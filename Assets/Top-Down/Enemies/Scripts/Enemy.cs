@@ -1,39 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 2f;
-    Rigidbody2D rb;
-    Transform target;
-    Vector2 moveDirection;
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
+    [SerializeField] float health, maxHealth = 3f;
 
     void Start()
     {
-        target = GameObject.Find("Player").transform;
+        health = maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(float damageAmount)
     {
-        if(target)
-        {
-            Vector3 direction = (target.position - transform.position).normalized;
-            moveDirection = direction;
-        }
-    }
+        health -= damageAmount;
 
-    private void FixedUpdate()
-    {
-        if(target)
+        if(health <= 0)
         {
-            rb.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
+            Destroy(gameObject);
         }
     }
 }
