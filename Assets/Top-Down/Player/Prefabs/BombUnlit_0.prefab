@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3194932738908297266}
   - component: {fileID: 4828077267819927130}
   - component: {fileID: -3784923117358822012}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BombUnlit_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,10 @@ MonoBehaviour:
   fuseTime: 5
   boxSize: {x: 2, y: 2}
   damage: 25
-  hitLayers:
+  enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
+  destructibleLayer:
+    serializedVersion: 2
+    m_Bits: 256
   explosionVfxPrefab: {fileID: 0}

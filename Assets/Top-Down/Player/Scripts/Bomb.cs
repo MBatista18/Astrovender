@@ -8,8 +8,9 @@ public class Bomb : MonoBehaviour
     public Vector2 boxSize = new Vector2(2f, 2f); //Square-ish area
     public int damage = 25;
 
-    [Header("Targets")]
-    public LayerMask hitLayers; //Set to enemy and destructible layers for the bomb to affect those objects
+    [Header("Targets")] //Set to enemy or destructible layers and tags for the bomb to affect those objects
+    public LayerMask enemyLayer;
+    public LayerMask destructibleLayer;
 
     [Header("VFX")]
     public GameObject explosionVfxPrefab;
@@ -32,25 +33,32 @@ public class Bomb : MonoBehaviour
         Debug.Log("Explosion went off");
         
         //Find everything in a square area
-        Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, boxSize, 0f,  hitLayers);
+        Collider2D[] enemyHits = Physics2D.OverlapBoxAll(transform.position, boxSize, 0f,  enemyLayer);
+        Collider2D[] destructibleHits = Physics2D.OverlapBoxAll(transform.position, boxSize, 0f, destructibleLayer);
 
         //Apply damage / destruction
-        foreach(Collider2D other in hits)
+        foreach (Collider2D other in enemyHits)
         {
+            Debug.Log("Reading enemy hit list");
             //Enemy explosion damage
             if (other.CompareTag("Enemy"))
             {
                 other.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
                 Debug.Log("Enemy takes explosion damage");
             }
+        }
 
+        foreach (Collider2D other in destructibleHits)
+        {
+            Debug.Log("Reading destructible hit list");
             //Destructible objects
             if (other.CompareTag("Destructible"))
-            {
-                other.SendMessage("Destroy", SendMessageOptions.DontRequireReceiver);
-                Debug.Log("Object is destroyed");
-            }
+                {
+                    other.SendMessage("Destroy", SendMessageOptions.DontRequireReceiver);
+                    Debug.Log("Object is destroyed");
+                }
         }
+
         
         //Apply VFX
         if (explosionVfxPrefab != null)
