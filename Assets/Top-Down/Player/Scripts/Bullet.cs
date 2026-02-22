@@ -14,18 +14,20 @@ public class Bullet : MonoBehaviour
     [Header("Damage")]
     public int damage = 10;
 
+    [Header("BulletPrep")]
     private Vector3 startPos;
     private float spawnTime;
     private Rigidbody2D bulletRigidBody;
 
 
-
+    //Called when script is activated
     private void OnEnable()
         {
             startPos = transform.position;
             spawnTime = Time.time;
         }
 
+    //Initialization
     private void Awake()
     {
         bulletRigidBody = GetComponent<Rigidbody2D>();
@@ -51,6 +53,7 @@ public class Bullet : MonoBehaviour
 
     }
 
+    //Called when another colliders enters the bullet's collider
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log($"Bullet hit: {other.name} tag={other.tag}");
@@ -69,6 +72,7 @@ public class Bullet : MonoBehaviour
         
     }
 
+    //Sets the direction of the bullet (Haven't been able to test this yet)
     public void SetDirection(Vector2 direction)
     {
         if(direction.sqrMagnitude > 0.0001f)

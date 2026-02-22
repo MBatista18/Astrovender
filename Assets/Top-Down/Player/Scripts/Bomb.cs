@@ -1,8 +1,10 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Bomb : MonoBehaviour
 {
+    //Declaring variables
     [Header("Explosion")]
     public float fuseTime = 5f;
     public Vector2 boxSize = new Vector2(2f, 2f); //Square-ish area
@@ -28,6 +30,7 @@ public class Bomb : MonoBehaviour
         
     }
 
+    //Handles the explosion logic for the bomb
     private void Explode()
     {
         Debug.Log("Explosion went off");
@@ -70,12 +73,14 @@ public class Bomb : MonoBehaviour
         Destroy(gameObject);
     }
 
+    //Coroutine for how long bomb needs to wait before it explodes
     IEnumerator FuseTimer()
     {
         yield return new WaitForSeconds(fuseTime);
         Explode();
     }
 
+    //Debug for explosion radius
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireCube(transform.position, boxSize);

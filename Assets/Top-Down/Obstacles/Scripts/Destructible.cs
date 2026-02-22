@@ -14,6 +14,7 @@ public class Destructible : MonoBehaviour
         
     }
 
+    //Destroys the game object when the function is called upon
     public void Destroy()
     {
         Destroy(gameObject);
