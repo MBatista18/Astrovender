@@ -1,0 +1,22 @@
+using UnityEngine;
+
+public class Destructible : MonoBehaviour
+{
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    //Destroys the game object when the function is called upon
+    public void Destroy()
+    {
+        Destroy(gameObject);
+    }
+}
