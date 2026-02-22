@@ -36,7 +36,8 @@ public class StateMachineBase : MonoBehaviour
 
     private void Start()
     {
-        if (InitialState() != null) { currentState = InitialState(); }
+        if (InitialState() != null) { currentState = InitialState(); Debug.Log("True"); }
+        else { Debug.Log("false"); }
 
         currentState?.thisStart();
     }

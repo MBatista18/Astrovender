@@ -5216,7 +5216,6 @@ GameObject:
   - component: {fileID: 2067541467}
   - component: {fileID: 2067541469}
   - component: {fileID: 2067541470}
-  - component: {fileID: 2067541468}
   m_Layer: 7
   m_Name: Eyeball Enemy
   m_TagString: Enemy
@@ -5325,21 +5324,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &2067541468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067541463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e81e142ad5f411c42ac0451d84bbfd5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyDetection
-  player: {fileID: 133064538}
-  moveSpeed: 4
-  detectionRadius: 5
 --- !u!61 &2067541469
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5395,11 +5379,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2067541463}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73940d2750d35f34090966643e548ddd, type: 3}
+  m_Script: {fileID: 11500000, guid: dfbb305d18d419f4994e258de96da75c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  health: 0
-  maxHealth: 20
+  m_EditorClassIdentifier: Assembly-CSharp::ChaserSM
+  maxHealth: 5
+  movementSpeed: 2
+  detectionRadius: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

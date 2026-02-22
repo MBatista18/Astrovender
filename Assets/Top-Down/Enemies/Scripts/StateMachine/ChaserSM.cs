@@ -1,16 +1,15 @@
 using UnityEngine;
 
-public class ChaserSM : MonoBehaviour
+public class ChaserSM : EnemySM
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    ChaserStateChase stateChase;
+    public override void InstantiateStates()
     {
-        
+        base.InstantiateStates();
+        stateChase = new ChaserStateChase(this);
     }
-
-    // Update is called once per frame
-    void Update()
+    public override StateBase AttackState()
     {
-        
+        return stateChase;
     }
 }
