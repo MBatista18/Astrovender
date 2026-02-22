@@ -12,12 +12,16 @@ public class PlayerCombat : MonoBehaviour
 
     [Header("JoyStick position")] 
     public Vector2 moveInput;
-    private Vector2 lastFacing = Vector2.up;
 
     [Header("Timing")]
     public float swordActiveTime = 0.12f;
     public float swordCooldown = 0.25f;
     private bool canSwordAttack = true;
+
+    [Header("Supplies Count")]
+    private int bombCount = 5;
+    private int ammoCount = 10;
+    private SetHUDText HUDtextDisplay;
 
     [Header("Positioning")]
     public Vector2 offsetRight = new Vector2(0.6f, 0f); //Where the object appears when player is facing right
@@ -25,27 +29,43 @@ public class PlayerCombat : MonoBehaviour
     public Vector2 offsetUp = new Vector2(0f, 0.6f);    //Where the object appears when player is facing up
     public Vector2 offsetDown = new Vector2(0f, -0.6f);  //Where the object appears when player is facing down
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        //Updates whenever the joystick is pushed
-        if(moveInput.sqrMagnitude > 0.01f)
-        {
-            lastFacing = moveInput.normalized;
-        }
+        HUDtextDisplay = FindFirstObjectByType<SetHUDText>();
+        HUDtextDisplay.SetAmmoText(ammoCount);
+        HUDtextDisplay.SetBombText(bombCount);
+    }
+
+    // attach combat functions to their respective button inputs in InputManager.cs
+    private void OnEnable()
+    {
+        InputManager.shootInput += Shoot;
+        InputManager.bombInput += Bomb;
+        InputManager.meleeInput += SwordAttack;
+    }
+
+    // detach combat functions from their respective button inputs in InputManager.cs to avoid memory leaks
+    private void OnDisable()
+    {
+        InputManager.shootInput -= Shoot;
+        InputManager.bombInput -= Bomb;
+        InputManager.meleeInput -= SwordAttack;
     }
 
     //Handles the shoot button
     public void Shoot()
     {
-        Debug.Log("Shoot button pressed");
+        if (ammoCount <= 0) { return; }
+        else { ammoCount--; }
+
+        HUDtextDisplay.SetAmmoText(ammoCount);
 
         if (bulletObj)
         {
             Debug.Log("Spawning bullet");
             Instantiate(bulletObj, transform.position, transform.rotation)
             .GetComponent<Bullet>()
-            .SetDirection(lastFacing);
+            .SetDirection(InputManager.facingDirection);
         }
         
     }
@@ -53,9 +73,12 @@ public class PlayerCombat : MonoBehaviour
     //Handles the bomb button
     public void Bomb()
     {
-        Debug.Log("Bomb button pressed");
+        if (bombCount <= 0) { return; }
+        else { bombCount--; }
 
-        if(bombObj)
+        HUDtextDisplay.SetBombText(bombCount);
+
+        if (bombObj)
         {
             Debug.Log("Spawning bomb");
             Instantiate(bombObj, transform.position, Quaternion.identity);
@@ -66,7 +89,7 @@ public class PlayerCombat : MonoBehaviour
     //Handles the sword button
     public void SwordAttack()
     {
-        Debug.Log("Sword attack trigger");
+        //Debug.Log("Sword attack trigger");
         if (!canSwordAttack) return;
         StartCoroutine(SwingSword());
     }
@@ -76,7 +99,7 @@ public class PlayerCombat : MonoBehaviour
     {
         canSwordAttack = false;
 
-        ApplyFacingToSword(lastFacing);
+        ApplyFacingToSword(InputManager.facingDirection);
 
         swordHitBox.BeginSwing();
         swordObj.SetActive(true);
@@ -85,7 +108,8 @@ public class PlayerCombat : MonoBehaviour
 
         swordObj.SetActive(false);
 
-        yield return new WaitForSeconds(swordCooldown);
+        //yield return new WaitForSeconds(swordCooldown); 
+            // I'm removing the sword cool-down because I think it feels better to not have it, though maybe we can re-implement it later -Dirk
         canSwordAttack = true;
     }
 
@@ -103,13 +127,15 @@ public class PlayerCombat : MonoBehaviour
             // Left / Right
             if (direction.x >= 0f)
             {
+                Debug.Log("Sword right");
                 localPos = offsetRight;
-                zRot = 0f;
+                zRot = -90f;
             }
             else
             {
+                Debug.Log("Sword left");
                 localPos = offsetLeft;
-                zRot = 180f;
+                zRot = 90f;
             }
         }
         else
@@ -117,13 +143,15 @@ public class PlayerCombat : MonoBehaviour
             // Up / Down
             if (direction.y >= 0f)
             {
+                Debug.Log("Sword up");
                 localPos = offsetUp;
-                zRot = 90f;
+                zRot = 0f;
             }
             else
             {
+                Debug.Log("Sword down");
                 localPos = offsetDown;
-                zRot = -90f;
+                zRot = 180f;
             }
         }
 

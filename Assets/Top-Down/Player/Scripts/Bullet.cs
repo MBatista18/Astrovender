@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         //Move forward (uses the bullet's own forward direction)
-        transform.position += transform.up * speed * Time.deltaTime;
+        transform.position += (Vector3)bulletDirection * speed * Time.deltaTime;
 
         //Despawn after distance
         if(Vector3.Distance(startPos, transform.position) >= maxDistance)
