@@ -2,11 +2,13 @@
 public class GameData
 {
     public int day;
-    public int resources;
+    public int coins;
+    public int gems;
 
     public GameData(GameManager gameManager)
     {
         day = gameManager.CurrentDay;
-        resources = gameManager.Resources;
+        gems = gameManager.CurrentGems;
+        coins = gameManager.CurrentCoins;
     }
 }

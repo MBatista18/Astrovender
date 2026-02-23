@@ -7,13 +7,16 @@ public class GameManager : MonoBehaviour, ISaveable
     public static GameManager Instance;
 
     [SerializeField] GameObject player;
-    [SerializeField] TextMeshProUGUI dayText;
-    [SerializeField] TextMeshProUGUI resourceCountText;
+
+    SetHUDText hudText;
 
     public int CurrentDay { get; private set; } = 0;
-    public int Resources { get; private set; } = 0;
+    public int CurrentCoins { get; private set; } = 0;
+    public int CurrentGems { get; private set; } = 0;
 
-    public int currentResources;
+    public int collectedCoins;
+    public int collectedGems;
+
     private PlayerStatusTest playerDebug;
 
     private void Awake()
@@ -30,15 +33,18 @@ public class GameManager : MonoBehaviour, ISaveable
         }
 
         // Debug Purposes
-        if (player != null)
+        /* if (player != null)
         {
             playerDebug = player.GetComponent<PlayerStatusTest>();
             playerDebug.OnPlayerStatusUpdate += Progress;
-        }
+        }*/
     }
 
     void OnEnable()
     {
+        Debug.Log(SaveManager.Instance);
+        Debug.Log(SaveManager.Instance.saveables);
+
         SaveManager.Instance.saveables.Add(this);
     }
     void OnDisable()
@@ -51,26 +57,30 @@ public class GameManager : MonoBehaviour, ISaveable
         StartDay();
     }
 
-    void Progress(bool success)
+    public void Progress(bool success)
     {
         if (success)
         {
-            Resources += currentResources;
+            CurrentGems += collectedGems;
+            CurrentCoins += collectedCoins;
         }
         else
         {
             Debug.Log("Day was failed. Progress lost");
         }
         
-        StartDay();
+        //StartDay();
     }
 
-    void StartDay()
+    public void StartDay()
     {
         IncrementDay();
-        IncrementResources(0);
         Debug.Log("A new day has started. Current Day: " + CurrentDay);
-        currentResources = 0;
+        
+        collectedCoins = 0;
+        collectedGems = 0;
+        RefreshUI();
+
         SaveManager.Instance.Save(this);
     }
 
@@ -79,9 +89,16 @@ public class GameManager : MonoBehaviour, ISaveable
         CurrentDay += value;
         RefreshUI();
     }
-    public void IncrementResources(int value = 1)
+
+    public void IncrementCoins(int value = 1)
     {
-        currentResources += value;
+        collectedCoins += value;
+        RefreshUI();
+    }
+
+    public void IncrementGems(int value = 1)
+    {
+        collectedGems += value;
         RefreshUI();
     }
 
@@ -102,7 +119,8 @@ public class GameManager : MonoBehaviour, ISaveable
         if (data != null)
         {
             CurrentDay = data.day;
-            Resources = data.resources;
+            CurrentCoins = data.coins;
+            CurrentGems = data.gems;
         }
 
         RefreshUI();
@@ -110,7 +128,10 @@ public class GameManager : MonoBehaviour, ISaveable
 
     void RefreshUI()
     {
-        resourceCountText.text = "# Resources: " + (Resources + currentResources);
-        dayText.text = "Day: " + CurrentDay;
+        if (hudText == null) { hudText = FindFirstObjectByType<SetHUDText>(); }
+
+        hudText?.SetDayText(CurrentDay);
+        hudText?.SetCoinText(collectedCoins);
+        hudText?.SetGemText(collectedGems);
     }
 }

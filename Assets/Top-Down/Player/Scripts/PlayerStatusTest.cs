@@ -27,12 +27,12 @@ public class PlayerStatusTest : MonoBehaviour
         }
         else if (Input.GetKeyDown(gainResources))
         {
-            GameManager.Instance.IncrementResources(1);
+            GameManager.Instance.IncrementCoins(1);
             Debug.Log($"Gained Resources.");
         }
         else if (Input.GetKeyDown(loseResources))
         {
-            GameManager.Instance.IncrementResources(-1);
+            GameManager.Instance.IncrementCoins(-1);
             Debug.Log($"Reduced Resources.");
         }
     }
