@@ -23,10 +23,12 @@ public class PlayerHealth : MonoBehaviour
         if (val < 0 && (!canBeHurt && !bypassInvulnerabilityCheck)) { return; } else { canBeHurt = false; } // if being damaged and the player is currently invulnerable, return false
 
         currentOxygenLevel += val;
-      
+
+        GameManager.Instance.Progress(false);
+
         if (currentOxygenLevel <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(1);
         }
     }
 

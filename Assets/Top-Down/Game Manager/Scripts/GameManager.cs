@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour, ISaveable
     public int collectedCoins;
     public int collectedGems;
 
+    bool progressSuccessful;
+    public bool GetProgressSuccessful() { return progressSuccessful; }
+
     private PlayerStatusTest playerDebug;
 
     private void Awake()
@@ -40,18 +43,6 @@ public class GameManager : MonoBehaviour, ISaveable
         }*/
     }
 
-    void OnEnable()
-    {
-        Debug.Log(SaveManager.Instance);
-        Debug.Log(SaveManager.Instance.saveables);
-
-        SaveManager.Instance.saveables.Add(this);
-    }
-    void OnDisable()
-    {
-        SaveManager.Instance.saveables.Add(this);
-    }
-
     void Start()
     {
         StartDay();
@@ -68,7 +59,9 @@ public class GameManager : MonoBehaviour, ISaveable
         {
             Debug.Log("Day was failed. Progress lost");
         }
-        
+
+        progressSuccessful = success;
+
         //StartDay();
     }
 

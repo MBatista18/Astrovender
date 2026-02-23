@@ -265920,6 +265920,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1399810203163045568, guid: bec28fa771324b54daee1edbddad8f98, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1762707183041989481, guid: bec28fa771324b54daee1edbddad8f98, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -265928,12 +265932,44 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Assets
       objectReference: {fileID: 0}
+    - target: {fileID: 2729366258098819639, guid: bec28fa771324b54daee1edbddad8f98, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3094803368126875543, guid: bec28fa771324b54daee1edbddad8f98, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3094803368126875543, guid: bec28fa771324b54daee1edbddad8f98, type: 3}
       propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530645559019955738, guid: bec28fa771324b54daee1edbddad8f98, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530645559019955738, guid: bec28fa771324b54daee1edbddad8f98, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530645559019955738, guid: bec28fa771324b54daee1edbddad8f98, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530645559019955738, guid: bec28fa771324b54daee1edbddad8f98, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530645559019955738, guid: bec28fa771324b54daee1edbddad8f98, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530645559019955738, guid: bec28fa771324b54daee1edbddad8f98, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530645559019955738, guid: bec28fa771324b54daee1edbddad8f98, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7566772518430339522, guid: bec28fa771324b54daee1edbddad8f98, type: 3}

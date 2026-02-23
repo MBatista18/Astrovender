@@ -15,9 +15,12 @@ public class SaveManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("Isn't Null");
+
         // Singleton pattern to ensure only one instance of SaveManager exists
         if (Instance == null)
         {
+            Debug.Log("Set to Isn't Null");
             Instance = this;
             saveables = new List<ISaveable>();
             DontDestroyOnLoad(gameObject); // Persist across scenes
@@ -28,16 +31,27 @@ public class SaveManager : MonoBehaviour
         }
     }
 
+    void OnEnable()
+    {
+        if (GameManager.Instance != null)
+            SaveManager.Instance.saveables.Add(GameManager.Instance);
+    }
+    void OnDisable()
+    {
+        if (GameManager.Instance != null)
+            SaveManager.Instance.saveables.Add(GameManager.Instance);
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(saveData))
+       /* if (Input.GetKeyDown(saveData))
         {
             Save();
         }
         else if (Input.GetKeyDown(loadSave))
         {
             Load();
-        }
+        }*/
     }
 
     public void Save(Object source = null)

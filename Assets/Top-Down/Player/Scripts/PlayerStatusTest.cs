@@ -15,7 +15,7 @@ public class PlayerStatusTest : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(failureState))
+       /* if (Input.GetKeyDown(failureState))
         {
             Debug.Log("Failure State Activated");
             OnPlayerStatusUpdate.Invoke(false);
@@ -34,6 +34,6 @@ public class PlayerStatusTest : MonoBehaviour
         {
             GameManager.Instance.IncrementCoins(-1);
             Debug.Log($"Reduced Resources.");
-        }
+        }*/
     }
 }
