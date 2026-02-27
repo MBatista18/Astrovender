@@ -10,6 +10,11 @@ public class PlayerCombat : MonoBehaviour
     public GameObject swordObj;     //Gets the sword game object
     public Sword swordHitBox;       //Gets the Sword script from the sword game object
 
+    [Header("Unlocks")]
+    public bool gunUnlocked = false;    //Call the function UnlockGun() to unlock the shooting mechanic
+    public bool bombUnlocked = false;   //Call the function UnlockBomb() to unlock the bomb mechanic
+    public bool shieldUnlocked = false; //Call the function UnlockShield() to unlock the shield mechanic
+
     [Header("JoyStick position")] 
     public Vector2 moveInput;
 
@@ -55,33 +60,42 @@ public class PlayerCombat : MonoBehaviour
     //Handles the shoot button
     public void Shoot()
     {
-        if (ammoCount <= 0) { return; }
-        else { ammoCount--; }
-
-        HUDtextDisplay.SetAmmoText(ammoCount);
-
-        if (bulletObj)
+        //Locks the gun until the player unlocks it
+        if (gunUnlocked ==  true)
         {
-            Debug.Log("Spawning bullet");
-            Instantiate(bulletObj, transform.position, transform.rotation)
-            .GetComponent<Bullet>()
-            .SetDirection(InputManager.facingDirection);
+            if (ammoCount <= 0) { return; }
+            else { ammoCount--; }
+
+            HUDtextDisplay.SetAmmoText(ammoCount);
+
+            if (bulletObj)
+            {
+                Debug.Log("Spawning bullet");
+                Instantiate(bulletObj, transform.position, transform.rotation)
+                .GetComponent<Bullet>()
+                .SetDirection(InputManager.facingDirection);
+            }
         }
+        
         
     }
 
     //Handles the bomb button
     public void Bomb()
     {
-        if (bombCount <= 0) { return; }
-        else { bombCount--; }
-
-        HUDtextDisplay.SetBombText(bombCount);
-
-        if (bombObj)
+        //Locks the bomb until the player unlocks it
+        if (bombUnlocked == true)
         {
-            Debug.Log("Spawning bomb");
-            Instantiate(bombObj, transform.position, Quaternion.identity);
+            if (bombCount <= 0) { return; }
+            else { bombCount--; }
+
+            HUDtextDisplay.SetBombText(bombCount);
+
+            if (bombObj)
+            {
+                Debug.Log("Spawning bomb");
+                Instantiate(bombObj, transform.position, Quaternion.identity);
+            }
         }
         
     }
@@ -157,6 +171,25 @@ public class PlayerCombat : MonoBehaviour
 
         swordObj.transform.localPosition = localPos;
         swordObj.transform.localRotation = Quaternion.Euler(0f, 0f, zRot);
+    }
+
+    //Handles unlocks for gun, bomb, and shield
+    public void UnlockGun()
+    {
+        gunUnlocked = true;
+        Debug.Log("Gun unlocked!");
+    }
+
+    public void UnlockBomb()
+    {
+        bombUnlocked = true;
+        Debug.Log("Bomb unlocked!");
+    }
+
+    public void UnlockShield()
+    {
+        shieldUnlocked = true;
+        Debug.Log("Shield unlocked!");
     }
 
 }
