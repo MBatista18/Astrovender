@@ -2248,6 +2248,7 @@ GameObject:
   - component: {fileID: 2158143489576240514}
   - component: {fileID: 953494481533633863}
   - component: {fileID: 6651678083348344935}
+  - component: {fileID: 5333157422734323725}
   - component: {fileID: 8606652903137658422}
   m_Layer: 10
   m_Name: Player
@@ -2391,6 +2392,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5333157422734323725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7861144985056148113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443383d735c8f97448090763275e7fb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimationController
 --- !u!95 &8606652903137658422
 Animator:
   serializedVersion: 7

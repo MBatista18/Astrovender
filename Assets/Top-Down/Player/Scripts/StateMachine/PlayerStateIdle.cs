@@ -13,6 +13,7 @@ public class PlayerStateIdle : StateBase
     {
         base.thisStart();
 
+        Debug.Log("Check for controller returns " + (sm.GetAnimationController() != null));
         sm.GetAnimationController().SetAnimatorState(PlayerAnimationController.AnimatorState.Idle);
     }
 
