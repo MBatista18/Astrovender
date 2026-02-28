@@ -4,14 +4,13 @@ using System.Collections.Generic;
 
 public class PlayerCombat : MonoBehaviour
 {
+    PlayerStateMachine sm;
+
     [Header("References")]
     public GameObject bulletObj;
     public GameObject bombObj;
     public GameObject swordObj;     //Gets the sword game object
     public Sword swordHitBox;       //Gets the Sword script from the sword game object
-
-    [Header("JoyStick position")] 
-    public Vector2 moveInput;
 
     [Header("Timing")]
     public float swordActiveTime = 0.12f;
@@ -24,13 +23,12 @@ public class PlayerCombat : MonoBehaviour
     private SetHUDText HUDtextDisplay;
 
     [Header("Positioning")]
-    public Vector2 offsetRight = new Vector2(0.6f, 0f); //Where the object appears when player is facing right
-    public Vector2 offsetLeft = new Vector2(-0.6f, 0f);  //Where the object appears when player is facing left
-    public Vector2 offsetUp = new Vector2(0f, 0.6f);    //Where the object appears when player is facing up
-    public Vector2 offsetDown = new Vector2(0f, -0.6f);  //Where the object appears when player is facing down
+    public float swordOffset = 1f;
 
     private void Awake()
     {
+        sm = GetComponent<PlayerStateMachine>();
+
         HUDtextDisplay = FindFirstObjectByType<SetHUDText>();
         HUDtextDisplay.SetAmmoText(ammoCount);
         HUDtextDisplay.SetBombText(bombCount);
@@ -65,7 +63,7 @@ public class PlayerCombat : MonoBehaviour
             Debug.Log("Spawning bullet");
             Instantiate(bulletObj, transform.position, transform.rotation)
             .GetComponent<Bullet>()
-            .SetDirection(InputManager.facingDirection);
+            .SetDirection(sm.GetFacingDirection());
         }
         
     }
@@ -99,7 +97,7 @@ public class PlayerCombat : MonoBehaviour
     {
         canSwordAttack = false;
 
-        ApplyFacingToSword(InputManager.facingDirection);
+        ApplyFacingToSword(sm.GetFacingDirection());
 
         swordHitBox.BeginSwing();
         swordObj.SetActive(true);
@@ -114,45 +112,28 @@ public class PlayerCombat : MonoBehaviour
     }
 
     //Controls the sword appearance based on the direction the player is "facing" / moving in
-    private void ApplyFacingToSword(Vector2 direction)
+    private void ApplyFacingToSword(PlayerStateMachine.facingDirection facingDirection)
     {
-        direction = direction.normalized;
-
-        Vector3 localPos = offsetRight;
+        Vector3 localPos = Vector2.up * swordOffset;
         float zRot = 0f;
 
-        // Snap to cardinal direction based on whichever axis is strongest (Can't test without joystick)
-        if (Mathf.Abs(direction.x) >= Mathf.Abs(direction.y))
+        switch (facingDirection)
         {
-            // Left / Right
-            if (direction.x >= 0f)
-            {
-                Debug.Log("Sword right");
-                localPos = offsetRight;
-                zRot = -90f;
-            }
-            else
-            {
-                Debug.Log("Sword left");
-                localPos = offsetLeft;
-                zRot = 90f;
-            }
-        }
-        else
-        {
-            // Up / Down
-            if (direction.y >= 0f)
-            {
-                Debug.Log("Sword up");
-                localPos = offsetUp;
-                zRot = 0f;
-            }
-            else
-            {
-                Debug.Log("Sword down");
-                localPos = offsetDown;
+            case PlayerStateMachine.facingDirection.up:
+                // values are set to up by default, this code simply returns without setting anything
+                break;
+            case PlayerStateMachine.facingDirection.down:
+                localPos = Vector2.down * swordOffset;
                 zRot = 180f;
-            }
+                break;
+            case PlayerStateMachine.facingDirection.left:
+                localPos = Vector2.left * swordOffset;
+                zRot = 90f;
+                break;
+            case PlayerStateMachine.facingDirection.right:
+                localPos = Vector2.right * swordOffset;
+                zRot = -90f;
+                break;
         }
 
         swordObj.transform.localPosition = localPos;

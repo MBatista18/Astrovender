@@ -1,0 +1,140 @@
+using UnityEngine;
+
+public class PlayerStateMachine : StateMachineBase
+{
+    #region variables
+
+    [SerializeField] private float _moveSpeed = 5f;
+    public float GetSpeed() { return _moveSpeed; }
+
+    private Vector2 _movement;
+    public Vector2 GetMovement() { return _movement; }
+    public void SetMovement(Vector2 movementDirection)
+    {
+        Vector2 referenceDirection = Vector2.zero;
+
+        // the following is designed to modify movementDirection for octagonal movement input
+
+        if (Mathf.Abs(movementDirection.y) > 0.2f) // checks y against a certain threshold; if it passes that threshold, the player moves vertically
+        {
+            referenceDirection += new Vector2(0, 1);
+        }
+
+        if (Mathf.Abs(movementDirection.x) > 0.2f) // checks x against a certain threshold; if it passes that threshold, the player moves horizontally
+        {
+            referenceDirection += new Vector2(1, 0);
+        }
+
+        referenceDirection = new Vector2(referenceDirection.x * Mathf.Sign(movementDirection.x), referenceDirection.y * Mathf.Sign(movementDirection.y));
+            // applies the directional vallue of movementDirection to referenceDirection
+
+        _movement = referenceDirection.normalized; // normalizes the vector to prevent diagonal movement  speeds exceeding straight horizontal or straight vertical movement speeds
+
+        SetFacingDirection();
+    }
+
+    // the following values modify the player's facing direction
+
+    public enum facingDirection
+    {
+        up, // facing away from camera
+        down, // facing towards the camera
+        left, // facing left
+        right // facing right
+    }
+    private facingDirection currentFacingDirection = facingDirection.down;
+
+    private void SetFacingDirection()
+    {
+        if (_movement.Equals(Vector2.zero)) { return; } // don't change the facing direction if the player is not moving
+
+        if (Mathf.Abs(_movement.x) > Mathf.Abs(_movement.y))
+        {
+            if (_movement.x > 0)
+            {
+                currentFacingDirection = facingDirection.right;
+            }
+            else if (_movement.x < 0)
+            {
+                currentFacingDirection = facingDirection.left;
+            }
+        }
+        else
+        {
+            if (_movement.y > 0)
+            {
+                currentFacingDirection = facingDirection.up;
+            }
+            else if (_movement.y < 0)
+            {
+                currentFacingDirection = facingDirection.down;
+            }
+        }
+
+        animationController.Animate(); // changes the animation controller's current facing direction
+    }
+
+    public facingDirection GetFacingDirection()
+    {
+        return currentFacingDirection;
+    }
+
+    #endregion
+
+    #region components
+
+    private Rigidbody2D rb;
+    public Rigidbody2D GetRB2d() { return rb; }
+
+    private PlayerAnimationController animationController;
+    public PlayerAnimationController GetAnimationController() { return animationController; }
+
+    public override void InstantiateComponents()
+    {
+        base.InstantiateComponents();
+        rb = GetComponent<Rigidbody2D>();
+        animationController = GetComponent<PlayerAnimationController>();
+    }
+    #endregion
+
+    #region states
+
+    PlayerStateIdle stateIdle;
+    public override StateBase InitialState()
+    {
+        return stateIdle;
+    }
+
+    PlayerStateMove stateMove;
+    public PlayerStateMove GetStateMove() { return stateMove; }
+
+    PlayerStateKnockback stateKnockback;
+    public void Knockback(Vector2 direction, float time)
+    {
+        ChangeState(stateKnockback);
+    }
+
+    PlayerStateDead stateDead;
+    public override StateBase DeathState()
+    {
+        return stateDead;
+    }
+
+    public override void InstantiateStates()
+    {
+        base.InstantiateStates();
+        stateIdle = new PlayerStateIdle(this);
+        stateMove = new PlayerStateMove(this);
+        stateKnockback = new PlayerStateKnockback(this);
+        stateDead = new PlayerStateDead(this);
+    }
+
+    #endregion
+
+    public override void UpdateFunctions()
+    {
+        base.UpdateFunctions();
+
+        SetMovement(new Vector2(InputManager.Movement.x, InputManager.Movement.y));
+    }
+}

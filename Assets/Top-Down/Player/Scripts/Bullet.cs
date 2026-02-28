@@ -73,8 +73,26 @@ public class Bullet : MonoBehaviour
     }
 
     //Sets the direction of the bullet (Haven't been able to test this yet)
-    public void SetDirection(Vector2 direction)
+    public void SetDirection(PlayerStateMachine.facingDirection facingDirection)
     {
+        Vector2 direction = Vector2.zero;
+
+        switch (facingDirection)
+        {
+            case PlayerStateMachine.facingDirection.up:
+                direction = Vector2.up;
+                break;
+            case PlayerStateMachine.facingDirection.down:
+                direction = Vector2.down;
+                break;
+            case PlayerStateMachine.facingDirection.left:
+                direction = Vector2.left;
+                break;
+            case PlayerStateMachine.facingDirection.right:
+                direction = Vector2.right;
+                break;
+        }
+
         if(direction.sqrMagnitude > 0.0001f)
         {
             bulletDirection = direction.normalized;

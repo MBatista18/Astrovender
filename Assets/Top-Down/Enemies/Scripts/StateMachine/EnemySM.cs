@@ -44,7 +44,7 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
     public override void InstantiateComponents()
     {
         base.InstantiateComponents();
-        playerTransform = FindFirstObjectByType<PlayerMovement>().transform;
+        playerTransform = FindFirstObjectByType<PlayerStateMachine>().transform;
         rb2D = GetComponent<Rigidbody2D>();
     }
 
