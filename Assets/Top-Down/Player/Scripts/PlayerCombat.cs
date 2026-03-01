@@ -20,7 +20,6 @@ public class PlayerCombat : MonoBehaviour
     [Header("Supplies Count")]
     private int bombCount = 5;
     private int ammoCount = 10;
-    private SetHUDText HUDtextDisplay;
 
     [Header("Positioning")]
     public float swordOffset = 1f;
@@ -28,10 +27,12 @@ public class PlayerCombat : MonoBehaviour
     private void Awake()
     {
         sm = GetComponent<PlayerStateMachine>();
+    }
 
-        HUDtextDisplay = FindFirstObjectByType<SetHUDText>();
-        HUDtextDisplay.SetAmmoText(ammoCount);
-        HUDtextDisplay.SetBombText(bombCount);
+    private void Start()
+    {
+        AssetCall.instance.HUDText.SetAmmoText(ammoCount);
+        AssetCall.instance.HUDText.SetBombText(bombCount);
     }
 
     // attach combat functions to their respective button inputs in InputManager.cs
@@ -56,7 +57,7 @@ public class PlayerCombat : MonoBehaviour
         if (ammoCount <= 0) { return; }
         else { ammoCount--; }
 
-        HUDtextDisplay.SetAmmoText(ammoCount);
+        AssetCall.instance.HUDText.SetAmmoText(ammoCount);
 
         if (bulletObj)
         {
@@ -74,7 +75,7 @@ public class PlayerCombat : MonoBehaviour
         if (bombCount <= 0) { return; }
         else { bombCount--; }
 
-        HUDtextDisplay.SetBombText(bombCount);
+        AssetCall.instance.HUDText.SetBombText(bombCount);
 
         if (bombObj)
         {

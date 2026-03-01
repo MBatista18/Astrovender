@@ -89,11 +89,15 @@ public class PlayerStateMachine : StateMachineBase
     private PlayerAnimationController animationController;
     public PlayerAnimationController GetAnimationController() { return animationController; }
 
+    private PlayerHealth playerHealth;
+    public PlayerHealth GetPlayerHealth() { return playerHealth; }
+
     public override void InstantiateComponents()
     {
         base.InstantiateComponents();
         rb = GetComponent<Rigidbody2D>();
         animationController = GetComponent<PlayerAnimationController>();
+        playerHealth = GetComponent<PlayerHealth>();
     }
     #endregion
 
@@ -111,6 +115,7 @@ public class PlayerStateMachine : StateMachineBase
     PlayerStateKnockback stateKnockback;
     public void Knockback(Vector2 direction, float time)
     {
+        stateKnockback.SetKnockback(direction, time);
         ChangeState(stateKnockback);
     }
 

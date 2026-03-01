@@ -25,7 +25,7 @@ public class PlayerStateKnockback : StateBase
     {
         base.thisStart();
 
-        fullTime = time;
+        fullTime = time; 
     }
 
     public override void thisUpdate()
@@ -44,12 +44,13 @@ public class PlayerStateKnockback : StateBase
     {
         base.thisFixedUpdate();
 
-        sm.GetRB2d().linearVelocity = movementDir * (movementSpeed * (time / fullTime)); // has the player knockback progressively slow as the timer reaches 0
+        sm.GetRB2d().linearVelocity = movementDir * (movementSpeed * Mathf.Clamp01(time / fullTime)); // has the player knockback progressively slow as the timer reaches 0
     }
 
     public override void thisEnd()
     {
         base.thisEnd();
+
         sm.GetRB2d().linearVelocity = Vector2.zero; // rests velocity at the end of the state to prevent rb velocity continuing into other states
     }
 }

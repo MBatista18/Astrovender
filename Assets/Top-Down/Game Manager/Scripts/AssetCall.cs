@@ -29,12 +29,16 @@ public class AssetCall : MonoBehaviour
     public GameObject coin;
     public GameObject gem;
 
+    public GameObject explosion;
+
     private void Awake()
     {
         Debug.Log("awake");
 
         coin = Resources.Load("Prefabs/Items/Coin") as GameObject;
         gem = Resources.Load("Prefabs/Items/Gem") as GameObject;
+
+        explosion = Resources.Load("Prefabs/Obstacles/ExplosionObj") as GameObject;
 
         playerSM = FindFirstObjectByType<PlayerStateMachine>();
         HUDText = FindFirstObjectByType<SetHUDText>();

@@ -2850,6 +2850,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4429505830412598345, guid: 300626bc9b7c20140adea03f2283b642, type: 3}
   m_PrefabInstance: {fileID: 3595707329789176202}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2068915301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2068915302}
+  m_Layer: 8
+  m_Name: DestructibleRock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2068915302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068915301}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.3224, y: -0.09736, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2886903013253528127
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2979,6 +3010,10 @@ PrefabInstance:
     - target: {fileID: 2729366258098819639, guid: bec28fa771324b54daee1edbddad8f98, type: 3}
       propertyPath: m_Name
       value: Player Assets
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032261678546556980, guid: bec28fa771324b54daee1edbddad8f98, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8352781953131624866, guid: bec28fa771324b54daee1edbddad8f98, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3151,6 +3186,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship Door
       objectReference: {fileID: 0}
+    - target: {fileID: 917436723711403911, guid: e77f5ab737e8b024e88746efde068a55, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1416413461558190095, guid: e77f5ab737e8b024e88746efde068a55, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.49
@@ -3208,3 +3247,4 @@ SceneRoots:
   - {fileID: 2886903013253528127}
   - {fileID: 8382068238252530176}
   - {fileID: 8525374669040986904}
+  - {fileID: 2068915302}
