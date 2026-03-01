@@ -2287,7 +2287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ce4bd6ac9da824cae76af53cc1b918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStateMachine
-  _moveSpeed: 5
+  _moveSpeed: 4
 --- !u!114 &5775440578771745381
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -68,7 +68,7 @@ public class Explosion : MonoBehaviour
                         1.5f);
                     break;
                 case "Destructible":
-                    Destroy(gameObject);
+                    ray.collider.GetComponent<Destructible>()?.CallDestroy();
                     break;
             }
         }
