@@ -20,4 +20,15 @@ public class SetHUDText : MonoBehaviour
     [SerializeField] TextMeshProUGUI gemText;
     public void SetGemText(int currentGems) { if (!gemText) return; gemText.text = "COLLECTED GEMS: " + currentGems; }
 
+    private void Start()
+    {
+        RefreshUI();
+    }
+
+    public void RefreshUI()
+    {
+        SetDayText(GameManager.Instance.CurrentDay);
+        SetCoinText(GameManager.Instance.collectedCoins);
+        SetGemText(GameManager.Instance.collectedGems);
+    }
 }

@@ -44,7 +44,7 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
     public override void InstantiateComponents()
     {
         base.InstantiateComponents();
-        playerTransform = FindFirstObjectByType<PlayerStateMachine>().transform;
+        playerTransform = AssetCall.instance.playerSM.transform;
         rb2D = GetComponent<Rigidbody2D>();
     }
 
@@ -73,15 +73,13 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
     {
         if (Random.Range(0,10) <= 7) 
         { //spawn coin
-            if (ResourcesManager.Instance != null) 
-            { Instantiate(ResourcesManager.Instance.coin, transform.position + (Vector3) Random.insideUnitCircle * .3f, Quaternion.identity); } 
+            Instantiate(AssetCall.instance.coin, transform.position + (Vector3)Random.insideUnitCircle * .3f, Quaternion.identity);
         }
         else
         {
             if (Random.Range(0, 10) <= 3)
             { //spawn gem
-                if (ResourcesManager.Instance != null)
-                { Instantiate(ResourcesManager.Instance.gem, transform.position + (Vector3)Random.insideUnitCircle * .3f, Quaternion.identity); }
+                Instantiate(AssetCall.instance.gem, transform.position + (Vector3)Random.insideUnitCircle * .3f, Quaternion.identity);
             }
         }
 

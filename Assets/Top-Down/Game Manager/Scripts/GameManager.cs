@@ -6,10 +6,6 @@ public class GameManager : MonoBehaviour, ISaveable
 {
     public static GameManager Instance;
 
-    [SerializeField] GameObject player;
-
-    SetHUDText hudText;
-
     public int CurrentDay { get; private set; } = 0;
     public int CurrentCoins { get; private set; } = 0;
     public int CurrentGems { get; private set; } = 0;
@@ -19,8 +15,6 @@ public class GameManager : MonoBehaviour, ISaveable
 
     bool progressSuccessful;
     public bool GetProgressSuccessful() { return progressSuccessful; }
-
-    private PlayerStatusTest playerDebug;
 
     private void Awake()
     {
@@ -45,7 +39,7 @@ public class GameManager : MonoBehaviour, ISaveable
 
     void Start()
     {
-        StartDay();
+        StartDay(); // this should be removed for the final build, otherwise everytime the player starts the game and this object is created, it'll start a new day
     }
 
     public void Progress(bool success)
@@ -72,7 +66,6 @@ public class GameManager : MonoBehaviour, ISaveable
         
         collectedCoins = 0;
         collectedGems = 0;
-        RefreshUI();
 
         SaveManager.Instance.Save(this);
     }
@@ -80,27 +73,24 @@ public class GameManager : MonoBehaviour, ISaveable
     public void IncrementDay(int value = 1)
     {
         CurrentDay += value;
-        RefreshUI();
     }
 
     public void IncrementCoins(int value = 1)
     {
         collectedCoins += value;
-        RefreshUI();
+        AssetCall.instance.HUDText.RefreshUI();
     }
 
     public void IncrementGems(int value = 1)
     {
         collectedGems += value;
-        RefreshUI();
+        AssetCall.instance.HUDText.RefreshUI();
     }
 
     public void SaveData(SaveData saveData)
     {
         Debug.Log("Saving GameManager data");
         saveData.gameData = new GameData(this);
-
-        RefreshUI();
     }
 
     public void LoadData(SaveData saveData)
@@ -115,16 +105,5 @@ public class GameManager : MonoBehaviour, ISaveable
             CurrentCoins = data.coins;
             CurrentGems = data.gems;
         }
-
-        RefreshUI();
-    }
-
-    void RefreshUI()
-    {
-        if (hudText == null) { hudText = FindFirstObjectByType<SetHUDText>(); }
-
-        hudText?.SetDayText(CurrentDay);
-        hudText?.SetCoinText(collectedCoins);
-        hudText?.SetGemText(collectedGems);
     }
 }
