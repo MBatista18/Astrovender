@@ -79,6 +79,11 @@ public class PlayerStateMachine : StateMachineBase
         return currentFacingDirection;
     }
 
+    private int currentKeyCount;
+    public int GetKeyCount() { return currentKeyCount; }
+    public void CollectKey() { currentKeyCount++; }
+    public void UseKey() { currentKeyCount--; }
+
     #endregion
 
     #region components
