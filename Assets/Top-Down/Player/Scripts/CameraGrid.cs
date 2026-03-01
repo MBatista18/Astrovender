@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraGrid : MonoBehaviour
@@ -8,11 +6,26 @@ public class CameraGrid : MonoBehaviour
     public Vector2 size;
     public float speed;
 
-    // Update is called once per frame
+    Vector2 cameraStartPos;
+
+    [Tooltip("Causes the camera to ignore the grid")] [SerializeField] bool parentToPlayer;
+
+    private void Start()
+    {
+        if (parentToPlayer) { this.transform.parent = target; return; }
+
+        cameraStartPos = transform.position;
+    }
+
     void Update()
     {
+        if (parentToPlayer) { return; }
+
         Vector3 pos = new Vector3(
-            Mathf.RoundToInt(target.position.x / size.x) * size.x, Mathf.RoundToInt(target.position.y / size.y) * size.y, transform.position.z);
-        transform.position = Vector3.Lerp(transform.position, pos, speed);
+            Mathf.RoundToInt((target.position.x - cameraStartPos.x) / size.x) * size.x, 
+            Mathf.RoundToInt((target.position.y - cameraStartPos.y) / size.y) * size.y, transform.position.z); 
+
+        transform.position = Vector3.Lerp(transform.position, (Vector3) cameraStartPos + pos, speed * Time.deltaTime);
     }
 }
+ 

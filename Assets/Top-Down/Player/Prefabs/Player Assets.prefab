@@ -1798,8 +1798,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraGrid
   target: {fileID: 3094803368126875543}
-  size: {x: 14, y: 9}
-  speed: 0.1
+  size: {x: 15, y: 10}
+  speed: 8
+  parentToPlayer: 0
 --- !u!1 &6032261678546556980
 GameObject:
   m_ObjectHideFlags: 0

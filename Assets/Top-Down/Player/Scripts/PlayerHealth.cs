@@ -21,10 +21,9 @@ public class PlayerHealth : MonoBehaviour
 
         currentOxygenLevel += val;
 
-        GameManager.Instance.Progress(false);
-
         if (currentOxygenLevel <= 0)
         {
+            GameManager.Instance.Progress(false);
             SceneManager.LoadScene(1);
         }
     }
