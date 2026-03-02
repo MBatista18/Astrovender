@@ -24,6 +24,9 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
     [SerializeField] float movementSpeed = 2f;
     public float GetMovementSpeed() { return movementSpeed; }
 
+    [SerializeField] float patrolRadius = 3f;
+    public float GetPatrolRadius() { return patrolRadius; }
+
     [SerializeField] float detectionRadius = 5f;
     public float GetDetectionRadius() { return detectionRadius; }
 

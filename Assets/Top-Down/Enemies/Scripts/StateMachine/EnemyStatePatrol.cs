@@ -12,7 +12,6 @@ public class EnemyStatePatrol : StateBase
     Vector3 startingPosition; // position where the enemy starts during this state.
 
     Vector3 targetPosition;
-    float randomRadius = 3f;
 
     bool isMoving;
 
@@ -59,7 +58,7 @@ public class EnemyStatePatrol : StateBase
     {
         if (updateTimer > 0) { return; } // idle until the timer reaches 0
 
-        targetPosition = startingPosition + (Vector3) (randomRadius * Random.insideUnitCircle);
+        targetPosition = startingPosition + (Vector3) (sm.GetPatrolRadius() * Random.insideUnitCircle);
 
         isMoving = true;
 
