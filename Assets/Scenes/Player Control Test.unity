@@ -3950,10 +3950,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7465434669150514909, guid: e785163994229934bb2f2e62b7d51315, type: 3}
-      propertyPath: maxHealth
-      value: 150
-      objectReference: {fileID: 0}
     - target: {fileID: 8421992730173224627, guid: e785163994229934bb2f2e62b7d51315, type: 3}
       propertyPath: knocksPlayer
       value: 1
