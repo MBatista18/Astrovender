@@ -126,13 +126,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c4790a25bcb5c4484d95cdb0e28f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bomb
-  fuseTime: 5
-  boxSize: {x: 2, y: 2}
+  fuseTime: 2
   damage: 25
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  destructibleLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  explosionVfxPrefab: {fileID: 0}

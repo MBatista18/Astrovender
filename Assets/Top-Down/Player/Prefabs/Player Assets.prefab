@@ -2300,7 +2300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d202a44567f601c439a02f710c51bf03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxOxygenlevel: 50
+  maxOxygenlevel: 300
 --- !u!114 &2158143489576240514
 MonoBehaviour:
   m_ObjectHideFlags: 0

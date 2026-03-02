@@ -118,9 +118,16 @@ public class PlayerStateMachine : StateMachineBase
     public PlayerStateMove GetStateMove() { return stateMove; }
 
     PlayerStateKnockback stateKnockback;
-    public void Knockback(Vector2 direction, float time)
-    {
-        stateKnockback.SetKnockback(direction, time);
+    public void Knockback(Vector2 callerPosition, float time)
+    {  
+        // knocks the player either horizontally or vertically (horizontally if they're farther on the x axis, verticaly if they're farther on the y-axis)
+
+        Vector2 distanceDiff = new Vector2(transform.position.x - callerPosition.x, transform.position.y - callerPosition.y).normalized;
+
+        Vector2 knockDirection =
+            Mathf.Abs(distanceDiff.x) > Mathf.Abs(distanceDiff.y) ? Vector2.right * Mathf.Sign(distanceDiff.x) : Vector2.up * Mathf.Sign(distanceDiff.y);
+
+        stateKnockback.SetKnockback(knockDirection, time);
         ChangeState(stateKnockback);
     }
 

@@ -8,11 +8,17 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
     public float GetHealth() { return health; }
     public float GetMaxHealth() { return maxHealth; }
 
+    [SerializeField] float damageReactionTime = .2f;
+    public float GetDamageReactionTime() { return damageReactionTime; }
+
+    bool reactToDamage = true;
+    public void SetReactToDamage(bool a) { reactToDamage = a; }
+
     public void TakeDamage(int damageAmount)
     {
         health -= damageAmount;
 
-        if (GetCurrentState() != stateHurt) { ChangeState(stateHurt); } 
+        if (reactToDamage && GetCurrentState() != stateHurt) { ChangeState(stateHurt); } 
             // changes enemy to state hurt; check for if the enemy is already in hurt state to prevent player from just hitting enemy relentlessly
 
         if (health <= 0)

@@ -7,6 +7,8 @@ public class DamagePlayerOnCollision : MonoBehaviour
     [SerializeField] private float attackCooldown = 1.5f;
     private float nextAttackTime = 0f;
 
+    [SerializeField] bool knocksPlayer;
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         //Debug.Log("True");
@@ -17,6 +19,8 @@ public class DamagePlayerOnCollision : MonoBehaviour
             {
                 PlayerHealth.ModifyOxygenLevel(damageVal, false);
 
+                if (knocksPlayer) { AssetCall.instance.playerSM.Knockback(transform.position, .5f); }
+
                 // Set next allowed attack time
                 nextAttackTime = Time.time + attackCooldown;
                 Debug.Log("Attack is in cooldown");
@@ -25,4 +29,6 @@ public class DamagePlayerOnCollision : MonoBehaviour
            
         }
     }
+
+
 }

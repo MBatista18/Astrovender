@@ -17,7 +17,9 @@ public class EnemyStateHurt : StateBase
     {
         base.thisStart();
 
-        timer = .2f;
+        Debug.Log("Hurt");
+
+        timer = sm.GetDamageReactionTime();
     }
 
     public override void thisUpdate()

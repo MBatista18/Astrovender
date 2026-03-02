@@ -57,15 +57,7 @@ public class Explosion : MonoBehaviour
                 case "Player":
                     PlayerHealth.ModifyOxygenLevel(-damage, false);
 
-                    // knocks the player either horizontally or vertically (horizontally if they're farther on the x axis, verticaly if they're farther on the y-axis)
-
-                    Vector2 distanceDiff = new Vector2(AssetCall.instance.playerSM.transform.position.x - transform.position.x,
-                        AssetCall.instance.playerSM.transform.position.y - transform.position.y).normalized;
-
-
-                    AssetCall.instance.playerSM.Knockback(
-                        Mathf.Abs(distanceDiff.x) > Mathf.Abs(distanceDiff.y) ? Vector2.right * Mathf.Sign(distanceDiff.x) : Vector2.up * Mathf.Sign(distanceDiff.y),
-                        1.5f);
+                    AssetCall.instance.playerSM.Knockback(transform.position, 1.5f);
                     break;
                 case "Destructible":
                     ray.collider.GetComponent<Destructible>()?.CallDestroy();
