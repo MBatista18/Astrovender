@@ -82,6 +82,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamagePlayerOnCollision
   damageVal: -10
+  attackCooldown: 1.5
+  knocksPlayer: 0
 --- !u!1 &7839313177776886084
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,8 +133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BombRobotSM
   maxHealth: 10
+  damageReactionTime: 0.2
   movementSpeed: 2
-  patrolRadius: 5
+  patrolRadius: 4
   detectionRadius: 2
   fuseTime: 2
 --- !u!95 &8137407031916260319
@@ -219,7 +222,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 45600207bf6f1b14080c2b35e3456699, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

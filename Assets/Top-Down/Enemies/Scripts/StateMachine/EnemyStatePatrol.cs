@@ -69,7 +69,7 @@ public class EnemyStatePatrol : StateBase
     {
         sm.GetRigidbody2D().MovePosition(Vector3.MoveTowards(sm.GetRigidbody2D().position, targetPosition, sm.GetMovementSpeed() * Time.fixedDeltaTime));
 
-        if (Vector3.Distance(sm.transform.position, targetPosition) > 0.1f || updateTimer > 0) { return; } // move until close to the target or the timer reaches 0
+        if (Vector3.Distance(sm.transform.position, targetPosition) > 0.1f && updateTimer > 0) { return; } // move until close to the target or the timer reaches 0
 
         isMoving = false;
 

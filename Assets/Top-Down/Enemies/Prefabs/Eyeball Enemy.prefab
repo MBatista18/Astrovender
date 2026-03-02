@@ -180,8 +180,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChaserSM
   maxHealth: 5
-  movementSpeed: 3
-  detectionRadius: 5
+  damageReactionTime: 0.2
+  movementSpeed: 2.5
+  patrolRadius: 3
+  detectionRadius: 3
 --- !u!1 &8355946509379703373
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,3 +266,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamagePlayerOnCollision
   damageVal: -5
+  attackCooldown: 1.5
+  knocksPlayer: 0

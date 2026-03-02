@@ -9,6 +9,8 @@ public class GameData
     public bool hasGun;
     public bool hasBombs;
 
+    public bool deafeatedBombsBoss;
+
     public GameData(GameManager gameManager)
     {
         day = gameManager.CurrentDay;
@@ -18,5 +20,7 @@ public class GameData
         hasShield = gameManager.PermaCollectedShield;
         hasGun = gameManager.PermaCollectedGun;
         hasBombs = gameManager.PermaCollectedBombs;
+
+        deafeatedBombsBoss = gameManager.PermaDefeatedBombsBoss;
     }
 }

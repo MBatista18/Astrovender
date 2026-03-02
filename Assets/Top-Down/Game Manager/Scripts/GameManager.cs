@@ -1,6 +1,6 @@
 using System;
-using TMPro;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour, ISaveable
 {
@@ -14,12 +14,16 @@ public class GameManager : MonoBehaviour, ISaveable
     public bool PermaCollectedGun;
     public bool PermaCollectedShield;
 
+    public bool PermaDefeatedBombsBoss;
+
     public int collectedCoins;
     public int collectedGems;
 
     public bool collectedBombs;
     public bool collectedGun;
     public bool collectedShield;
+
+    public bool defeatedBombsBoss;
 
     bool progressSuccessful;
     public bool GetProgressSuccessful() { return progressSuccessful; }
@@ -60,6 +64,8 @@ public class GameManager : MonoBehaviour, ISaveable
             if (PermaCollectedBombs == false) { PermaCollectedBombs = collectedBombs; }
             if (PermaCollectedGun == false) { PermaCollectedGun = collectedGun; }
             if (PermaCollectedShield == false) { PermaCollectedShield = collectedShield; }
+
+            if (PermaDefeatedBombsBoss == false) { PermaDefeatedBombsBoss = defeatedBombsBoss; }
         }
         else
         {
@@ -82,6 +88,8 @@ public class GameManager : MonoBehaviour, ISaveable
         collectedBombs = PermaCollectedBombs;
         collectedGun = PermaCollectedGun;
         collectedShield = PermaCollectedShield;
+
+        defeatedBombsBoss = PermaDefeatedBombsBoss;
 
         SaveManager.Instance.Save(this);
     }
@@ -124,6 +132,8 @@ public class GameManager : MonoBehaviour, ISaveable
             PermaCollectedShield = data.hasShield;
             PermaCollectedGun = data.hasGun;
             PermaCollectedBombs = data.hasBombs;
+
+            PermaDefeatedBombsBoss = data.deafeatedBombsBoss;
         }
     }
 }

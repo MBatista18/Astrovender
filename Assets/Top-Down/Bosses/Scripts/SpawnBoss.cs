@@ -11,6 +11,14 @@ public class SpawnBoss : MonoBehaviour
         boss.SetActive(false);
     }
 
+    private void Start()
+    {
+        if (GameManager.Instance.defeatedBombsBoss)
+        {
+            Destroy(transform.parent.gameObject);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))

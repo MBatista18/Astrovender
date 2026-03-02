@@ -6,6 +6,13 @@ public class CollectWeapon : MonoBehaviour
     [SerializeField] bool bomb;
     [SerializeField] bool shield;
 
+    private void Start()
+    {
+        if ((gun && GameManager.Instance.collectedGun) ||
+            (shield && GameManager.Instance.collectedShield) ||
+            (bomb && GameManager.Instance.collectedBombs)) { Destroy(gameObject); }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer != LayerMask.NameToLayer("Player"))

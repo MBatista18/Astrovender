@@ -5,6 +5,27 @@ public class BombTankBossSM : EnemySM
     [SerializeField] GameObject bomb;
     public GameObject GetBomb() { return bomb; }
 
+    [SerializeField] GameObject[] DungeonWalls;
+
+    public override void OnEnableFunctions()
+    {
+        base.OnEnableFunctions();
+
+        foreach (GameObject a in DungeonWalls)
+        {
+            a.SetActive(true);
+        }
+    }
+
+    public override void OnDisableFunctions()
+    {
+        base.OnDisableFunctions();
+        foreach (GameObject a in DungeonWalls)
+        {
+            a.SetActive(false);
+        }
+    }
+
     Animator animator;
     public Animator GetAnimator() { return animator; }
 
@@ -28,6 +49,11 @@ public class BombTankBossSM : EnemySM
     public override StateBase AttackState()
     {
         return stateRush;
+    }
+    public override StateBase DeathState()
+    {
+        GameManager.Instance.defeatedBombsBoss = true;
+        return base.DeathState();
     }
 
     public override void InstantiateStates()
