@@ -54,6 +54,8 @@ public class PlayerCombat : MonoBehaviour
     //Handles the shoot button
     public void Shoot()
     {
+        if (!GameManager.Instance.collectedGun) { return; }
+
         if (ammoCount <= 0) { return; }
         else { ammoCount--; }
 
@@ -72,6 +74,8 @@ public class PlayerCombat : MonoBehaviour
     //Handles the bomb button
     public void Bomb()
     {
+        if (!GameManager.Instance.collectedBombs) { return; }
+
         if (bombCount <= 0) { return; }
         else { bombCount--; }
 

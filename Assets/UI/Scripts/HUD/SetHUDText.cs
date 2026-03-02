@@ -22,10 +22,21 @@ public class SetHUDText : MonoBehaviour
 
     private void Start()
     {
-        RefreshUI();
+        RefreshDailyValuesUI();
     }
 
-    public void RefreshUI()
+    private void Update()
+    {
+        RefreshCollectiblesUI();
+    }
+
+    public void RefreshCollectiblesUI()
+    {
+        ammoCount.alpha = GameManager.Instance.collectedGun ? 1 : 0;
+        bombCount.alpha = GameManager.Instance.collectedBombs ? 1 : 0;
+    }
+
+    public void RefreshDailyValuesUI()
     {
         SetDayText(GameManager.Instance.CurrentDay);
         SetCoinText(GameManager.Instance.collectedCoins);

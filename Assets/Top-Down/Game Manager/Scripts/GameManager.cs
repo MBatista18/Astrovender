@@ -10,8 +10,16 @@ public class GameManager : MonoBehaviour, ISaveable
     public int CurrentCoins { get; private set; } = 0;
     public int CurrentGems { get; private set; } = 0;
 
+    public bool PermaCollectedBombs;
+    public bool PermaCollectedGun;
+    public bool PermaCollectedShield;
+
     public int collectedCoins;
     public int collectedGems;
+
+    public bool collectedBombs;
+    public bool collectedGun;
+    public bool collectedShield;
 
     bool progressSuccessful;
     public bool GetProgressSuccessful() { return progressSuccessful; }
@@ -48,6 +56,10 @@ public class GameManager : MonoBehaviour, ISaveable
         {
             CurrentGems += collectedGems;
             CurrentCoins += collectedCoins;
+
+            if (PermaCollectedBombs == false) { PermaCollectedBombs = collectedBombs; }
+            if (PermaCollectedGun == false) { PermaCollectedGun = collectedGun; }
+            if (PermaCollectedShield == false) { PermaCollectedShield = collectedShield; }
         }
         else
         {
@@ -67,6 +79,10 @@ public class GameManager : MonoBehaviour, ISaveable
         collectedCoins = 0;
         collectedGems = 0;
 
+        collectedBombs = PermaCollectedBombs;
+        collectedGun = PermaCollectedGun;
+        collectedShield = PermaCollectedShield;
+
         SaveManager.Instance.Save(this);
     }
 
@@ -78,13 +94,13 @@ public class GameManager : MonoBehaviour, ISaveable
     public void IncrementCoins(int value = 1)
     {
         collectedCoins += value;
-        AssetCall.instance.HUDText.RefreshUI();
+        AssetCall.instance.HUDText.RefreshDailyValuesUI();
     }
 
     public void IncrementGems(int value = 1)
     {
         collectedGems += value;
-        AssetCall.instance.HUDText.RefreshUI();
+        AssetCall.instance.HUDText.RefreshDailyValuesUI();
     }
 
     public void SaveData(SaveData saveData)
@@ -104,6 +120,10 @@ public class GameManager : MonoBehaviour, ISaveable
             CurrentDay = data.day;
             CurrentCoins = data.coins;
             CurrentGems = data.gems;
+
+            PermaCollectedShield = data.hasShield;
+            PermaCollectedGun = data.hasGun;
+            PermaCollectedBombs = data.hasBombs;
         }
     }
 }
