@@ -139104,6 +139104,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 827893037461707349, guid: e785163994229934bb2f2e62b7d51315, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4727226336385028217, guid: e785163994229934bb2f2e62b7d51315, type: 3}
       propertyPath: m_Size.x
       value: 11.31
@@ -139154,6 +139158,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5916706575054538425, guid: e785163994229934bb2f2e62b7d51315, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705781325674649900, guid: e785163994229934bb2f2e62b7d51315, type: 3}
+      propertyPath: m_Radius
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705781325674649900, guid: e785163994229934bb2f2e62b7d51315, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558732064590553596, guid: e785163994229934bb2f2e62b7d51315, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

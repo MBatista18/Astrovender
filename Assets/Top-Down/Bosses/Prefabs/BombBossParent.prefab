@@ -83,7 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DamagePlayerOnCollision
   damageVal: -10
   attackCooldown: 1.5
-  knocksPlayer: 0
+  knocksPlayer: 1
 --- !u!1 &774132934811346825
 GameObject:
   m_ObjectHideFlags: 0
