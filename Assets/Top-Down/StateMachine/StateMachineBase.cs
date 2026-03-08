@@ -2,10 +2,6 @@ using UnityEngine;
 
 public class StateMachineBase : MonoBehaviour
 {
-    AstrovenderStructs.facingDirection currentFacingDirection = AstrovenderStructs.facingDirection.down;
-    public AstrovenderStructs.facingDirection GetFacingDirection() { return currentFacingDirection; }
-    public void SetFacingDirection(AstrovenderStructs.facingDirection newDirection) { currentFacingDirection = newDirection; }
-
     StateBase currentState;
     public StateBase GetCurrentState() { return currentState; }
     public void ChangeState(StateBase state)

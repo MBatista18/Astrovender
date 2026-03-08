@@ -10,7 +10,6 @@ public class GameData
     public bool hasBombs;
 
     public bool deafeatedBombsBoss;
-    public bool deafeatedGunsBoss;
 
     public GameData(GameManager gameManager)
     {
@@ -23,6 +22,5 @@ public class GameData
         hasBombs = gameManager.PermaCollectedBombs;
 
         deafeatedBombsBoss = gameManager.PermaDefeatedBombsBoss;
-        deafeatedGunsBoss = gameManager.PermaDefeatedGunsBoss;
     }
 }

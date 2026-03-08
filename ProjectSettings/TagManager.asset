@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Detection
   - Destructible
+  - Button
   layers:
   - Default
   - TransparentFX
@@ -49,9 +50,6 @@ TagManager:
     locked: 0
   - name: Front
     uniqueID: 1401916839
-    locked: 0
-  - name: InGameUI
-    uniqueID: 2072620727
     locked: 0
   m_RenderingLayers:
   - Default

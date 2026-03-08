@@ -69,26 +69,31 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (other.CompareTag("Button"))
+        {
+            other.GetComponentInParent<ShootableButton>()?.ActivateButton();
+        }
+
         
     }
 
-    //Sets the direction of the bullet relative to its caller's facing direction
-    public void SetDirection(AstrovenderStructs.facingDirection facingDirection)
+    //Sets the direction of the bullet (Haven't been able to test this yet)
+    public void SetDirection(PlayerStateMachine.facingDirection facingDirection)
     {
         Vector2 direction = Vector2.zero;
 
         switch (facingDirection)
         {
-            case AstrovenderStructs.facingDirection.up:
+            case PlayerStateMachine.facingDirection.up:
                 direction = Vector2.up;
                 break;
-            case AstrovenderStructs.facingDirection.down:
+            case PlayerStateMachine.facingDirection.down:
                 direction = Vector2.down;
                 break;
-            case AstrovenderStructs.facingDirection.left:
+            case PlayerStateMachine.facingDirection.left:
                 direction = Vector2.left;
                 break;
-            case AstrovenderStructs.facingDirection.right:
+            case PlayerStateMachine.facingDirection.right:
                 direction = Vector2.right;
                 break;
         }
@@ -97,12 +102,6 @@ public class Bullet : MonoBehaviour
         {
             bulletDirection = direction.normalized;
         }
-    }
-
-    // sets direction of the bullet manually via an inputted Vector2
-    public void SetDirection(Vector2 vectorDirection)
-    {
-        bulletDirection = vectorDirection.normalized;
     }
 
 }

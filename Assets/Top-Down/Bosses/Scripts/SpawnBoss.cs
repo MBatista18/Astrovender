@@ -6,8 +6,6 @@ public class SpawnBoss : MonoBehaviour
 
     [SerializeField] GameObject boss;
 
-    [SerializeField] [Tooltip("0 = bomb boss, 1 = gun boss")] [Range(0, 1)] int bosstype;
-
     private void Awake()
     {
         boss.SetActive(false);
@@ -15,18 +13,7 @@ public class SpawnBoss : MonoBehaviour
 
     private void Start()
     {
-        bool isTrue = false;
-
-        if (bosstype == 0 && GameManager.Instance.defeatedBombsBoss)
-        {
-            isTrue = true;
-        }
-        else if (bosstype == 1 && GameManager.Instance.defeatedBombsBoss)
-        {
-            isTrue = true;
-        }
-
-        if (isTrue)
+        if (GameManager.Instance.defeatedBombsBoss)
         {
             Destroy(transform.parent.gameObject);
         }
