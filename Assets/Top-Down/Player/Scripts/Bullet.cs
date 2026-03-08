@@ -73,22 +73,22 @@ public class Bullet : MonoBehaviour
     }
 
     //Sets the direction of the bullet (Haven't been able to test this yet)
-    public void SetDirection(PlayerStateMachine.facingDirection facingDirection)
+    public void SetDirection(AstrovenderStructs.facingDirection facingDirection)
     {
         Vector2 direction = Vector2.zero;
 
         switch (facingDirection)
         {
-            case PlayerStateMachine.facingDirection.up:
+            case AstrovenderStructs.facingDirection.up:
                 direction = Vector2.up;
                 break;
-            case PlayerStateMachine.facingDirection.down:
+            case AstrovenderStructs.facingDirection.down:
                 direction = Vector2.down;
                 break;
-            case PlayerStateMachine.facingDirection.left:
+            case AstrovenderStructs.facingDirection.left:
                 direction = Vector2.left;
                 break;
-            case PlayerStateMachine.facingDirection.right:
+            case AstrovenderStructs.facingDirection.right:
                 direction = Vector2.right;
                 break;
         }

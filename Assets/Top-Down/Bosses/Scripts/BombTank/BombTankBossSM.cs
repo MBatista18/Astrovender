@@ -11,6 +11,7 @@ public class BombTankBossSM : EnemySM
     {
         base.OnEnableFunctions();
 
+
         foreach (GameObject a in DungeonWalls)
         {
             a.SetActive(true);

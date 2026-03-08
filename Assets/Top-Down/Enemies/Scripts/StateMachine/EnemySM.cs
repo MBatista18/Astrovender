@@ -18,7 +18,7 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
     {
         health -= damageAmount;
 
-        if (reactToDamage && GetCurrentState() != stateHurt) { ChangeState(stateHurt); } 
+        if (reactToDamage && GetCurrentState() != stateHurt) { ChangeState(stateHurt); PainReactions(); } 
             // changes enemy to state hurt; check for if the enemy is already in hurt state to prevent player from just hitting enemy relentlessly
 
         if (health <= 0)
@@ -26,6 +26,8 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
             ChangeState(DeathState());
         }
     }
+
+    public virtual void PainReactions() { return; }
 
     [SerializeField] float movementSpeed = 2f;
     public float GetMovementSpeed() { return movementSpeed; }
