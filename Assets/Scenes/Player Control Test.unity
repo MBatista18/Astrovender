@@ -2873,6 +2873,68 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 5
+--- !u!1001 &1958818928
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3091638198677410791, guid: 3756320ec11741b4ba822af2902e2816, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.3755035
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091638198677410791, guid: 3756320ec11741b4ba822af2902e2816, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6498322
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091638198677410791, guid: 3756320ec11741b4ba822af2902e2816, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091638198677410791, guid: 3756320ec11741b4ba822af2902e2816, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091638198677410791, guid: 3756320ec11741b4ba822af2902e2816, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091638198677410791, guid: 3756320ec11741b4ba822af2902e2816, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091638198677410791, guid: 3756320ec11741b4ba822af2902e2816, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091638198677410791, guid: 3756320ec11741b4ba822af2902e2816, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091638198677410791, guid: 3756320ec11741b4ba822af2902e2816, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091638198677410791, guid: 3756320ec11741b4ba822af2902e2816, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5069761947633674494, guid: 3756320ec11741b4ba822af2902e2816, type: 3}
+      propertyPath: m_Name
+      value: PelletShooter
+      objectReference: {fileID: 0}
+    - target: {fileID: 5069761947633674494, guid: 3756320ec11741b4ba822af2902e2816, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4566172501547015317, guid: 3756320ec11741b4ba822af2902e2816, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3756320ec11741b4ba822af2902e2816, type: 3}
 --- !u!1 &1964968852
 GameObject:
   m_ObjectHideFlags: 0
@@ -4152,3 +4214,4 @@ SceneRoots:
   - {fileID: 8525374669040986904}
   - {fileID: 8325548645004259803}
   - {fileID: 1664318119}
+  - {fileID: 1958818928}
