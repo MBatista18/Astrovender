@@ -24,4 +24,13 @@ public class PelletRobotSM : EnemySM
 
     [SerializeField] GameObject bullet;
     public GameObject GetBullet() { return bullet; }
+
+    Animator animator;
+    public Animator GetAnimator() { return animator; }
+
+    public override void InstantiateComponents()
+    {
+        base.InstantiateComponents();
+        animator = GetComponent<Animator>();
+    }
 }

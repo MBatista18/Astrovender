@@ -19,6 +19,7 @@ public class PelletRobotStateAttack : StateBase
         timer = timerStartingVal;
 
         doOnce = false;
+        sm.GetAnimator().Play("PelletShoot");
     }
 
     public override void thisUpdate()

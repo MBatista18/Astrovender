@@ -22,6 +22,15 @@ public class MultiShotRobotStateFire : StateBase
 
         timer -= Time.deltaTime;
 
+        if (timer > maxTimer / 2)
+        {
+            sm.SwapRenderer(!cardinalDirection);
+        }
+        else
+        {
+            sm.SwapRenderer(cardinalDirection);
+        }
+
         if (timer <= 0)
         {
             Shoot();

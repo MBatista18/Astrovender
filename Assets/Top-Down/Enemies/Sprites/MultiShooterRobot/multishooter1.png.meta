@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3c5a214e7617ad840b2303b91ee37257
+guid: 7f344d2c7f5fe2c4082d152b2fc67aad
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1341213799329586065
-    second: pelletShooter5_0
+      213: -4534096966911979189
+    second: multishooter1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pelletShooter5_0
+      name: multishooter1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 5
-        width: 16
-        height: 11
+        y: 0
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f64ab13d72d036de0800000000000000
-      internalID: -1341213799329586065
+      spriteID: b41190ec4d6a311c0800000000000000
+      internalID: -4534096966911979189
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pelletShooter5_0: -1341213799329586065
+      multishooter1_0: -4534096966911979189
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

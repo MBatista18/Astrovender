@@ -34,6 +34,28 @@ public class PelletRobotStateMove : StateBase
             movementDirection = new Vector2(-movementDirection.x, movementDirection.y);
         }
 
+        if (Mathf.Abs(movementDirection.y) > Mathf.Abs(movementDirection.x))
+        {
+            if (movementDirection.y > 0)
+            {
+                sm.GetAnimator().Play("PelletUp");
+            }
+            else
+            {
+                sm.GetAnimator().Play("PelletDown");
+            }
+        }
+        else
+        {
+            if (movementDirection.x < 0)
+            {
+                sm.GetAnimator().Play("PelletLeft");
+            }
+            else
+            {
+                sm.GetAnimator().Play("PelletRight");
+            }
+        }
         movementTimer = Random.Range(.5f, .75f);
     }
 
