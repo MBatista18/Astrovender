@@ -117,25 +117,25 @@ public class PlayerCombat : MonoBehaviour
     }
 
     //Controls the sword appearance based on the direction the player is "facing" / moving in
-    private void ApplyFacingToSword(AstrovenderStructs.facingDirection facingDirection)
+    private void ApplyFacingToSword(PlayerStateMachine.facingDirection facingDirection)
     {
         Vector3 localPos = Vector2.up * swordOffset;
         float zRot = 0f;
 
         switch (facingDirection)
         {
-            case AstrovenderStructs.facingDirection.up:
+            case PlayerStateMachine.facingDirection.up:
                 // values are set to up by default, this code simply returns without setting anything
                 break;
-            case AstrovenderStructs.facingDirection.down:
+            case PlayerStateMachine.facingDirection.down:
                 localPos = Vector2.down * swordOffset;
                 zRot = 180f;
                 break;
-            case AstrovenderStructs.facingDirection.left:
+            case PlayerStateMachine.facingDirection.left:
                 localPos = Vector2.left * swordOffset;
                 zRot = 90f;
                 break;
-            case AstrovenderStructs.facingDirection.right:
+            case PlayerStateMachine.facingDirection.right:
                 localPos = Vector2.right * swordOffset;
                 zRot = -90f;
                 break;
