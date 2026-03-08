@@ -27,6 +27,10 @@ public class StateMachineBase : MonoBehaviour
     public virtual StateBase InitialState() { return null; }
     public virtual StateBase DeathState() { this.SetCanChangeStates(false); return null; }
 
+    public AstrovenderStructs.facingDirection facingDirection = AstrovenderStructs.facingDirection.down;
+    public void SetFacingDirection(AstrovenderStructs.facingDirection newFacingDirection) { facingDirection = newFacingDirection; }
+    public AstrovenderStructs.facingDirection GetFacingDirection() { return facingDirection; }
+
     private void Awake()
     {
         InstantiateComponents();

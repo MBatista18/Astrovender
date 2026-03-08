@@ -50,16 +50,16 @@ public class PlayerAnimationController : MonoBehaviour
 
         switch (sm.GetFacingDirection())
         {
-            case PlayerStateMachine.facingDirection.up:
+            case AstrovenderStructs.facingDirection.up:
                 refName = "PlayerIdleUp";
                 break;
-            case PlayerStateMachine.facingDirection.down:
+            case AstrovenderStructs.facingDirection.down:
                 refName = "PlayerIdleDown";
                 break;
-            case PlayerStateMachine.facingDirection.left:
+            case AstrovenderStructs.facingDirection.left:
                 refName = "PlayerIdleLeft";
                 break;
-            case PlayerStateMachine.facingDirection.right:
+            case AstrovenderStructs.facingDirection.right:
                 refName = "PlayerIdleRight";
                 break;
         }
@@ -73,16 +73,16 @@ public class PlayerAnimationController : MonoBehaviour
 
         switch (sm.GetFacingDirection())
         {
-            case PlayerStateMachine.facingDirection.up:
+            case AstrovenderStructs.facingDirection.up:
                 refName = "PlayerMoveUp";
                 break;
-            case PlayerStateMachine.facingDirection.down:
+            case AstrovenderStructs.facingDirection.down:
                 refName = "PlayerMoveDown";
                 break;
-            case PlayerStateMachine.facingDirection.left:
+            case AstrovenderStructs.facingDirection.left:
                 refName = "PlayerMoveLeft";
                 break;
-            case PlayerStateMachine.facingDirection.right:
+            case AstrovenderStructs.facingDirection.right:
                 refName = "PlayerMoveRight";
                 break;
         }

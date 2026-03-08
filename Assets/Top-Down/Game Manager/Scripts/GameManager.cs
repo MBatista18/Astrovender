@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour, ISaveable
     public bool PermaCollectedShield;
 
     public bool PermaDefeatedBombsBoss;
+    public bool PermaDefeatedGunsBoss;
 
     public int collectedCoins;
     public int collectedGems;
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour, ISaveable
     public bool collectedShield;
 
     public bool defeatedBombsBoss;
+    public bool defeatedGunsBoss;
 
     bool progressSuccessful;
     public bool GetProgressSuccessful() { return progressSuccessful; }
@@ -66,6 +68,7 @@ public class GameManager : MonoBehaviour, ISaveable
             if (PermaCollectedShield == false) { PermaCollectedShield = collectedShield; }
 
             if (PermaDefeatedBombsBoss == false) { PermaDefeatedBombsBoss = defeatedBombsBoss; }
+            if (PermaDefeatedGunsBoss == false) { PermaDefeatedGunsBoss = defeatedGunsBoss; }
         }
         else
         {
@@ -90,6 +93,7 @@ public class GameManager : MonoBehaviour, ISaveable
         collectedShield = PermaCollectedShield;
 
         defeatedBombsBoss = PermaDefeatedBombsBoss;
+        defeatedGunsBoss = PermaDefeatedGunsBoss;
 
         SaveManager.Instance.Save(this);
     }
@@ -134,6 +138,7 @@ public class GameManager : MonoBehaviour, ISaveable
             PermaCollectedBombs = data.hasBombs;
 
             PermaDefeatedBombsBoss = data.deafeatedBombsBoss;
+            PermaDefeatedGunsBoss = data.deafeatedGunsBoss;
         }
     }
 }

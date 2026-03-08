@@ -35,15 +35,6 @@ public class PlayerStateMachine : StateMachineBase
 
     // the following values modify the player's facing direction
 
-    public enum facingDirection
-    {
-        up, // facing away from camera
-        down, // facing towards the camera
-        left, // facing left
-        right // facing right
-    }
-    private facingDirection currentFacingDirection = facingDirection.down;
-
     private void SetFacingDirection()
     {
         if (_movement.Equals(Vector2.zero)) { return; } // don't change the facing direction if the player is not moving
@@ -52,31 +43,26 @@ public class PlayerStateMachine : StateMachineBase
         {
             if (_movement.x > 0)
             {
-                currentFacingDirection = facingDirection.right;
+                SetFacingDirection(AstrovenderStructs.facingDirection.right);
             }
             else if (_movement.x < 0)
             {
-                currentFacingDirection = facingDirection.left;
+                SetFacingDirection(AstrovenderStructs.facingDirection.left);
             }
         }
         else
         {
             if (_movement.y > 0)
             {
-                currentFacingDirection = facingDirection.up;
+                SetFacingDirection(AstrovenderStructs.facingDirection.up);
             }
             else if (_movement.y < 0)
             {
-                currentFacingDirection = facingDirection.down;
+                SetFacingDirection(AstrovenderStructs.facingDirection.down);    
             }
         }
 
         animationController.Animate(); // changes the animation controller's current facing direction
-    }
-
-    public facingDirection GetFacingDirection()
-    {
-        return currentFacingDirection;
     }
 
     private int currentKeyCount;
