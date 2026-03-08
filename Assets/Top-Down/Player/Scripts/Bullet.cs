@@ -72,7 +72,7 @@ public class Bullet : MonoBehaviour
         
     }
 
-    //Sets the direction of the bullet (Haven't been able to test this yet)
+    //Sets the direction of the bullet relative to its caller's facing direction
     public void SetDirection(AstrovenderStructs.facingDirection facingDirection)
     {
         Vector2 direction = Vector2.zero;
@@ -97,6 +97,12 @@ public class Bullet : MonoBehaviour
         {
             bulletDirection = direction.normalized;
         }
+    }
+
+    // sets direction of the bullet manually via an inputted Vector2
+    public void SetDirection(Vector2 vectorDirection)
+    {
+        bulletDirection = vectorDirection.normalized;
     }
 
 }
