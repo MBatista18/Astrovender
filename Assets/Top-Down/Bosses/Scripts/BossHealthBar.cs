@@ -7,7 +7,7 @@ public class BossHealthBar : MonoBehaviour
     [SerializeField] Slider healthSlider;
     void Update()
     {
-        Debug.Log(boss.GetHealth() + " / " + boss.GetMaxHealth());
+        //Debug.Log(boss.GetHealth() + " / " + boss.GetMaxHealth());
 
         healthSlider.value = Mathf.Clamp01(boss.GetHealth() / boss.GetMaxHealth());
     }

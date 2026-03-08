@@ -45,7 +45,32 @@ public class GunBossStateMove : StateBase
         
         RecalculateAttackTime();
 
+        animate();
+
         wasAttacked = false;
+    }
+
+    public void animate()
+    {
+        switch (sm.GetFacingDirection())
+        {
+            case AstrovenderStructs.facingDirection.up:
+                sm.GetAnimator().Play("Torso_MoveUp");
+                if (!sm.GetIsShooting()) { sm.GetAnimator().Play("Head_MoveUp"); }
+                break;
+            case AstrovenderStructs.facingDirection.left:
+                sm.GetAnimator().Play("Torso_MoveLeft");
+                if (!sm.GetIsShooting()) { sm.GetAnimator().Play("Head_MoveLeft"); }
+                break;
+            case AstrovenderStructs.facingDirection.right:
+                sm.GetAnimator().Play("Torso_MoveRight");
+                if (!sm.GetIsShooting()) { sm.GetAnimator().Play("Head_MoveRight"); }
+                break;
+            case AstrovenderStructs.facingDirection.down:
+                sm.GetAnimator().Play("Torso_MoveDown");
+                if (!sm.GetIsShooting()) { sm.GetAnimator().Play("Head_MoveDown"); }
+                break;
+        }
     }
 
     public override void thisUpdate()
@@ -100,6 +125,7 @@ public class GunBossStateMove : StateBase
             sm.SetFacingDirection(AstrovenderStructs.facingDirection.right);
         }
 
+        animate();
         RecalculateAttackTime();
     }
 

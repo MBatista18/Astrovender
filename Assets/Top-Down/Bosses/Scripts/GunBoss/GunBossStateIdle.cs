@@ -25,6 +25,22 @@ public class GunBossStateIdle : StateBase
 
         if (bossOpening) { return; }
 
+        switch (sm.GetFacingDirection())
+        {
+            case AstrovenderStructs.facingDirection.up:
+                sm.GetAnimator().Play("Torso_IdleUp");
+                break;
+            case AstrovenderStructs.facingDirection.left:
+                sm.GetAnimator().Play("Torso_IdleLeft");
+                break;
+            case AstrovenderStructs.facingDirection.right:
+                sm.GetAnimator().Play("Torso_IdleRight");
+                break;
+            case AstrovenderStructs.facingDirection.down:
+                sm.GetAnimator().Play("Torso_IdleDown");
+                break;
+        }
+
         shootCoroutine = sm.StartCoroutine(sm.shoot());
     }
 

@@ -51,5 +51,8 @@ TagManager:
   - name: Front
     uniqueID: 1401916839
     locked: 0
+  - name: InGameUI
+    uniqueID: 722995703
+    locked: 0
   m_RenderingLayers:
   - Default
