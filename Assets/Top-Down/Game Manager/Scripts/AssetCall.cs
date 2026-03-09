@@ -25,6 +25,7 @@ public class AssetCall : MonoBehaviour
 
     public PlayerStateMachine playerSM;
     public SetHUDText HUDText;
+    public CameraEffectors cameraEffectors;
 
     public GameObject coin;
     public GameObject gem;
@@ -42,5 +43,6 @@ public class AssetCall : MonoBehaviour
 
         playerSM = FindFirstObjectByType<PlayerStateMachine>();
         HUDText = FindFirstObjectByType<SetHUDText>();
+        cameraEffectors = FindFirstObjectByType<CameraEffectors>();
     }
 }

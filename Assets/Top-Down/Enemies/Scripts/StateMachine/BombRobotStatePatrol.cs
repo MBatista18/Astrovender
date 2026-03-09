@@ -26,13 +26,13 @@ public class BombRobotStatePatrol : EnemyStatePatrol
 
         if (sm.transform.position.x > lastPos.x)
         {
-            Debug.Log("moving right, " + sm.transform.position.x + " > " + lastPos.x);
+            //Debug.Log("moving right, " + sm.transform.position.x + " > " + lastPos.x);
             sm.transform.localScale = new Vector3(-1, 1, 1);
         }
 
         if (sm.transform.position.x < lastPos.x)
         {
-            Debug.Log("moving left, " + sm.transform.position.x + " < " + lastPos.x);
+            //Debug.Log("moving left, " + sm.transform.position.x + " < " + lastPos.x);
             sm.transform.localScale = new Vector3(1, 1, 1);
         }
 

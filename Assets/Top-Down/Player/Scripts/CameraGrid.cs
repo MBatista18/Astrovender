@@ -12,7 +12,10 @@ public class CameraGrid : MonoBehaviour
 
     private void Start()
     {
-        if (parentToPlayer) { this.transform.parent = target; return; }
+        if (parentToPlayer) { 
+            this.transform.parent = target;
+            transform.position = target.position + new Vector3(0, 0, -10);
+            return; }
 
         cameraStartPos = transform.position;
     }

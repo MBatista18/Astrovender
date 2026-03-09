@@ -5,8 +5,9 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
     [Header("Enemy Base Values")]
     [SerializeField] int maxHealth;
     int health;
-    public float GetHealth() { return health; }
-    public float GetMaxHealth() { return maxHealth; }
+    public int GetHealth() { return health; }
+    public void SetHealth(int val) { health = val; }
+    public int GetMaxHealth() { return maxHealth; }
 
     [SerializeField] float damageReactionTime = .2f;
     public float GetDamageReactionTime() { return damageReactionTime; }

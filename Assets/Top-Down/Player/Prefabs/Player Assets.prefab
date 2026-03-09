@@ -240,7 +240,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 877295046595348028}
+  - {fileID: 7860342401180972846}
   - {fileID: 3094803368126875543}
   - {fileID: 7566772518430339522}
   - {fileID: 3907153257055281091}
@@ -1659,7 +1659,7 @@ GameObject:
   - component: {fileID: 2682901662126116019}
   - component: {fileID: 3506709389899104979}
   - component: {fileID: 2491124124442746948}
-  - component: {fileID: 3653643569051936232}
+  - component: {fileID: 803012030120763784}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1676,11 +1676,11 @@ Transform:
   m_GameObject: {fileID: 5923656598680180049}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -404.35202, y: -242.6323, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8352781953131624866}
+  m_Father: {fileID: 7860342401180972846}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &2682901662126116019
 Camera:
@@ -1717,7 +1717,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.46
+  orthographic size: 7.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1785,7 +1785,7 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &3653643569051936232
+--- !u!114 &803012030120763784
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1794,13 +1794,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5923656598680180049}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56f7292270beb164da0f54fc28c64594, type: 3}
+  m_Script: {fileID: 11500000, guid: 7adc3d028eff5404590a0ca0797093e0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraGrid
-  target: {fileID: 3094803368126875543}
-  size: {x: 15, y: 10}
-  speed: 8
-  parentToPlayer: 0
+  m_EditorClassIdentifier: Assembly-CSharp::CameraEffectors
+  cameraShakeStrength: 50
+  cameraShakeMovementCap: 0.12
 --- !u!1 &6032261678546556980
 GameObject:
   m_ObjectHideFlags: 0
@@ -2058,6 +2056,55 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &6550630738458199362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7860342401180972846}
+  - component: {fileID: 8480985503489308512}
+  m_Layer: 0
+  m_Name: CameraParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7860342401180972846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6550630738458199362}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -404.24, y: -242.49, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 877295046595348028}
+  m_Father: {fileID: 8352781953131624866}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8480985503489308512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6550630738458199362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f7292270beb164da0f54fc28c64594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraGrid
+  target: {fileID: 3094803368126875543}
+  size: {x: 15, y: 10}
+  speed: 8
+  parentToPlayer: 0
 --- !u!1 &6573023758519188748
 GameObject:
   m_ObjectHideFlags: 0
@@ -2267,7 +2314,7 @@ Transform:
   m_GameObject: {fileID: 7861144985056148113}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -398.86, y: -242.66, z: 0}
+  m_LocalPosition: {x: -403.35, y: -243.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2287,6 +2334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ce4bd6ac9da824cae76af53cc1b918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStateMachine
+  facingDirection: 1
   _moveSpeed: 4
 --- !u!114 &5775440578771745381
 MonoBehaviour:
