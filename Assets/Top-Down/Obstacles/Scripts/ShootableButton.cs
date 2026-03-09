@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class ShootableButton : MonoBehaviour
+public class ShootableButton : EnemySM
 {
     [Header("Bridge Reference")]
     [SerializeField] private SlidingBridge bridge;
@@ -12,9 +12,15 @@ public class ShootableButton : MonoBehaviour
 
     [Header("Button Feedback")]
     [SerializeField] private SpriteRenderer buttonRenderer;
-    [SerializeField] private Color activatedColor = Color.green;
+    //    [SerializeField] private Color activatedColor = Color.green;
+    [SerializeField] Sprite activatedSprite;
 
     private bool hasBeenActivated = false;
+
+    public override void PainReactions()
+    {
+        ActivateButton();
+    }
 
     //Handles button activation logic
     public void ActivateButton()
@@ -48,8 +54,8 @@ public class ShootableButton : MonoBehaviour
         //Changes the button color upon activation
         if (buttonRenderer != null)
         {
-            buttonRenderer.color = activatedColor;
+            buttonRenderer.sprite = activatedSprite;
+            //buttonRenderer.color = activatedColor;
         }
     }
-
 }

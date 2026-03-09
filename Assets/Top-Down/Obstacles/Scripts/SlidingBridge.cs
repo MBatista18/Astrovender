@@ -7,6 +7,8 @@ public class SlidingBridge : MonoBehaviour
     [Header("Bridge Positions")]
     [SerializeField] private Transform startPoint;
     [SerializeField] private Transform endPoint;
+    [SerializeField] Collider2D bridgeSpaceCollider;
+    [SerializeField] LineRenderer lineRenderer;
 
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 3.0f;
@@ -24,6 +26,11 @@ public class SlidingBridge : MonoBehaviour
             return;
         }
 
+
+        lineRenderer.SetPosition(0, transform.position);
+        lineRenderer.SetPosition(1, transform.position);
+
+        bridgeSpaceCollider.enabled = true;
     }
 
     // Update is called once per frame
@@ -31,11 +38,13 @@ public class SlidingBridge : MonoBehaviour
     {
         if (!isMoving) { return; }
 
-        transform.position = Vector3.MoveTowards(
-            transform.position,
+        Debug.Log("line renderer pos = " + lineRenderer.GetPosition(1) + "; target = " + targetPosition);
+
+        lineRenderer.SetPosition(1, Vector3.MoveTowards(
+            lineRenderer.GetPosition(1),
             targetPosition,
             moveSpeed * Time.deltaTime
-            );
+            ));
 
         if (Vector3.Distance(transform.position, targetPosition ) < 0.01f )
         {
@@ -48,12 +57,14 @@ public class SlidingBridge : MonoBehaviour
     //Tells the bridge where to extend/retract and sets isMoving to true
     public void ExtendBridge()
     {
+        bridgeSpaceCollider.enabled = false;
         targetPosition = endPoint.position;
         isMoving = true;
     }
 
     public void RetractBrirdge()
     {
+        bridgeSpaceCollider.enabled = false; //this probably causes a collision issue if the players on the bridge already
         targetPosition = startPoint.position;
         isMoving = true;
     }

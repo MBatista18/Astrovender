@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4300327526154421910}
   - component: {fileID: -9023172103279298949}
   - component: {fileID: -2839691639727057405}
+  - component: {fileID: 8164663989697944950}
   m_Layer: 0
   m_Name: TEMP_Button
   m_TagString: Untagged
@@ -122,7 +123,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -150,7 +151,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b365cf674d7b0142a371171b80f2ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShootableButton
+  facingDirection: 1
+  maxHealth: 0
+  damageReactionTime: 0.2
+  movementSpeed: 2
+  patrolRadius: 3
+  detectionRadius: 5
   bridge: {fileID: -5995923343093933184, guid: 212741826bcde4348b928ec44901cc7c, type: 3}
   useToggle: 0
   buttonRenderer: {fileID: 0}
   activatedColor: {r: 0, g: 1, b: 0, a: 1}
+--- !u!50 &8164663989697944950
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2551597206629204202}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

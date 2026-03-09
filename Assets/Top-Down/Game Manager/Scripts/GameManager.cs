@@ -6,26 +6,26 @@ public class GameManager : MonoBehaviour, ISaveable
 {
     public static GameManager Instance;
 
-    public int CurrentDay { get; private set; } = 0;
-    public int CurrentCoins { get; private set; } = 0;
-    public int CurrentGems { get; private set; } = 0;
+    [HideInInspector] public int CurrentDay { get; private set; } = 0;
+    [HideInInspector] public int CurrentCoins { get; private set; } = 0;
+    [HideInInspector] public int CurrentGems { get; private set; } = 0;
 
-    public bool PermaCollectedBombs;
-    public bool PermaCollectedGun;
-    public bool PermaCollectedShield;
+    [HideInInspector] public bool PermaCollectedBombs;
+    [HideInInspector] public bool PermaCollectedGun;
+    [HideInInspector] public bool PermaCollectedShield;
 
-    public bool PermaDefeatedBombsBoss;
-    public bool PermaDefeatedGunsBoss;
+    [HideInInspector] public bool PermaDefeatedBombsBoss;
+    [HideInInspector] public bool PermaDefeatedGunsBoss;
 
-    public int collectedCoins;
-    public int collectedGems;
+    [HideInInspector] public int collectedCoins;
+    [HideInInspector] public int collectedGems;
 
-    public bool collectedBombs;
-    public bool collectedGun;
-    public bool collectedShield;
+    [HideInInspector] public bool collectedBombs;
+    [HideInInspector] public bool collectedGun;
+    [HideInInspector] public bool collectedShield;
 
-    public bool defeatedBombsBoss;
-    public bool defeatedGunsBoss;
+    [HideInInspector] public bool defeatedBombsBoss;
+    [HideInInspector] public bool defeatedGunsBoss;
 
     bool progressSuccessful;
     public bool GetProgressSuccessful() { return progressSuccessful; }
@@ -95,6 +95,8 @@ public class GameManager : MonoBehaviour, ISaveable
         defeatedBombsBoss = PermaDefeatedBombsBoss;
         defeatedGunsBoss = PermaDefeatedGunsBoss;
 
+        PlayerManager.ResetPlayerValues();
+        PlayerManager.playerWorldSpawn = new Vector3(10, 23);
         SaveManager.Instance.Save(this);
     }
 

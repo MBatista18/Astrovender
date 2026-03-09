@@ -17,9 +17,6 @@ public class PlayerCombat : MonoBehaviour
     public float swordCooldown = 0.25f;
     private bool canSwordAttack = true;
 
-    [Header("Supplies Count")]
-    private int bombCount = 5;
-    private int ammoCount = 10;
 
     [Header("Positioning")]
     public float swordOffset = 1f;
@@ -31,8 +28,8 @@ public class PlayerCombat : MonoBehaviour
 
     private void Start()
     {
-        AssetCall.instance.HUDText.SetAmmoText(ammoCount);
-        AssetCall.instance.HUDText.SetBombText(bombCount);
+        AssetCall.instance.HUDText.SetAmmoText(PlayerManager.ammoCount);
+        AssetCall.instance.HUDText.SetBombText(PlayerManager.ammoCount);
     }
 
     // attach combat functions to their respective button inputs in InputManager.cs
@@ -56,10 +53,10 @@ public class PlayerCombat : MonoBehaviour
     {
         if (!GameManager.Instance.collectedGun) { return; }
 
-        if (ammoCount <= 0) { return; }
-        else { ammoCount--; }
+        if (PlayerManager.ammoCount <= 0) { return; }
+        else { PlayerManager.ammoCount--; }
 
-        AssetCall.instance.HUDText.SetAmmoText(ammoCount);
+        AssetCall.instance.HUDText.SetAmmoText(PlayerManager.ammoCount);
 
         if (bulletObj)
         {
@@ -76,10 +73,10 @@ public class PlayerCombat : MonoBehaviour
     {
         if (!GameManager.Instance.collectedBombs) { return; }
 
-        if (bombCount <= 0) { return; }
-        else { bombCount--; }
+        if (PlayerManager.bombCount <= 0) { return; }
+        else { PlayerManager.bombCount--; }
 
-        AssetCall.instance.HUDText.SetBombText(bombCount);
+        AssetCall.instance.HUDText.SetBombText(PlayerManager.bombCount);
 
         if (bombObj)
         {

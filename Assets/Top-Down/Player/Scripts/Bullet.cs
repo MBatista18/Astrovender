@@ -102,11 +102,15 @@ public class Bullet : MonoBehaviour
         {
             bulletDirection = direction.normalized;
         }
+
+        transform.right = direction;
     }
 
     public void SetDirection(Vector2 direction)
     {
         bulletDirection = direction.normalized;
+
+        transform.right = direction;
     }
 
 }

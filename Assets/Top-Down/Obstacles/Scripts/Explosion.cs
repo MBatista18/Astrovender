@@ -36,6 +36,8 @@ public class Explosion : MonoBehaviour
 
     void Explode()
     {
+        if (explosionDuration <= 0.4f) { return; }
+
         if (currentCheckTimer > 0) { currentCheckTimer -= Time.deltaTime; return; } 
             // puts the explosion check against a timer delay so it's not checking every frame, but every few frames
         else { currentCheckTimer = checkTimer; }

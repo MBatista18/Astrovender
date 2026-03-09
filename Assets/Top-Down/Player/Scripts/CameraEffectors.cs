@@ -10,8 +10,6 @@ public class CameraEffectors : MonoBehaviour
     public void SetCameraShake(float duration)
     {
         cameraShake = duration;
-
-        Debug.Log("Shake = " + cameraShake);
     }
 
     private void Update()
@@ -21,8 +19,6 @@ public class CameraEffectors : MonoBehaviour
 
     private void LateUpdate()
     {
-        Debug.Log("Shake value current: " + cameraShake);
-
         if (cameraShake > 0)
         {
             transform.localPosition

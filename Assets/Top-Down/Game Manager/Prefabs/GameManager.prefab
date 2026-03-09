@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8831914587572905001}
   - component: {fileID: 3766598437222340903}
+  - component: {fileID: 2295067014971803429}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -44,6 +45,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cfea6d64c6ba345b76d26f03fa63d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  player: {fileID: 0}
+  PermaCollectedBombs: 0
+  PermaCollectedGun: 0
+  PermaCollectedShield: 0
+  PermaDefeatedBombsBoss: 0
+  PermaDefeatedGunsBoss: 0
   collectedCoins: 0
   collectedGems: 0
+  collectedBombs: 0
+  collectedGun: 0
+  collectedShield: 0
+  defeatedBombsBoss: 0
+  defeatedGunsBoss: 0
+--- !u!114 &2295067014971803429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091175761179334861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0950f47a10a027847b67bf2c58e4625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerManager

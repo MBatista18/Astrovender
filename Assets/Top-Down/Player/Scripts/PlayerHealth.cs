@@ -4,24 +4,21 @@ using System.Collections;
 using UnityEngine.SceneManagement; // for now, the value hitting 0 will simply reset the scene for the final build, we will change this in the final build
 
 public class PlayerHealth : MonoBehaviour
-{
-    [SerializeField] int maxOxygenlevel;
-    static int currentOxygenLevel; // having all this stuff be static may not be the best way of handling this, may need to iterate on this later -Dirk
-    
-    static bool canBeHurt = true;
+{    static bool canBeHurt = true;
     float invulnerabilityTimer;
 
     public static void ModifyOxygenLevel(int val, bool bypassInvulnerabilityCheck) // bypass for invulnerability check in case of necessity (e.g. oxygen countdown, insta-death attack, etc.)
     {
         // only check for invincibility frames if they can't be bypassed
         // if being damaged and the player is currently invulnerable, return false
-        if (!bypassInvulnerabilityCheck) {
-            if (val < 0 && !canBeHurt) { Debug.Log("No Damage"); return; } else { canBeHurt = false; Debug.Log("Damage"); } 
+        if (!bypassInvulnerabilityCheck)
+        {
+            if (val < 0 && !canBeHurt) { Debug.Log("No Damage"); return; } else { canBeHurt = false; Debug.Log("Damage"); }
         }
 
-        currentOxygenLevel += val;
+        PlayerManager.currentOxygenLevel += val;
 
-        if (currentOxygenLevel <= 0)
+        if (PlayerManager.currentOxygenLevel <= 0)
         {
             GameManager.Instance.Progress(false);
             SceneManager.LoadScene(1);
@@ -30,7 +27,6 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
-        currentOxygenLevel = maxOxygenlevel;
         StartCoroutine(oxygenCountDown());
     }
 
@@ -48,7 +44,7 @@ public class PlayerHealth : MonoBehaviour
             }
         }
 
-        AssetCall.instance.HUDText.SetOxygenText(currentOxygenLevel);
+        AssetCall.instance.HUDText.SetOxygenText(PlayerManager.currentOxygenLevel);
     }
 
     IEnumerator oxygenCountDown()
