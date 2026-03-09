@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2360235911397295067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7897341065824319963}
+  - component: {fileID: 3100823768510538344}
+  - component: {fileID: 5437232006556109799}
+  - component: {fileID: 2449661556873576320}
+  m_Layer: 0
+  m_Name: Subgame Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7897341065824319963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2360235911397295067}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3100823768510538344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2360235911397295067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb4ef55ca5552840aa1ee3886718a91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SubgameInputManager
+  showDebugLogs: 0
+--- !u!114 &5437232006556109799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2360235911397295067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5f851ede415b34e80dd8694416a609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Match3Board
+  width: 5
+  height: 7
+  cellSize: 1
+  origin: {x: 0, y: 0}
+  nodePrefabs:
+  - {fileID: 6271802088635220574, guid: ca08744a4596a1549875c33a4d180e49, type: 3}
+  - {fileID: 6385377638312398284, guid: 1e0f6edd670eefb48aa09fd16733d3c9, type: 3}
+  - {fileID: 4806181888951159119, guid: 7474ce40b07c24044ab87adef17717c2, type: 3}
+  - {fileID: 3144733590786165761, guid: 093320a007c806c4ab6badb219ac62bf, type: 3}
+  backgroundTilePrefab: {fileID: 7669107819939452947, guid: 8b7eea34afc4f96489a35126dc726166, type: 3}
+  nodeParent: {fileID: 0}
+  swapDuration: 0.12
+  fallDuration: 0.12
+  startingMoves: 20
+  OnMovesChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnOutOfMoves:
+    m_PersistentCalls:
+      m_Calls: []
+  OnNodesCleared:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2449661556873576320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2360235911397295067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Touch
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}

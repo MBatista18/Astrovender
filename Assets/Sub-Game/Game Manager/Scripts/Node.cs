@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+// Enum representing different node types in the subgame. Primarily used for visual differentiation, but may also be used for type-based logic
 public enum NodeType
 {
     TypeA = 0,
@@ -9,8 +10,9 @@ public enum NodeType
     TypeD = 3
 }
 
+// Represents a single cell in the subgame grid. Handles visuals and highlighting states.
 [RequireComponent(typeof(SpriteRenderer))]
-public class Match3Node : MonoBehaviour
+public class Node : MonoBehaviour
 {
     public NodeType Type { get; private set; }
     public int X { get; set; }

@@ -2,8 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// Handles input for selecting / swapping tiles
-[RequireComponent(typeof(Match3Board), typeof(PlayerInput))]
+// Handles selecting / swapping tiles
+[RequireComponent(typeof(SubgameBoard), typeof(PlayerInput))]
 public class SubgameInputManager : MonoBehaviour
 {
     [SerializeField] bool showDebugLogs = false;
@@ -12,12 +12,12 @@ public class SubgameInputManager : MonoBehaviour
     private InputAction _touchPositionAction;
     private InputAction _touchPressAction;
 
-    private Match3Board _board;
+    private SubgameBoard _board;
     private Camera _mainCam;
-    private Match3Node _selectedNode;
+    private Node _selectedNode;
 
     // keep track of highlighted nodes so we can clear them reliably
-    private readonly List<Match3Node> _highlightedNodes = new List<Match3Node>();
+    private readonly List<Node> _highlightedNodes = new List<Node>();
 
     // tracking pointer state for continuous follow
     private bool _isPointerDown;
@@ -27,7 +27,7 @@ public class SubgameInputManager : MonoBehaviour
     private int _startY;
 
     // current candidate target node under pointer (highlighted)
-    private Match3Node _currentTarget;
+    private Node _currentTarget;
 
     private void Awake()
     {
@@ -35,7 +35,7 @@ public class SubgameInputManager : MonoBehaviour
         _touchPressAction = _playerInput.actions["TouchPress"];
         _touchPositionAction = _playerInput.actions["TouchPosition"];
 
-        _board = GetComponent<Match3Board>();
+        _board = GetComponent<SubgameBoard>();
         _mainCam = Camera.main;
     }
 
@@ -53,6 +53,7 @@ public class SubgameInputManager : MonoBehaviour
         ClearHighlights();
     }
 
+    // Called when a touch press is performed or canceled, then stores the screen position
     private void TouchPressed(InputAction.CallbackContext context)
     {
         Vector2 screenPos = _touchPositionAction.ReadValue<Vector2>();
@@ -68,15 +69,18 @@ public class SubgameInputManager : MonoBehaviour
         {
             if (showDebugLogs) Debug.Log($"Touch ended at {screenPos}");
             _isPointerDown = false;
-            OnPointerUp(screenPos);
+            OnPointerUp();
         }
     }
 
+    // On touch press, selects the node at the touch position and begins tracking it for dragging. Highlights the selected node.
     private void OnPointerDown(Vector2 screenPos)
     {
         Vector2 world = _mainCam.ScreenToWorldPoint(screenPos);
         var node = _board.GetNodeAtWorld(world);
         if (node == null) return;
+
+        if (showDebugLogs) Debug.Log($"Selected node {node.name} at ({world.x}, {world.y})");
 
         // clear previous highlights if selecting a new node
         if (_selectedNode != node)
@@ -96,17 +100,38 @@ public class SubgameInputManager : MonoBehaviour
         _currentTarget = null;
     }
 
-    private void OnPointerUp(Vector2 screenPos)
+    // On touch release, if we have a valid target, attempt swap. If target is invalid or missing, return selected node to original position. Clear all highlights and reset state.
+    private void OnPointerUp()
     {
         if (_selectedNode == null) return;
 
         // if we have a valid target outstanding, attempt swap
         if (_currentTarget != null)
         {
-            // ensure target is adjacent in grid (should be, by clamp) and present
+            // ensure target is still present in the board
             if (_board.GetNodeAt(_currentTarget.X, _currentTarget.Y) == _currentTarget)
             {
-                _board.TrySwap(_selectedNode, _currentTarget);
+                // verify adjacency (prevents diagonal swaps)
+                int dx = Mathf.Abs(_currentTarget.X - _startX);
+                int dy = Mathf.Abs(_currentTarget.Y - _startY);
+                bool adjacent = (dx + dy) == 1;
+
+                if (adjacent)
+                {
+                    _board.TrySwap(_selectedNode, _currentTarget);
+                }
+                else
+                {
+                    // non-adjacent target — return selected node to its origin
+                    if (showDebugLogs) Debug.Log("Target not adjacent — returning selected node to origin.");
+                    _selectedNode.StartCoroutine(_selectedNode.MoveToPosition(_board.GetCellCenter(_startX, _startY), 0.12f));
+                }
+            }
+            else
+            {
+                // target disappeared or changed — return selected node to origin
+                if (showDebugLogs) Debug.Log("Target invalid at release — returning selected node to origin.");
+                _selectedNode.StartCoroutine(_selectedNode.MoveToPosition(_board.GetCellCenter(_startX, _startY), 0.12f));
             }
         }
         else
@@ -115,11 +140,12 @@ public class SubgameInputManager : MonoBehaviour
             _selectedNode.StartCoroutine(_selectedNode.MoveToPosition(_board.GetCellCenter(_startX, _startY), 0.12f));
         }
 
-        // clear visuals and state
+        // clear visuals and state (selected node may still be animating back)
         ClearHighlights();
         _selectedNode = null;
         _currentTarget = null;
     }
+
     private void Update()
     {
         // while pointer down and a node is selected, update the selected node's visual position to follow the pointer
@@ -129,8 +155,6 @@ public class SubgameInputManager : MonoBehaviour
             Vector2 world = _mainCam.ScreenToWorldPoint(screenPos);
 
             // clamp world position to the 3x3 area centered on the start cell
-            float halfCell = _board.CellSize * 0.5f;
-
             float minX = _board.Origin.x + (_startX - 1) * _board.CellSize - 0.001f;
             float maxX = _board.Origin.x + (_startX + 1) * _board.CellSize + 0.001f;
             float minY = _board.Origin.y + (_startY - 1) * _board.CellSize - 0.001f;
@@ -151,15 +175,17 @@ public class SubgameInputManager : MonoBehaviour
                 int tx = Mathf.Clamp(cx, _startX - 1, _startX + 1);
                 int ty = Mathf.Clamp(cy, _startY - 1, _startY + 1);
 
-                // don't highlight the original selected cell
-                if (tx == _startX && ty == _startY)
-                {
-                    SetCurrentTarget(null);
-                }
-                else
+                // ensure only orthogonally adjacent cells are ever highlighted
+                int dx = Mathf.Abs(tx - _startX);
+                int dy = Mathf.Abs(ty - _startY);
+                if (dx + dy == 1)
                 {
                     var node = _board.GetNodeAt(tx, ty);
                     SetCurrentTarget(node);
+                }
+                else
+                {
+                    SetCurrentTarget(null);
                 }
             }
             else
@@ -170,8 +196,8 @@ public class SubgameInputManager : MonoBehaviour
         }
     }
 
-
-    private void SetCurrentTarget(Match3Node node)
+    // Updates the current target node and its visual state. Clears previous target highlight if changing.
+    private void SetCurrentTarget(Node node)
     {
         if (_currentTarget == node) return;
 
@@ -194,10 +220,10 @@ public class SubgameInputManager : MonoBehaviour
     private void ClearHighlights()
     {
         // reset selected & adjacent states for tracked nodes
-        foreach (var n in _highlightedNodes)
+        foreach (var node in _highlightedNodes)
         {
-            if (n == null) continue;
-            n.ResetHighlight();
+            if (node == null) continue;
+            node.ResetHighlight();
         }
         _highlightedNodes.Clear();
 
