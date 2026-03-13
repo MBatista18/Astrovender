@@ -251796,6 +251796,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DungeonEntrance
   dungeonSceneIndex: 2
+  isOutside: 0
+  playerSpawn: {fileID: 0}
 --- !u!4 &1087481436 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4429505830412598345, guid: 300626bc9b7c20140adea03f2283b642, type: 3}
