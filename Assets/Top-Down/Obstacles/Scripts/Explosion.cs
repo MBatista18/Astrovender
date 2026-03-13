@@ -57,7 +57,7 @@ public class Explosion : MonoBehaviour
                     ray.collider.gameObject.GetComponent<EnemySM>().TakeDamage(damage);
                     break;
                 case "Player":
-                    PlayerHealth.ModifyOxygenLevel(-damage, false);
+                    PlayerHealth.ModifyOxygenLevel(-damage, false, transform.position);
 
                     AssetCall.instance.playerSM.Knockback(transform.position, 1.5f);
                     break;

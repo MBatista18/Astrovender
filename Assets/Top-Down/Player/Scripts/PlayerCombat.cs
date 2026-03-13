@@ -29,7 +29,7 @@ public class PlayerCombat : MonoBehaviour
     private void Start()
     {
         AssetCall.instance.HUDText.SetAmmoText(PlayerManager.ammoCount);
-        AssetCall.instance.HUDText.SetBombText(PlayerManager.ammoCount);
+        AssetCall.instance.HUDText.SetBombText(PlayerManager.bombCount);
     }
 
     // attach combat functions to their respective button inputs in InputManager.cs

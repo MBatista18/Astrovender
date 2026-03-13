@@ -7,6 +7,26 @@ public class PlayerHealth : MonoBehaviour
 {    static bool canBeHurt = true;
     float invulnerabilityTimer;
 
+    public static void ModifyOxygenLevel(int val, bool bypassInvulnerabilityCheck, Vector3 position)
+    {
+        if (GameManager.Instance.collectedShield && PlayerManager.ShieldCanDefend(AssetCall.instance.playerSM.transform.position, position, AssetCall.instance.playerSM.GetFacingDirection()))
+        {
+            if (!bypassInvulnerabilityCheck) // It's bad practice to just copy the code over to here, but it probably works, so I'll just do it I guess
+            {
+                if (val < 0 && !canBeHurt) { return; } else { canBeHurt = false; }
+            }
+
+            if (PlayerManager.GetCurrentShieldHealth() > 0)
+            {
+                PlayerManager.ModifyShieldHealth(val);
+
+                return;
+            }
+        }
+
+        ModifyOxygenLevel(val, bypassInvulnerabilityCheck);
+    }
+
     public static void ModifyOxygenLevel(int val, bool bypassInvulnerabilityCheck) // bypass for invulnerability check in case of necessity (e.g. oxygen countdown, insta-death attack, etc.)
     {
         // only check for invincibility frames if they can't be bypassed
@@ -45,6 +65,7 @@ public class PlayerHealth : MonoBehaviour
         }
 
         AssetCall.instance.HUDText.SetOxygenText(PlayerManager.currentOxygenLevel);
+        AssetCall.instance.HUDText.SetShieldText(PlayerManager.GetCurrentShieldHealth());
     }
 
     IEnumerator oxygenCountDown()

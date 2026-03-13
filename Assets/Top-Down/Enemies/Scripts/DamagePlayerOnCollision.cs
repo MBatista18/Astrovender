@@ -17,7 +17,7 @@ public class DamagePlayerOnCollision : MonoBehaviour
         {
             if(Time.time >= nextAttackTime)
             {
-                PlayerHealth.ModifyOxygenLevel(damageVal, false);
+                PlayerHealth.ModifyOxygenLevel(damageVal, false, transform.position);
 
                 if (knocksPlayer) { AssetCall.instance.playerSM.Knockback(transform.position, .5f); }
 

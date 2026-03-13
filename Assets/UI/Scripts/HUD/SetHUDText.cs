@@ -10,6 +10,8 @@ public class SetHUDText : MonoBehaviour
     public void SetBombText(int currentBombs) { if (!bombCount) return; bombCount.text = "BOMB: " + currentBombs; }
     [SerializeField] TextMeshProUGUI oxygenCount;
     public void SetOxygenText(int currentOxygen) { if (!oxygenCount) return; oxygenCount.text = "OXYGEN: " + currentOxygen; }
+    [SerializeField] TextMeshProUGUI shieldCount;
+    public void SetShieldText(int currentShield) { if (!shieldCount) return; shieldCount.text = "SHIELD: " + currentShield; }
 
 
     [Header("Game Management")]
@@ -34,6 +36,7 @@ public class SetHUDText : MonoBehaviour
     {
         ammoCount.alpha = GameManager.Instance.collectedGun ? 1 : 0;
         bombCount.alpha = GameManager.Instance.collectedBombs ? 1 : 0;
+        shieldCount.alpha = GameManager.Instance.collectedShield ? 1 : 0;
     }
 
     public void RefreshDailyValuesUI()

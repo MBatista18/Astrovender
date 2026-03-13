@@ -9,7 +9,7 @@ public class EnemyBullet : Bullet
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            PlayerHealth.ModifyOxygenLevel(damage, false);
+            PlayerHealth.ModifyOxygenLevel(damage, false, transform.position);
             Destroy(gameObject);
         }
 
