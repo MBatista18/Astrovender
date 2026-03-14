@@ -56,7 +56,7 @@ public class Bullet : MonoBehaviour
     //Called when another colliders enters the bullet's collider
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log($"Bullet hit: {other.name} tag={other.tag}");
+        Debug.Log("Bullet hit: {other.name} tag={other.tag}");
 
         //Damages only enemies
         if (other.CompareTag("Enemy"))

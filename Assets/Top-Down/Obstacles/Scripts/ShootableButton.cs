@@ -4,18 +4,17 @@ using System.Collections.Generic;
 
 public class ShootableButton : EnemySM
 {
-    [Header("Bridge Reference")]
-    [SerializeField] private SlidingBridge bridge;
+    [Header("Bridge Script References")]
+    [SerializeField] SlidingBridge slidingBridge;
+    [SerializeField] TimedBridge timedBridge;
 
     [Header("Button Settings")]
-    [SerializeField] private bool useToggle = false;
+    [SerializeField] private bool isTimed = false;
 
     [Header("Button Feedback")]
     [SerializeField] private SpriteRenderer buttonRenderer;
     //    [SerializeField] private Color activatedColor = Color.green;
     [SerializeField] Sprite activatedSprite;
-
-    private bool hasBeenActivated = false;
 
     public override void PainReactions()
     {
@@ -27,29 +26,15 @@ public class ShootableButton : EnemySM
     {
         Debug.Log("ActivateButton called on: " + gameObject.name);
 
-        //Checks if the button has already been activated
-        if (hasBeenActivated == true) { return; }
-
-        //Checks if bridge is valid
-        if (bridge == null)
+        //Determines which bridge it controls depending on what it is set for
+        if (isTimed)
         {
-            Debug.LogError("ShootableButton: bridge is missing on " + gameObject.name);
-            return;
-        }
-
-        //Checks if the toggle option is set to true, if not, button is one time use
-        if (useToggle)
-        {
-            bridge.ToggleBridge();
+            timedBridge.PauseBridge();
         }
         else
         {
-            bridge.ExtendBridge();
+            slidingBridge.SlidingButton();
         }
-
-        //Setting hasBeenActivated to true so button can't be activated again
-        hasBeenActivated = true;
-        Debug.Log("Button has been activated!");
 
         //Changes the button color upon activation
         if (buttonRenderer != null)
