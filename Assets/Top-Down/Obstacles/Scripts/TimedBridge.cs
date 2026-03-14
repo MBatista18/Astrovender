@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class TimedBridge : MonoBehaviour
 {
+    //Movement points can simply use the bridge start/end position prefabs
     [Header("Movement Points")]
     [SerializeField] private Transform pointA;
     [SerializeField] private Transform pointB;
@@ -20,6 +21,7 @@ public class TimedBridge : MonoBehaviour
 
     private void Start()
     {
+        //Checks if points A or B are valid
         if (pointA == null || pointB == null)
         {
             Debug.LogError("TimedBridge: Missing movement points.");
@@ -33,20 +35,22 @@ public class TimedBridge : MonoBehaviour
 
     private void Update()
     {
-        if (isPaused)
-            return;
-
+        //If paused, stop bridge from moving
+        if (isPaused) {return;}
+            
         MoveBridge();
     }
 
     private void MoveBridge()
     {
+        //Moves the bridge towards target point
         transform.position = Vector3.MoveTowards(
             transform.position,
             targetPosition,
             moveSpeed * Time.deltaTime
         );
 
+        //Changes target destination once previous destination was reached
         if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
         {
             targetPosition = (targetPosition == pointA.position)
@@ -64,6 +68,7 @@ public class TimedBridge : MonoBehaviour
         pauseRoutine = StartCoroutine(PauseCoroutine());
     }
 
+    //Pauses the bridge
     private IEnumerator PauseCoroutine()
     {
         isPaused = true;
