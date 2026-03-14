@@ -154,44 +154,93 @@ public class SubgameInputManager : MonoBehaviour
             Vector2 screenPos = _touchPositionAction.ReadValue<Vector2>();
             Vector2 world = _mainCam.ScreenToWorldPoint(screenPos);
 
-            // clamp world position to the 3x3 area centered on the start cell
-            float minX = _board.Origin.x + (_startX - 1) * _board.CellSize - 0.001f;
-            float maxX = _board.Origin.x + (_startX + 1) * _board.CellSize + 0.001f;
-            float minY = _board.Origin.y + (_startY - 1) * _board.CellSize - 0.001f;
-            float maxY = _board.Origin.y + (_startY + 1) * _board.CellSize + 0.001f;
+            // center of the start cell
+            Vector3 startCenter = _board.GetCellCenter(_startX, _startY);
 
-            // clamp to board bounds as well
-            minX = Mathf.Max(minX, _board.Origin.x);
-            minY = Mathf.Max(minY, _board.Origin.y);
-            maxX = Mathf.Min(maxX, _board.Origin.x + (_board.Width - 1) * _board.CellSize);
-            maxY = Mathf.Min(maxY, _board.Origin.y + (_board.Height - 1) * _board.CellSize);
+            // compute differences from start center
+            float dx = world.x - startCenter.x;
+            float dy = world.y - startCenter.y;
 
-            Vector3 clamped = new Vector3(Mathf.Clamp(world.x, minX, maxX), Mathf.Clamp(world.y, minY, maxY), _selectedNode.transform.position.z);
-            _selectedNode.transform.position = clamped;
-
-            // determine which cell the pointer is over, then clamp that cell to the 3x3 allowed area
-            if (_board.WorldToCell(world, out int cx, out int cy))
+            // If within the start cell, keep the node at start center
+            float snapThreshold = _board.CellSize * 0.25f;
+            if (Mathf.Abs(dx) <= snapThreshold && Mathf.Abs(dy) <= snapThreshold)
             {
-                int tx = Mathf.Clamp(cx, _startX - 1, _startX + 1);
-                int ty = Mathf.Clamp(cy, _startY - 1, _startY + 1);
+                _selectedNode.transform.position = startCenter;
+                SetCurrentTarget(null);
+                return;
+            }
 
-                // ensure only orthogonally adjacent cells are ever highlighted
-                int dx = Mathf.Abs(tx - _startX);
-                int dy = Mathf.Abs(ty - _startY);
-                if (dx + dy == 1)
+            // Decide dominant axis to prevent diagonal movement:
+            // - If horizontal movement dominates, lock Y to start center and allow X to move only within one cell left/right.
+            // - If vertical movement dominates, lock X to start center and allow Y to move only within one cell up/down.
+            bool horizontal = Mathf.Abs(dx) > Mathf.Abs(dy);
+
+            if (horizontal)
+            {
+                float minX = startCenter.x - _board.CellSize;
+                float maxX = startCenter.x + _board.CellSize;
+                // clamp to board world bounds
+                minX = Mathf.Max(minX, _board.Origin.x);
+                maxX = Mathf.Min(maxX, _board.Origin.x + (_board.Width - 1) * _board.CellSize);
+
+                float xPos = Mathf.Clamp(world.x, minX, maxX);
+                _selectedNode.transform.position = new Vector3(xPos, startCenter.y, _selectedNode.transform.position.z);
+
+                // determine target cell along X axis
+                int targetX = dx > 0 ? _startX + 1 : _startX - 1;
+                int targetY = _startY;
+
+                // only set target if within board bounds
+                if (targetX >= 0 && targetX < _board.Width)
                 {
-                    var node = _board.GetNodeAt(tx, ty);
-                    SetCurrentTarget(node);
+                    // compute how far toward the neighbor the pointer is (use half-cell as activation)
+                    if (Mathf.Abs(dx) >= _board.CellSize * 0.5f)
+                    {
+                        var node = _board.GetNodeAt(targetX, targetY);
+                        SetCurrentTarget(node);
+                    }
+                    else
+                    {
+                        SetCurrentTarget(null);
+                    }
                 }
                 else
                 {
                     SetCurrentTarget(null);
                 }
             }
-            else
+            else // vertical movement
             {
-                // if outside board, clear target
-                SetCurrentTarget(null);
+                float minY = startCenter.y - _board.CellSize;
+                float maxY = startCenter.y + _board.CellSize;
+                // clamp to board world bounds
+                minY = Mathf.Max(minY, _board.Origin.y);
+                maxY = Mathf.Min(maxY, _board.Origin.y + (_board.Height - 1) * _board.CellSize);
+
+                float yPos = Mathf.Clamp(world.y, minY, maxY);
+                _selectedNode.transform.position = new Vector3(startCenter.x, yPos, _selectedNode.transform.position.z);
+
+                // determine target cell along Y axis
+                int targetX = _startX;
+                int targetY = dy > 0 ? _startY + 1 : _startY - 1;
+
+                // only set target if within board bounds
+                if (targetY >= 0 && targetY < _board.Height)
+                {
+                    if (Mathf.Abs(dy) >= _board.CellSize * 0.5f)
+                    {
+                        var node = _board.GetNodeAt(targetX, targetY);
+                        SetCurrentTarget(node);
+                    }
+                    else
+                    {
+                        SetCurrentTarget(null);
+                    }
+                }
+                else
+                {
+                    SetCurrentTarget(null);
+                }
             }
         }
     }
