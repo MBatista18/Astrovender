@@ -13,7 +13,11 @@ public class SlidingBridge : MonoBehaviour
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 3.0f;
 
+    [Header("Bridge Settings")]
+    [SerializeField] private bool useToggle = false;
+
     private bool isMoving = false;
+    private bool hasBeenActivated = false;
     private Vector3 targetPosition;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -51,6 +55,28 @@ public class SlidingBridge : MonoBehaviour
             transform.position = targetPosition;
             isMoving = false;
         }
+
+    }
+
+    //The function that the button calls when shot
+    public void SlidingButton()
+    {
+        //Checks if the bridge has already been activated
+        if (hasBeenActivated == true) { return; }
+
+        //Checks if the toggle option is set to true, if not, bridge is one time use
+        if (useToggle)
+        {
+            ToggleBridge();
+        }
+        else
+        {
+            ExtendBridge();
+        }
+
+        //Setting hasBeenActivated to true so button can't be activated again
+        hasBeenActivated = true;
+        Debug.Log("SlidingBridge has been activated!");
 
     }
 
