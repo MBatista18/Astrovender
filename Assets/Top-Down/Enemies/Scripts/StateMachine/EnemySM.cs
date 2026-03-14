@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemySM : StateMachineBase // this is the base for the enemy state machine. all enemies will be built off of this statemachine
 {
-    [Header("Enemy Base Values")]
+    [Header("Health Values")]
     [SerializeField] int maxHealth;
     int health;
     public int GetHealth() { return health; }
@@ -33,6 +33,8 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
         return;
     }
 
+    [Header("Movement Values")]
+
     [SerializeField] float movementSpeed = 2f;
     public float GetMovementSpeed() { return movementSpeed; }
 
@@ -41,6 +43,9 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
 
     [SerializeField] float detectionRadius = 5f;
     public float GetDetectionRadius() { return detectionRadius; }
+
+    [Header("Death Effects")]
+    [SerializeField] bool dropsCoinsGems = true;
 
     public override void InstantiateValues()
     {
@@ -86,15 +91,18 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
 
     public override StateBase DeathState()
     {
-        if (Random.Range(0,10) <= 7) 
-        { //spawn coin
-            Instantiate(AssetCall.instance.coin, transform.position + (Vector3)Random.insideUnitCircle * .3f, Quaternion.identity);
-        }
-        else
+        if (dropsCoinsGems)
         {
-            if (Random.Range(0, 10) <= 3)
-            { //spawn gem
-                Instantiate(AssetCall.instance.gem, transform.position + (Vector3)Random.insideUnitCircle * .3f, Quaternion.identity);
+            if (Random.Range(0, 10) <= 7)
+            { //spawn coin
+                Instantiate(AssetCall.instance.coin, transform.position + (Vector3)Random.insideUnitCircle * .3f, Quaternion.identity);
+            }
+            else
+            {
+                if (Random.Range(0, 10) <= 3)
+                { //spawn gem
+                    Instantiate(AssetCall.instance.gem, transform.position + (Vector3)Random.insideUnitCircle * .3f, Quaternion.identity);
+                }
             }
         }
 

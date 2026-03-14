@@ -6,6 +6,11 @@ public class CameraEffectors : MonoBehaviour
     [SerializeField] float cameraShakeStrength;
     [SerializeField] float cameraShakeMovementCap;
 
+    [Header("Camera Offset")]
+    [SerializeField] float offsetSpeed;
+    Vector2 offset;
+    public void SetOffset(Vector2 value) { offset = value; }
+
     float cameraShake;
     public void SetCameraShake(float duration)
     {
@@ -15,6 +20,8 @@ public class CameraEffectors : MonoBehaviour
     private void Update()
     {
         if (cameraShake > 0) { cameraShake -= Time.deltaTime; }
+
+        transform.localPosition = Vector3.MoveTowards(transform.localPosition, offset, offsetSpeed * Time.deltaTime);
     }
 
     private void LateUpdate()
