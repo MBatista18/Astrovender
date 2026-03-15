@@ -3,6 +3,8 @@ using UnityEngine;
 public class DamagePlayerOnCollision : MonoBehaviour
 {
     [SerializeField] [Tooltip("Damage value applied to player, please keep this value negative")] int damageVal;
+    public void SetDamageValue(int value) { damageVal = value; }
+    public int GetDamageValue () { return damageVal; }
 
     [SerializeField] private float attackCooldown = 1.5f;
     private float nextAttackTime = 0f;
@@ -10,6 +12,8 @@ public class DamagePlayerOnCollision : MonoBehaviour
     [Header("Knockback")]
     [SerializeField] bool knocksPlayer;
     [SerializeField] float knockDuration = .5f;
+    public void SetKnockDuration(float value) { knockDuration = value; }
+    public float GetKnockDuration() { return knockDuration; }
 
     public virtual void OnCollision() { return; }
 

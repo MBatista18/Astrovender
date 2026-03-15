@@ -16,6 +16,8 @@ public class ShielderRobotStateRush : StateBase
         base.thisStart();
         sm.GetAnimator().Play("ShielderBotRush");
         playerDirection = (AssetCall.instance.playerSM.transform.position - sm.transform.position).normalized;
+
+        sm.ShieldKnockbackRush(true);
     }
 
     public override void thisFixedUpdate()
@@ -35,5 +37,7 @@ public class ShielderRobotStateRush : StateBase
         base.thisEnd();
         sm.GetRigidbody2D().linearVelocity = Vector2.zero;
         sm.GetStateKnockback().direction = -playerDirection;
+
+        sm.ShieldKnockbackRush(false);
     }
 }

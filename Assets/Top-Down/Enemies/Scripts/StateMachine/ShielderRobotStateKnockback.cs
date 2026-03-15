@@ -27,9 +27,9 @@ public class ShielderRobotStateKnockback : StateBase
         float multiplier = 0;
         if (knockbackTime/MAXknockbackTime > 0.5f)
         {
-            Debug.Log("y = -sin((1 - " + (knockbackTime / MAXknockbackTime) + ") ^ 2) / .16f + 1");
+            //Debug.Log("y = -sin((1 - " + (knockbackTime / MAXknockbackTime) + ") ^ 2) / .16f + 1");
             multiplier = -Mathf.Sin((Mathf.Pow(Mathf.Clamp01(1-(knockbackTime / MAXknockbackTime)), 2) / .16f)) + 1;
-            Debug.Log(multiplier + " = -sin((1 - " + (knockbackTime / MAXknockbackTime) + ") ^ 2) / .16f + 1");
+            //Debug.Log(multiplier + " = -sin((1 - " + (knockbackTime / MAXknockbackTime) + ") ^ 2) / .16f + 1");
         }
 
         //Debug.Log("Multiplier = " + multiplier);

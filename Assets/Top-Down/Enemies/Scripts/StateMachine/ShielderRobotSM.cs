@@ -55,6 +55,15 @@ public class ShielderRobotSM : EnemySM
     Animator animator;
     public Animator GetAnimator() { return animator; }
 
+    ShielderVar_DamagePlayerOnCollision onCollision;
+    public ShielderVar_DamagePlayerOnCollision GetDamageCollider() { return onCollision; }
+
+    public void ShieldKnockbackRush(bool isTrue) 
+    {
+        GetDamageCollider().SetDamageValue(isTrue ? -20 : -5);
+        GetDamageCollider().SetKnockDuration(isTrue ? 1f : .2f);
+    }
+
     SpriteRenderer sprite;
     public void SwapFacingDirection(Vector3 facingPos)
     {
@@ -76,5 +85,8 @@ public class ShielderRobotSM : EnemySM
         base.InstantiateComponents();
         animator = GetComponent<Animator>();
         sprite = transform.Find("Sprite")?.GetComponent<SpriteRenderer>();
+
+        onCollision = GetComponentInChildren<ShielderVar_DamagePlayerOnCollision>();
+        ShieldKnockbackRush(true);
     }
 }
