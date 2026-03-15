@@ -62,9 +62,11 @@ public class Bullet : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             //Sends a message to the enemy script telling the enemy to take damage
-            other.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
+           // other.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
+           
             Debug.Log("Enemy takes damage");
 
+            other.GetComponent<EnemySM>().TakeDamage(damage, transform.position);
             //Destroy bullet upon hit
             Destroy(gameObject);
         }

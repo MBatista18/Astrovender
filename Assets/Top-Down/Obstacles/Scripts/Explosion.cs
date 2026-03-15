@@ -54,7 +54,7 @@ public class Explosion : MonoBehaviour
             switch (layerName)
             {
                 case "Enemy":
-                    ray.collider.gameObject.GetComponent<EnemySM>().TakeDamage(damage);
+                    ray.collider.gameObject.GetComponent<EnemySM>().TakeDamage(damage, transform.position);
                     break;
                 case "Player":
                     PlayerHealth.ModifyOxygenLevel(-damage, false, transform.position);

@@ -12,10 +12,72 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
     [SerializeField] float damageReactionTime = .2f;
     public float GetDamageReactionTime() { return damageReactionTime; }
 
-    bool reactToDamage = true;
+    [SerializeField] bool reactToDamage = true;
     public void SetReactToDamage(bool a) { reactToDamage = a; }
 
-    public void TakeDamage(int damageAmount)
+    [SerializeField] bool shielded;
+    bool ShieldProtects(Vector3 otherPos)
+    {
+        bool didDefend = false;
+
+        if (shielded)
+        {
+            Vector3 difference = transform.position - otherPos;
+
+            float axisDiff = Mathf.Abs(Mathf.Abs(difference.x) - Mathf.Abs(difference.y));
+
+            float chosenAxis = 0; // 0 = x, 1 = y, 2 = both
+
+            if (axisDiff >= .1) { chosenAxis = Mathf.Abs(difference.x) > Mathf.Abs(difference.y) ? 0 : 1; } else { chosenAxis = 2; }
+
+            if (chosenAxis == 0 || chosenAxis == 2) // x check
+            {
+                switch (facingDirection)
+                {
+                    case AstrovenderStructs.facingDirection.left:
+
+                        if (difference.x >= 0) { Debug.Log("Counter attack coming left"); didDefend = true; }
+
+                        break;
+                    case AstrovenderStructs.facingDirection.right:
+
+                        if (difference.x <= 0) { Debug.Log("Counter attack coming right"); didDefend = true; }
+
+                        break;
+                }
+            }
+            else if (chosenAxis == 1 || chosenAxis == 2) // y check
+            {
+                switch (facingDirection)
+                {
+                    case AstrovenderStructs.facingDirection.down:
+
+                        if (difference.y >= 0) { Debug.Log("Counter attack coming from below"); didDefend = true; }
+
+                        break;
+                    case AstrovenderStructs.facingDirection.up:
+
+                        if (difference.y <= 0) { Debug.Log("Counter attack coming from above"); didDefend = true; }
+
+                        break;
+                }
+            }
+        }
+
+        return didDefend;
+    }
+
+    public virtual void TakeDamage(int damageAmount, Vector3 attackerPos)
+    {
+        if (ShieldProtects(attackerPos))
+        {
+            return;
+        }
+
+        TakeDamage(damageAmount);
+    }
+
+    public virtual void TakeDamage(int damageAmount)
     {
         health -= damageAmount;
 

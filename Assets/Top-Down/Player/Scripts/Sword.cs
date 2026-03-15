@@ -22,7 +22,8 @@ public class Sword : MonoBehaviour
     {
         if(other.CompareTag("Enemy"))
         {
-            other.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
+            // other.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
+            other.GetComponent<EnemySM>().TakeDamage(damage, AssetCall.instance.playerSM.transform.position);
             Debug.Log("Enemy gets hit by the sword");
         }
     }
