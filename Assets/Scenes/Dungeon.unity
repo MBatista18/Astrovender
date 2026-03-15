@@ -10325,6 +10325,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8480985503489308512, guid: bec28fa771324b54daee1edbddad8f98, type: 3}
+      propertyPath: parentToPlayer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -134506,6 +134510,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DungeonEntrance
   dungeonSceneIndex: 0
+  isOutside: 0
+  playerSpawn: {fileID: 0}
 --- !u!4 &1203531774
 Transform:
   m_ObjectHideFlags: 0
