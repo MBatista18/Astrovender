@@ -3,7 +3,7 @@ using UnityEngine;
 public class GalleryTarget : EnemySM
 {
     GalleryStateFly stateFly;
-    public void BeginFlying() { ChangeState(stateFly); }
+    public void BeginFlying() { GetComponent<Animator>().Play("GalleryBirdFly"); ChangeState(stateFly); }
 
     public override void InstantiateStates()
     {

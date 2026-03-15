@@ -89,7 +89,7 @@ Transform:
   m_GameObject: {fileID: 1291529735519917963}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.365, y: 0, z: 0}
+  m_LocalPosition: {x: 0.439, y: 0.066, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 8197952008380008785}
   - component: {fileID: 3962240868928953752}
   - component: {fileID: 420565097122569744}
+  - component: {fileID: 4484779502409068607}
   m_Layer: 7
   m_Name: Bird
   m_TagString: Enemy
@@ -256,6 +257,8 @@ MonoBehaviour:
   facingDirection: 1
   maxHealth: 1
   damageReactionTime: 0
+  reactToDamage: 1
+  shielded: 0
   movementSpeed: 3.5
   patrolRadius: 0
   detectionRadius: 0
@@ -391,6 +394,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &4484779502409068607
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4765115474842470698}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 503d475502180f44b8aae42fd24b8f45, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7569034079262917032
 GameObject:
   m_ObjectHideFlags: 0

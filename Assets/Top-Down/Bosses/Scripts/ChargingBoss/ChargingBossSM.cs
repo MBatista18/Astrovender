@@ -75,11 +75,33 @@ public class ChargingBossSM : EnemySM
     [SerializeField] FallingRockManager rockManager;
     public FallingRockManager GetRockSlideManager() { return rockManager; }
 
+
     public override void InstantiateComponents()
     {
         base.InstantiateComponents();
         animator = GetComponent<Animator>();
         boxCollider2D = GetComponent<BoxCollider2D>();
         sp_renderer = transform.Find("Sprite").GetComponent<SpriteRenderer>();
+    }
+
+    [SerializeField] GameObject[] DungeonWalls;
+
+    public override void OnEnableFunctions()
+    {
+        base.OnEnableFunctions();
+
+        foreach (GameObject a in DungeonWalls)
+        {
+            a.SetActive(true);
+        }
+    }
+
+    public override void OnDisableFunctions()
+    {
+        base.OnDisableFunctions();
+        foreach (GameObject a in DungeonWalls)
+        {
+            a.SetActive(false);
+        }
     }
 }

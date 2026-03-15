@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3455300476923842744
 Transform:
   m_ObjectHideFlags: 0
@@ -478,7 +478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1719357425072192674
 Transform:
   m_ObjectHideFlags: 0
@@ -680,6 +680,9 @@ MonoBehaviour:
   burrowingSpeed: 3
   stuntime: 2
   rockManager: {fileID: 8073486455592006697}
+  DungeonWalls:
+  - {fileID: 3474369068651620949}
+  - {fileID: 1703723900300213575}
 --- !u!95 &5958550137591747086
 Animator:
   serializedVersion: 7
