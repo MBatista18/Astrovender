@@ -17,6 +17,8 @@ public class ChargingBossStateBurrow : StateBase
         timer = .2f;
 
         sm.GetAnimator().Play("ChargingBossBurrowing");
+
+        sm.GetSpriteRenderer().flipY = sm.GetFacingDirection() != AstrovenderStructs.facingDirection.down;
     }
 
     public override void thisUpdate()

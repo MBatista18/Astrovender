@@ -20,7 +20,7 @@ public class ChargingBossStateCharge : StateBase
 
         movementDirection = sm.facingDirection == AstrovenderStructs.facingDirection.down ? -1 : 1;
 
-        sm.GetAnimator().Play("ChargingBossCharge");
+        sm.GetAnimator().Play(movementDirection < 0 ? "ChargingBossChargeDown" : "ChargingBossChargeUp");
     }
 
     public override void thisUpdate()

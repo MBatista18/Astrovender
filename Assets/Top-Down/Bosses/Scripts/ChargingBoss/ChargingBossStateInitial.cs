@@ -24,7 +24,7 @@ public class ChargingBossStateInitial : StateBase
         movingTimer -= Time.deltaTime;
 
         if (movingTimer <= 0 ||
-            (Physics2D.BoxCast((sm.transform.position + ((Vector3)new Vector3(0, -1) * .1f)), Vector3.one * sm.GetBoxCollider2D().size.x, 0f, Vector2.zero, 0f,
+            (Physics2D.BoxCast((sm.transform.position + ((Vector3)new Vector3(0, -1) * .01f)), Vector3.one * sm.GetBoxCollider2D().size.x, 0f, Vector2.zero, 0f,
             LayerMask.GetMask("Walls"))))
         {
             sm.ChangeState(sm.GetStateBurrow());

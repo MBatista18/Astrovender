@@ -68,10 +68,18 @@ public class ChargingBossSM : EnemySM
 
     BoxCollider2D boxCollider2D;
     public BoxCollider2D GetBoxCollider2D() { return boxCollider2D; }
+
+    SpriteRenderer sp_renderer;
+    public SpriteRenderer GetSpriteRenderer() { return sp_renderer; }
+
+    [SerializeField] FallingRockManager rockManager;
+    public FallingRockManager GetRockSlideManager() { return rockManager; }
+
     public override void InstantiateComponents()
     {
         base.InstantiateComponents();
         animator = GetComponent<Animator>();
         boxCollider2D = GetComponent<BoxCollider2D>();
+        sp_renderer = transform.Find("Sprite").GetComponent<SpriteRenderer>();
     }
 }

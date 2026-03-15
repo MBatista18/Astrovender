@@ -14,19 +14,31 @@ public class FallingRockManager : MonoBehaviour
     float MAXtimer = 1f;
     float timer;
 
+    bool hit;
+
+    [SerializeField] bool checkForBomb = true;
+
     private void Update()
     {
         if (timer > 0) { timer -= Time.deltaTime; return; }
 
-        RaycastHit2D hit = Physics2D.BoxCast(transform.position, coll.size, 0f, Vector2.zero, 0f, LayerMask.GetMask("Explosion"));
+        if (checkForBomb && Physics2D.BoxCast(transform.position, coll.size, 0f, Vector2.zero, 0f, LayerMask.GetMask("Explosion")))
+        {
+            hit = true;
+        }
 
         if (hit)
         {
+
+            hit = false;
+
             timer = MAXtimer;
             StartCoroutine(RockSlide());
             AssetCall.instance.cameraEffectors.SetCameraShake(2);
         }
     }
+
+    public void CallRockslide() {  hit = true; }
 
     IEnumerator RockSlide()
     {

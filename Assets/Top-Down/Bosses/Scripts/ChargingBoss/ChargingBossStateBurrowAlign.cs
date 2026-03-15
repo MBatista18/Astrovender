@@ -17,17 +17,17 @@ public class ChargingBossStateBurrowAlign : StateBase
         base.thisStart();
         timer = sm.GetBurrowingTime();
 
-        sm.GetBoxCollider2D().enabled = false;
+        sm.GetBoxCollider2D().excludeLayers = LayerMask.GetMask("Walls");
 
         if (sm.GetFacingDirection() == AstrovenderStructs.facingDirection.down)
         {
             sm.SetFacingDirection(AstrovenderStructs.facingDirection.up);
-            sm.transform.position -= Vector3.up * .5f;
+            sm.transform.position -= Vector3.up * (sm.GetBoxCollider2D().size.y/2);
         }
         else if (sm.GetFacingDirection() == AstrovenderStructs.facingDirection.up)
         {
             sm.SetFacingDirection(AstrovenderStructs.facingDirection.down);
-            sm.transform.position += Vector3.up * .5f;
+            sm.transform.position += Vector3.up * (sm.GetBoxCollider2D().size.y / 2);
         }
 
         sm.GetAnimator().Play("ChargingBossBurrowMove");
@@ -73,16 +73,18 @@ public class ChargingBossStateBurrowAlign : StateBase
         base.thisEnd();
 
         sm.GetRigidbody2D().linearVelocity = Vector2.zero;
-        
+
         if (sm.GetFacingDirection() == AstrovenderStructs.facingDirection.down)
         {
-            sm.transform.position -= Vector3.up * .5f;
+            sm.transform.position -= Vector3.up * (sm.GetBoxCollider2D().size.y / 2);
         }
         else if (sm.GetFacingDirection() == AstrovenderStructs.facingDirection.up)
         {
-            sm.transform.position += Vector3.up * .5f;
+            sm.transform.position += Vector3.up * (sm.GetBoxCollider2D().size.y / 2);
         }
 
-        sm.GetBoxCollider2D().enabled = true;
+        sm.GetBoxCollider2D().excludeLayers = LayerMask.GetMask();
+
+        sm.GetSpriteRenderer().flipY = false;
     }
 }

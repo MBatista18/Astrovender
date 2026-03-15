@@ -14,6 +14,7 @@ public class ChargingBossStateStunned : StateBase
     public override void thisStart()
     {
         base.thisStart();
+        sm.GetRockSlideManager().CallRockslide();
         timer = sm.GetStunTime();
 
         sm.GetAnimator().Play("ChargingBossStun");
