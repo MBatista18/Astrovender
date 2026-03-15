@@ -14,12 +14,14 @@ public class ShielderRobotStateCharge : StateBase
     public override void thisStart()
     {
         base.thisStart();
+        sm.GetAnimator().Play("ShielderBotCharge");
         timer = sm.GetChargeTime();
     }
 
     public override void thisUpdate()
     {
         base.thisUpdate();
+        sm.SwapFacingDirection(AssetCall.instance.playerSM.transform.position);
         timer -= Time.deltaTime;
         if (timer <= 0)
         {

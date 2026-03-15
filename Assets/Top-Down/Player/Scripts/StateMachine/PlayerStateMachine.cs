@@ -83,9 +83,13 @@ public class PlayerStateMachine : StateMachineBase
     private PlayerHealth playerHealth;
     public PlayerHealth GetPlayerHealth() { return playerHealth; }
 
+    ShieldVisuals shieldVisuals;
+    public ShieldVisuals GetShieldVisuals() { return shieldVisuals; }
+
     public override void InstantiateComponents()
     {
         base.InstantiateComponents();
+        shieldVisuals = GetComponentInChildren<ShieldVisuals>();
         rb = GetComponent<Rigidbody2D>();
         animationController = GetComponent<PlayerAnimationController>();
         playerHealth = GetComponent<PlayerHealth>();

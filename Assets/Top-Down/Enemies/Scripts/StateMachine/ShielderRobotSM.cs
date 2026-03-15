@@ -13,39 +13,25 @@ public class ShielderRobotSM : EnemySM
     public ShielderRobotStateKnockback GetStateKnockback() { return stateKnockback; }
     ShielderRobotStateRush stateRush;
     public ShielderRobotStateRush GetStateRush() { return stateRush; }
+    ShielderRobotStatePatrol statePatrol;
     public override void InstantiateStates()
     {
         base.InstantiateStates();
         stateCharge = new ShielderRobotStateCharge(this);
         stateKnockback = new ShielderRobotStateKnockback(this);
         stateRush = new ShielderRobotStateRush(this);
+
+        statePatrol = new ShielderRobotStatePatrol(this);
+    }
+
+    public override StateBase InitialState()
+    {
+        return statePatrol;
     }
 
     public override void InstantiateValues()
     {
         base.InstantiateValues();
-        if (Random.Range(0,10) < 5) 
-        {
-            if (Random.Range(0, 10) < 5)
-            {
-                base.SetFacingDirection(AstrovenderStructs.facingDirection.left);
-            }
-            else
-            {
-                base.SetFacingDirection(AstrovenderStructs.facingDirection.right);
-            }
-        }
-        else
-        {
-            if (Random.Range(0, 10) < 5)
-            {
-                base.SetFacingDirection(AstrovenderStructs.facingDirection.up);
-            }
-            else
-            {
-                base.SetFacingDirection(AstrovenderStructs.facingDirection.down);
-            }
-        }
     }
 
     public override StateBase AttackState()
@@ -64,5 +50,31 @@ public class ShielderRobotSM : EnemySM
     public override void TakeDamage(int damageAmount)
     {
         base.TakeDamage(damageAmount);
+    }
+
+    Animator animator;
+    public Animator GetAnimator() { return animator; }
+
+    SpriteRenderer sprite;
+    public void SwapFacingDirection(Vector3 facingPos)
+    {
+        switch (facingPos.x > transform.position.x)
+        {
+            case true:
+                sprite.flipX = true;
+                base.SetFacingDirection(AstrovenderStructs.facingDirection.right);
+                break;
+            case false:
+                sprite.flipX = false;
+                base.SetFacingDirection(AstrovenderStructs.facingDirection.left);
+                break;
+        }
+    }
+
+    public override void InstantiateComponents()
+    {
+        base.InstantiateComponents();
+        animator = GetComponent<Animator>();
+        sprite = transform.Find("Sprite")?.GetComponent<SpriteRenderer>();
     }
 }

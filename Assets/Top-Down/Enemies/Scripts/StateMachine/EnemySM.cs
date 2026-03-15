@@ -66,11 +66,12 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
 
         return didDefend;
     }
-
+    
     public virtual void TakeDamage(int damageAmount, Vector3 attackerPos)
     {
         if (ShieldProtects(attackerPos))
         {
+            shield.PlayHit();
             return;
         }
 
@@ -123,11 +124,15 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
     Rigidbody2D rb2D;
     public Rigidbody2D GetRigidbody2D() { return rb2D; }
 
+    EnemyShield shield;
+    public EnemyShield GetShield() { return shield; }
+
     public override void InstantiateComponents()
     {
         base.InstantiateComponents();
         playerTransform = AssetCall.instance.playerSM.transform;
         rb2D = GetComponent<Rigidbody2D>();
+        shield = GetComponentInChildren<EnemyShield>();
     }
 
     [Header("States")]

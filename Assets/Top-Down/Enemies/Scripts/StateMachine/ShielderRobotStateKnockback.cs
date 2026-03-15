@@ -17,6 +17,7 @@ public class ShielderRobotStateKnockback : StateBase
     public override void thisStart()
     {
         base.thisStart();
+        sm.GetAnimator().Play("ShielderBotKnockback");
         knockbackTime = MAXknockbackTime;
     }
 

@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 1401916839
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 434b891d1cb30ac4fbd2ffa2918f3271, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 10e4069b62c157e428e3e1e6ac7526a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 755761301149140192}
   - component: {fileID: 913430801331673700}
   - component: {fileID: 747067276672992341}
+  - component: {fileID: 1592736028075149615}
   m_Layer: 7
   m_Name: ShieldVisual
   m_TagString: Untagged
@@ -169,9 +170,9 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1401916839
   m_SortingLayer: 2
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 69c760f9295f0f24fa0ee64354ff4a13, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 3f6c3693f14fcda4cafbbb89e44bf07b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7607843}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -193,10 +194,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac69afbe3ceafe343b5941013f8970be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShield
-  verticalShield: {fileID: 21300000, guid: 69c760f9295f0f24fa0ee64354ff4a13, type: 3}
-  horizontalShield: {fileID: 21300000, guid: 9cf345302875871449e8ba7c4e904538, type: 3}
+  upshield: {fileID: 21300000, guid: b02047d01b1083040b4d9150f5598ceb, type: 3}
+  downshield: {fileID: 21300000, guid: fe07b84e3f5ecf14bb35bc3745957e90, type: 3}
+  leftshield: {fileID: 21300000, guid: 3f6c3693f14fcda4cafbbb89e44bf07b, type: 3}
+  rightshield: {fileID: 21300000, guid: 12d41bb220d5aac44bb5fc4107e38bfb, type: 3}
   offset: 0.25
   scale: 1
+--- !u!95 &1592736028075149615
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2892077490671996132}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c994ad3b77d29b04fa6de6e18b90db1a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7222304031122715835
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +249,7 @@ Transform:
   m_GameObject: {fileID: 7222304031122715835}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.155, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -330,7 +355,7 @@ Animator:
   m_GameObject: {fileID: 8645131886166869560}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3de3227e021359b42948bc227129ffc0, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1e9b17cc6117ca54ebaa5626f37ddf13, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -430,10 +455,11 @@ MonoBehaviour:
   facingDirection: 1
   maxHealth: 15
   damageReactionTime: 0.2
+  reactToDamage: 1
   shielded: 1
   movementSpeed: 2
   patrolRadius: 3
-  detectionRadius: 5
+  detectionRadius: 3.5
   dropsCoinsGems: 1
   chargeTime: 1
   rushSpeed: 7

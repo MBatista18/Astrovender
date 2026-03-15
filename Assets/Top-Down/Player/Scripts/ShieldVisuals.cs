@@ -7,9 +7,17 @@ public class ShieldVisuals : MonoBehaviour
     [SerializeField] Sprite verticalShield;
     [SerializeField] Sprite horizontalShield;
 
+    Animator animator;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+    }
+
+    public void PlayHit()
+    {
+        animator.Play("ShieldHit", 0, 0);
     }
 
     void Update()
@@ -20,6 +28,7 @@ public class ShieldVisuals : MonoBehaviour
         if (!GameManager.Instance.collectedShield) { showSprite = false; }
 
         spriteRenderer.color = new Color(1, 1, 1, showSprite ? 1 : 0);
+        animator.enabled = showSprite;
 
         if (!showSprite) { return; }
 

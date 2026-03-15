@@ -14,6 +14,7 @@ public class ShielderRobotStateRush : StateBase
     public override void thisStart()
     {
         base.thisStart();
+        sm.GetAnimator().Play("ShielderBotRush");
         playerDirection = (AssetCall.instance.playerSM.transform.position - sm.transform.position).normalized;
     }
 

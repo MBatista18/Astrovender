@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
             if (PlayerManager.GetCurrentShieldHealth() > 0)
             {
                 PlayerManager.ModifyShieldHealth(val);
+                AssetCall.instance.playerSM.GetShieldVisuals()?.PlayHit();
 
                 return;
             }

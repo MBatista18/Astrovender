@@ -12,6 +12,7 @@ public class EnemyStatePatrol : StateBase
     Vector3 startingPosition; // position where the enemy starts during this state.
 
     Vector3 targetPosition;
+    public Vector3 GetTargetPosition() { return targetPosition; }
 
     bool isMoving;
 
