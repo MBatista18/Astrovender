@@ -4,10 +4,7 @@ using System.Collections.Generic;
 
 public class Tide : MonoBehaviour
 {
-    [Header("Prefabs")]
-    public GameObject coinPrefab;
-    public GameObject gemPrefab;
-    public GameObject enemyPrefab;
+    [SerializeField] GameObject spawnAsset;
 
     [Header("Tide Movement")]
     [SerializeField] private float lowY = 0f;
@@ -22,10 +19,6 @@ public class Tide : MonoBehaviour
     [SerializeField] private int maxSpawnCount = 4;
     [SerializeField] private int maxActiveSpawnedObjects = 20;
 
-    [Header("Spawn Weights")]
-    [SerializeField] private int coinWeight = 45;
-    [SerializeField] private int enemyWeight = 50;
-    [SerializeField] private int gemWeight = 10;
 
     [Header("Spawn Area")]
     [SerializeField] private BoxCollider2D spawnArea;
@@ -35,6 +28,8 @@ public class Tide : MonoBehaviour
     private bool rising = true;
     private bool paused = false;
     private float pauseTimer = 0f;
+
+    [HideInInspector] public int currentObjectCount = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -115,70 +110,19 @@ public class Tide : MonoBehaviour
 
         for(int i = 0; i < spawnCount; i++)
         {
-            SpawnRandomObject();
+            if (currentObjectCount > 8) { return; }
+
+            Debug.Log("Spawn");
+
+            var a = Instantiate(spawnAsset, GetRandomSpawnPosition(), Quaternion.identity);
+            a.GetComponent<TideSpawnAsset>().tide = this;
         }
     }
 
-    //Spawns a random tide objects
-    private void SpawnRandomObject()
+    //Removes destroyed spawned objects to allow more to spawn
+    private void CleanupSpawnList()
     {
-        //Get the random object to spawn
-        GameObject prefabToSpawn = GetWeightedRandomPrefab();
-
-        //Checks if the prefab is null
-        if (prefabToSpawn == null )
-        {
-            Debug.LogError("Tide: prefabToSpawn is null before instantiate");
-            return;
-        }
-
-        //Get a random spawn position within spawn area and spawn tide object
-        Vector3 spawnPos = GetRandomSpawnPosition();
-        GameObject spawned = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
-
-        //Adds the spawned object to the spawned objects list
-        spawnedObjects.Add(spawned);
-
-    }
-
-    //Get a random tide objected based off of spawn weights(chance to spawn)
-    private GameObject GetWeightedRandomPrefab()
-    {
-        //Get total weight
-        int totalWeight = coinWeight + enemyWeight + gemWeight;
-
-        //If total weight is 0 or less, return null
-        if (totalWeight <= 0)
-        {
-            Debug.LogError("Total spawn weight is 0 or less.");
-            return null;
-        }
-
-        //Gets a random roll
-        int roll = Random.Range(0, totalWeight);
-
-        //If the roll falls within the bounds of the object, return that object
-        if (roll < coinWeight)
-        {
-            return coinPrefab;
-        }
-
-        roll -= coinWeight;
-
-        if (roll < enemyWeight)
-        {
-            return enemyPrefab;
-        }
-
-        roll -= enemyWeight;
-
-        if (roll < gemWeight)
-        {
-            return gemPrefab;
-        }
-
-        Debug.LogError("Weighted selection returned null unexpectedly.");
-        return null;
+        spawnedObjects.RemoveAll(obj => obj == null);
     }
 
     //Gets a random spawn position within the bounds of the collision box and returns it
@@ -190,12 +134,6 @@ public class Tide : MonoBehaviour
         float randomY = Random.Range(bounds.min.y, bounds.max.y);
 
         return new Vector3(randomX, randomY, 0f);
-    }
-
-    //Removes destroyed spawned objects to allow more to spawn
-    private void CleanupSpawnList()
-    {
-        spawnedObjects.RemoveAll(obj => obj == null);
     }
 
 }
