@@ -27,11 +27,37 @@ public class ArrowDispenser : MonoBehaviour
     private float fireTimer;
     private bool isFiring;
 
+    Animator animator;
+
     private void Start()
     {
         //Establishing dispenser settings
         isFiring = startFiringOnStart;
         fireTimer = fireInterval;
+
+        animator = GetComponent<Animator>();
+    }
+
+    bool isIdling;
+
+    string GetDirectionalPlayback()
+    {
+        switch (fireDirection)
+        {
+            case FireDirection.Up:
+                return "Up";
+
+            case FireDirection.Down:
+                return "Down";
+
+            case FireDirection.Left:
+                return "Left";
+
+            case FireDirection.Right:
+                return "Right";
+        }
+
+        return "Down";
     }
 
     private void Update()
@@ -39,6 +65,18 @@ public class ArrowDispenser : MonoBehaviour
         //Checks if dispenser is not firing or arrow setup variables are invalid
         if (!isFiring || arrowPrefab == null || firePoint == null)
             return;
+
+        //animates the dispenser
+        if (fireTimer >= fireInterval / 2 && !isIdling)
+        {
+            isIdling = true;
+            animator.Play("DispenserIdle" + GetDirectionalPlayback());
+        }
+        else if (fireTimer < fireInterval / 2 && isIdling)
+        {
+            isIdling = false;
+            animator.Play("DispenserShoot" + GetDirectionalPlayback());
+        }
 
         fireTimer -= Time.deltaTime;
 
@@ -56,10 +94,10 @@ public class ArrowDispenser : MonoBehaviour
         //Gets the fire direction
         Vector2 direction = GetDirectionVector();
 
-        GameObject arrow = Instantiate(arrowPrefab, firePoint.position, Quaternion.identity);
+        GameObject arrow = Instantiate(arrowPrefab, firePoint.position + (Vector3)GetDirectionVector() * .5f, Quaternion.identity);
 
         //Gets arrow script and tells arrow which way to move after it is spawned
-        ArrowProjectile projectile = arrow.GetComponent<ArrowProjectile>();
+        EnemyBullet projectile = arrow.GetComponent<EnemyBullet>();
         if (projectile != null)
         {
             projectile.SetDirection(direction);

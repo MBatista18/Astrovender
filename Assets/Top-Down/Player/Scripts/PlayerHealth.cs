@@ -55,7 +55,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        if (canBeHurt) { invulnerabilityTimer = 1.5f; } // sets the invulnerability timer
+        if (canBeHurt) { invulnerabilityTimer = .7f; } // sets the invulnerability timer
         else // gives the player a brief period of invulnerability after being hurt
         {
             invulnerabilityTimer -= Time.deltaTime;
