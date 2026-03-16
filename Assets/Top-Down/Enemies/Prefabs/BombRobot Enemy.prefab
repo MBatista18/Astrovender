@@ -84,6 +84,7 @@ MonoBehaviour:
   damageVal: -10
   attackCooldown: 1.5
   knocksPlayer: 0
+  knockDuration: 0.5
 --- !u!1 &7839313177776886084
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,11 +133,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5e45e23cce43944926a1d50b1fe9e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BombRobotSM
+  facingDirection: 1
   maxHealth: 10
   damageReactionTime: 0.2
+  reactToDamage: 1
+  shielded: 0
   movementSpeed: 2
   patrolRadius: 4
   detectionRadius: 2
+  dropsCoinsGems: 1
   fuseTime: 2
 --- !u!95 &8137407031916260319
 Animator:
@@ -149,7 +154,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3de3227e021359b42948bc227129ffc0, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
