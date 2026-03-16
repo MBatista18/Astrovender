@@ -76,7 +76,10 @@ public class Bullet : MonoBehaviour
             other.GetComponentInParent<ShootableButton>()?.ActivateButton();
         }
 
-        
+        if (other.gameObject.layer == LayerMask.NameToLayer("Walls"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     //Sets the direction of the bullet (Haven't been able to test this yet)
