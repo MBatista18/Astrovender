@@ -6,7 +6,7 @@ public class BridgePassengerHandler : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             other.transform.SetParent(transform);
         }
@@ -14,7 +14,7 @@ public class BridgePassengerHandler : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             other.transform.SetParent(null);
         }
