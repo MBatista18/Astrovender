@@ -20,6 +20,7 @@ public class ArrowDispenser : MonoBehaviour
     [Header("Timing")]
     [SerializeField] private float fireInterval = 1.5f;
     [SerializeField] private bool startFiringOnStart = true;
+    [SerializeField] bool initialDelay = false;
 
     [Header("Direction")]
     [SerializeField] private FireDirection fireDirection = FireDirection.Right;
@@ -33,7 +34,7 @@ public class ArrowDispenser : MonoBehaviour
     {
         //Establishing dispenser settings
         isFiring = startFiringOnStart;
-        fireTimer = fireInterval;
+        fireTimer = initialDelay ? fireInterval/2 : fireInterval;
 
         animator = GetComponent<Animator>();
     }

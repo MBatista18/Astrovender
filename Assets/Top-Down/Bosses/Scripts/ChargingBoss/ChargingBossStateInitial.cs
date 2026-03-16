@@ -10,6 +10,7 @@ public class ChargingBossStateInitial : StateBase
     }
 
     float movingTimer;
+    float idleTimer = 2f;
     public override void thisStart()
     {
         base.thisStart();
@@ -21,6 +22,12 @@ public class ChargingBossStateInitial : StateBase
     public override void thisUpdate()
     {
         base.thisUpdate();
+        if (idleTimer > 0)
+        {
+            idleTimer -= Time.deltaTime;
+            return;
+        }
+
         movingTimer -= Time.deltaTime;
 
         if (movingTimer <= 0 ||
@@ -34,7 +41,9 @@ public class ChargingBossStateInitial : StateBase
     {
         base.thisFixedUpdate();
 
-        sm.GetRigidbody2D().linearVelocity = -Vector2.up * sm.GetBurrowingSpeed();
+        if (idleTimer > 0) { return; }
+
+        sm.GetRigidbody2D().linearVelocity = -Vector2.up * sm.GetBurrowingSpeed() *.75f;
     }
     public override void thisEnd()
     {

@@ -26,7 +26,7 @@ public class ShielderRobotStateRush : StateBase
 
         sm.GetRigidbody2D().linearVelocity = playerDirection * sm.GetRushSpeed();
 
-        if (Physics2D.BoxCast((sm.transform.position + ((Vector3)playerDirection * .1f)), Vector3.one, 0f, Vector2.zero, 0f, LayerMask.GetMask("Walls", "Destructible")))
+        if (Physics2D.BoxCast((sm.transform.position + ((Vector3)playerDirection * .1f)), Vector3.one, 0f, Vector2.zero, 0f, LayerMask.GetMask("Walls", "Destructible", "Pit")))
         {
             sm.CallKnockback();
         }

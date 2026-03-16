@@ -12,7 +12,7 @@ public class PlayerManager : MonoBehaviour
     static int maxBombCount = 20;
 
     public static int ammoCount;
-    static int maxAmmoCount = 20;
+    static int maxAmmoCount = 50;
 
     static int currentShieldHealth;
     static int maxShieldHealth = 100;

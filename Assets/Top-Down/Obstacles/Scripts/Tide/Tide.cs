@@ -110,7 +110,7 @@ public class Tide : MonoBehaviour
 
         for(int i = 0; i < spawnCount; i++)
         {
-            if (currentObjectCount > 8) { return; }
+            if (Vector3.Distance(transform.position, AssetCall.instance.playerSM.transform.position) > 10 || currentObjectCount > 8) { return; }
 
             Debug.Log("Spawn");
 

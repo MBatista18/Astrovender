@@ -676,9 +676,9 @@ MonoBehaviour:
   patrolRadius: 3
   detectionRadius: 5
   dropsCoinsGems: 1
-  burrowingTime: 3
+  burrowingTime: 4
   burrowingSpeed: 3
-  stuntime: 2
+  stuntime: 5
   rockManager: {fileID: 8073486455592006697}
   DungeonWalls:
   - {fileID: 3474369068651620949}
