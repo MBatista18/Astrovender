@@ -6,10 +6,10 @@ public class ShootableButton : EnemySM
 {
     [Header("Bridge Script References")]
     [SerializeField] SlidingBridge slidingBridge;
-    [SerializeField] TimedBridge timedBridge;
+    [SerializeField] ShootOpenDoor shootOpenDoor;
 
     [Header("Button Settings")]
-    [SerializeField] private bool isTimed = false;
+    //[SerializeField] private bool isTimed = false;
 
     [Header("Button Feedback")]
     [SerializeField] private SpriteRenderer buttonRenderer;
@@ -27,14 +27,17 @@ public class ShootableButton : EnemySM
         Debug.Log("ActivateButton called on: " + gameObject.name);
 
         //Determines which bridge it controls depending on what it is set for
-        if (isTimed)
+      /*  if (isTimed)
         {
             timedBridge.PauseBridge();
         }
         else
         {
             slidingBridge.SlidingButton();
-        }
+        } */
+
+        slidingBridge?.SlidingButton();
+        shootOpenDoor?.OpenDoor();
 
         //Changes the button color upon activation
         if (buttonRenderer != null)
