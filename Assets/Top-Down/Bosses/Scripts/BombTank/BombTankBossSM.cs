@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BombTankBossSM : EnemySM
+public class BombTankBossSM : BossBaseSM
 {
     [SerializeField] GameObject bomb;
     public GameObject GetBomb() { return bomb; }
@@ -49,11 +49,6 @@ public class BombTankBossSM : EnemySM
     public override StateBase AttackState()
     {
         return stateRush;
-    }
-    public override StateBase DeathState()
-    {
-        GameManager.Instance.defeatedBombsBoss = true;
-        return base.DeathState();
     }
 
     public override void InstantiateStates()

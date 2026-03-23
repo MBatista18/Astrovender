@@ -51,7 +51,7 @@ public class PlayerCombat : MonoBehaviour
     //Handles the shoot button
     public void Shoot()
     {
-        if (!GameManager.Instance.collectedGun) { return; }
+        if (!GameManager.Instance.currentdataObj.hasGun) { return; }
 
         if (PlayerManager.ammoCount <= 0) { return; }
         else { PlayerManager.ammoCount--; }
@@ -71,7 +71,7 @@ public class PlayerCombat : MonoBehaviour
     //Handles the bomb button
     public void Bomb()
     {
-        if (!GameManager.Instance.collectedBombs) { return; }
+        if (!GameManager.Instance.currentdataObj.hasBombs) { return; }
 
         if (PlayerManager.bombCount <= 0) { return; }
         else { PlayerManager.bombCount--; }

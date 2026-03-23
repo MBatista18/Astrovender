@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
 
     public static void ModifyOxygenLevel(int val, bool bypassInvulnerabilityCheck, Vector3 position)
     {
-        if (GameManager.Instance.collectedShield && PlayerManager.ShieldCanDefend(AssetCall.instance.playerSM.transform.position, position, AssetCall.instance.playerSM.GetFacingDirection()))
+        if (GameManager.Instance.currentdataObj.hasShield && PlayerManager.ShieldCanDefend(AssetCall.instance.playerSM.transform.position, position, AssetCall.instance.playerSM.GetFacingDirection()))
         {
             if (!bypassInvulnerabilityCheck) // It's bad practice to just copy the code over to here, but it probably works, so I'll just do it I guess
             {

@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-public class GunBossSM : EnemySM
+public class GunBossSM : BossBaseSM
 {
     [SerializeField] GameObject[] DungeonWalls;
     [SerializeField] GameObject bullet;
@@ -53,12 +53,6 @@ public class GunBossSM : EnemySM
         animator.Play("Head_Knockback", 1);
 
         stateMove.SetWasAttackedTrue();
-    }
-
-    public override StateBase DeathState()
-    {
-        GameManager.Instance.defeatedGunsBoss = true;
-        return base.DeathState();
     }
 
     public override void InstantiateStates()

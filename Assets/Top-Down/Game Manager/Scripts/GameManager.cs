@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour, ISaveable
 {
     public static GameManager Instance;
 
-    [HideInInspector] public int CurrentDay { get; private set; } = 0;
+    /*[HideInInspector] public int CurrentDay { get; private set; } = 0;
     [HideInInspector] public int CurrentCoins { get; private set; } = 0;
     [HideInInspector] public int CurrentGems { get; private set; } = 0;
 
@@ -25,7 +25,13 @@ public class GameManager : MonoBehaviour, ISaveable
     [HideInInspector] public bool collectedShield;
 
     [HideInInspector] public bool defeatedBombsBoss;
-    [HideInInspector] public bool defeatedGunsBoss;
+    [HideInInspector] public bool defeatedGunsBoss;*/
+
+    public int collectedCoins;
+    public int collectedGems;
+
+    public DataObj currentdataObj = new DataObj("");
+    public DataObj startingDataObj = new DataObj("");
 
     bool progressSuccessful;
     public bool GetProgressSuccessful() { return progressSuccessful; }
@@ -42,13 +48,6 @@ public class GameManager : MonoBehaviour, ISaveable
         {
             Destroy(gameObject); // Destroy duplicate GameManager if another instance already exists
         }
-
-        // Debug Purposes
-        /* if (player != null)
-        {
-            playerDebug = player.GetComponent<PlayerStatusTest>();
-            playerDebug.OnPlayerStatusUpdate += Progress;
-        }*/
     }
 
     void Start()
@@ -60,22 +59,30 @@ public class GameManager : MonoBehaviour, ISaveable
     {
         if (success)
         {
-            CurrentGems += collectedGems;
-            CurrentCoins += collectedCoins;
+            /*currentdataObj.coins += collectedGems;
+            currentdataObj.coins += collectedCoins;
 
             if (PermaCollectedBombs == false) { PermaCollectedBombs = collectedBombs; }
             if (PermaCollectedGun == false) { PermaCollectedGun = collectedGun; }
             if (PermaCollectedShield == false) { PermaCollectedShield = collectedShield; }
 
             if (PermaDefeatedBombsBoss == false) { PermaDefeatedBombsBoss = defeatedBombsBoss; }
-            if (PermaDefeatedGunsBoss == false) { PermaDefeatedGunsBoss = defeatedGunsBoss; }
+            if (PermaDefeatedGunsBoss == false) { PermaDefeatedGunsBoss = defeatedGunsBoss; }*/
+
+            currentdataObj.coins += collectedCoins;
+            currentdataObj.gems += collectedGems;
         }
         else
         {
+            startingDataObj.day = currentdataObj.day; // saves the day count but resets everything else before saving.
+            currentdataObj = startingDataObj;
+
             Debug.Log("Day was failed. Progress lost");
         }
 
         progressSuccessful = success;
+
+        SaveManager.Instance.Save(this);
 
         //StartDay();
     }
@@ -83,9 +90,9 @@ public class GameManager : MonoBehaviour, ISaveable
     public void StartDay()
     {
         IncrementDay();
-        Debug.Log("A new day has started. Current Day: " + CurrentDay);
-        
-        collectedCoins = 0;
+        //Debug.Log("A new day has started. Current Day: " + 1CurrentDay);
+
+        /*collectedCoins = 0;
         collectedGems = 0;
 
         collectedBombs = PermaCollectedBombs;
@@ -93,16 +100,20 @@ public class GameManager : MonoBehaviour, ISaveable
         collectedShield = PermaCollectedShield;
 
         defeatedBombsBoss = PermaDefeatedBombsBoss;
-        defeatedGunsBoss = PermaDefeatedGunsBoss;
+        defeatedGunsBoss = PermaDefeatedGunsBoss;*/
+
+        startingDataObj = currentdataObj;
 
         PlayerManager.ResetPlayerValues();
         PlayerManager.playerWorldSpawn = new Vector3(10, 23);
-        SaveManager.Instance.Save(this);
+        //SaveManager.Instance.Save(this);
     }
 
     public void IncrementDay(int value = 1)
     {
-        CurrentDay += value;
+        currentdataObj.day += value;
+        collectedCoins = 0;
+        collectedGems = 0;
     }
 
     public void IncrementCoins(int value = 1)
@@ -131,7 +142,7 @@ public class GameManager : MonoBehaviour, ISaveable
         GameData data = saveData.gameData;
         if (data != null)
         {
-            CurrentDay = data.day;
+            /*CurrentDay = data.day;
             CurrentCoins = data.coins;
             CurrentGems = data.gems;
 
@@ -140,7 +151,11 @@ public class GameManager : MonoBehaviour, ISaveable
             PermaCollectedBombs = data.hasBombs;
 
             PermaDefeatedBombsBoss = data.deafeatedBombsBoss;
-            PermaDefeatedGunsBoss = data.deafeatedGunsBoss;
+            PermaDefeatedGunsBoss = data.deafeatedGunsBoss;*/
+
+            currentdataObj = saveData.gameData.data;
+            currentdataObj.coins = 0;
+            currentdataObj.gems = 0;
         }
     }
 }

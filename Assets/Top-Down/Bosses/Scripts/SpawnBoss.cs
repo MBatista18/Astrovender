@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpawnBoss : MonoBehaviour
 {
@@ -13,7 +14,9 @@ public class SpawnBoss : MonoBehaviour
 
     private void Start()
     {
-        if (GameManager.Instance.defeatedBombsBoss)
+        //if (GameManager.Instance.defeatedBombsBoss)
+
+        if (GameManager.Instance.currentdataObj.dungeons[SceneManager.GetActiveScene().name].defeatedBoss)
         {
             Destroy(transform.parent.gameObject);
         }

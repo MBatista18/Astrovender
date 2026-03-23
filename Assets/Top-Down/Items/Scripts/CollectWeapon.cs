@@ -8,9 +8,9 @@ public class CollectWeapon : MonoBehaviour
 
     private void Start()
     {
-        if ((gun && GameManager.Instance.collectedGun) ||
-            (shield && GameManager.Instance.collectedShield) ||
-            (bomb && GameManager.Instance.collectedBombs)) { Destroy(gameObject); }
+        if ((gun && GameManager.Instance.currentdataObj.hasGun) ||
+            (shield && GameManager.Instance.currentdataObj.hasShield) ||
+            (bomb && GameManager.Instance.currentdataObj.hasBombs)) { Destroy(gameObject); }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -20,9 +20,9 @@ public class CollectWeapon : MonoBehaviour
             return;
         }
 
-        if (gun) { GameManager.Instance.collectedGun = true; }
-        if (bomb) { GameManager.Instance.collectedBombs = true; }
-        if (shield) { GameManager.Instance.collectedShield = true; }
+        if (gun) { GameManager.Instance.currentdataObj.hasGun = true; }
+        if (bomb) { GameManager.Instance.currentdataObj.hasBombs = true; }
+        if (shield) { GameManager.Instance.currentdataObj.hasShield = true; }
 
         Destroy(gameObject);
     }

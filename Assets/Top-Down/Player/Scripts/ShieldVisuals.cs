@@ -25,7 +25,7 @@ public class ShieldVisuals : MonoBehaviour
         bool showSprite = true;
 
         if (PlayerManager.GetCurrentShieldHealth() <= 0) { showSprite = false; }
-        if (!GameManager.Instance.collectedShield) { showSprite = false; }
+        if (!GameManager.Instance.currentdataObj.hasShield) { showSprite = false; }
 
         spriteRenderer.color = new Color(1, 1, 1, showSprite ? 1 : 0);
         animator.enabled = showSprite;

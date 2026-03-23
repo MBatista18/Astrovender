@@ -1,6 +1,21 @@
+using System.Collections.Generic;
+
 [System.Serializable]
 public class GameData
 {
+    public DataObj data = new DataObj("");
+    
+    public GameData(GameManager gameManager)
+    {
+        data = gameManager.currentdataObj;
+    }
+}
+
+[System.Serializable]
+public struct DataObj
+{
+    public string saveName; // this is useless, c# wouldn't let me compile without a parameter in the constructor, however
+
     public int day;
     public int coins;
     public int gems;
@@ -9,20 +24,46 @@ public class GameData
     public bool hasGun;
     public bool hasBombs;
 
-    public bool deafeatedBombsBoss;
-    public bool deafeatedGunsBoss;
+    public List<string> saveObstaclesGameWorld;
 
-    public GameData(GameManager gameManager)
+    public Dictionary<string, DungeonDatObj> dungeons;
+
+    public DataObj(string _saveName)
     {
-        day = gameManager.CurrentDay;
-        gems = gameManager.CurrentGems;
-        coins = gameManager.CurrentCoins;
+        saveName = _saveName;
 
-        hasShield = gameManager.PermaCollectedShield;
-        hasGun = gameManager.PermaCollectedGun;
-        hasBombs = gameManager.PermaCollectedBombs;
+        day = 0;
+        coins = 0;
+        gems = 0;
 
-        deafeatedBombsBoss = gameManager.PermaDefeatedBombsBoss;
-        deafeatedGunsBoss = gameManager.PermaDefeatedGunsBoss;
+        hasShield = false;
+        hasGun = false;
+        hasBombs = false;
+
+        saveObstaclesGameWorld = new List<string>();
+
+        dungeons = new Dictionary<string, DungeonDatObj>
+        {
+           {"Dungeon", new DungeonDatObj("Dungeon") },
+           {"Rocky Dungeon", new DungeonDatObj("Rocky Dungeon") },
+           {"Beach Dungeon", new DungeonDatObj("Beach Dungeon") }
+        };
+    }
+}
+[System.Serializable]
+public struct DungeonDatObj
+{
+    string sceneName;  // this is useless, c# wouldn't let me compile without a parameter in the constructor, however
+
+    public bool defeatedBoss;
+    public List<string> saveObstacles;
+    public bool foundMap;
+
+    public DungeonDatObj(string _sceneName)
+    {
+        sceneName = _sceneName;
+        defeatedBoss = false;
+        saveObstacles = new List<string>();
+        foundMap = false;
     }
 }

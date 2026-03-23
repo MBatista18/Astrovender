@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ChargingBossSM : EnemySM
+public class ChargingBossSM : BossBaseSM
 {
     ChargingBossStateBurrow stateBurrow;
     public ChargingBossStateBurrow GetStateBurrow() { return stateBurrow; }

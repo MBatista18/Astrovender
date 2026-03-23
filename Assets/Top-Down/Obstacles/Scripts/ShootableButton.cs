@@ -8,6 +8,17 @@ public class ShootableButton : EnemySM
     [SerializeField] SlidingBridge slidingBridge;
     [SerializeField] ShootOpenDoor shootOpenDoor;
 
+    [SerializeField] string uniqueID;
+    public string GetUniqueID() { return uniqueID + "_" + gameObject.name; }
+    public override StateBase InitialState()
+    {
+        if (GameManager.Instance.currentdataObj.saveObstaclesGameWorld.Contains(GetUniqueID()))
+        {
+            PainReactions();
+        }
+        return base.InitialState();
+    }
+
     [Header("Button Settings")]
     //[SerializeField] private bool isTimed = false;
 
@@ -45,5 +56,7 @@ public class ShootableButton : EnemySM
             buttonRenderer.sprite = activatedSprite;
             //buttonRenderer.color = activatedColor;
         }
+
+        GameManager.Instance.currentdataObj.saveObstaclesGameWorld.Add(GetUniqueID());
     }
 }

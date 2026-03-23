@@ -34,14 +34,14 @@ public class SetHUDText : MonoBehaviour
 
     public void RefreshCollectiblesUI()
     {
-        ammoCount.alpha = GameManager.Instance.collectedGun ? 1 : 0;
-        bombCount.alpha = GameManager.Instance.collectedBombs ? 1 : 0;
-        shieldCount.alpha = GameManager.Instance.collectedShield ? 1 : 0;
+        ammoCount.alpha = GameManager.Instance.currentdataObj.hasGun ? 1 : 0;
+        bombCount.alpha = GameManager.Instance.currentdataObj.hasBombs ? 1 : 0;
+        shieldCount.alpha = GameManager.Instance.currentdataObj.hasShield ? 1 : 0;
     }
 
     public void RefreshDailyValuesUI()
     {
-        SetDayText(GameManager.Instance.CurrentDay);
+        SetDayText(GameManager.Instance.currentdataObj.day);
         SetCoinText(GameManager.Instance.collectedCoins);
         SetGemText(GameManager.Instance.collectedGems);
     }
