@@ -22,4 +22,15 @@ public class PlayerMovement : MonoBehaviour
         _rb.linearVelocity = _movement * _moveSpeed;
         
     }
+
+    public void StopMovement()
+    {
+        _moveSpeed = 0.0f;
+    }
+
+    public void StartMovement()
+    {
+        _moveSpeed = 5.0f;
+    }
+
 }

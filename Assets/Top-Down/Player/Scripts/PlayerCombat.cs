@@ -12,6 +12,7 @@ public class PlayerCombat : MonoBehaviour
     public GameObject swordObj;     //Gets the sword game object
     public Sword swordHitBox;       //Gets the Sword script from the sword game object
 
+
     [Header("Timing")]
     public float swordActiveTime = 0.12f;
     public float swordCooldown = 0.25f;
@@ -90,6 +91,7 @@ public class PlayerCombat : MonoBehaviour
     public void SwordAttack()
     {
         //Debug.Log("Sword attack trigger");
+        sm._moveSpeed = 0.0f;
         if (!canSwordAttack) return;
         StartCoroutine(SwingSword());
     }
@@ -109,7 +111,8 @@ public class PlayerCombat : MonoBehaviour
         swordObj.SetActive(false);
 
         //yield return new WaitForSeconds(swordCooldown); 
-            // I'm removing the sword cool-down because I think it feels better to not have it, though maybe we can re-implement it later -Dirk
+        // I'm removing the sword cool-down because I think it feels better to not have it, though maybe we can re-implement it later -Dirk
+        sm._moveSpeed = 5.0f;
         canSwordAttack = true;
     }
 

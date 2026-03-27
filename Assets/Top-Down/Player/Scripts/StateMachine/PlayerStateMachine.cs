@@ -4,7 +4,7 @@ public class PlayerStateMachine : StateMachineBase
 {
     #region variables
 
-    [SerializeField] private float _moveSpeed = 5f;
+    public float _moveSpeed = 5f;
     public float GetSpeed() { return _moveSpeed; }
 
     private Vector2 _movement;
@@ -144,4 +144,16 @@ public class PlayerStateMachine : StateMachineBase
 
         SetMovement(new Vector2(InputManager.Movement.x, InputManager.Movement.y));
     }
+
+    public void StopMovement()
+    {
+        _moveSpeed = 0.0f;
+    }
+
+    public void StartMovement()
+    {
+        _moveSpeed = 5.0f;
+    }
+
+
 }
