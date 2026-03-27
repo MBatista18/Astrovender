@@ -8,8 +8,8 @@ using UnityEngine.Events;
 public class SubgameBoard : MonoBehaviour
 {
     [Header("Grid")]
-    [SerializeField] int width = 6;
-    [SerializeField] int height = 6;
+    [SerializeField] int width = 5;
+    [SerializeField] int height = 7;
     [SerializeField] float cellSize = 1.0f;
     [SerializeField] Vector2 origin = Vector2.zero; // world position of (0,0) cell (bottom-left)
 
@@ -27,6 +27,7 @@ public class SubgameBoard : MonoBehaviour
     [Header("Gameplay")]
     [Tooltip("How many moves the player starts with")]
     [SerializeField] int startingMoves = 20;
+    [SerializeField] bool startOnWakeup = true;
 
     private int _nodeTypeCount = 4;
     private Node[,] _grid;
@@ -56,11 +57,10 @@ public class SubgameBoard : MonoBehaviour
 
     private void Start()
     {
-        InitializeBoard();
-        OnMovesChanged?.Invoke(_movesRemaining);
+        if (startOnWakeup) InitializeBoard(width, height);
     }
 
-    private void InitializeBoard()
+    public void InitializeBoard(int width, int height)
     {
         StopAllCoroutines();
         _boardBusy = false;
@@ -71,6 +71,8 @@ public class SubgameBoard : MonoBehaviour
 
         _grid = new Node[width, height];
         FillBoardInitial();
+
+        OnMovesChanged?.Invoke(_movesRemaining);
     }
 
     private void FillBoardInitial()
@@ -320,7 +322,7 @@ public class SubgameBoard : MonoBehaviour
 
         return matches;
     }
-    #region Overload
+    #region FindAllMatches Overload
 
     private HashSet<Node> FindAllMatches(out NodeType nodeType)
     {
@@ -459,6 +461,11 @@ public class SubgameBoard : MonoBehaviour
 
         // wait for all falling animations to complete
         yield return new WaitForSeconds(fallDuration + 0.02f);
+    }
+
+    public void SetStartOnWakeup(bool value)
+    {
+        startOnWakeup = value;
     }
 
     // ---------- Helpers for SubgameInputManager logic ----------
