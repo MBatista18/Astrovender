@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class EnemySM : StateMachineBase // this is the base for the enemy state machine. all enemies will be built off of this statemachine
 {
+    [Header("Damage Indicator")]
+    FlashOnHit flashOnHit;
+
     [Header("Health Values")]
     [SerializeField] int maxHealth;
     int health;
@@ -82,9 +85,8 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
     {
         health -= damageAmount;
 
-        if (reactToDamage && GetCurrentState() != stateHurt) { ChangeState(stateHurt); PainReactions(); } 
-            // changes enemy to state hurt; check for if the enemy is already in hurt state to prevent player from just hitting enemy relentlessly
-
+        if (reactToDamage && GetCurrentState() != stateHurt) { ChangeState(stateHurt); PainReactions(); }
+        // changes enemy to state hurt; check for if the enemy is already in hurt state to prevent player from just hitting enemy relentlessly
         if (health <= 0)
         {
             ChangeState(DeathState());
@@ -93,6 +95,7 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
 
     public virtual void PainReactions()
     {
+        flashOnHit?.FlashRed();
         return;
     }
 
@@ -133,6 +136,7 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
         playerTransform = AssetCall.instance.playerSM.transform;
         rb2D = GetComponent<Rigidbody2D>();
         shield = GetComponentInChildren<EnemyShield>();
+        flashOnHit = GetComponent<FlashOnHit>();
     }
 
     [Header("States")]
@@ -176,4 +180,5 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
         Destroy(this.gameObject);
         return base.DeathState();
     }
+
 }

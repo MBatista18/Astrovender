@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 544464880361670304}
   - component: {fileID: 5776958873077382673}
   - component: {fileID: 3653901663493211076}
+  - component: {fileID: 3076070844328611370}
   m_Layer: 7
   m_Name: Eyeball Enemy
   m_TagString: Enemy
@@ -179,11 +180,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfbb305d18d419f4994e258de96da75c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChaserSM
+  facingDirection: 1
   maxHealth: 5
   damageReactionTime: 0.2
+  reactToDamage: 1
+  shielded: 0
   movementSpeed: 2.5
   patrolRadius: 3
   detectionRadius: 3
+  dropsCoinsGems: 1
+--- !u!114 &3076070844328611370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2554516024548237133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e26879da27f1c949884aed6f5f1b0f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlashOnHit
+  flashDuration: 0.1
 --- !u!1 &8355946509379703373
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,3 +286,4 @@ MonoBehaviour:
   damageVal: -5
   attackCooldown: 1.5
   knocksPlayer: 0
+  knockDuration: 0.5

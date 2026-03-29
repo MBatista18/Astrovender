@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 3037580634137164069}
   - component: {fileID: 6929763728415591852}
   - component: {fileID: 6238134980338189712}
+  - component: {fileID: 8662026538500369979}
   m_Layer: 7
   m_Name: ShielderRobot Enemy
   m_TagString: Enemy
@@ -463,3 +464,16 @@ MonoBehaviour:
   dropsCoinsGems: 1
   chargeTime: 1
   rushSpeed: 7
+--- !u!114 &8662026538500369979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8645131886166869560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e26879da27f1c949884aed6f5f1b0f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlashOnHit
+  flashDuration: 0.1

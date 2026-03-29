@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 8724478756965088945}
   - component: {fileID: 5343098976086316176}
   - component: {fileID: 5750249493521034908}
+  - component: {fileID: 835661406978961872}
   m_Layer: 7
   m_Name: PelletShooter
   m_TagString: Enemy
@@ -329,6 +330,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &835661406978961872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5069761947633674494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e26879da27f1c949884aed6f5f1b0f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlashOnHit
+  flashDuration: 0.1
 --- !u!1 &8922600397679396533
 GameObject:
   m_ObjectHideFlags: 0

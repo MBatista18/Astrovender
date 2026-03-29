@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BossBaseSM : EnemySM
 {
+    
     public override StateBase DeathState()
     {
         DungeonDatObj dataObj;

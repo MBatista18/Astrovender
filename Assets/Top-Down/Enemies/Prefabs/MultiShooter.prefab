@@ -84,6 +84,7 @@ MonoBehaviour:
   damageVal: -10
   attackCooldown: 1.5
   knocksPlayer: 0
+  knockDuration: 0.5
 --- !u!1 &7655881856336308863
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +98,7 @@ GameObject:
   - component: {fileID: 359897918419260434}
   - component: {fileID: 652699324549192024}
   - component: {fileID: 2919229889214646744}
+  - component: {fileID: 1813190425638914249}
   m_Layer: 7
   m_Name: MultiShooter
   m_TagString: Enemy
@@ -266,9 +268,25 @@ MonoBehaviour:
   facingDirection: 1
   maxHealth: 20
   damageReactionTime: 0
+  reactToDamage: 1
+  shielded: 0
   movementSpeed: 2
   patrolRadius: 3
   detectionRadius: 5
+  dropsCoinsGems: 1
   bullet: {fileID: 2824927569778295297, guid: 6c7e0e2b28da37c46a63f2e30082646a, type: 3}
   cardinalSprite: {fileID: 21300000, guid: bad4dfd3bee032a4e965b5e4ebbd56d0, type: 3}
   ordinalSprite: {fileID: 21300000, guid: 7f344d2c7f5fe2c4082d152b2fc67aad, type: 3}
+--- !u!114 &1813190425638914249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7655881856336308863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e26879da27f1c949884aed6f5f1b0f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlashOnHit
+  flashDuration: 0.1

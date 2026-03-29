@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PelletRobotSM : EnemySM
 {
+    
     PelletRobotStateAttack stateAttack;
     public override StateBase InitialState()
     {

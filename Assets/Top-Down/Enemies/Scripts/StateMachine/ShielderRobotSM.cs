@@ -14,6 +14,7 @@ public class ShielderRobotSM : EnemySM
     ShielderRobotStateRush stateRush;
     public ShielderRobotStateRush GetStateRush() { return stateRush; }
     ShielderRobotStatePatrol statePatrol;
+
     public override void InstantiateStates()
     {
         base.InstantiateStates();

@@ -3,6 +3,7 @@ using UnityEngine;
 public class ChaserSM : EnemySM
 {
     ChaserStateChase stateChase;
+
     public override void InstantiateStates()
     {
         base.InstantiateStates();
