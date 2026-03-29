@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 public class GunBossSM : BossBaseSM
 {
+
     [SerializeField] GameObject[] DungeonWalls;
     [SerializeField] GameObject bullet;
 

@@ -145,6 +145,7 @@ public class PlayerStateMachine : StateMachineBase
         SetMovement(new Vector2(InputManager.Movement.x, InputManager.Movement.y));
     }
 
+    //Functions to stop and start movement
     public void StopMovement()
     {
         _moveSpeed = 0.0f;

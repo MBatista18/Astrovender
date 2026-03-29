@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MultiShotRobotSM : EnemySM
 {
+    
     [SerializeField] GameObject bullet;
     public GameObject GetBullet() { return bullet; }
 

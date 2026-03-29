@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class ShootableButton : EnemySM
 {
+
     [Header("Bridge Script References")]
     [SerializeField] SlidingBridge slidingBridge;
     [SerializeField] ShootOpenDoor shootOpenDoor;
