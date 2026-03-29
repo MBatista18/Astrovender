@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PelletRobotSM
   facingDirection: 1
+  deathEffectPrefab: {fileID: 3732931278602249674, guid: ac8b2772f1a0bb546b7911c63e5c6114, type: 3}
   maxHealth: 2
   damageReactionTime: 0
   reactToDamage: 1
