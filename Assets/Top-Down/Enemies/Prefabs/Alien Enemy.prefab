@@ -267,6 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChaserSM
   facingDirection: 1
+  deathEffectPrefab: {fileID: 3732931278602249674, guid: ac8b2772f1a0bb546b7911c63e5c6114, type: 3}
   maxHealth: 15
   damageReactionTime: 0.2
   reactToDamage: 1

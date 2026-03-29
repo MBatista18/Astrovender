@@ -4,6 +4,8 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
 {
     [Header("Damage Indicator")]
     FlashOnHit flashOnHit;
+    [SerializeField] GameObject deathEffectPrefab;
+    public GameObject GetDeathEffect() { return deathEffectPrefab; }
 
     [Header("Health Values")]
     [SerializeField] int maxHealth;
@@ -162,6 +164,8 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
 
     public override StateBase DeathState()
     {
+        Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
+
         if (dropsCoinsGems)
         {
             if (Random.Range(0, 10) <= 7)
