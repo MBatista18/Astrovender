@@ -29,7 +29,7 @@ public class MapButtonBehavior : MonoBehaviour
 
         button.interactable = isInteractible;
 
-        Debug.Log("Value = " + isInteractible);
+        //Debug.Log("Value = " + isInteractible);
     }
 
     public void OnInteract()

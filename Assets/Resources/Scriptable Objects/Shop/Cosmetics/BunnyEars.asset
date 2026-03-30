@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f11d728d08693a418a61ada06f7e362, type: 3}
+  m_Name: BunnyEars
+  m_EditorClassIdentifier: Assembly-CSharp::Cosmetic_ShopSO
+  Name: Bunny Ears
+  Sprite: {fileID: 21300000, guid: c585dd06eaf9b864f9622c9ffcc06439, type: 3}
+  Description: Put a festive foot forward and grab your Easter egg basket when you
+    don these yellow rabbit ears! After all, who doesn't love the yellow rabbit?
+  cost:
+    coins: 40
+    gems: 2
+  backFacingHat: {fileID: 21300000, guid: a2c4d2f7a806e3645a38c7a613a28415, type: 3}
+  leftFacingHat: {fileID: 21300000, guid: 136783d6447887942ace05a562ee4a47, type: 3}
+  rightFacingHat: {fileID: 21300000, guid: 52c6da6cc3d73144f8a9d85c30127f07, type: 3}

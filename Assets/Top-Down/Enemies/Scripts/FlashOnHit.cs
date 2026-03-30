@@ -28,7 +28,7 @@ public class FlashOnHit : MonoBehaviour
 
     public void FlashRed()
     {
-        Debug.Log("Flashing Red");
+        //Debug.Log("Flashing Red");
 
         if (flashCoroutine != null)
         {

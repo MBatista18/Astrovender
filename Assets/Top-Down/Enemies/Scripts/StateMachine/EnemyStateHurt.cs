@@ -17,7 +17,7 @@ public class EnemyStateHurt : StateBase
     {
         base.thisStart();
 
-        Debug.Log("Hurt");
+        //Debug.Log("Hurt");
 
         timer = sm.GetDamageReactionTime();
     }

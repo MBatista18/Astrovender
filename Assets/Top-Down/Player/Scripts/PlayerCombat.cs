@@ -27,12 +27,6 @@ public class PlayerCombat : MonoBehaviour
         sm = GetComponent<PlayerStateMachine>();
     }
 
-    private void Start()
-    {
-        AssetCall.instance.HUDText.SetAmmoText(PlayerManager.ammoCount);
-        AssetCall.instance.HUDText.SetBombText(PlayerManager.bombCount);
-    }
-
     // attach combat functions to their respective button inputs in InputManager.cs
     private void OnEnable()
     {
@@ -57,8 +51,6 @@ public class PlayerCombat : MonoBehaviour
         if (PlayerManager.ammoCount <= 0) { return; }
         else { PlayerManager.ammoCount--; }
 
-        AssetCall.instance.HUDText.SetAmmoText(PlayerManager.ammoCount);
-
         if (bulletObj)
         {
             Debug.Log("Spawning bullet");
@@ -76,8 +68,6 @@ public class PlayerCombat : MonoBehaviour
 
         if (PlayerManager.bombCount <= 0) { return; }
         else { PlayerManager.bombCount--; }
-
-        AssetCall.instance.HUDText.SetBombText(PlayerManager.bombCount);
 
         if (bombObj)
         {

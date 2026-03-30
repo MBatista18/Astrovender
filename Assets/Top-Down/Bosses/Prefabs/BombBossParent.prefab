@@ -84,6 +84,7 @@ MonoBehaviour:
   damageVal: -10
   attackCooldown: 1.5
   knocksPlayer: 1
+  knockDuration: 0.5
 --- !u!1 &774132934811346825
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,11 +830,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BombTankBossSM
   facingDirection: 1
+  deathEffectPrefab: {fileID: 0}
   maxHealth: 150
   damageReactionTime: 0.5
+  reactToDamage: 1
+  shielded: 0
   movementSpeed: 2
   patrolRadius: 0
   detectionRadius: 0
+  dropsCoinsGems: 0
   bomb: {fileID: 313781609436775413, guid: 348c675e098aa594ab735a65bcb142f2, type: 3}
   DungeonWalls:
   - {fileID: 8558732064590553596}

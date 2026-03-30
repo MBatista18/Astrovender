@@ -668,6 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChargingBossSM
   facingDirection: 1
+  deathEffectPrefab: {fileID: 0}
   maxHealth: 300
   damageReactionTime: 0
   reactToDamage: 0
@@ -675,7 +676,7 @@ MonoBehaviour:
   movementSpeed: 7
   patrolRadius: 3
   detectionRadius: 5
-  dropsCoinsGems: 1
+  dropsCoinsGems: 0
   burrowingTime: 4
   burrowingSpeed: 3
   stuntime: 5

@@ -30,6 +30,10 @@ public class AssetCall : MonoBehaviour
 
     public GameObject coin;
     public GameObject gem;
+    public GameObject oxygen;
+    public GameObject shield;
+    public GameObject ammo;
+    public GameObject bomb;
 
     public GameObject explosion;
 
@@ -39,6 +43,10 @@ public class AssetCall : MonoBehaviour
 
         coin = Resources.Load("Prefabs/Items/Coin") as GameObject;
         gem = Resources.Load("Prefabs/Items/Gem") as GameObject;
+        oxygen = Resources.Load("Prefabs/Items/Oxygen") as GameObject;
+        shield = Resources.Load("Prefabs/Items/ShieldEnergy") as GameObject;
+        ammo = Resources.Load("Prefabs/Items/Ammo") as GameObject;
+        bomb = Resources.Load("Prefabs/Items/Bomb") as GameObject;
 
         explosion = Resources.Load("Prefabs/Obstacles/ExplosionObj") as GameObject;
 

@@ -37,7 +37,7 @@ public class PlayerHealth : MonoBehaviour
             if (val < 0 && !canBeHurt) { Debug.Log("No Damage"); return; } else { canBeHurt = false; Debug.Log("Damage"); }
         }
 
-        PlayerManager.currentOxygenLevel += val;
+        PlayerManager.currentOxygenLevel = Mathf.Clamp(PlayerManager.currentOxygenLevel + val, 0, PlayerManager.GetMaxOxygenLevel());
 
         if (PlayerManager.currentOxygenLevel <= 0)
         {
@@ -64,9 +64,6 @@ public class PlayerHealth : MonoBehaviour
                 canBeHurt = true;
             }
         }
-
-        AssetCall.instance.HUDText.SetOxygenText(PlayerManager.currentOxygenLevel);
-        AssetCall.instance.HUDText.SetShieldText(PlayerManager.GetCurrentShieldHealth());
     }
 
     IEnumerator oxygenCountDown()

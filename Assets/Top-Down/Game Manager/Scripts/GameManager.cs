@@ -69,8 +69,8 @@ public class GameManager : MonoBehaviour, ISaveable
             if (PermaDefeatedBombsBoss == false) { PermaDefeatedBombsBoss = defeatedBombsBoss; }
             if (PermaDefeatedGunsBoss == false) { PermaDefeatedGunsBoss = defeatedGunsBoss; }*/
 
-            currentdataObj.coins += collectedCoins;
-            currentdataObj.gems += collectedGems;
+            ModifyDataCoinCountBy(collectedCoins);
+            ModifyDataGemCountBy(collectedGems);
         }
         else
         {
@@ -82,9 +82,24 @@ public class GameManager : MonoBehaviour, ISaveable
 
         progressSuccessful = success;
 
-        SaveManager.Instance.Save(this);
+        CallSaveGame();
+    }
 
-        //StartDay();
+    public void ModifyDataCoinCountBy(int val)
+    {
+        currentdataObj.coins += val;
+        currentdataObj.coins = Mathf.Clamp(currentdataObj.coins, 0, 999999999);
+    }
+
+    public void ModifyDataGemCountBy(int val)
+    {
+        currentdataObj.gems += val;
+        currentdataObj.gems = Mathf.Clamp(currentdataObj.gems, 0, 999999999);
+    }
+
+    public void CallSaveGame()
+    {
+        SaveManager.Instance.Save(this);
     }
 
     public void StartDay()
@@ -119,12 +134,14 @@ public class GameManager : MonoBehaviour, ISaveable
     public void IncrementCoins(int value = 1)
     {
         collectedCoins += value;
+        Mathf.Clamp(collectedCoins, 0, 999999999);
         AssetCall.instance.HUDText.RefreshDailyValuesUI();
     }
 
     public void IncrementGems(int value = 1)
     {
         collectedGems += value;
+        Mathf.Clamp(collectedGems, 0, 999999999);
         AssetCall.instance.HUDText.RefreshDailyValuesUI();
     }
 

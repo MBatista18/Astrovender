@@ -33,7 +33,7 @@ public class DamagePlayerOnCollision : MonoBehaviour
 
                 // Set next allowed attack time
                 nextAttackTime = Time.time + attackCooldown;
-                Debug.Log("Attack is in cooldown");
+                //Debug.Log("Attack is in cooldown");
 
             }
            

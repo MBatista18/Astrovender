@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f11d728d08693a418a61ada06f7e362, type: 3}
+  m_Name: Crown
+  m_EditorClassIdentifier: Assembly-CSharp::Cosmetic_ShopSO
+  Name: Crown
+  Sprite: {fileID: 21300000, guid: 34a00348a9e02e84787afed831393c6a, type: 3}
+  Description: Become royalty and rule over this unknown planet. If any alien doesn't
+    know who's in charge, just point to the crown.
+  cost:
+    coins: 200
+    gems: 5
+  backFacingHat: {fileID: 21300000, guid: f90235d3e1e4fbd4c83b9f296e8a02e9, type: 3}
+  leftFacingHat: {fileID: 21300000, guid: f7bc704febe3b1e4a9e76a8257451b3f, type: 3}
+  rightFacingHat: {fileID: 21300000, guid: 5c6ff19d29b69234eafb89f827c9053c, type: 3}

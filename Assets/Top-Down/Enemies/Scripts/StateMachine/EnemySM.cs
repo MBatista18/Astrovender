@@ -168,21 +168,147 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
 
         if (dropsCoinsGems)
         {
-            if (Random.Range(0, 10) <= 7)
-            { //spawn coin
-                Instantiate(AssetCall.instance.coin, transform.position + (Vector3)Random.insideUnitCircle * .3f, Quaternion.identity);
-            }
-            else
-            {
-                if (Random.Range(0, 10) <= 3)
-                { //spawn gem
-                    Instantiate(AssetCall.instance.gem, transform.position + (Vector3)Random.insideUnitCircle * .3f, Quaternion.identity);
-                }
-            }
+            OnDeathCall();
         }
 
         Destroy(this.gameObject);
         return base.DeathState();
+    }
+
+    void OnDeathCall()
+    {
+        /*if (Random.Range(0, 10) <= 7)
+        { //spawn coin
+            Instantiate(AssetCall.instance.coin, transform.position + (Vector3)Random.insideUnitCircle * .3f, Quaternion.identity);
+        }
+        else
+        {
+            if (Random.Range(0, 10) <= 3)
+            { //spawn gem
+                Instantiate(AssetCall.instance.gem, transform.position + (Vector3)Random.insideUnitCircle * .3f, Quaternion.identity);
+            }
+        }*/
+
+        int coinLikelihood=0;
+        int gemLikelihood=0;
+        int oxygenLikelihood=0;
+        int ammoLikelihood=0;
+        int bombLikelihood=0;
+        int shieldLikelihood=0;
+
+        switch (GameManager.Instance.currentdataObj.enemyDropLevel)
+        {
+            case 0:
+                coinLikelihood = 42;
+                gemLikelihood = 3;
+                break;
+            case 1:
+                coinLikelihood = 35;
+                gemLikelihood = 3;
+                oxygenLikelihood = 15;
+                break;
+            case 2:
+                coinLikelihood = 35;
+                gemLikelihood = 5;
+                oxygenLikelihood = 17;
+                bombLikelihood = 5;
+                break;
+            case 3:
+                coinLikelihood = 30;
+                gemLikelihood = 5;
+                oxygenLikelihood = 20;
+                bombLikelihood = 10;
+                ammoLikelihood = 5;
+                break;
+            case 4:
+                coinLikelihood = 30;
+                gemLikelihood = 8;
+                oxygenLikelihood = 20;
+                bombLikelihood = 10;
+                ammoLikelihood = 10;
+                shieldLikelihood = 5;
+                break;
+            case 5:
+                coinLikelihood = 25;
+                gemLikelihood = 8;
+                oxygenLikelihood = 20;
+                bombLikelihood = 15;
+                ammoLikelihood = 15;
+                shieldLikelihood = 15;
+                break;
+        }
+
+
+        int RandomVal = Random.Range(0, 101);
+        int valueCheck = coinLikelihood;
+
+        Debug.Log("RandomVal = " + RandomVal + "; Case = lvl " + GameManager.Instance.currentdataObj.enemyDropLevel);
+
+        if (RandomVal <= valueCheck)
+        {
+            Instantiate(AssetCall.instance.coin, transform.position + (Vector3)Random.insideUnitCircle * .3f, Quaternion.identity);
+            return;
+        }
+
+        Debug.Log(RandomVal + " > " + valueCheck);
+
+        valueCheck += gemLikelihood;
+
+        if (RandomVal <= valueCheck)
+        {
+            Instantiate(AssetCall.instance.gem, transform.position + (Vector3)Random.insideUnitCircle * .3f, Quaternion.identity);
+            return;
+        }
+
+        Debug.Log(RandomVal + " > " + valueCheck);
+
+        if (oxygenLikelihood <= 0) { return; }
+
+        valueCheck += oxygenLikelihood;
+
+        if (RandomVal <= valueCheck)
+        {
+            Instantiate(AssetCall.instance.oxygen, transform.position + (Vector3)Random.insideUnitCircle * .3f, Quaternion.identity);
+            return;
+        }
+
+        Debug.Log("Failed Oxygen: " + RandomVal + " > " + valueCheck);
+
+        if (bombLikelihood <= 0) { return; }
+
+        valueCheck += bombLikelihood;
+
+        if (RandomVal <= valueCheck)
+        {
+            Instantiate(GameManager.Instance.currentdataObj.hasBombs ? AssetCall.instance.bomb : AssetCall.instance.oxygen, transform.position + (Vector3)Random.insideUnitCircle * .3f, Quaternion.identity);
+            return;
+        }
+
+        Debug.Log("Failed Bomb: " + RandomVal + " > " + valueCheck);
+
+        if (ammoLikelihood <= 0) { return; }
+
+        valueCheck += ammoLikelihood;
+
+        if (RandomVal <= valueCheck)
+        {
+            Instantiate(GameManager.Instance.currentdataObj.hasGun ? AssetCall.instance.ammo : AssetCall.instance.oxygen, transform.position + (Vector3)Random.insideUnitCircle * .3f, Quaternion.identity);
+            return;
+        }
+
+        Debug.Log("Failed Gun: " + RandomVal + " > " + valueCheck);
+
+        if (shieldLikelihood <= 0) { return; }
+
+        valueCheck += shieldLikelihood;
+
+        if (RandomVal <= valueCheck)
+        {
+            Instantiate(GameManager.Instance.currentdataObj.hasShield ? AssetCall.instance.shield : AssetCall.instance.oxygen, transform.position + (Vector3)Random.insideUnitCircle * .3f, Quaternion.identity);
+            return;
+        }
+
+        Debug.Log("Failed Shield: " + RandomVal + " > " + valueCheck);
     }
 
 }

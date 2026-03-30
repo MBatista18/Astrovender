@@ -5,29 +5,34 @@ public class PlayerManager : MonoBehaviour
 {
     public static Vector3 playerWorldSpawn = new Vector3(10,23);
     
-    static int maxOxygenlevel = 1400;
+    static int oxygenLevelMultiplier = 60;
+    public static int GetMaxOxygenLevel() { return 150 + (oxygenLevelMultiplier * GameManager.Instance.currentdataObj.oxygenLevel); }
     public static int currentOxygenLevel;
     
     public static int bombCount;
-    static int maxBombCount = 20;
+    public static void ModifyBombCount(int val) { bombCount = Mathf.Clamp(bombCount + val, 0, GetMaxBombCount()); }
+    public static int GetMaxBombCount() { return 5 + (bombCountMultiplier * GameManager.Instance.currentdataObj.bombLevel); }
+    static int bombCountMultiplier = 3;
 
     public static int ammoCount;
-    static int maxAmmoCount = 50;
+    public static void ModifyAmmoCount(int val) { ammoCount = Mathf.Clamp(ammoCount + val, 0, GetMaxAmmoCount()); }
+    public static int GetMaxAmmoCount() { return 10 + (ammoCountMultiplier * GameManager.Instance.currentdataObj.gunLevel); }
+    static int ammoCountMultiplier = 5;
 
     static int currentShieldHealth;
-    static int maxShieldHealth = 100;
-
     public static int GetCurrentShieldHealth() { return currentShieldHealth; }
-    public static int GetMaxShieldHealth() { return maxShieldHealth; }
 
-    public static void ModifyShieldHealth(int val) { currentShieldHealth = Mathf.Clamp(currentShieldHealth + val, 0, maxShieldHealth); }
+    static int shieldHealthMultiplier = 20;
+    public static int GetMaxShieldHealth() { return 40 + (shieldHealthMultiplier * GameManager.Instance.currentdataObj.shieldLevel); }
+
+    public static void ModifyShieldHealth(int val) { currentShieldHealth = Mathf.Clamp(currentShieldHealth + val, 0, GetMaxShieldHealth()); }
 
     public static void ResetPlayerValues() 
     {
-        currentOxygenLevel = maxOxygenlevel;
-        bombCount = maxBombCount;
-        ammoCount = maxAmmoCount;
-        currentShieldHealth = maxShieldHealth;
+        currentOxygenLevel = GetMaxOxygenLevel();
+        bombCount = GetMaxBombCount();
+        ammoCount = GetMaxAmmoCount();
+        currentShieldHealth = GetMaxShieldHealth();
     }
 
     private void Start()

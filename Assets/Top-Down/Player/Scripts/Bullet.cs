@@ -56,7 +56,7 @@ public class Bullet : MonoBehaviour
     //Called when another colliders enters the bullet's collider
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Bullet hit: {other.name} tag={other.tag}");
+        //Debug.Log("Bullet hit: {other.name} tag={other.tag}");
 
         //Damages only enemies
         if (other.CompareTag("Enemy"))
@@ -64,7 +64,7 @@ public class Bullet : MonoBehaviour
             //Sends a message to the enemy script telling the enemy to take damage
            // other.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
            
-            Debug.Log("Enemy takes damage");
+            //Debug.Log("Enemy takes damage");
 
             other.GetComponent<EnemySM>().TakeDamage(damage, transform.position);
             //Destroy bullet upon hit

@@ -37,6 +37,11 @@ public class SetHUDText : MonoBehaviour
         ammoCount.alpha = GameManager.Instance.currentdataObj.hasGun ? 1 : 0;
         bombCount.alpha = GameManager.Instance.currentdataObj.hasBombs ? 1 : 0;
         shieldCount.alpha = GameManager.Instance.currentdataObj.hasShield ? 1 : 0;
+
+        SetBombText(PlayerManager.bombCount);
+        SetAmmoText(PlayerManager.ammoCount);
+        SetOxygenText(PlayerManager.currentOxygenLevel);
+        SetShieldText(PlayerManager.GetCurrentShieldHealth());
     }
 
     public void RefreshDailyValuesUI()

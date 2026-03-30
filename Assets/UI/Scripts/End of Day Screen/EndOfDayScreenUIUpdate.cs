@@ -15,7 +15,7 @@ public class EndOfDayScreenUIUpdate : MonoBehaviour
 
         header.text = "End of Day " + GameManager.Instance.currentdataObj.day;
         coinCount.text = "Total Count Count: " + GameManager.Instance.currentdataObj.coins;
-        gemCount.text = "Current Gem Count: " + GameManager.Instance.currentdataObj.gems;
+        gemCount.text = "Total Gem Count: " + GameManager.Instance.currentdataObj.gems;
         deathCheck.text = "Died today? " + (GameManager.Instance.GetProgressSuccessful() ? "No" : "Yes");
     }
 }

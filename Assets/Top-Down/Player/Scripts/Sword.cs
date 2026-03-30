@@ -24,7 +24,7 @@ public class Sword : MonoBehaviour
         {
             // other.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
             other.GetComponent<EnemySM>().TakeDamage(damage, AssetCall.instance.playerSM.transform.position);
-            Debug.Log("Enemy gets hit by the sword");
+            //Debug.Log("Enemy gets hit by the sword");
         }
     }
 

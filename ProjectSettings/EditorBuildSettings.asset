@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Player End Day.unity
     guid: bcb20e72ee175cc4182729cc41b7eaa3
   - enabled: 1
+    path: Assets/Scenes/ShopScene.unity
+    guid: a2277c6db437c3244b9baed4d8130d25
+  - enabled: 1
     path: Assets/Scenes/Dungeon.unity
     guid: ef994149d1d1e3a45b3e93b709a664e8
   - enabled: 1

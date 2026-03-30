@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f11d728d08693a418a61ada06f7e362, type: 3}
+  m_Name: DuckHat
+  m_EditorClassIdentifier: Assembly-CSharp::Cosmetic_ShopSO
+  Name: Duck Hat
+  Sprite: {fileID: 21300000, guid: b6b5c748c47f85c4f92481808cc085dc, type: 3}
+  Description: A quack-alicious hat perfect for exploring the lakes of this hostile
+    planet.
+  cost:
+    coins: 50
+    gems: 2
+  backFacingHat: {fileID: 21300000, guid: 663dcca37ab5ae54993d49af954b08f7, type: 3}
+  leftFacingHat: {fileID: 21300000, guid: 202210c97b59b0949965133f95bdf74e, type: 3}
+  rightFacingHat: {fileID: 21300000, guid: d45c87478f827744b9c4389c8cea1863, type: 3}
