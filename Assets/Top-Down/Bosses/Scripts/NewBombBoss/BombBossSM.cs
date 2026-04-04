@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class BombTankBossSM : BossBaseSM
+public class BombBossSM : BossBaseSM
 {
-    [SerializeField] GameObject bomb;
-    public GameObject GetBomb() { return bomb; }
+    [SerializeField] PortManager portManager;
+    public PortManager GetPorts() { return portManager; }
 
     [SerializeField] GameObject[] DungeonWalls;
 
@@ -15,6 +15,8 @@ public class BombTankBossSM : BossBaseSM
         {
             a.SetActive(true);
         }
+
+        portManager.gameObject.SetActive(true);
     }
 
     public override void OnDisableFunctions()
@@ -24,6 +26,8 @@ public class BombTankBossSM : BossBaseSM
         {
             a.SetActive(false);
         }
+        
+        portManager.gameObject.SetActive(false);
     }
 
     Animator animator;
@@ -36,28 +40,39 @@ public class BombTankBossSM : BossBaseSM
         animator = GetComponent<Animator>();
     }
 
-    BombTankStateMove stateMove;
-    public BombTankStateMove GetStateMove() { return stateMove; }
-    
-    BombTankStatePause statePause;
+    BombBossStateHidden stateHidden;
     public override StateBase InitialState()
     {
-        return statePause;
+        return stateHidden;
     }
 
-    BombTankStateRush stateRush;
+    BombBossStateVisible stateVisible;
     public override StateBase AttackState()
     {
-        return stateRush;
+        return stateVisible;
     }
+
+    BombBossStateVulnerable stateVulnerable;
+    public BombBossStateVulnerable GetVulnerableState() { return stateVulnerable; }
 
     public override void InstantiateStates()
     {
         base.InstantiateStates();
 
-        stateMove = new BombTankStateMove(this);
-        statePause = new BombTankStatePause(this);
-        stateRush = new BombTankStateRush(this);
+        stateHidden = new BombBossStateHidden(this);
+        stateVisible = new BombBossStateVisible(this);
+        stateVulnerable = new BombBossStateVulnerable(this);
+    }
+
+    private Collider2D[] colliders;
+    private SpriteRenderer spriteRenderer;
+    public void SetVisibility(bool value)
+    {
+        foreach (Collider2D c in colliders)
+        {
+            c.enabled = value;
+        }
+        spriteRenderer.enabled = value;
     }
 
     Vector3 lastPosition;
@@ -65,6 +80,8 @@ public class BombTankBossSM : BossBaseSM
     public override void InstantiateValues()
     {
         base.InstantiateValues();
+        colliders = GetComponentsInChildren<Collider2D>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         lastPosition = transform.position;
     }
 
