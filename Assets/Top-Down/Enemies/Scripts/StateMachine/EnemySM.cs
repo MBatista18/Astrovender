@@ -164,7 +164,7 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
 
     public override StateBase DeathState()
     {
-        Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
+        if (deathEffectPrefab) { Instantiate(deathEffectPrefab, transform.position, Quaternion.identity); }
 
         if (dropsCoinsGems)
         {
