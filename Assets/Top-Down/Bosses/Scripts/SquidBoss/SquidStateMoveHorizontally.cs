@@ -18,6 +18,8 @@ public class SquidStateMoveHorizontally : StateBase
     {
         base.thisStart();
         movementTimer = Random.Range(1f, 3f);
+        Debug.Log("Horizontal");
+        sm.GetAnimator().Play(!moveRight ? "SquidMoveLeft" : "SquidMoveRight");
     }
 
     public override void thisUpdate()

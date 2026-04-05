@@ -8,35 +8,40 @@ public class SquidStateMoveVertically : StateBase
     {
         sm = (SquidBossSM)_sm;
 
-        moveVertically = Random.Range(0, 10) < 5 ? true : false;
+        moveUp = true;
     }
 
-    bool moveVertically;
+    bool moveUp;
 
     float movementTimer;
     public override void thisStart()
     {
         base.thisStart();
         movementTimer = Random.Range(1f, 3f);
+        Debug.Log("Vertical"); //
+        sm.GetAnimator().Play("SquidMoveVertical");
     }
 
     public override void thisUpdate()
     {
         base.thisUpdate();
 
-        movementTimer -= Time.deltaTime;
+        if (moveUp ? sm.transform.position.y >= sm.GetMaximumY() : sm.transform.position.y <= sm.GetMinimumY()) 
+        {
+            sm.ChangeState(sm.InitialState()); return;
+        }
+        Debug.Log("Ended");
 
-        if (movementTimer <= 0) { sm.ChangeState(sm.InitialState()); return; }
 
         Vector3 pos = sm.transform.position;
 
         sm.transform.position = new Vector3(
-            pos.x, Mathf.Clamp(pos.y + (sm.GetMovementSpeed() * (moveVertically ? 1 : -1) * Time.deltaTime), sm.GetMinimumY(), sm.GetMaximumY()), pos.z);
+            pos.x, Mathf.Clamp(pos.y + (sm.GetMovementSpeed() * 2 * (moveUp ? 1 : -1) * Time.deltaTime), sm.GetMinimumY(), sm.GetMaximumY()), pos.z);
     }
 
     public override void thisEnd()
     {
         base.thisEnd();
-        moveVertically = !moveVertically;
+        moveUp = !moveUp;
     }
 }

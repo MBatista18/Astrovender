@@ -87,6 +87,8 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
     {
         health -= damageAmount;
 
+        flashOnHit?.FlashRed();
+
         if (reactToDamage && GetCurrentState() != stateHurt) { ChangeState(stateHurt); PainReactions(); }
         // changes enemy to state hurt; check for if the enemy is already in hurt state to prevent player from just hitting enemy relentlessly
         if (health <= 0)
@@ -97,7 +99,6 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
 
     public virtual void PainReactions()
     {
-        flashOnHit?.FlashRed();
         return;
     }
 

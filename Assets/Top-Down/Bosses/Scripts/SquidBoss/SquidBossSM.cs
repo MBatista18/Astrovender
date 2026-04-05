@@ -46,4 +46,50 @@ public class SquidBossSM : BossBaseSM
         minimumY = transform.position.y;
         maximumY = transform.position.y + maximumTravelDistanceY;
     }
+
+    [Header("Walls")]
+    [SerializeField] GameObject[] DungeonWalls;
+
+    [Header("Arms")]
+
+    [SerializeField] GameObject leftArm;
+    [SerializeField] GameObject rightArm;
+
+    public override void OnEnableFunctions()
+    {
+        base.OnEnableFunctions();
+
+        foreach (GameObject a in DungeonWalls)
+        {
+            a.SetActive(true);
+        }
+
+        leftArm.SetActive(true);
+        rightArm.SetActive(true);
+    }
+
+    public override void OnDisableFunctions()
+    {
+        base.OnDisableFunctions();
+
+        foreach (GameObject a in DungeonWalls)
+        {
+            a.SetActive(false);
+        }
+
+        leftArm.SetActive(false);
+        rightArm.SetActive(false);
+    }
+
+    Animator animator;
+    public Animator GetAnimator()
+    {
+        return animator;
+    }
+
+    public override void InstantiateComponents()
+    {
+        base.InstantiateComponents();
+        animator = GetComponent<Animator>();
+    }
 }

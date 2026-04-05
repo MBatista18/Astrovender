@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class SegmentSM : EnemySM
 {
@@ -20,9 +21,48 @@ public class SegmentSM : EnemySM
                 return;
             }
 
+            for (int i = 0; i < armManager.armSegments.Length; i++)
+            {
+                armManager.armSegments[i].BeginFlashing();
+            }
+
             armManager?.ChangeState(armManager.stateRetract);
         }
 
         //base.TakeDamage(damageAmount, attackerPos);
+    }
+
+    SpriteRenderer spriteRenderer;
+
+    public override void InstantiateComponents()
+    {
+        base.InstantiateComponents();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    Coroutine flashingCoroutine;
+
+    public void BeginFlashing()
+    {
+        if (flashingCoroutine != null)
+        {
+            StopCoroutine(flashingCoroutine);
+        }
+        flashingCoroutine = StartCoroutine(flash());
+    }
+
+    IEnumerator flash()
+    {
+        int i = 0;
+        while (i < 3)
+        {
+            i++;
+
+            spriteRenderer.color = Color.red;
+            yield return new WaitForSeconds(.1f);
+            spriteRenderer.color = Color.white;
+            yield return new WaitForSeconds(.1f);
+        }
+        
     }
 }

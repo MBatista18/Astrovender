@@ -17,6 +17,8 @@ public class SquidStateIdle : StateBase
     {
         base.thisStart();
         timer = Random.Range(1f, 4f);
+        Debug.Log("Idle");
+        sm.GetAnimator().Play("SquidIdle");
     }
 
     public override void thisUpdate()

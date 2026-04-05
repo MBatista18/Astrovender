@@ -4,15 +4,20 @@ public class ArmManager : StateMachineBase
 {
     public SegmentSM[] armSegments;
 
+    public override void InstantiateComponents()
+    {
+        base.InstantiateComponents();
+    }
+
     public float armDirection;
 
     public ArmStateJab stateJab;
     public ArmStateMove stateMove;
-    public ArmStateRetract stateRetract;
     public override StateBase InitialState()
     {
-        return stateRetract;
+        return stateMove;
     }
+    public ArmStateRetract stateRetract;
     public ArmStateSwipe stateSwipe;
 
     public override void InstantiateStates()
