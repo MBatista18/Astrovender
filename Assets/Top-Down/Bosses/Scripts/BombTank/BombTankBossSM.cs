@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class BombTankBossSM : BossBaseSM
 {
-    
     [SerializeField] GameObject bomb;
     public GameObject GetBomb() { return bomb; }
 

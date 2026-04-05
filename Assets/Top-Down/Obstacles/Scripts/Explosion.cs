@@ -64,6 +64,9 @@ public class Explosion : MonoBehaviour
                 case "Destructible":
                     ray.collider.GetComponent<Destructible>()?.CallDestroy();
                     break;
+                case "Port":
+                    ray.collider.GetComponent<Port>().OnExplosion();
+                    break;
             }
         }
     }
