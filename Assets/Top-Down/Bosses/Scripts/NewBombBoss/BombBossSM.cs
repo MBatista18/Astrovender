@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class BombBossSM : BossBaseSM
 {
-    [SerializeField] PortManager portManager;
-    public PortManager GetPorts() { return portManager; }
+    [field: SerializeField] public Transform Player { get; private set; }
+    [field: SerializeField] public GameObject EnergyBall { get; private set; }
+    [field: SerializeField] public PortManager PortManager { get; private set; }
 
     [SerializeField] GameObject[] DungeonWalls;
 
@@ -16,7 +17,12 @@ public class BombBossSM : BossBaseSM
             a.SetActive(true);
         }
 
-        portManager.gameObject.SetActive(true);
+        PortManager.gameObject.SetActive(true);
+        
+        foreach (Port p in PortManager.PortsArray)
+        {
+            p.enabled = true;
+        }
     }
 
     public override void OnDisableFunctions()
@@ -26,12 +32,17 @@ public class BombBossSM : BossBaseSM
         {
             a.SetActive(false);
         }
-        
-        portManager.gameObject.SetActive(false);
+
+        PortManager.gameObject.SetActive(false);
+
+        foreach (Port p in PortManager.PortsArray)
+        {
+            p.enabled = false;
+        }
     }
 
     Animator animator;
-    public Animator GetAnimator() { return animator; }
+    public Animator GetAnimator() => animator;
 
     public override void InstantiateComponents()
     {
@@ -53,7 +64,7 @@ public class BombBossSM : BossBaseSM
     }
 
     BombBossStateVulnerable stateVulnerable;
-    public BombBossStateVulnerable GetVulnerableState() { return stateVulnerable; }
+    public BombBossStateVulnerable GetVulnerableState() => stateVulnerable;
 
     public override void InstantiateStates()
     {
@@ -66,6 +77,7 @@ public class BombBossSM : BossBaseSM
 
     private Collider2D[] colliders;
     private SpriteRenderer spriteRenderer;
+    private Canvas bossValues;
     public void SetVisibility(bool value)
     {
         foreach (Collider2D c in colliders)
@@ -73,50 +85,24 @@ public class BombBossSM : BossBaseSM
             c.enabled = value;
         }
         spriteRenderer.enabled = value;
+        bossValues.enabled = value;
     }
-
-    Vector3 lastPosition;
 
     public override void InstantiateValues()
     {
         base.InstantiateValues();
+
+        if (Player == null)
+        {
+            Player = GameObject.FindFirstObjectByType<PlayerStateMachine>().transform;
+        }
         colliders = GetComponentsInChildren<Collider2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        lastPosition = transform.position;
+        bossValues = GetComponentInChildren<Canvas>();
     }
 
     public override void UpdateFunctions()
     {
         base.UpdateFunctions();
-
-        float diffX = transform.position.x - lastPosition.x;
-        float diffY = transform.position.y - lastPosition.y;
-
-        if (Mathf.Abs(diffX) > Mathf.Abs(diffY))
-        {
-            if (diffX > 0)
-            {
-                animator.Play("BombTankRight");
-            }
-
-            if (diffX < 0)
-            {
-                animator.Play("BombTankLeft");
-            }
-        }
-        else
-        {
-            if (diffY > 0)
-            {
-                animator.Play("BombTankUp");
-            }
-
-            if (diffY < 0)
-            {
-                animator.Play("BombTankDown");
-            }
-        }
-
-        lastPosition = transform.position;
     }
 }

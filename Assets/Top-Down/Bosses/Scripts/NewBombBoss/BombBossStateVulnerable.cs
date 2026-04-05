@@ -13,7 +13,7 @@ public class BombBossStateVulnerable : StateBase
     {
         base.thisStart();
 
-        vulnTimer = Random.Range(2f, 3f);
+        vulnTimer = Random.Range(2.25f, 3f);
 
         Debug.Log("Vulnerable");
     }

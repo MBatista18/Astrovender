@@ -10,7 +10,7 @@ public class BombBossStateHidden : StateBase
     public BombBossStateHidden(StateMachineBase _sm) : base(_sm)
     {
         sm = (BombBossSM)_sm;
-        portManager = sm.GetPorts();
+        portManager = sm.PortManager;
     }
 
     float hideTimer;
@@ -23,7 +23,7 @@ public class BombBossStateHidden : StateBase
         {
             port.HideInPort();
         }
-        hideTimer = Random.Range(0.75f, 1.5f);
+        hideTimer = Random.Range(4.25f, 5f);
 
         Debug.Log("Hidden");
     }

@@ -4,11 +4,10 @@ using UnityEngine;
 public class PortManager : MonoBehaviour
 {
     [SerializeField] private BombBossSM bossSM;
+    [HideInInspector] public Port[] PortsArray = new Port[5];
 
-    private Port[] allPorts = new Port[5];
     private List<Port> activePortsList;
     private GameObject boss;
-    private int bossPortIndex = -1;
 
     private void Awake()
     {
@@ -17,13 +16,13 @@ public class PortManager : MonoBehaviour
         else
             Debug.LogError("Boss State Machine reference is missing in PortManager.");
 
-        allPorts = GetComponentsInChildren<Port>();
+        PortsArray = GetComponentsInChildren<Port>();
         activePortsList = new List<Port>();
 
-        for (int i = 0; i < allPorts.Length; i++)
+        for (int i = 0; i < PortsArray.Length; i++)
         {
-            allPorts[i].Initialize(this);
-            activePortsList.Add(allPorts[i]);
+            PortsArray[i].Initialize(this);
+            activePortsList.Add(PortsArray[i]);
         }
     }
 
@@ -37,21 +36,34 @@ public class PortManager : MonoBehaviour
 
         int randomIndex = Random.Range(0, activePortsList.Count);
         port = activePortsList[randomIndex];
-        bossPortIndex = System.Array.IndexOf(allPorts, port);
         return true;
+    }
+
+    public void OnPortExplosion(Port port, bool isBossPort)
+    {
+        RemoveActivePort(port);
+
+        if (isBossPort && (bossSM.GetCurrentState() == bossSM.InitialState()))
+        {
+            // If the boss port is hit while the boss is hidden, the boss becomes vulnerable
+            port.SetBossPresence(false);
+            bossSM.TakeDamage(20);
+            bossSM.ChangeState(bossSM.GetVulnerableState());
+        }
     }
 
     public void SetBossPort(Port port)
     {
-        foreach (Port p in allPorts)
+        foreach (Port p in PortsArray)
         {
             p.SetBossPresence(p == port);
         }
 
+        Debug.Log($"Boss is now in port: {port.gameObject.name}");
         boss.transform.position = port.transform.position;
     }
 
-    public void DeactivatePort(Port port)
+    public void RemoveActivePort(Port port)
     {
         if (activePortsList.Contains(port))
         {
