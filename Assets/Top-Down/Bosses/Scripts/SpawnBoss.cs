@@ -16,6 +16,8 @@ public class SpawnBoss : MonoBehaviour
     {
         //if (GameManager.Instance.defeatedBombsBoss)
 
+        if (!GameManager.Instance.currentdataObj.dungeons.ContainsKey(SceneManager.GetActiveScene().name)) { return; }
+
         if (GameManager.Instance.currentdataObj.dungeons[SceneManager.GetActiveScene().name].defeatedBoss)
         {
             Destroy(transform.parent.gameObject);

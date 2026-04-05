@@ -46,7 +46,7 @@ public class ArmStateMove : StateBase
 
         armManager.transform.position = new Vector3(armManager.transform.position.x, armManager.startingPosition.y, armManager.transform.position.z);
 
-        float transformX = Random.Range(armManager.startingPosition.x, armManager.startingPosition.x + armManager.xDistance);
+        float transformX = Random.Range(armManager.startingPosition.x + Mathf.Sign(armManager.xDistance) * 1, armManager.startingPosition.x + armManager.xDistance);
 
         while (armManager.armDirection < 0 ? armManager.transform.position.x > transformX : armManager.transform.position.x < transformX)
         {
@@ -79,7 +79,7 @@ public class ArmStateMove : StateBase
 
         Debug.Log("jab_move along Y");
 
-        float transformY = Random.Range(armManager.startingPosition.y, armManager.startingPosition.y + -armManager.yDistance);
+        float transformY = Random.Range(armManager.startingPosition.y - 1, armManager.startingPosition.y + -armManager.yDistance);
 
         while (armManager.transform.position.y > transformY)
         {
