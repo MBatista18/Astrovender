@@ -19,6 +19,7 @@ public class ArmStateRetract : StateBase
     {
         base.thisStart();
         Debug.Log("retract");
+        armManager?.GetAudioCall().CallAudioClip("TentacleExtend");
 
         currentCoroutine = armManager.StartCoroutine(StretchOutArm());
     }

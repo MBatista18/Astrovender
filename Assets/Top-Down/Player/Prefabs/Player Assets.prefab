@@ -3216,6 +3216,8 @@ GameObject:
   - component: {fileID: 5333157422734323725}
   - component: {fileID: 8606652903137658422}
   - component: {fileID: 6645790045406832201}
+  - component: {fileID: 6466161171447459751}
+  - component: {fileID: 2225024806811413863}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -3406,6 +3408,140 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0950f47a10a027847b67bf2c58e4625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
+--- !u!114 &6466161171447459751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7861144985056148113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461e8ef33e5ce9e4dbc7ab05925e1fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioCall
+  audioKeys:
+  - audioClip: {fileID: 8300000, guid: b990ba991be042a43bf20442cbafb8ca, type: 3}
+    key: CollectCoin
+  - audioClip: {fileID: 8300000, guid: 97a44d1bee2e441488b88487d41a235b, type: 3}
+    key: CollectGem
+  - audioClip: {fileID: 8300000, guid: a8a17560daed2c9499c1a6cec56c71ac, type: 3}
+    key: CollectAbility
+  - audioClip: {fileID: 8300000, guid: 9647709c8adb67e4b960ad7d8198f150, type: 3}
+    key: CollectKey
+  - audioClip: {fileID: 8300000, guid: a4c97425524f0094180c4db2cff1fbce, type: 3}
+    key: CollectResource
+  - audioClip: {fileID: 8300000, guid: 996902008de900741a438fad982e1e35, type: 3}
+    key: UseBomb
+  - audioClip: {fileID: 8300000, guid: 49e53ad7e3c98e24abb66e6ffc3aa27f, type: 3}
+    key: UseSword
+  - audioClip: {fileID: 8300000, guid: c3d00b05821ac8f48b809945c5b75afd, type: 3}
+    key: UseGun
+  - audioClip: {fileID: 8300000, guid: cc4cd7c89dfaef04d9a48f66d08e1fe0, type: 3}
+    key: Damage
+  - audioClip: {fileID: 8300000, guid: 2d4bba737ec754a4ba287f0e9b1f0f84, type: 3}
+    key: DamageShield
+  - audioClip: {fileID: 8300000, guid: 45b42b798f42cf94a8d7569ff4f8acea, type: 3}
+    key: DamageLowOxygen
+  - audioClip: {fileID: 8300000, guid: eb0b641d819bbf14ea142bbccaac9a11, type: 3}
+    key: Death
+--- !u!82 &2225024806811413863
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7861144985056148113}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 0
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7964993989864804445
 GameObject:
   m_ObjectHideFlags: 0

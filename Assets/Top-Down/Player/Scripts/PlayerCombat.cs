@@ -53,6 +53,8 @@ public class PlayerCombat : MonoBehaviour
 
         if (bulletObj)
         {
+            sm.GetAudioCall().CallAudioClip("UseGun");
+
             Debug.Log("Spawning bullet");
             Instantiate(bulletObj, transform.position, transform.rotation)
             .GetComponent<Bullet>()
@@ -71,6 +73,8 @@ public class PlayerCombat : MonoBehaviour
 
         if (bombObj)
         {
+            sm.GetAudioCall().CallAudioClip("UseBomb");
+
             Debug.Log("Spawning bomb");
             Instantiate(bombObj, transform.position, Quaternion.identity);
         }
@@ -83,6 +87,9 @@ public class PlayerCombat : MonoBehaviour
         //Debug.Log("Sword attack trigger");
         sm._moveSpeed = 0.0f;
         if (!canSwordAttack) return;
+
+        sm.GetAudioCall().CallAudioClip("UseSword");
+
         StartCoroutine(SwingSword());
     }
 

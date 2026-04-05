@@ -25,6 +25,9 @@ public class ArmStateSwipe : StateBase
 
     IEnumerator rotate()
     {
+
+        armManager?.GetAudioCall().CallAudioClip("TentaclePeek");
+
         int finalIndex = armManager.armSegments.Length - 1;
 
         while (Mathf.Abs(armManager.armSegments[finalIndex].transform.localPosition.y) < 1) // check if this segment has moved more than a single unit to either side
@@ -43,6 +46,8 @@ public class ArmStateSwipe : StateBase
         armManager.armSegments[finalIndex].transform.localPosition = new Vector3(lastSegment_localPos.x, -1, lastSegment_localPos.z);
 
         yield return new WaitForSeconds(1f);
+
+        armManager?.GetAudioCall().CallAudioClip("TentacleExtend");
 
         float movementValuePerSegment = 0;
 
@@ -79,6 +84,8 @@ public class ArmStateSwipe : StateBase
 
         float timePerSwing = fullSwingDuration;
 
+        armManager?.GetAudioCall().CallAudioClip("TentacleSwipe1");
+
         while (timePerSwing > 0)
         {
             timePerSwing -= Time.deltaTime;
@@ -93,6 +100,8 @@ public class ArmStateSwipe : StateBase
 
         timePerSwing = fullSwingDuration;
 
+        armManager?.GetAudioCall().CallAudioClip("TentacleSwipe2");
+
         while (timePerSwing > 0)
         {
             timePerSwing -= Time.deltaTime;
@@ -106,6 +115,8 @@ public class ArmStateSwipe : StateBase
         }
 
         timePerSwing = fullSwingDuration;
+
+        armManager?.GetAudioCall().CallAudioClip("TentacleSwipe1");
 
         while (timePerSwing > 0)
         {

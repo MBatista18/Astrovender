@@ -9,6 +9,8 @@ public class BombCollectible : MonoBehaviour
 
         PlayerManager.ModifyBombCount(Random.Range(3, 5));
 
+        AssetCall.instance.playerSM.GetAudioCall().CallAudioClip("CollectResource");
+
         Destroy(gameObject);
     }
 }

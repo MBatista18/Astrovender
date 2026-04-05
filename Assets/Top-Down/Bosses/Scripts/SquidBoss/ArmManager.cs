@@ -3,9 +3,12 @@ using UnityEngine;
 public class ArmManager : StateMachineBase
 {
     public SegmentSM[] armSegments;
+    AudioCall audioCall;
+    public AudioCall GetAudioCall() { return audioCall; }
 
     public override void InstantiateComponents()
     {
+        audioCall = GetComponent<AudioCall>();
         base.InstantiateComponents();
     }
 

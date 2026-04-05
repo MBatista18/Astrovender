@@ -87,9 +87,13 @@ public class SquidBossSM : BossBaseSM
         return animator;
     }
 
+    AudioCall audioCall;
+    public AudioCall GetAudioCall() { return audioCall; }
+
     public override void InstantiateComponents()
     {
         base.InstantiateComponents();
         animator = GetComponent<Animator>();
+        audioCall = GetComponent<AudioCall>();
     }
 }

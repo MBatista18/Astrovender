@@ -9,6 +9,8 @@ public class CoinCollectible : MonoBehaviour
 
         GameManager.Instance.IncrementCoins(Random.Range(1,4));
 
+        AssetCall.instance.playerSM.GetAudioCall().CallAudioClip("CollectCoin");
+
         Destroy(gameObject);
     }
 }

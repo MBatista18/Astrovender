@@ -9,6 +9,8 @@ public class AmmoCollectible : MonoBehaviour
 
         PlayerManager.ModifyAmmoCount(Random.Range(4, 8));
 
+        AssetCall.instance.playerSM.GetAudioCall().CallAudioClip("CollectResource");
+
         Destroy(gameObject);
     }
 }

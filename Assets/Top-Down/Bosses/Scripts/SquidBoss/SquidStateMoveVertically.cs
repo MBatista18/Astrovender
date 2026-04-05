@@ -20,6 +20,7 @@ public class SquidStateMoveVertically : StateBase
         movementTimer = Random.Range(1f, 3f);
         Debug.Log("Vertical"); //
         sm.GetAnimator().Play("SquidMoveVertical");
+        sm.GetAudioCall().CallAudioClip("MonsterCry1");
     }
 
     public override void thisUpdate()

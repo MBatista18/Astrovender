@@ -9,6 +9,8 @@ public class ShieldEnergyCollectible : MonoBehaviour
 
         PlayerManager.ModifyShieldHealth(Random.Range(5, 8));
 
+        AssetCall.instance.playerSM.GetAudioCall().CallAudioClip("CollectResource");
+
         Destroy(gameObject);
     }
 }

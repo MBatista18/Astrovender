@@ -26,6 +26,8 @@ public class SegmentSM : EnemySM
                 armManager.armSegments[i].BeginFlashing();
             }
 
+            armManager?.GetAudioCall().CallAudioClip("TentacleHurt");
+
             armManager?.ChangeState(armManager.stateRetract);
         }
 

@@ -94,7 +94,7 @@ MonoBehaviour:
   meteor: {fileID: 8186935909478851286, guid: 8d64e8c0fc2374b47b9c7e2e8e7378dd, type: 3}
   minTimeBetweenShowers: 7
   maxTimeBetweenShowers: 15
-  minRocksPerShower: 3
-  maxRocksPerShower: 7
-  minDelayBetweenRocks: 0.1
-  maxDelayBetweenRocks: 0.4
+  minRocksPerShower: 1
+  maxRocksPerShower: 3
+  minDelayBetweenRocks: 0.2
+  maxDelayBetweenRocks: 0.5

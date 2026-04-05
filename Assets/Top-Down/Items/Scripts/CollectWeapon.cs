@@ -20,6 +20,8 @@ public class CollectWeapon : MonoBehaviour
             return;
         }
 
+        AssetCall.instance.playerSM.GetAudioCall().CallAudioClip("CollectAbility");
+
         if (gun) { GameManager.Instance.currentdataObj.hasGun = true; }
         if (bomb) { GameManager.Instance.currentdataObj.hasBombs = true; }
         if (shield) { GameManager.Instance.currentdataObj.hasShield = true; }

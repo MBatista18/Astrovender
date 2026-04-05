@@ -9,6 +9,8 @@ public class OxygenCollectible : MonoBehaviour
 
         PlayerHealth.ModifyOxygenLevel(Random.Range(20, 30), true);
 
+        AssetCall.instance.playerSM.GetAudioCall().CallAudioClip("CollectResource");
+
         Destroy(gameObject);
     }
 }

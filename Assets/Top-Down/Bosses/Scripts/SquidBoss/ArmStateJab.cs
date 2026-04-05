@@ -27,6 +27,8 @@ public class ArmStateJab : StateBase
     {
         Debug.Log("Begin Stretch");
 
+        armManager?.GetAudioCall().CallAudioClip("TentaclePeek");
+
         int finalIndex = armManager.armSegments.Length - 1;
 
         while (Mathf.Abs(armManager.armSegments[finalIndex].transform.localPosition.x) < 1) // check if this segment has moved more than a single unit to either side
@@ -47,6 +49,7 @@ public class ArmStateJab : StateBase
         yield return new WaitForSeconds(1f);
 
         Debug.Log("Then Stretch");
+        armManager?.GetAudioCall().CallAudioClip("TentacleExtend");
 
         for (int i = finalIndex - 1; i > 0; i--)
         {

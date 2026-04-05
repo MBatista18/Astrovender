@@ -9,6 +9,8 @@ public class GemCollectible : MonoBehaviour
 
         GameManager.Instance.IncrementGems(1);
 
+        AssetCall.instance.playerSM.GetAudioCall().CallAudioClip("CollectGem");
+
         Destroy(gameObject);
     }
 }

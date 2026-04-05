@@ -11,6 +11,7 @@ public class Explosion : MonoBehaviour
     private void Start()
     {
         GetComponent<Animator>().Play("FireExplosionClip");
+        GetComponent<AudioCall>().CallAudioClip("Explode");
 
         // aligns the explosion to the grid.
 

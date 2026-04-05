@@ -28,7 +28,23 @@ public class MeteorManager : MonoBehaviour
 
     private void Start()
     {
-        showerRoutine = StartCoroutine(RockShowerLoop());
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            showerRoutine = StartCoroutine(RockShowerLoop());
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            if (showerRoutine != null) { StopCoroutine(showerRoutine);
+            }
+        }
     }
 
     private IEnumerator RockShowerLoop()
@@ -44,14 +60,16 @@ public class MeteorManager : MonoBehaviour
 
     private IEnumerator SpawnRockShower()
     {
+        AssetCall.instance.cameraEffectors.SetCameraShake(4);
+
         int rockCount = Random.Range(minRocksPerShower, maxRocksPerShower + 1);
 
-        float radiusX = (coll.size.x - 1) / 2f;
-        float radiusY = (coll.size.y - 1) / 2f;
+        float radiusX = 5;
+        float radiusY = 5;
 
         for (int i = 0; i < rockCount; i++)
         {
-            Instantiate(meteor, transform.position + new Vector3(Random.Range(-radiusX, radiusX), Random.Range(-radiusY, radiusY), 0), Quaternion.identity);
+            Instantiate(meteor, AssetCall.instance.playerSM.transform.position + new Vector3(Random.Range(-radiusX, radiusX), Random.Range(-radiusY, radiusY), 0), Quaternion.identity);
 
             float delay = Random.Range(minDelayBetweenRocks, maxDelayBetweenRocks);
             yield return new WaitForSeconds(delay);

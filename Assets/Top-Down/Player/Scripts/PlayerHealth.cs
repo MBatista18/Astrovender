@@ -18,6 +18,8 @@ public class PlayerHealth : MonoBehaviour
 
             if (PlayerManager.GetCurrentShieldHealth() > 0)
             {
+                AssetCall.instance.playerSM.GetAudioCall().CallAudioClip("DamageShield");
+
                 PlayerManager.ModifyShieldHealth(val);
                 AssetCall.instance.playerSM.GetShieldVisuals()?.PlayHit();
 
@@ -34,7 +36,8 @@ public class PlayerHealth : MonoBehaviour
         // if being damaged and the player is currently invulnerable, return false
         if (!bypassInvulnerabilityCheck)
         {
-            if (val < 0 && !canBeHurt) { Debug.Log("No Damage"); return; } else { canBeHurt = false; Debug.Log("Damage"); }
+            if (val < 0 && !canBeHurt) { Debug.Log("No Damage"); return; } else { canBeHurt = false; Debug.Log("Damage"); 
+            AssetCall.instance.playerSM.GetAudioCall().CallAudioClip("Damage"); }
         }
 
         PlayerManager.currentOxygenLevel = Mathf.Clamp(PlayerManager.currentOxygenLevel + val, 0, PlayerManager.GetMaxOxygenLevel());
@@ -63,6 +66,32 @@ public class PlayerHealth : MonoBehaviour
             {
                 canBeHurt = true;
             }
+        }
+
+        if (PlayerManager.currentOxygenLevel > PlayerManager.GetMaxOxygenLevel() * .25f)
+        {
+            healthDipping = false;
+        }
+        else
+        {
+            if (!healthDipping)
+            {
+                StartCoroutine(beepbeepbeep());
+                healthDipping = true;
+            }
+        }
+    }
+
+    bool healthDipping;
+
+    IEnumerator beepbeepbeep()
+    {
+        int i = 0;
+        while (i < 3)
+        {
+            i++;
+            AssetCall.instance.playerSM.GetAudioCall().CallAudioClip("DamageLowOxygen");
+            yield return new WaitForSeconds(0.5f);
         }
     }
 

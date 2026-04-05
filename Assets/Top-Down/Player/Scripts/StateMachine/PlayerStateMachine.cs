@@ -86,6 +86,12 @@ public class PlayerStateMachine : StateMachineBase
     ShieldVisuals shieldVisuals;
     public ShieldVisuals GetShieldVisuals() { return shieldVisuals; }
 
+    AudioCall audioCall;
+    public AudioCall GetAudioCall()
+    {
+        return audioCall;
+    }
+
     public override void InstantiateComponents()
     {
         base.InstantiateComponents();
@@ -93,6 +99,7 @@ public class PlayerStateMachine : StateMachineBase
         rb = GetComponent<Rigidbody2D>();
         animationController = GetComponent<PlayerAnimationController>();
         playerHealth = GetComponent<PlayerHealth>();
+        audioCall = GetComponent<AudioCall>();
     }
     #endregion
 
