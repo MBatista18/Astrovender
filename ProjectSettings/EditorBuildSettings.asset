@@ -26,6 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Beach Dungeon.unity
     guid: 448419eee886f744099b43440476582a
+  - enabled: 1
+    path: Assets/Scenes/Bomb MiniDungeon.unity
+    guid: 43292ffe028d31d418212b634a66613a
+  - enabled: 1
+    path: Assets/Scenes/Gun MiniDungeon.unity
+    guid: e95fa4ddd3ffbdb4a8c4788f14b2ad5e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

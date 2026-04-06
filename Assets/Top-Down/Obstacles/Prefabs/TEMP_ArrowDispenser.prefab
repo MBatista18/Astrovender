@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 416277022389158341}
   - component: {fileID: 677881833636076968}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4109224303199832447}
   - component: {fileID: 6395995319491651468}
-  m_Layer: 13
+  m_Layer: 16
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 7997395280356440328}
   - component: {fileID: -3695463878079304213}
   - component: {fileID: 7959871901277083891}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TEMP_ArrowDispenser
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -15,9 +15,13 @@ public class Port : MonoBehaviour
 
     [SerializeField] Sprite closed, open, broken, semibroken;
 
+    AudioSource audioSource;
+
     public void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        audioSource = GetComponent<AudioSource>();
 
         activated = false;
     }
@@ -63,7 +67,9 @@ public class Port : MonoBehaviour
         if (activated)
         {
             activated = false;
-            portManager.RemoveActivePort(this);
+            portManager?.RemoveActivePort(this);
+
+            audioSource.Play();
 
             reactivationCoroutine ??= StartCoroutine(ReactivationTimer(5f));
 
@@ -78,6 +84,7 @@ public class Port : MonoBehaviour
 
     public void ClosePort()
     {
+        if (!activated) { return; }
         spriteRenderer.sprite = closed;
     }
 
@@ -96,7 +103,7 @@ public class Port : MonoBehaviour
         if (reactivationCoroutine != null) return;
 
         DeactivatePort();
-        portManager.OnPortExplosion(this, hasBoss);
+        portManager?.OnPortExplosion(this, hasBoss);
     }
 
     IEnumerator ReactivationTimer(float delay)

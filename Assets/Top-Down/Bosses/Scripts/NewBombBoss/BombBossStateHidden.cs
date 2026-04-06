@@ -16,7 +16,7 @@ public class BombBossStateHidden : StateBase
     float hideTimer;
     float maxHideTimer;
 
-    Port referencePort;
+    public Port referencePort;
 
     public override void thisStart()
     {
@@ -28,6 +28,7 @@ public class BombBossStateHidden : StateBase
             referencePort = port;
             port.HideInPort();
         }
+
         maxHideTimer = Random.Range(4.25f, 5f);
         hideTimer = maxHideTimer;
 
@@ -54,7 +55,6 @@ public class BombBossStateHidden : StateBase
     public override void thisEnd()
     {
         base.thisEnd();
-        referencePort = null;
         sm.SetVisibility(true);
     }
 }

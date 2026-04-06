@@ -21,19 +21,39 @@ public class BombBossStateVisible : StateBase
     {
         base.thisStart();
 
+        sm.GetAudioCall().CallAudioClip("PopUp");
+
         sm.SetVisibility(true);
-        attackDelayTimer = Random.Range(0.5f, 1f);
-        visibleTimer = Random.Range(2.5f, 3.25f);
+        attackDelayTimer = Random.Range(1.3f, 1.6f);
+        visibleTimer = Random.Range(2f, 2.35f);
         hasAttacked = false;
 
         sm.GetAnimator().Play("BrainPopOut");
 
+
+        newSoundTimer = 0;
+        played = false;
+
         Debug.Log("Visible");
     }
+
+    float newSoundTimer;
+    bool played;
 
     public override void thisUpdate()
     {
         base.thisUpdate();
+
+        if (newSoundTimer < .2f)
+        {
+            newSoundTimer += Time.deltaTime;
+        }
+        else
+        {
+            if (!played) { played = true;
+                sm.GetAudioCall().CallAudioClip("ChargeUp");
+            }
+        }
 
         if (!hasAttacked)
         {
@@ -41,8 +61,12 @@ public class BombBossStateVisible : StateBase
 
             if (attackDelayTimer <= 0f)
             {
+
+                sm.GetAudioCall().CallAudioClip("Shoot");
+
+
                 GameObject energyBall = GameObject.Instantiate(sm.EnergyBall, sm.transform.position, Quaternion.identity);
-                energyBall.GetComponent<EnergyBall>().Launch(player.position);
+                energyBall.GetComponent<TrackingProjectile>().boss = sm.gameObject;
                 hasAttacked = true;
 
                 sm.GetAnimator().Play("BrainIdle");
@@ -55,6 +79,9 @@ public class BombBossStateVisible : StateBase
 
         if (visibleTimer <= 0)
         {
+            sm.GetAudioCall().CallAudioClip("PopDown");
+            sm.GetStateHidden().referencePort?.ClosePort();
+
             sm.ChangeState(sm.InitialState()); // Go back to hidden state
         }
     }

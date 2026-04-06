@@ -15,7 +15,6 @@ public class BombBossStateVulnerable : StateBase
 
         vulnTimer = Random.Range(2.25f, 3f);
 
-
         sm.GetAnimator().Play("BrainStunned");
 
         Debug.Log("Vulnerable");
@@ -29,6 +28,8 @@ public class BombBossStateVulnerable : StateBase
 
         if (vulnTimer <= 0)
         {
+            sm.GetAudioCall().CallAudioClip("PopDown");
+            sm.GetStateHidden().referencePort?.ClosePort();
             sm.ChangeState(sm.InitialState()); // Go back to hidden state
         }
     }

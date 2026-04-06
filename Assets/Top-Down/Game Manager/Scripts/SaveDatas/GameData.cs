@@ -84,7 +84,9 @@ public struct DataObj
         {
            {"Dungeon", new DungeonDatObj("Dungeon") },
            {"Rocky Dungeon", new DungeonDatObj("Rocky Dungeon") },
-           {"Beach Dungeon", new DungeonDatObj("Beach Dungeon") }
+           {"Beach Dungeon", new DungeonDatObj("Beach Dungeon") },
+           {"Bomb MiniDungeon", new DungeonDatObj("Bomb MiniDungeon") },
+           {"Gun MiniDungeon", new DungeonDatObj("Gun MiniDungeon") }
         };
     }
 }

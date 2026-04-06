@@ -36,8 +36,6 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Move forward (uses the bullet's own forward direction)
-        transform.position += (Vector3)bulletDirection * speed * Time.deltaTime;
 
         //Despawn after distance
         if(Vector3.Distance(startPos, transform.position) >= maxDistance)
@@ -51,6 +49,12 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    private void FixedUpdate()
+    {
+        //Move forward (uses the bullet's own forward direction)
+        bulletRigidBody.linearVelocity = bulletDirection * speed;
     }
 
     //Called when another colliders enters the bullet's collider

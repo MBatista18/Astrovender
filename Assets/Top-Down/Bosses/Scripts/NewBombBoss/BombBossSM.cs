@@ -44,10 +44,13 @@ public class BombBossSM : BossBaseSM
     Animator animator;
     public Animator GetAnimator() => animator;
 
+    AudioCall audioCall;
+    public AudioCall GetAudioCall() { return audioCall; }
     public override void InstantiateComponents()
     {
         base.InstantiateComponents();
 
+        audioCall = GetComponent<AudioCall>();
         animator = GetComponent<Animator>();
     }
 
@@ -56,6 +59,7 @@ public class BombBossSM : BossBaseSM
     {
         return stateHidden;
     }
+    public BombBossStateHidden GetStateHidden() { return stateHidden; }
 
     BombBossStateVisible stateVisible;
     public override StateBase AttackState()
