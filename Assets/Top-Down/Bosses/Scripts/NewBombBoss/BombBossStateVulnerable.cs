@@ -15,6 +15,9 @@ public class BombBossStateVulnerable : StateBase
 
         vulnTimer = Random.Range(2.25f, 3f);
 
+
+        sm.GetAnimator().Play("BrainStunned");
+
         Debug.Log("Vulnerable");
     }
 

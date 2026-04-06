@@ -14,6 +14,10 @@ public class BombBossStateHidden : StateBase
     }
 
     float hideTimer;
+    float maxHideTimer;
+
+    Port referencePort;
+
     public override void thisStart()
     {
         base.thisStart();
@@ -21,9 +25,11 @@ public class BombBossStateHidden : StateBase
         sm.SetVisibility(false);
         if (portManager.GetRandomActivePort(out Port port))
         {
+            referencePort = port;
             port.HideInPort();
         }
-        hideTimer = Random.Range(4.25f, 5f);
+        maxHideTimer = Random.Range(4.25f, 5f);
+        hideTimer = maxHideTimer;
 
         Debug.Log("Hidden");
     }
@@ -34,6 +40,11 @@ public class BombBossStateHidden : StateBase
 
         hideTimer -= Time.deltaTime;
 
+        if (hideTimer <= maxHideTimer * .15f)
+        {
+            referencePort?.OpenPort();
+        }
+
         if (hideTimer <= 0)
         {
             sm.ChangeState(sm.AttackState()); // Pop up and start attacking
@@ -43,6 +54,7 @@ public class BombBossStateHidden : StateBase
     public override void thisEnd()
     {
         base.thisEnd();
+        referencePort = null;
         sm.SetVisibility(true);
     }
 }

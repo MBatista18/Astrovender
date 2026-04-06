@@ -60,7 +60,7 @@ public class PortManager : MonoBehaviour
         }
 
         Debug.Log($"Boss is now in port: {port.gameObject.name}");
-        boss.transform.position = port.transform.position;
+        boss.transform.position = port.transform.position + (Vector3.up * .5f);
     }
 
     public void RemoveActivePort(Port port)

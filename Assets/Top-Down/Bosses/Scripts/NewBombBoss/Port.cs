@@ -13,6 +13,8 @@ public class Port : MonoBehaviour
     private Color tempActiveColor = Color.white;
     private Color tempInactiveColor = Color.gray;
 
+    [SerializeField] Sprite closed, open, broken, semibroken;
+
     public void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -44,7 +46,6 @@ public class Port : MonoBehaviour
     {
         portManager = manager;
         reactivationCoroutine = null;
-        spriteRenderer.color = tempActiveColor; // Temp
 
         ActivatePort();
     }
@@ -54,7 +55,7 @@ public class Port : MonoBehaviour
         activated = true;
 
         // Additional logic for activating the port (e.g., visual effects)
-        spriteRenderer.color = tempActiveColor; // Temp
+        spriteRenderer.sprite = closed; // Temp
     }
 
     public void DeactivatePort()
@@ -67,8 +68,17 @@ public class Port : MonoBehaviour
             reactivationCoroutine ??= StartCoroutine(ReactivationTimer(5f));
 
             // Additional logic for deactivating the port (e.g., visual effects)
-            spriteRenderer.color = tempInactiveColor; // Temp
         }
+    }
+
+    public void OpenPort()
+    {
+        spriteRenderer.sprite = open;
+    }
+
+    public void ClosePort()
+    {
+        spriteRenderer.sprite = closed;
     }
 
     public void HideInPort()
@@ -92,7 +102,12 @@ public class Port : MonoBehaviour
     IEnumerator ReactivationTimer(float delay)
     {
         Debug.Log($"{gameObject.name} will reactivate in {delay} seconds.");
-        yield return new WaitForSeconds(delay);
+
+        spriteRenderer.sprite = broken;
+        yield return new WaitForSeconds(delay/2);
+
+        spriteRenderer.sprite = semibroken;
+        yield return new WaitForSeconds(delay / 2);
         ActivatePort();
         reactivationCoroutine = null;
     }

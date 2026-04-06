@@ -26,6 +26,8 @@ public class BombBossStateVisible : StateBase
         visibleTimer = Random.Range(2.5f, 3.25f);
         hasAttacked = false;
 
+        sm.GetAnimator().Play("BrainPopOut");
+
         Debug.Log("Visible");
     }
 
@@ -42,6 +44,9 @@ public class BombBossStateVisible : StateBase
                 GameObject energyBall = GameObject.Instantiate(sm.EnergyBall, sm.transform.position, Quaternion.identity);
                 energyBall.GetComponent<EnergyBall>().Launch(player.position);
                 hasAttacked = true;
+
+                sm.GetAnimator().Play("BrainIdle");
+
             }
             else return; // Don't start visible timer until after the attack delay, so the boss doesn't hide immediately after shooting
         }
