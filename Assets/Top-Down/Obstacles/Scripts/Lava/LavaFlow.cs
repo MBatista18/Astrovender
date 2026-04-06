@@ -31,6 +31,15 @@ public class LavaFlowObstacle : MonoBehaviour
     private float damageTimer;
     private float lavaWidth;
 
+    [SerializeField] Animator animator;
+
+    AudioCall audioCall;
+
+    private void Awake()
+    {
+        audioCall = GetComponent<AudioCall>();
+    }
+
     private void Start()
     {
         lavaWidth = lavaRenderer.size.x;
@@ -48,13 +57,16 @@ public class LavaFlowObstacle : MonoBehaviour
 
     private void Update()
     {
+
         if (isActive && playerInside)
         {
+            AssetCall.instance.playerSM.Knockback(Vector2.right * 2 * (AssetCall.instance.playerSM.transform.position.x < transform.position.x ? 1 : -1), 0.5f);
+            PlayerHealth.ModifyOxygenLevel(damageAmount, false, transform.position);
+
             damageTimer -= Time.deltaTime;
 
             if (damageTimer <= 0f)
             {
-                PlayerHealth.ModifyOxygenLevel(damageAmount, false, transform.position);
                 Debug.Log("Player took damage");
                 damageTimer = damageInterval;
             }
@@ -68,9 +80,9 @@ public class LavaFlowObstacle : MonoBehaviour
 
         while (true)
         {
+            isActive = true;
             yield return StartCoroutine(FlowDown(topY, bottomY));
 
-            isActive = true;
             yield return new WaitForSeconds(activeDuration);
 
             yield return StartCoroutine(DrainDown(topY, bottomY));
@@ -87,6 +99,10 @@ public class LavaFlowObstacle : MonoBehaviour
         playerInside = false;
 
         float elapsed = 0f;
+
+        animator?.Play("LavaHoleBeginFlow");
+
+        audioCall.CallAudioClip("Spill");
 
         while (elapsed < flowDownDuration)
         {
@@ -105,6 +121,8 @@ public class LavaFlowObstacle : MonoBehaviour
     private IEnumerator DrainDown(float topY, float bottomY)
     {
         float elapsed = 0f;
+
+        animator?.Play("LavaHoleEndFlow");
 
         while (elapsed < drainDuration)
         {

@@ -36,8 +36,13 @@ public class PlayerHealth : MonoBehaviour
         // if being damaged and the player is currently invulnerable, return false
         if (!bypassInvulnerabilityCheck)
         {
-            if (val < 0 && !canBeHurt) { Debug.Log("No Damage"); return; } else { canBeHurt = false; Debug.Log("Damage"); 
-            AssetCall.instance.playerSM.GetAudioCall().CallAudioClip("Damage"); }
+            if (val < 0 && !canBeHurt) { Debug.Log("No Damage"); return; } 
+            else 
+            {
+                Debug.Log("Damage; " + val + "; canBehurt = " + canBeHurt + "; bypass = " + bypassInvulnerabilityCheck);
+                canBeHurt = false; 
+                AssetCall.instance.playerSM.GetAudioCall().CallAudioClip("Damage"); 
+            }
         }
 
         PlayerManager.currentOxygenLevel = Mathf.Clamp(PlayerManager.currentOxygenLevel + val, 0, PlayerManager.GetMaxOxygenLevel());
@@ -58,12 +63,16 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        if (canBeHurt) { invulnerabilityTimer = .7f; } // sets the invulnerability timer
+        if (canBeHurt) { invulnerabilityTimer = .7f;
+        } // sets the invulnerability timer
         else // gives the player a brief period of invulnerability after being hurt
         {
             invulnerabilityTimer -= Time.deltaTime;
             if (invulnerabilityTimer <= 0)
             {
+                invulnerabilityTimer = .7f; 
+                // there's a second call to reset the timer here, since if the player gets damaged multiple times per frame after canbehurt is reset, then it can 
+                // deal multiple attacks to the player before the next frame loads, meaning the previous call to reset the timer won't run
                 canBeHurt = true;
             }
         }
