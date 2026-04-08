@@ -63,6 +63,11 @@ public class PortManager : MonoBehaviour
         boss.transform.position = port.transform.position + (Vector3.up * .5f);
     }
 
+    public void AddActivePort(Port port)
+    {
+        activePortsList.Add(port);
+    }
+
     public void RemoveActivePort(Port port)
     {
         if (activePortsList.Contains(port))

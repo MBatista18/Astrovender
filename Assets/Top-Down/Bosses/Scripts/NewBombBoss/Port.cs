@@ -58,6 +58,8 @@ public class Port : MonoBehaviour
     {
         activated = true;
 
+        if (portManager != null) portManager.AddActivePort(this);
+
         // Additional logic for activating the port (e.g., visual effects)
         spriteRenderer.sprite = closed; // Temp
     }
