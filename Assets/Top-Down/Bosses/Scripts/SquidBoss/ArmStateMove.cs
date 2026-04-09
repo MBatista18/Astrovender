@@ -24,12 +24,12 @@ public class ArmStateMove : StateBase
 
         if (movingTowardsJab)
         {
-            Debug.Log("Move to jab");
+            //Debug.Log("Move to jab");
             coroutine = armManager.StartCoroutine(MoveTowardJab());
         }
         else
         {
-            Debug.Log("Move to swipe");
+            //Debug.Log("Move to swipe");
             coroutine = armManager.StartCoroutine(MoveTowardSwipe());
         }
 
@@ -50,7 +50,7 @@ public class ArmStateMove : StateBase
 
         while (armManager.armDirection < 0 ? armManager.transform.position.x > transformX : armManager.transform.position.x < transformX)
         {
-            Debug.Log(transformX + " < " + armManager.transform.position.x);
+           // Debug.Log(transformX + " < " + armManager.transform.position.x);
 
             // while arm is facing right, wait until it reaches right
             // while arm is facing left, wait until it reaches left
@@ -67,7 +67,7 @@ public class ArmStateMove : StateBase
 
     IEnumerator MoveTowardJab()
     {
-        Debug.Log("jab_move along X");
+       // Debug.Log("jab_move along X");
 
         while (armManager.armDirection < 0 ? armManager.transform.position.x < armManager.startingPosition.x : armManager.transform.position.x > armManager.startingPosition.x)
         {
@@ -77,7 +77,7 @@ public class ArmStateMove : StateBase
 
         armManager.transform.position = new Vector3(armManager.startingPosition.x, armManager.transform.position.y, armManager.transform.position.z);
 
-        Debug.Log("jab_move along Y");
+     //   Debug.Log("jab_move along Y");
 
         float transformY = Random.Range(armManager.startingPosition.y - 1, armManager.startingPosition.y + -armManager.yDistance);
 

@@ -51,10 +51,10 @@ public class DungeonTile : MonoBehaviour
     {
         if (!image) { return; }
 
-        if (playerIsInRoom) { image.color = Color.red; return; }
-        if (isStartingRoom) { image.color = Color.blue; return; }
-        if (roomHasBeenEntered) { image.color = Color.white; return; }
-        image.color = Color.black;
+        if (playerIsInRoom) { image.sprite = AssetCall.instance.mapGetSprites?.GetSpriteBoxPlayer(); return; }
+        if (isStartingRoom) { image.sprite = AssetCall.instance.mapGetSprites?.GetSpriteBoxEntrance(); return; }
+        if (roomHasBeenEntered) { image.sprite = AssetCall.instance.mapGetSprites?.GetSpriteBoxOpen(); return; }
+        image.sprite = AssetCall.instance.mapGetSprites?.GetSpriteBoxClosed();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

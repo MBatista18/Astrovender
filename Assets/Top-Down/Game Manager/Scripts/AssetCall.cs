@@ -27,6 +27,7 @@ public class AssetCall : MonoBehaviour
     public SetHUDText HUDText;
     public CameraEffectors cameraEffectors;
     public MapUIBehavior mapUIBehavior;
+    public MapGetSprites mapGetSprites;
 
     public GameObject coin;
     public GameObject gem;
@@ -54,5 +55,6 @@ public class AssetCall : MonoBehaviour
         HUDText = FindFirstObjectByType<SetHUDText>();
         cameraEffectors = FindFirstObjectByType<CameraEffectors>();
         mapUIBehavior = FindFirstObjectByType<MapUIBehavior>();
+        mapGetSprites = FindFirstObjectByType<MapGetSprites>();
     }
 }
