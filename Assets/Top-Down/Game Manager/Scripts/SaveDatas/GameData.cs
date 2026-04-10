@@ -19,6 +19,7 @@ public struct DataObj
     public int day;
     public int coins;
     public int gems;
+    public int keys;
 
     public bool hasShield;
     public bool hasGun;
@@ -42,7 +43,8 @@ public struct DataObj
     public List<string> puchasedHats;
     public string wornHat;
 
-    public List<string> saveObstaclesGameWorld;
+    public List<string> saveENVGameWorld; //environment obj
+    public List<string> saveCOLGameWorld; //collected obj
 
     public Dictionary<string, DungeonDatObj> dungeons;
 
@@ -53,6 +55,7 @@ public struct DataObj
         day = 0;
         coins = 0;
         gems = 0;
+        keys = 0;
 
         hasShield = false;
         hasGun = false;
@@ -78,7 +81,8 @@ public struct DataObj
 
         puchasedHats = new List<string>();
 
-        saveObstaclesGameWorld = new List<string>();
+        saveCOLGameWorld = new List<string>();
+        saveENVGameWorld = new List<string>();
 
         dungeons = new Dictionary<string, DungeonDatObj>
         {

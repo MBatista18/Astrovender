@@ -9,14 +9,20 @@ public class ShootableButton : EnemySM
     [SerializeField] SlidingBridge slidingBridge;
     [SerializeField] ShootOpenDoor shootOpenDoor;
 
-    [SerializeField] string uniqueID;
-    public string GetUniqueID() { return uniqueID + "_" + gameObject.name; }
+    ObjectID objectID;
+
+    public override void InstantiateComponents()
+    {
+        base.InstantiateComponents();
+        objectID = GetComponent<ObjectID>();
+    }
+
     public override StateBase InitialState()
     {
-        if (GameManager.Instance.currentdataObj.saveObstaclesGameWorld.Contains(GetUniqueID()))
+       /* if (GameManager.Instance.currentdataObj.saveENVGameWorld.Contains(objectID.GetID()))
         {
             PainReactions();
-        }
+        } */
         return base.InitialState();
     }
 
@@ -36,7 +42,7 @@ public class ShootableButton : EnemySM
     //Handles button activation logic
     public void ActivateButton()
     {
-        Debug.Log("ActivateButton called on: " + gameObject.name);
+        //Debug.Log("ActivateButton called on: " + gameObject.name);
 
         //Determines which bridge it controls depending on what it is set for
       /*  if (isTimed)
@@ -58,6 +64,6 @@ public class ShootableButton : EnemySM
             //buttonRenderer.color = activatedColor;
         }
 
-        GameManager.Instance.currentdataObj.saveObstaclesGameWorld.Add(GetUniqueID());
+        GameManager.Instance.currentdataObj.saveENVGameWorld.Add(objectID.GetID());
     }
 }

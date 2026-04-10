@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour, ISaveable
         else
         {
             startingDataObj.day = currentdataObj.day; // saves the day count but resets everything else before saving.
+            startingDataObj.saveENVGameWorld = currentdataObj.saveENVGameWorld;
             currentdataObj = startingDataObj;
 
             Debug.Log("Day was failed. Progress lost");

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class MapButtonBehavior : MonoBehaviour
 {
     Button button;
-    bool mapIsActive = true;
+    //bool mapIsActive = true;
 
     [SerializeField] GameObject mapUI;
 
@@ -13,11 +13,14 @@ public class MapButtonBehavior : MonoBehaviour
     {
         button = GetComponent<Button>();
 
+        mapUI.SetActive(true);
+
         OnInteract(); // disables the map on start and sets map is active to false
     }
 
     private void Update()
     {
+
         bool isInteractible = false;
 
         DungeonDatObj obj;
@@ -28,13 +31,10 @@ public class MapButtonBehavior : MonoBehaviour
         }
 
         button.interactable = isInteractible;
-
-        //Debug.Log("Value = " + isInteractible);
     }
 
     public void OnInteract()
     {
-        mapIsActive = !mapIsActive;
-        mapUI.SetActive(mapIsActive);
+        mapUI.SetActive(!mapUI.activeSelf);
     }
 }

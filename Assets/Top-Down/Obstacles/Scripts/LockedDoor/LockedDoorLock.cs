@@ -9,6 +9,9 @@ public class LockedDoorLock : MonoBehaviour
 
     bool unlocked;
 
+
+    ObjectID objectID;
+
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -18,6 +21,18 @@ public class LockedDoorLock : MonoBehaviour
 
         lineRenderer.SetPosition(0, transform.position);
         lineRenderer.SetPosition(1, lockedDoor.transform.position + Vector3.up);
+
+
+        objectID = GetComponent<ObjectID>();
+    }
+
+    private void Start()
+    {
+       /* if (GameManager.Instance.currentdataObj.saveENVGameWorld.Contains(objectID.GetID()))
+        {
+            Debug.Log("saveENV contains " + objectID.GetID());
+            Unlock();
+        }*/
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -29,6 +44,7 @@ public class LockedDoorLock : MonoBehaviour
             if (AssetCall.instance.playerSM.GetKeyCount() <= 0) { return; }
 
             AssetCall.instance.playerSM.UseKey();
+            GameManager.Instance.currentdataObj.saveENVGameWorld.Add(objectID.GetID());
             Unlock();
         }
     }

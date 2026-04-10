@@ -16,7 +16,7 @@ public class ArmStateSwipe : StateBase
     public override void thisStart()
     {
         base.thisStart();
-        Debug.Log("swipe");
+       // Debug.Log("swipe");
 
         currentCoroutine = armManager.StartCoroutine(rotate());
     }

@@ -18,14 +18,14 @@ public class ArmStateJab : StateBase
     {
         base.thisStart();
 
-        Debug.Log("Jab");
+        //Debug.Log("Jab");
 
         currentCoroutine = armManager.StartCoroutine(StretchOutArm());
     }
 
     IEnumerator StretchOutArm()
     {
-        Debug.Log("Begin Stretch");
+        //Debug.Log("Begin Stretch");
 
         armManager?.GetAudioCall().CallAudioClip("TentaclePeek");
 
@@ -48,7 +48,7 @@ public class ArmStateJab : StateBase
 
         yield return new WaitForSeconds(1f);
 
-        Debug.Log("Then Stretch");
+        //Debug.Log("Then Stretch");
         armManager?.GetAudioCall().CallAudioClip("TentacleExtend");
 
         for (int i = finalIndex - 1; i > 0; i--)
@@ -77,7 +77,7 @@ public class ArmStateJab : StateBase
 
         yield return new WaitForSeconds(3f);
 
-        Debug.Log("End Stretch");
+       // Debug.Log("End Stretch");
 
         armManager.ChangeState(armManager.stateRetract);
     }

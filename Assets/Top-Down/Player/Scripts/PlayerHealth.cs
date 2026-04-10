@@ -39,11 +39,15 @@ public class PlayerHealth : MonoBehaviour
             if (val < 0 && !canBeHurt) { Debug.Log("No Damage"); return; } 
             else 
             {
-                Debug.Log("Damage; " + val + "; canBehurt = " + canBeHurt + "; bypass = " + bypassInvulnerabilityCheck);
-                canBeHurt = false; 
-                AssetCall.instance.playerSM.GetAudioCall().CallAudioClip("Damage"); 
+                //Debug.Log("Damage; " + val + "; canBehurt = " + canBeHurt + "; bypass = " + bypassInvulnerabilityCheck);
+                canBeHurt = false;
+
+                AssetCall.instance.playerSM.GetFlashOnHit()?.FlashRed();
+
+                AssetCall.instance.playerSM.GetAudioCall()?.CallAudioClip("Damage"); 
             }
         }
+
 
         PlayerManager.currentOxygenLevel = Mathf.Clamp(PlayerManager.currentOxygenLevel + val, 0, PlayerManager.GetMaxOxygenLevel());
 

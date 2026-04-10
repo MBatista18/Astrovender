@@ -92,6 +92,13 @@ public class PlayerStateMachine : StateMachineBase
         return audioCall;
     }
 
+
+    FlashOnHit flashOnHit;
+    public FlashOnHit GetFlashOnHit()
+    {
+        return flashOnHit;
+    }
+
     public override void InstantiateComponents()
     {
         base.InstantiateComponents();
@@ -100,6 +107,7 @@ public class PlayerStateMachine : StateMachineBase
         animationController = GetComponent<PlayerAnimationController>();
         playerHealth = GetComponent<PlayerHealth>();
         audioCall = GetComponent<AudioCall>();
+        flashOnHit = GetComponent<FlashOnHit>();
     }
     #endregion
 

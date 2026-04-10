@@ -32,7 +32,7 @@ public class DungeonTile : MonoBehaviour
 
         isStartingRoom = Physics2D.BoxCast(transform.position, new Vector2(15, 10), 0f, Vector2.zero, 0f, LayerMask.GetMask("Player"));
 
-        Debug.Log(Physics2D.BoxCast(transform.position, new Vector2(15, 10), 0f, Vector2.zero, 0f, LayerMask.GetMask("Player")));
+        //Debug.Log(Physics2D.BoxCast(transform.position, new Vector2(15, 10), 0f, Vector2.zero, 0f, LayerMask.GetMask("Player")));
 
         RaycastHit2D[] rayAll = Physics2D.BoxCastAll(transform.position, new Vector2(15, 10), 0f, Vector2.zero, 0f, LayerMask.GetMask("Enemy", "Destructible", "Obstacle"));
 

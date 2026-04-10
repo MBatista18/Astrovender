@@ -4,7 +4,7 @@ using System.Collections;
 public class FlashOnHit : MonoBehaviour
 {
 
-    private SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     private Color originalColor;
 
     [SerializeField] private float flashDuration = 0.1f;
@@ -12,7 +12,7 @@ public class FlashOnHit : MonoBehaviour
 
     private void Awake()
     {
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        if (spriteRenderer == null) { spriteRenderer = GetComponentInChildren<SpriteRenderer>(); }
 
         if (spriteRenderer != null)
         {

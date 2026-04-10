@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1190411580291269452}
   - component: {fileID: 7687712565883540336}
   - component: {fileID: 5332122795767620798}
+  - component: {fileID: 692604621855401097}
   m_Layer: 8
   m_Name: DestructibleRock
   m_TagString: Untagged
@@ -151,3 +152,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Destructible
   particle: {fileID: 2292311466028325949, guid: 4c23768533fa78e4888dc7435851bd95, type: 3}
+--- !u!114 &692604621855401097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8300022781785906057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8720780a9003e374fa602e425272ce10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectID
+  uniqueID: f37b99bc-1383-43c1-b379-87b062a5ffce

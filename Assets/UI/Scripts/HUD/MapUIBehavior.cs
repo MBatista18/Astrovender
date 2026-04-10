@@ -39,7 +39,5 @@ public class MapUIBehavior : MonoBehaviour
         scale = (1 / scale) * 7;
 
         tileScaleParent.localScale = Vector3.one * scale;
-
-        this.gameObject.SetActive(false);
     }
 }

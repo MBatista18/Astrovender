@@ -18,9 +18,20 @@ public class LockedDoor : MonoBehaviour
 
     Animator animator;
 
+    ObjectID objectID;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        objectID = GetComponent<ObjectID>();
+    }
+
+    private void Start()
+    {
+        /*if (GameManager.Instance.currentdataObj.saveENVGameWorld.Contains(objectID.GetID()))
+        {
+            Open();
+        }*/
     }
 
     private void Update()
@@ -28,7 +39,14 @@ public class LockedDoor : MonoBehaviour
         if (open) { return; }
 
         if (lockCount > 0) { return; }
-        
+
+        GameManager.Instance.currentdataObj.saveENVGameWorld.Add(objectID.GetID());
+
+        Open();
+    }
+
+    void Open()
+    {
         open = true;
 
         animator.Play("LockedDoorOpen");

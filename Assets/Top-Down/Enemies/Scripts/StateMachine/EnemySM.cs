@@ -243,7 +243,7 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
         int RandomVal = Random.Range(0, 101);
         int valueCheck = coinLikelihood;
 
-        Debug.Log("RandomVal = " + RandomVal + "; Case = lvl " + GameManager.Instance.currentdataObj.enemyDropLevel);
+     //   Debug.Log("RandomVal = " + RandomVal + "; Case = lvl " + GameManager.Instance.currentdataObj.enemyDropLevel);
 
         if (RandomVal <= valueCheck)
         {
@@ -251,7 +251,7 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
             return;
         }
 
-        Debug.Log(RandomVal + " > " + valueCheck);
+     //   Debug.Log(RandomVal + " > " + valueCheck);
 
         valueCheck += gemLikelihood;
 
@@ -273,7 +273,7 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
             return;
         }
 
-        Debug.Log("Failed Oxygen: " + RandomVal + " > " + valueCheck);
+       // Debug.Log("Failed Oxygen: " + RandomVal + " > " + valueCheck);
 
         if (bombLikelihood <= 0) { return; }
 
@@ -285,7 +285,7 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
             return;
         }
 
-        Debug.Log("Failed Bomb: " + RandomVal + " > " + valueCheck);
+      //  Debug.Log("Failed Bomb: " + RandomVal + " > " + valueCheck);
 
         if (ammoLikelihood <= 0) { return; }
 
@@ -297,7 +297,7 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
             return;
         }
 
-        Debug.Log("Failed Gun: " + RandomVal + " > " + valueCheck);
+      //  Debug.Log("Failed Gun: " + RandomVal + " > " + valueCheck);
 
         if (shieldLikelihood <= 0) { return; }
 
@@ -309,7 +309,7 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
             return;
         }
 
-        Debug.Log("Failed Shield: " + RandomVal + " > " + valueCheck);
+      //  Debug.Log("Failed Shield: " + RandomVal + " > " + valueCheck);
     }
 
 }

@@ -237,6 +237,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (141)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 6a81e662-df29-484e-8873-601d1c71f6ca
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -789,6 +793,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 64dc4fa4-3487-482c-8406-1a8d64fe78c8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -998,6 +1006,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (98)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 9c0b3326-4fd0-4a2e-8733-9c7831cde4e1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1303,6 +1315,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (64)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 2ef3bae8-836b-457a-a81f-b5dd5a128feb
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1507,6 +1523,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 421975f1-47cc-4e66-b92f-acbcfe99c005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1760,6 +1780,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (163)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 492f5caa-fc8f-4dd4-8d92-05ca1be3d78b
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1945,6 +1969,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (52)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 57de6a10-f06f-42d5-8276-704b934d94e9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2006,6 +2034,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (80)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: e2ce02e6-be56-4a49-819d-93bdc5721923
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2066,6 +2098,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (92)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 04eef784-4684-4448-bb66-873ba2d491d9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2190,6 +2226,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 7cb4de42-adb0-40f0-8c77-3a8a347ed60a
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2250,6 +2290,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (81)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 3f0499c7-548e-4df4-9398-60a59863bc78
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2373,6 +2417,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (73)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: aebe5b4b-2433-4d5e-8abc-2de44486b2c7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2568,6 +2616,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (78)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 694e89ef-bbb0-436f-ac9d-7d9ac6402ccd
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2913,6 +2965,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (136)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 5e424be8-afa2-49ad-9fd4-b9b4ec018c42
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2983,6 +3039,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (87)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 984ca43c-9dd2-4941-b3a7-26ba1010fbd4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3169,6 +3229,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (184)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: d4e736b3-e6fa-48eb-9330-7ee9a99f7362
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3240,6 +3304,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (140)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 50512d04-2680-4098-b882-8b3e8c889db1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3300,6 +3368,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (91)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: bfbbd047-332c-422c-a86d-2d7c4aed5678
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3389,6 +3461,10 @@ PrefabInstance:
     - target: {fileID: 263234174216284280, guid: 6cf8593330901684494faece37a3e380, type: 3}
       propertyPath: m_Name
       value: DoorLock (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099044911032005679, guid: 6cf8593330901684494faece37a3e380, type: 3}
+      propertyPath: uniqueID
+      value: 0dd65a8c-e298-499f-b7a0-bc496bf039f1
       objectReference: {fileID: 0}
     - target: {fileID: 6706327357914868737, guid: 6cf8593330901684494faece37a3e380, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3562,6 +3638,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (100)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 01db7cd3-99e4-4895-9c60-9325831804a0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3623,6 +3703,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (90)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 26549623-9e4c-4ec3-b483-7aa738360168
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3683,6 +3767,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (177)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: bdf898f5-5ee6-4cac-9524-683ff516607f
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3874,6 +3962,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (170)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: aa927104-871f-4cb0-af14-26815fcaef94
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3939,6 +4031,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (127)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: dfb915d9-a15f-42ff-b7d0-a73920e14005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4296,6 +4392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (109)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: d17800a0-46cb-4bc5-bb03-62ebba0b1f9a
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4419,6 +4519,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 89a13596-abaa-474c-ada7-bc01592ae064
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4485,6 +4589,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (159)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 993659bf-400f-4795-906f-3536121d7374
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4545,6 +4653,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (117)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 4a0099e1-aea5-43e8-be2f-ca509c915aac
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4813,6 +4925,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (106)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 7ca2f525-d17f-4d01-b119-74a0b3cb4ddb
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4961,6 +5077,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (148)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: ab08ba2d-c0dc-495b-8352-70bf473219b6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5031,6 +5151,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 408370142772854560, guid: f642962f6b1fff44aa2cc57cfa872a51, type: 3}
+      propertyPath: uniqueID
+      value: 1e727cbc-6e9b-472d-bca5-07113994ac74
+      objectReference: {fileID: 0}
     - target: {fileID: 1457804615685983929, guid: f642962f6b1fff44aa2cc57cfa872a51, type: 3}
       propertyPath: m_Name
       value: Key (2)
@@ -5135,6 +5259,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 3200b355-6ee1-4128-b940-4f6078157ab4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5259,6 +5387,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: bdf1448b-7482-4a92-8fe5-9183a2574a29
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5337,6 +5469,10 @@ PrefabInstance:
     - target: {fileID: 263234174216284280, guid: 6cf8593330901684494faece37a3e380, type: 3}
       propertyPath: m_Name
       value: DoorLock
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099044911032005679, guid: 6cf8593330901684494faece37a3e380, type: 3}
+      propertyPath: uniqueID
+      value: 02718712-fdb6-44ee-bf0a-644c96a4e546
       objectReference: {fileID: 0}
     - target: {fileID: 6706327357914868737, guid: 6cf8593330901684494faece37a3e380, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5458,6 +5594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (43)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: c89936fc-1109-4440-887d-a8c0f2a7f87b
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5519,6 +5659,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 9bd63118-af99-4149-9817-a950764e005b
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5579,6 +5723,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: abc7f337-efce-4940-aca8-49b3bc2f5f9b
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5645,6 +5793,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (114)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 4a42e71e-3982-4d3d-9a31-76d508bd5d6c
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5774,6 +5926,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (63)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 13319359-b455-4d3a-a817-53935c4efbe6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5840,6 +5996,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 126c4312-8ccf-4972-ac32-e033fe185afb
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5900,6 +6060,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (58)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: c7671a04-873d-458a-8352-035e350bae4f
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5967,6 +6131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (74)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 72a3ef48-efbb-43f4-b347-2d560e4af833
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6027,6 +6195,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: ba064021-c95c-40ac-b059-c67f5fbe1ce5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6089,6 +6261,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (54)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: d6543ed4-63be-4a44-8b35-2e474d3af366
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6149,6 +6325,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (53)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: a5cf3d0c-2c72-4b65-9442-6783c2dfadcb
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6215,6 +6395,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 2e0e80fb-59e8-4b32-9ace-03b81bdbf3fe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6348,6 +6532,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (144)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: c4cfb420-8890-4704-8487-a27a8181bf2d
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6596,6 +6784,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (72)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 59cc2272-9d1a-4a8f-b18a-9162ed286bcc
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6676,6 +6868,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 5a543469-c356-497d-b78a-5d61b9b6c414
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6805,6 +7001,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (137)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: e5e84877-c00a-4b7c-bf6a-2159b92446f9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6865,6 +7065,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (48)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 3758fecb-e0d4-43c8-b324-1425798ba2e5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6993,6 +7197,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (179)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 8f5e0843-14ca-42ee-ad19-c898ee51b446
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7127,6 +7335,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (130)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: e8bf9f3b-0a5c-4362-b875-fadc71623cc9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7250,6 +7462,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (96)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 552b686b-9fda-4f95-8040-d669cf18ff7d
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7310,6 +7526,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (93)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: ecb9b967-3647-4184-992f-0e5c962710f0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8510,6 +8730,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 3114416f-71ad-4472-a47b-cb4fc90731c3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8762,6 +8986,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (89)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 51ffc2a2-841c-4d15-96d0-bfe397c4d6c5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8827,6 +9055,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (124)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 1f36ae55-ab87-4f38-8f45-8240ee94f436
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9231,6 +9463,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 77f8676b-1eac-47dc-bf16-7d78d84c159c
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9733,6 +9969,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (79)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: d04ffaf9-f22c-4f7a-815a-1693e020bf17
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9793,6 +10033,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 58d73cf8-93e3-466e-bf18-1678bcab8c6c
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10232,6 +10476,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (180)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: defab273-0746-4e69-bef9-a3ef6a2997e1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10370,6 +10618,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (154)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: f19963f0-6947-47a5-b2dd-867dd8b13a2d
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10430,6 +10682,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (120)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 9f49d11b-0e5a-47e6-bcca-d59054aa2c40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10735,6 +10991,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (175)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 08de892a-86d6-4148-8be2-3adbd72b80d1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10972,6 +11232,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: db7dba6b-4222-442d-af30-1fc9175b0ffc
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11032,6 +11296,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (165)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 83e740d9-fbd4-4403-852e-c1638b665431
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11854,6 +12122,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (121)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 182e15da-7204-47d9-8e29-6befcc5b8a55
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11972,6 +12244,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 64b148b2-f49a-43ef-b9ca-5afcabd1bb61
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12038,6 +12314,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (139)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: c21e3159-0708-44fd-b93d-f271425d4134
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12103,6 +12383,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 35b5edb2-ebaf-45f6-8aaf-5f9cf449c126
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12227,6 +12511,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (103)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: c8d7e105-a0ac-4948-9f7b-321b27ff039d
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12288,6 +12576,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (146)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: ef081676-513e-45ca-a345-5aeacb18f997
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12314,6 +12606,10 @@ PrefabInstance:
     - target: {fileID: 1014944979030749834, guid: c9d0d48e51ba45645879c923c5d1adc1, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 8371461309369286940, guid: c9d0d48e51ba45645879c923c5d1adc1, type: 3}
+      propertyPath: uniqueID
+      value: b4d94692-e21d-4c86-9202-d23ef25d97fe
       objectReference: {fileID: 0}
     - target: {fileID: 8602169425720935329, guid: c9d0d48e51ba45645879c923c5d1adc1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12556,6 +12852,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (101)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 08185520-97d9-475e-92fd-ccb845749b0f
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12666,6 +12966,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (69)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: b53831ca-6611-40ae-aeb3-68f323ad78b7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12995,6 +13299,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (42)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: a450c46b-1870-42c0-965e-8298f82aa1a4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13113,6 +13421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (82)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 98a27d2e-1aa1-4193-9dd8-638eccc24e5d
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13173,6 +13485,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (84)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 131f60e1-cbe8-4344-b484-6f9d9e0eb042
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13244,6 +13560,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (83)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 85477d45-45aa-4b5f-b67e-11cdf805781f
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13363,6 +13683,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: b00b8dc8-7997-4bee-ac36-06ee700ef0d8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13434,6 +13758,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (112)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 3ba6fe6a-dc63-49e4-9cb7-ac66a469b7bf
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13500,6 +13828,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (174)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: cff365b7-e837-4db4-9b6d-f9ffacac7388
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13560,6 +13892,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (138)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: caeaab4d-1e2a-472d-9816-69ab4ca4d7c9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -82080,6 +82416,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (142)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: fc89d96b-c293-4eed-8357-18f28f74d01a
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -82140,6 +82480,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (65)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 5539b4fa-0dfd-41ba-8a67-4d99b756861f
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -82455,6 +82799,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: e16f0545-fca6-43a5-b930-c07404a4198b
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -82578,6 +82926,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 20c69a10-7e62-4e38-a0cf-9e1dddd86f29
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -82599,6 +82951,10 @@ PrefabInstance:
     - target: {fileID: 263234174216284280, guid: 6cf8593330901684494faece37a3e380, type: 3}
       propertyPath: m_Name
       value: DoorLock (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099044911032005679, guid: 6cf8593330901684494faece37a3e380, type: 3}
+      propertyPath: uniqueID
+      value: d3d72cd3-e6c4-4aee-a506-56c810005528
       objectReference: {fileID: 0}
     - target: {fileID: 6706327357914868737, guid: 6cf8593330901684494faece37a3e380, type: 3}
       propertyPath: m_LocalPosition.x
@@ -82710,6 +83066,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (104)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 481f2a9c-95e6-429f-8be9-aaa24cab1fb9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -82776,6 +83136,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (176)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 5b560132-64f5-43f2-918a-522d0e86ebfb
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -82836,6 +83200,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (133)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 28a7e3b5-6687-400c-8f0a-e30a1ffd5d33
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -83022,6 +83390,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (192)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 4c6b539b-a2bf-437e-a414-6b2777875fb2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -83144,6 +83516,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (153)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: bd95e494-54b8-4b7f-9768-92078a85629b
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -83329,6 +83705,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (168)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: dbfc5684-1bab-4760-af35-3bf2a77f32b2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -83535,6 +83915,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (132)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 5d629b96-a277-4d0b-81e4-e39211a32533
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -83601,6 +83985,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (86)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 66c51b35-8c1a-44cc-816d-e1758753c9e3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -83661,6 +84049,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (157)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 5ab7cec2-bc64-4be2-8474-76efce3ad0a5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -83784,6 +84176,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (66)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 6e817146-217e-45c5-ae20-e9240f3a87bb
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -83965,6 +84361,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (57)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 7881766c-da47-4b38-90ff-7ef6cfbb0ca4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -84035,6 +84435,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (50)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 2852a699-aecc-4e23-9de3-d8d97a170bcd
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -84499,6 +84903,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 43431bc8-fd8b-4590-8e4c-cf40451f880c
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -84559,6 +84967,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (186)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 8488bb85-a5d5-4025-ae16-08e94e39b874
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -84682,6 +85094,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (190)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: d00705d9-c62c-43ea-86f8-1f635b340cc3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -84945,6 +85361,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (119)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: abd4ef04-c04d-4bf7-9933-92a8f90b15d7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -85206,6 +85626,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 408370142772854560, guid: f642962f6b1fff44aa2cc57cfa872a51, type: 3}
+      propertyPath: uniqueID
+      value: 4bbb40cb-ee34-4c85-9972-3fdc19a2ceaa
+      objectReference: {fileID: 0}
     - target: {fileID: 1457804615685983929, guid: f642962f6b1fff44aa2cc57cfa872a51, type: 3}
       propertyPath: m_Name
       value: Key
@@ -85372,6 +85796,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (135)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: c94e8928-3739-42af-91e4-ef622eee70e4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -85552,6 +85980,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (189)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: fde57f66-84ce-4634-af1d-b42925f18fba
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -85804,6 +86236,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (107)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: f6c7bdf2-8ec1-4dcc-a463-4045547c9c8a
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -86066,6 +86502,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 00da9dec-7395-4ecc-9dbe-751702e2495c
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -86447,6 +86887,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (143)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 0fc5a91d-7c0c-42d2-91e2-b39bfbd88f2a
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -86911,6 +87355,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 75a9d4be-198c-425d-ae30-b8473a9aaa95
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -86972,6 +87420,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (62)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 58fe60d2-97a7-4a74-8f57-52c42b09b6b9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -87032,6 +87484,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 42cd1089-18c8-4017-a3ca-4e92d40cfa6d
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -87213,6 +87669,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (126)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 3591f30f-c16f-4b5c-b7dc-2b7e3de6ee7a
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -87278,6 +87738,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (129)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 1e0b561f-2fcb-4520-9d7f-1ace644baf51
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -87397,6 +87861,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (169)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: d25a8c7c-11e3-46b7-9684-023cb768e769
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -87514,6 +87982,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (118)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: fb8811f2-4070-48d9-b66b-6ebe0df6f778
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -87789,6 +88261,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (85)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 36a55d2d-9121-4daa-a5ba-1020809d1058
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -87849,6 +88325,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 44010217-1943-467a-9123-53cfdfe2bfd3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -88030,6 +88510,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (77)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: c160535f-39a9-4303-9cc0-93b23d077c89
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -88096,6 +88580,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (115)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: b781e14f-3bfe-421f-883d-6922a3b7a215
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -88157,6 +88645,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 99be210d-90ed-4e62-bee3-3ba8fa95882d
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -88217,6 +88709,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (193)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 6a079368-e9a7-42d5-96dc-9505851faa0f
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -88340,6 +88836,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (188)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 2368b141-8fcf-4624-909d-a1c0a2b05664
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -88613,6 +89113,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (173)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 5011c00b-3675-4672-97c1-83e5a6b60705
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -88673,6 +89177,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (147)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 3ee7a6d0-08bd-4e5a-8166-8a754c71bca3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -89040,6 +89548,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (131)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 02482850-1e84-4a31-8271-da5ed5d25d15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -89359,6 +89871,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (178)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 9ee79bf8-c9c4-4bc6-b89c-ef89ed269982
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -89491,6 +90007,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 02f51d06-59f6-4c60-9652-ff302f06a1d3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -89712,6 +90232,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (68)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: ebb07e00-6bdc-48ea-b0b1-1719bda45b22
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -89772,6 +90296,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (162)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 46fbb1f3-bd8a-4df0-95e1-88a08b887d54
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -89834,6 +90362,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (76)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: e3d0a2b5-2999-475b-bf33-348daa78371f
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -89894,6 +90426,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (116)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: edcd7cf7-f6ac-40dd-a256-cf2bce51f718
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -90013,6 +90549,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (151)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: d04aeb68-b8ab-414d-87d8-5aa4df349ef8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -90073,6 +90613,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (181)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: e7356669-b6a5-465b-8c75-f164b3102c4b
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -90139,6 +90683,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (94)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: d048a2e8-e264-446f-ad72-90b9b07745b7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -90267,6 +90815,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (71)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 10161dfd-45fc-4a2b-94c6-e149601f6bbc
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -90567,6 +91119,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (56)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: edf62377-1de7-4c76-bcdb-3fb34bd744f3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -90757,6 +91313,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (164)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 1f20f24b-a11f-4dce-907c-70b6d9f4a438
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -90942,6 +91502,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (182)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 05db9a8e-74ac-4583-90a1-b39af1e72063
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -91012,6 +91576,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (122)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 92936b2a-529e-4b3f-b7a5-0f101b870a95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -91141,6 +91709,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (97)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: a3f63998-3c7a-40b2-b184-f02278ca7d70
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -91268,6 +91840,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: f218d5a3-818a-4cde-a491-9c85dfbc5c00
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -91516,6 +92092,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (187)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: e7403815-c777-46a4-bd3f-428a25d4716e
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -91606,6 +92186,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 828b6255-93c8-424b-91e2-02d5bbb87a7d
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -91792,6 +92376,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 5dc695f7-23b3-4ade-ae83-68c2f65918a0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -91857,6 +92445,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (172)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 4bc750c5-50db-43d6-aaf7-b5bdd3687f2e
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -91991,6 +92583,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (128)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 23dce950-b685-47df-9a18-22e68ec1fe60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -92051,6 +92647,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: a9c7e3e8-4261-4cb7-865b-1ec20492ddca
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -92175,6 +92775,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (51)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: dde0c900-209e-492a-9708-bbd9860ccde3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -92235,6 +92839,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (75)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 599def18-da7e-4fc6-9b2b-5a6f2fbb32a8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -92483,6 +93091,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (158)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: c76ee3c8-9676-4e61-b9ff-006bb38c6362
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -92719,6 +93331,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (150)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: da2bb323-b2c8-426f-b205-1bd1495413bc
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -93109,6 +93725,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (67)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 9093fa0b-07ae-4063-9590-be536d6e8670
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -93366,6 +93986,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (125)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 6acd9272-fb9a-4747-b3b6-ad09391f70f8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -93613,6 +94237,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (161)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 47c20518-b900-443c-8b9e-d06441ec8e23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -93793,6 +94421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: a676e7e4-faa8-4aa1-b48e-c21d9f9eefb1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -93853,6 +94485,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (160)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: b3bbc2ee-e0cb-4d2b-bfd0-a14430319dd9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -93982,6 +94618,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (102)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 3931ed39-ea71-453c-92e7-f445f835d884
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -94109,6 +94749,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (183)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: c7b2b689-f1a4-4c02-bea1-eb18fe16d2df
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -94295,6 +94939,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (111)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 47b4ae91-a72c-41ac-a455-cb03795b63c5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -94366,6 +95014,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: ffc682ba-712a-43e6-b8c9-7db41fa55cdf
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -94426,6 +95078,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (167)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 74b214f8-f50d-42ee-a4d5-c0326e2fae47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -94555,6 +95211,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (191)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: f0270eec-e146-4ab8-ad53-d4296c9589ad
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -94625,6 +95285,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 1a43ba19-3c05-4df1-b887-659f43a370e5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -94898,6 +95562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (110)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 35ecf77e-661d-40de-9141-4a728c5b6f3b
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -94973,6 +95641,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 408370142772854560, guid: f642962f6b1fff44aa2cc57cfa872a51, type: 3}
+      propertyPath: uniqueID
+      value: bde40a0b-979f-40af-88d1-1f3a74a441e6
+      objectReference: {fileID: 0}
     - target: {fileID: 1457804615685983929, guid: f642962f6b1fff44aa2cc57cfa872a51, type: 3}
       propertyPath: m_Name
       value: Key (1)
@@ -95383,6 +96055,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 84dfb7cb-6af2-4380-b8af-60815e060e00
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -95501,6 +96177,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (95)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: e7d90479-fcfb-4e20-b5ca-79c6a6a52bda
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -95576,6 +96256,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 4178dff3-c8c3-4d20-857c-753cc19a25cb
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -95762,6 +96446,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (194)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 45967fb2-61d8-404d-9415-d60c9cfb88da
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -95837,6 +96525,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (155)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 0ce9fbe3-9cf7-42a1-adce-ce70ac9150f1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -96348,6 +97040,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (185)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 8f61ed5d-1e2c-48c3-ad38-935e94463224
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -96538,6 +97234,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: ecf08327-72fe-433c-9b7f-ad86f78de0ba
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -96598,6 +97298,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (123)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 1e914bc1-17ec-46a7-8d35-7e4c744a4aac
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -96727,6 +97431,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 29dccef4-3bab-4ae3-a791-832d43df5ae2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -96845,6 +97553,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: fbf72e06-a6b8-4e95-900e-db054b7d8c75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -96905,6 +97617,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (113)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 5601f250-5cdd-4497-ab30-c7cabb7a6d77
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -97028,6 +97744,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (156)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: a28eb85c-8bc7-40a2-bb92-7c730a7d0178
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -97296,6 +98016,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (59)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 0f859fa5-3a4d-47b3-85f1-61aa8e968a44
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -97356,6 +98080,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (105)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: bfda4b52-4398-4098-8a93-61558964d7c6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -97485,6 +98213,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (166)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 3f829f0c-3583-4c25-824d-1904b6355e7c
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -97545,6 +98277,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (149)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 6b9b614e-f924-46aa-8288-b193c22a7bc5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -97746,6 +98482,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (152)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 954a5f9a-d962-42e4-9d37-1e45a5ed8ff9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -97921,6 +98661,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (108)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 51dd1380-27c3-4939-a055-5924132a04e1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -97986,6 +98730,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (145)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 2ef2eb2f-e28c-4e83-b4a2-ad6069a83f6c
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -98279,6 +99027,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 002c70ed-0527-4aea-b0d2-93f4ad453c2a
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -98560,6 +99312,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 8ab863b6-f967-487f-9178-768e423bd5d4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -98750,6 +99506,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 40ff00e9-e4e7-4cfe-928f-d25a81a9d50f
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -98810,6 +99570,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (99)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: b7a314a6-579d-4949-b2f8-8b561d8f7af1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -98872,6 +99636,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (171)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 8aeb75dc-fe0c-48d8-9a8a-9561e4e0b749
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -98933,6 +99701,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (134)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: c182751f-e917-45b4-8a41-1f8e067ac327
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -98993,6 +99765,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (70)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: d60493a3-db22-41b5-a174-f3210f54dca1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -99198,6 +99974,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (61)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: f9b2ff4f-b3fd-4596-9124-5fb9775df0ac
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -99427,6 +100207,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 4a94dff6-9d94-49eb-89c9-71f82c0e4d74
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -169586,6 +170370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 89c458c6-996d-4e5c-88a6-f4dc0a37bd11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -169945,6 +170733,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleRock (55)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 0671d3a9-8344-4870-947b-b02d5efd307e
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -170072,6 +170864,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: ead2a12a-27ce-4955-a7d0-95f27ffd17b7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -170205,6 +171001,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: fad61a90-092d-4dea-97fc-4a43aea35c4a
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -170395,6 +171195,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (88)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 0ac9f6c1-f825-4354-91f9-8bb55ef06a67
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -170637,6 +171441,10 @@ PrefabInstance:
     - target: {fileID: 8300022781785906057, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
       propertyPath: m_Name
       value: DestructibleRock (60)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098969462523776834, guid: 27cbc4aa5870cac4ba445af6d3fb052f, type: 3}
+      propertyPath: uniqueID
+      value: 3bd694ca-27dc-4e5b-8403-09ecbaead73d
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

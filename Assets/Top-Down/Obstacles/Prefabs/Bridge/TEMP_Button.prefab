@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 815674159097707763}
   - component: {fileID: 782424655109529118}
   - component: {fileID: 6492168019946867046}
+  - component: {fileID: 8757232357498534918}
   m_Layer: 7
   m_Name: TEMP_Button
   m_TagString: Enemy
@@ -231,6 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShootableButton
   facingDirection: 1
+  deathEffectPrefab: {fileID: 0}
   maxHealth: 999999999
   damageReactionTime: 0
   reactToDamage: 1
@@ -241,7 +243,6 @@ MonoBehaviour:
   dropsCoinsGems: 1
   slidingBridge: {fileID: 0}
   shootOpenDoor: {fileID: 0}
-  uniqueID: 
   buttonRenderer: {fileID: 2841935539994214150}
   activatedSprite: {fileID: 21300000, guid: a1868e75fd3748c46854e87723d83f1a, type: 3}
 --- !u!50 &6492168019946867046
@@ -271,3 +272,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8757232357498534918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6882417387202215221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8720780a9003e374fa602e425272ce10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectID
+  uniqueID: cb766e6e-aa20-4442-9655-f571335e03f1

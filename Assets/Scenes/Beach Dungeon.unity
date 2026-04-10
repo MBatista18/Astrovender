@@ -2925,6 +2925,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5292444412621708235, guid: 3f1f66a8610ece44081c287fd3c32725, type: 3}
+      propertyPath: uniqueID
+      value: 1fd4871f-ad51-41c4-9de1-3b8941583601
+      objectReference: {fileID: 0}
     - target: {fileID: 5976430837990686116, guid: 3f1f66a8610ece44081c287fd3c32725, type: 3}
       propertyPath: m_Name
       value: FullBridge (3)
@@ -4022,6 +4026,10 @@ PrefabInstance:
       propertyPath: lockedDoor
       value: 
       objectReference: {fileID: 1758165801}
+    - target: {fileID: 9034542590343370269, guid: 6cf8593330901684494faece37a3e380, type: 3}
+      propertyPath: uniqueID
+      value: 02ff761b-278e-4279-a948-3d1ae578b525
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4559,6 +4567,10 @@ PrefabInstance:
     - target: {fileID: 1457804615685983929, guid: f642962f6b1fff44aa2cc57cfa872a51, type: 3}
       propertyPath: m_Name
       value: Key (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063605942495270595, guid: f642962f6b1fff44aa2cc57cfa872a51, type: 3}
+      propertyPath: uniqueID
+      value: c0de1c73-7dcf-4d8e-9c1e-674819981f22
       objectReference: {fileID: 0}
     - target: {fileID: 8957481500904781622, guid: f642962f6b1fff44aa2cc57cfa872a51, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5508,6 +5520,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5292444412621708235, guid: 3f1f66a8610ece44081c287fd3c32725, type: 3}
+      propertyPath: uniqueID
+      value: 8c033a04-4d9b-42ce-9667-69bf182a9cae
+      objectReference: {fileID: 0}
     - target: {fileID: 5976430837990686116, guid: 3f1f66a8610ece44081c287fd3c32725, type: 3}
       propertyPath: m_Name
       value: FullBridge (2)
@@ -6074,6 +6090,10 @@ PrefabInstance:
     - target: {fileID: 5045116783832580870, guid: 3f1f66a8610ece44081c287fd3c32725, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292444412621708235, guid: 3f1f66a8610ece44081c287fd3c32725, type: 3}
+      propertyPath: uniqueID
+      value: 4d1c5591-ac8e-49ac-8551-d0d3949f5b9b
       objectReference: {fileID: 0}
     - target: {fileID: 5976430837990686116, guid: 3f1f66a8610ece44081c287fd3c32725, type: 3}
       propertyPath: m_Name
@@ -7404,6 +7424,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1957408579}
     m_Modifications:
+    - target: {fileID: 936520798408892087, guid: c9d0d48e51ba45645879c923c5d1adc1, type: 3}
+      propertyPath: uniqueID
+      value: 93e96e63-ad94-4f16-9e9d-3c97e12a31a2
+      objectReference: {fileID: 0}
     - target: {fileID: 1014944979030749834, guid: c9d0d48e51ba45645879c923c5d1adc1, type: 3}
       propertyPath: m_Name
       value: Door (1)
@@ -7743,6 +7767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GalleryTarget
   facingDirection: 1
+  deathEffectPrefab: {fileID: 0}
   maxHealth: 1
   damageReactionTime: 0
   reactToDamage: 1
@@ -93512,6 +93537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GalleryTarget
   facingDirection: 1
+  deathEffectPrefab: {fileID: 0}
   maxHealth: 1
   damageReactionTime: 0
   reactToDamage: 1
@@ -93917,6 +93943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GalleryTarget
   facingDirection: 1
+  deathEffectPrefab: {fileID: 0}
   maxHealth: 1
   damageReactionTime: 0
   reactToDamage: 1
@@ -95157,6 +95184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GalleryTarget
   facingDirection: 1
+  deathEffectPrefab: {fileID: 0}
   maxHealth: 1
   damageReactionTime: 0
   reactToDamage: 1
@@ -95256,6 +95284,10 @@ PrefabInstance:
     - target: {fileID: 6324626145709963118, guid: 95036c79c1cf87c41861bff5d81f86cf, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228203231033159598, guid: 95036c79c1cf87c41861bff5d81f86cf, type: 3}
+      propertyPath: uniqueID
+      value: 23837b1d-b42f-4ef2-b06b-d65a349692af
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -95738,6 +95770,10 @@ PrefabInstance:
     - target: {fileID: 1457804615685983929, guid: f642962f6b1fff44aa2cc57cfa872a51, type: 3}
       propertyPath: m_Name
       value: Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063605942495270595, guid: f642962f6b1fff44aa2cc57cfa872a51, type: 3}
+      propertyPath: uniqueID
+      value: 34b7d78e-2522-4135-ae3d-011bb237a48f
       objectReference: {fileID: 0}
     - target: {fileID: 8957481500904781622, guid: f642962f6b1fff44aa2cc57cfa872a51, type: 3}
       propertyPath: m_LocalPosition.x
@@ -96299,6 +96335,10 @@ PrefabInstance:
       propertyPath: lockedDoor
       value: 
       objectReference: {fileID: 890813605}
+    - target: {fileID: 9034542590343370269, guid: 6cf8593330901684494faece37a3e380, type: 3}
+      propertyPath: uniqueID
+      value: b5703a2a-6cbd-48f5-92b4-2438c6addadc
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -96608,6 +96648,10 @@ PrefabInstance:
     - target: {fileID: 5045116783832580870, guid: 3f1f66a8610ece44081c287fd3c32725, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292444412621708235, guid: 3f1f66a8610ece44081c287fd3c32725, type: 3}
+      propertyPath: uniqueID
+      value: 0ee4d7b3-9e96-4ded-86ad-d3ec98efd554
       objectReference: {fileID: 0}
     - target: {fileID: 5976430837990686116, guid: 3f1f66a8610ece44081c287fd3c32725, type: 3}
       propertyPath: m_Name
@@ -100074,6 +100118,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Key (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4063605942495270595, guid: f642962f6b1fff44aa2cc57cfa872a51, type: 3}
+      propertyPath: uniqueID
+      value: 364aeb94-fbf9-4a65-adfa-98d9a6e1d453
+      objectReference: {fileID: 0}
     - target: {fileID: 8957481500904781622, guid: f642962f6b1fff44aa2cc57cfa872a51, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -102508,6 +102556,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5292444412621708235, guid: 3f1f66a8610ece44081c287fd3c32725, type: 3}
+      propertyPath: uniqueID
+      value: a2b646f5-75a1-4c75-a0d9-900841179016
+      objectReference: {fileID: 0}
     - target: {fileID: 5976430837990686116, guid: 3f1f66a8610ece44081c287fd3c32725, type: 3}
       propertyPath: m_Name
       value: FullBridge (4)
@@ -102637,6 +102689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GalleryTarget
   facingDirection: 1
+  deathEffectPrefab: {fileID: 0}
   maxHealth: 1
   damageReactionTime: 0
   reactToDamage: 1
@@ -103203,6 +103256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GalleryTarget
   facingDirection: 1
+  deathEffectPrefab: {fileID: 0}
   maxHealth: 1
   damageReactionTime: 0
   reactToDamage: 1
@@ -103541,6 +103595,10 @@ PrefabInstance:
       propertyPath: lockedDoor
       value: 
       objectReference: {fileID: 1748823028}
+    - target: {fileID: 9034542590343370269, guid: 6cf8593330901684494faece37a3e380, type: 3}
+      propertyPath: uniqueID
+      value: d92051b2-5717-4f06-a244-0c5e303f557c
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -103886,6 +103944,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1957408579}
     m_Modifications:
+    - target: {fileID: 936520798408892087, guid: c9d0d48e51ba45645879c923c5d1adc1, type: 3}
+      propertyPath: uniqueID
+      value: 4c204590-2258-4e24-8aa7-164a73ee698b
+      objectReference: {fileID: 0}
     - target: {fileID: 1014944979030749834, guid: c9d0d48e51ba45645879c923c5d1adc1, type: 3}
       propertyPath: m_Name
       value: Door
@@ -104026,9 +104088,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1957408579}
     m_Modifications:
+    - target: {fileID: 936520798408892087, guid: c9d0d48e51ba45645879c923c5d1adc1, type: 3}
+      propertyPath: uniqueID
+      value: 5a61e832-cd0d-4602-adcd-e6983ab2e207
+      objectReference: {fileID: 0}
     - target: {fileID: 1014944979030749834, guid: c9d0d48e51ba45645879c923c5d1adc1, type: 3}
       propertyPath: m_Name
       value: Door (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8371461309369286940, guid: c9d0d48e51ba45645879c923c5d1adc1, type: 3}
+      propertyPath: uniqueID
+      value: 841f3d03-8d4c-4888-ad78-0535246bd31b
       objectReference: {fileID: 0}
     - target: {fileID: 8602169425720935329, guid: c9d0d48e51ba45645879c923c5d1adc1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -105083,6 +105153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GalleryTarget
   facingDirection: 1
+  deathEffectPrefab: {fileID: 0}
   maxHealth: 1
   damageReactionTime: 0
   reactToDamage: 1
