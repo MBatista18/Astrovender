@@ -28,11 +28,11 @@ public class LockedDoorLock : MonoBehaviour
 
     private void Start()
     {
-       /* if (GameManager.Instance.currentdataObj.saveENVGameWorld.Contains(objectID.GetID()))
+        if (GameManager.Instance.currentdataObj.saveENVGameWorld.Contains(objectID.GetID()))
         {
             Debug.Log("saveENV contains " + objectID.GetID());
             Unlock();
-        }*/
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

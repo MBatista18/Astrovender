@@ -19,10 +19,10 @@ public class ShootableButton : EnemySM
 
     public override StateBase InitialState()
     {
-       /* if (GameManager.Instance.currentdataObj.saveENVGameWorld.Contains(objectID.GetID()))
+        if (GameManager.Instance.currentdataObj.saveENVGameWorld.Contains(objectID.GetID()))
         {
             PainReactions();
-        } */
+        }
         return base.InitialState();
     }
 

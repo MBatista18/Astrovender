@@ -28,14 +28,20 @@ public class ChargingBossStateCharge : StateBase
         base.thisUpdate();
         runningTimer -= Time.deltaTime;
 
+        RaycastHit2D a1 = Physics2D.BoxCast((sm.transform.position + ((Vector3)new Vector3(0, movementDirection) * (sm.GetBoxCollider2D().size.y/2)))
+            , new Vector3(sm.GetBoxCollider2D().size.x, .1f), 0f, Vector2.zero, 0f,
+            LayerMask.GetMask("Walls"));
+
         if (runningTimer <= 0 || 
-            (Physics2D.BoxCast((sm.transform.position + ((Vector3)new Vector3(0,movementDirection) * .1f)), Vector3.one * sm.GetBoxCollider2D().size.x, 0f, Vector2.zero, 0f, 
-            LayerMask.GetMask("Walls"))))
+            a1)
         {
+            Debug.Log("COLLISION AT " + a1.point);
+
             sm.ChangeState(sm.GetStateStunned());
         }
 
-        RaycastHit2D a = Physics2D.BoxCast((sm.transform.position + ((Vector3)new Vector3(0, movementDirection) * .1f)), Vector3.one * sm.GetBoxCollider2D().size.x, 0f, Vector2.zero, 0f,
+        RaycastHit2D a = Physics2D.BoxCast((sm.transform.position + ((Vector3)new Vector3(0, movementDirection) * .1f)), 
+            new Vector3(sm.GetBoxCollider2D().size.x + .1f, sm.GetBoxCollider2D().size.y + .1f), 0f, Vector2.zero, 0f,
             LayerMask.GetMask("Destructible"));
 
         if (a)

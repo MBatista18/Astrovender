@@ -2,8 +2,11 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(ObjectID))]
 public class DungeonTile : MonoBehaviour
 {
+    ObjectID objectID;
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -27,6 +30,11 @@ public class DungeonTile : MonoBehaviour
 
     GameObject[] roomObjects;
 
+    private void Awake()
+    {
+        objectID = GetComponent<ObjectID>();
+    }
+
     private void Start()
     {
 
@@ -44,6 +52,11 @@ public class DungeonTile : MonoBehaviour
         {
             roomObjects[i] = rayAll[i].collider.gameObject;
             roomObjects[i].SetActive(false);
+        }
+
+        if (GameManager.Instance.currentdataObj.saveENVGameWorld.Contains(objectID.GetID()))
+        {
+            roomHasBeenEntered = true;
         }
     }
 
@@ -63,7 +76,12 @@ public class DungeonTile : MonoBehaviour
         {
             SetActiveArray(true);
 
-            roomHasBeenEntered = true;
+            if (!roomHasBeenEntered)
+            {
+                roomHasBeenEntered = true;
+
+                GameManager.Instance.currentdataObj.saveENVGameWorld.Add(objectID.GetID());
+            }
 
             playerIsInRoom = true;
         }

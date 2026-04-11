@@ -16,6 +16,8 @@ public class BombTankStateRush : StateBase
         base.thisStart();
         timer = 1f;
 
+        if (Random.Range(0, 10) < 7) { Object.Instantiate(sm.GetBomb(), sm.transform.position, Quaternion.identity); }
+
         switch (sm.GetStateMove().movedHorizontally)
         {
             case false:

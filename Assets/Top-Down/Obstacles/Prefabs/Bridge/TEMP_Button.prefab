@@ -39,7 +39,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3263480095291483884}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 782424655109529118}
   - component: {fileID: 6492168019946867046}
   - component: {fileID: 8757232357498534918}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: TEMP_Button
   m_TagString: Enemy
   m_Icon: {fileID: 0}

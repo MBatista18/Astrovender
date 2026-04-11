@@ -1,8 +1,6 @@
 using UnityEngine;
 using System.Collections;
 
-using UnityEngine.SceneManagement; // for now, the value hitting 0 will simply reset the scene for the final build, we will change this in the final build
-
 public class PlayerHealth : MonoBehaviour
 {    static bool canBeHurt = true;
     float invulnerabilityTimer;
@@ -53,8 +51,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (PlayerManager.currentOxygenLevel <= 0)
         {
-            GameManager.Instance.Progress(false);
-            SceneManager.LoadScene(1);
+            AssetCall.instance.playerSM.ChangeState(AssetCall.instance.playerSM.DeathState());
         }
     }
 

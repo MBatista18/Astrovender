@@ -28,10 +28,10 @@ public class LockedDoor : MonoBehaviour
 
     private void Start()
     {
-        /*if (GameManager.Instance.currentdataObj.saveENVGameWorld.Contains(objectID.GetID()))
+        if (GameManager.Instance.currentdataObj.saveENVGameWorld.Contains(objectID.GetID()))
         {
             Open();
-        }*/
+        }
     }
 
     private void Update()

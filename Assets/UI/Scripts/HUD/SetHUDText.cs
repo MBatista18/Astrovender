@@ -57,18 +57,21 @@ public class SetHUDText : MonoBehaviour
         SetGemText(GameManager.Instance.collectedGems);
     }
 
+    float MAXTIMER = 2f;
     float a2Timer = 0;
     float a1Timer = 0;
+
+    bool beginCountdown = false;
+    public void BeginCountdown() { beginCountdown = true; }
     
     public void RefreshFadeInUI()
     {
-        if (PlayerManager.currentOxygenLevel <= 5) { a1Timer += Time.deltaTime; } else { a1Timer = 0; } 
-        // hopefully there's never a situation where the player gains 3 seconds of oxygen after only having 1 second of oxygen left, because
-            // that would misalign this timer from the actual oxygen meter
+        if (!beginCountdown) { return; }
 
-        if (PlayerManager.currentOxygenLevel <= 1) { a2Timer += Time.deltaTime; } else { a2Timer = 0; }
+        a1Timer += Time.deltaTime;
+        a2Timer += Time.deltaTime;
 
-        fadeOutCircle.color = new Color(1, 1, 1, Mathf.Clamp01(a1Timer/5f));
-        fadeOut.color = new Color(0, 0, 0, a2Timer);
+        fadeOutCircle.color = new Color(1, 1, 1, Mathf.Clamp01(a1Timer/ MAXTIMER));
+        fadeOut.color = new Color(0, 0, 0, Mathf.Clamp01(a1Timer - MAXTIMER));
     }
 }

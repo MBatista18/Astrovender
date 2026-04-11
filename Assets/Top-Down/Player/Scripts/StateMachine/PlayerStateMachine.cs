@@ -77,6 +77,9 @@ public class PlayerStateMachine : StateMachineBase
     private Rigidbody2D rb;
     public Rigidbody2D GetRB2d() { return rb; }
 
+    private BoxCollider2D boxCollider2D;
+    public BoxCollider2D GetCollider2D() { return boxCollider2D; }
+
     private PlayerAnimationController animationController;
     public PlayerAnimationController GetAnimationController() { return animationController; }
 
@@ -108,6 +111,7 @@ public class PlayerStateMachine : StateMachineBase
         playerHealth = GetComponent<PlayerHealth>();
         audioCall = GetComponent<AudioCall>();
         flashOnHit = GetComponent<FlashOnHit>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
     }
     #endregion
 

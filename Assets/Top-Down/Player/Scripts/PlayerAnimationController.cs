@@ -14,7 +14,8 @@ public class PlayerAnimationController : MonoBehaviour
     public enum AnimatorState
     {
         Idle,
-        Walking
+        Walking,
+        Death
     }
 
     private AnimatorState currentAnimatorState;
@@ -36,6 +37,9 @@ public class PlayerAnimationController : MonoBehaviour
                 break;
             case AnimatorState.Walking:
                 output = MoveAnimations();
+                break;
+            case AnimatorState.Death:
+                output = "PlayerDeath";
                 break;
         }
 
