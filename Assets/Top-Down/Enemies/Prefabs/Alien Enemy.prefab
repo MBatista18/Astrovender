@@ -98,7 +98,6 @@ GameObject:
   - component: {fileID: 902993300855353842}
   - component: {fileID: 4919713061325975852}
   - component: {fileID: 7347582648108561360}
-  - component: {fileID: -505235876211888140}
   - component: {fileID: -5164616888248934846}
   m_Layer: 7
   m_Name: Alien Enemy
@@ -276,19 +275,6 @@ MonoBehaviour:
   patrolRadius: 3
   detectionRadius: 4
   dropsCoinsGems: 1
---- !u!114 &-505235876211888140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8809358222740024218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73940d2750d35f34090966643e548ddd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  flashOnHit: {fileID: 0}
 --- !u!114 &-5164616888248934846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,4 +287,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e26879da27f1c949884aed6f5f1b0f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlashOnHit
+  spriteRenderer: {fileID: 0}
   flashDuration: 0.1
