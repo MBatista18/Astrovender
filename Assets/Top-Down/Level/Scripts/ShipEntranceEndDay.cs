@@ -16,4 +16,25 @@ public class ShipEntranceEndDay : MonoBehaviour
             SceneManager.LoadScene(endOfDayScene_ID);
         }
     }
+
+    [SerializeField] Sprite spriteClosed;
+    [SerializeField] Sprite spriteOpen;
+    SpriteRenderer spriteRenderer;
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
+        if (Vector2.Distance(transform.position, AssetCall.instance.playerSM.transform.position) < 4)
+        {
+            spriteRenderer.sprite = spriteOpen;
+        }
+        else
+        {
+            spriteRenderer.sprite = spriteClosed;
+        }
+    }
 }
