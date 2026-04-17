@@ -456,18 +456,6 @@ PrefabInstance:
       value: Subgame Manager
       objectReference: {fileID: 0}
     - target: {fileID: 5437232006556109799, guid: 7cd5fe1089bcc13428251c8faddb658e, type: 3}
-      propertyPath: width
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437232006556109799, guid: 7cd5fe1089bcc13428251c8faddb658e, type: 3}
-      propertyPath: origin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437232006556109799, guid: 7cd5fe1089bcc13428251c8faddb658e, type: 3}
-      propertyPath: nodeDataList.Array.data[3].unlocked
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437232006556109799, guid: 7cd5fe1089bcc13428251c8faddb658e, type: 3}
       propertyPath: OnMovesChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 634253026}

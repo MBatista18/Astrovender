@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -36,6 +37,9 @@ public class SubgameBoard : MonoBehaviour
     [Tooltip("How many moves the player starts with")]
     [SerializeField] int startingMoves = 20;
     [SerializeField] bool startOnWakeup = true;
+
+    [Header("Gizmos (Editor only)")]
+    [SerializeField] bool drawGizmos = true;
 
     private Node[,] _grid;
     private bool _boardBusy;
@@ -138,7 +142,9 @@ public class SubgameBoard : MonoBehaviour
         {
             // Move the origin so that the grid's center is still generally aligned with the original origin
             int widthOffset = this.width - width;
+            this.width = width;
             int heightOffset = this.height - height;
+            this.height = height;
             Vector2 newOrigin = new Vector2(widthOffset * cellSize * 0.5f, heightOffset * cellSize * 0.5f);
             origin = newOrigin;
         }
@@ -547,6 +553,33 @@ public class SubgameBoard : MonoBehaviour
     public void SetStartOnWakeup(bool value)
     {
         startOnWakeup = value;
+    }
+
+    // Draw the grid in the Scene view using Gizmos
+    private void OnDrawGizmos()
+    {
+        if (!drawGizmos) return;
+        if (width <= 0 || height <= 0) return;
+
+        Gizmos.color = Color.green;
+
+        Vector2 firstCellOrigin = new Vector2(origin.x - (cellSize * 0.5f), origin.y - (cellSize * 0.5f));
+
+        // Draw vertical grid lines (including the rightmost edge)
+        for (int x = 0; x <= width; x++)
+        {
+            Vector3 from = new Vector3(firstCellOrigin.x + x * cellSize, firstCellOrigin.y + 0f * cellSize, 0f);
+            Vector3 to = new Vector3(firstCellOrigin.x + x * cellSize, firstCellOrigin.y + height * cellSize, 0f);
+            Gizmos.DrawLine(from, to);
+        }
+
+        // Draw horizontal grid lines (including the top edge)
+        for (int y = 0; y <= height; y++)
+        {
+            Vector3 from = new Vector3(firstCellOrigin.x + 0f * cellSize, firstCellOrigin.y + y * cellSize, 0f);
+            Vector3 to = new Vector3(firstCellOrigin.x + width * cellSize, firstCellOrigin.y + y * cellSize, 0f);
+            Gizmos.DrawLine(from, to);
+        }
     }
 
     // ---------- Helpers for SubgameInputManager logic ----------
