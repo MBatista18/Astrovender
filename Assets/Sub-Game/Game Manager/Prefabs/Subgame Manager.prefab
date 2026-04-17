@@ -63,19 +63,40 @@ MonoBehaviour:
   height: 7
   cellSize: 1
   origin: {x: 0, y: 0}
-  nodePrefabs:
-  - {fileID: 6271802088635220574, guid: ca08744a4596a1549875c33a4d180e49, type: 3}
-  - {fileID: 6385377638312398284, guid: 1e0f6edd670eefb48aa09fd16733d3c9, type: 3}
-  - {fileID: 4806181888951159119, guid: 7474ce40b07c24044ab87adef17717c2, type: 3}
-  - {fileID: 3144733590786165761, guid: 093320a007c806c4ab6badb219ac62bf, type: 3}
+  nodeDataList:
+  - nodeType: 0
+    prefab: {fileID: 4806181888951159119, guid: 7474ce40b07c24044ab87adef17717c2, type: 3}
+    unlocked: 1
+  - nodeType: 1
+    prefab: {fileID: 6271802088635220574, guid: ca08744a4596a1549875c33a4d180e49, type: 3}
+    unlocked: 1
+  - nodeType: 2
+    prefab: {fileID: 6385377638312398284, guid: 1e0f6edd670eefb48aa09fd16733d3c9, type: 3}
+    unlocked: 1
+  - nodeType: 3
+    prefab: {fileID: 3144733590786165761, guid: 093320a007c806c4ab6badb219ac62bf, type: 3}
+    unlocked: 1
   backgroundTilePrefab: {fileID: 7669107819939452947, guid: 8b7eea34afc4f96489a35126dc726166, type: 3}
   nodeParent: {fileID: 0}
   swapDuration: 0.12
   fallDuration: 0.12
   startingMoves: 20
+  startOnWakeup: 1
   OnMovesChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SubgameUI, Assembly-CSharp
+        m_MethodName: UpdateMovesRemaining
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnOutOfMoves:
     m_PersistentCalls:
       m_Calls: []

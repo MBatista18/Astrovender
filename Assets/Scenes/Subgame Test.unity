@@ -456,29 +456,21 @@ PrefabInstance:
       value: Subgame Manager
       objectReference: {fileID: 0}
     - target: {fileID: 5437232006556109799, guid: 7cd5fe1089bcc13428251c8faddb658e, type: 3}
-      propertyPath: OnMovesChanged.m_PersistentCalls.m_Calls.Array.size
+      propertyPath: width
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437232006556109799, guid: 7cd5fe1089bcc13428251c8faddb658e, type: 3}
+      propertyPath: origin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437232006556109799, guid: 7cd5fe1089bcc13428251c8faddb658e, type: 3}
+      propertyPath: nodeDataList.Array.data[3].unlocked
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5437232006556109799, guid: 7cd5fe1089bcc13428251c8faddb658e, type: 3}
       propertyPath: OnMovesChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 634253026}
-    - target: {fileID: 5437232006556109799, guid: 7cd5fe1089bcc13428251c8faddb658e, type: 3}
-      propertyPath: OnMovesChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437232006556109799, guid: 7cd5fe1089bcc13428251c8faddb658e, type: 3}
-      propertyPath: OnMovesChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpdateMovesRemaining
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437232006556109799, guid: 7cd5fe1089bcc13428251c8faddb658e, type: 3}
-      propertyPath: OnMovesChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SubgameUI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437232006556109799, guid: 7cd5fe1089bcc13428251c8faddb658e, type: 3}
-      propertyPath: OnMovesChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 7897341065824319963, guid: 7cd5fe1089bcc13428251c8faddb658e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

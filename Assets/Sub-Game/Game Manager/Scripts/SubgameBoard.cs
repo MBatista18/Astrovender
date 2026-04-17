@@ -13,9 +13,17 @@ public class SubgameBoard : MonoBehaviour
     [SerializeField] float cellSize = 1.0f;
     [SerializeField] Vector2 origin = Vector2.zero; // world position of (0,0) cell (bottom-left)
 
+    [Serializable]
+    private struct NodeData
+    {
+        public NodeType nodeType;
+        public GameObject prefab;
+        public bool unlocked;
+    }
+    [Header("Node Types (Make sure each Node Type is only represented once)")]
+    [SerializeField] List<NodeData> nodeDataList = new();
+
     [Header("Prefabs & Visuals")]
-    [Tooltip("Provide exactly 4 prefabs for NodeType order: TypeA, TypeB, TypeC, TypeD")]
-    [SerializeField] GameObject[] nodePrefabs = new GameObject[4];
     [SerializeField] GameObject backgroundTilePrefab;
     [Tooltip("Optional parent for spawned nodes. If null, will use this GameObject's transform.")]
     [SerializeField] Transform nodeParent;
@@ -29,10 +37,12 @@ public class SubgameBoard : MonoBehaviour
     [SerializeField] int startingMoves = 20;
     [SerializeField] bool startOnWakeup = true;
 
-    private int _nodeTypeCount = 4;
     private Node[,] _grid;
     private bool _boardBusy;
     private int _movesRemaining;
+
+    // runtime unlocked state
+    private List<NodeType> _availableTypes = new List<NodeType>();
 
     [Tooltip("Event that fires when the player's moves remaining changes. Passes the current moves remaining as an int.")]
     public UnityEvent<int> OnMovesChanged; // Event that passes current moves remaining
@@ -52,7 +62,7 @@ public class SubgameBoard : MonoBehaviour
         _grid = new Node[width, height];
         _movesRemaining = startingMoves;
 
-        _nodeTypeCount = Enum.GetNames(typeof(NodeType)).Length;
+        RefreshAvailableTypes();
     }
 
     private void Start()
@@ -60,7 +70,61 @@ public class SubgameBoard : MonoBehaviour
         if (startOnWakeup) InitializeBoard(width, height);
     }
 
-    public void InitializeBoard(int width, int height)
+    // Recalculate the list of available node types
+    private void RefreshAvailableTypes()
+    {
+        if (nodeDataList == null || nodeDataList.Count == 0) return;
+
+        _availableTypes.Clear();
+        foreach (var nodeData in nodeDataList)
+        {
+            if (nodeData.unlocked)
+            {
+                _availableTypes.Add(nodeData.nodeType);
+            }
+        }
+
+        // If nothing is available (all locked), default to at least one type to avoid runtime errors
+        if (_availableTypes.Count == 0)
+        {
+            Debug.LogError("There are no Node Types unlocked, so defaulting to unlocking the first node type. Probably not intended");
+            _availableTypes.Add((NodeType)0);
+        }
+    }
+
+    // Public API to unlock/lock types at runtime
+    public void UnlockNodeType(NodeType type)
+    {
+        int index = nodeDataList.FindIndex(node => node.nodeType == type);
+        if (index != -1)
+        {
+            // Set NodeData to unlocked
+            var nodeData = nodeDataList[index];
+            nodeData.unlocked = true;
+            nodeDataList[index] = nodeData;
+        }
+        RefreshAvailableTypes();
+    }
+
+    public void LockNodeType(NodeType type)
+    {
+        int index = nodeDataList.FindIndex(node => node.nodeType == type);
+        if (index != -1)
+        {
+            // Set NodeData to locked
+            var nodeData = nodeDataList[index];
+            nodeData.unlocked = false;
+            nodeDataList[index] = nodeData;
+        }
+        RefreshAvailableTypes();
+    }
+
+    public IReadOnlyList<NodeType> GetAvailableNodeTypes()
+    {
+        return _availableTypes.AsReadOnly();
+    }
+
+    public void InitializeBoard(int width, int height, bool offsetOrigin = false)
     {
         StopAllCoroutines();
         _boardBusy = false;
@@ -70,6 +134,14 @@ public class SubgameBoard : MonoBehaviour
         foreach (Transform t in nodeParent) { Destroy(t.gameObject); }
 
         _grid = new Node[width, height];
+        if (offsetOrigin)
+        {
+            // Move the origin so that the grid's center is still generally aligned with the original origin
+            int widthOffset = this.width - width;
+            int heightOffset = this.height - height;
+            Vector2 newOrigin = new Vector2(widthOffset * cellSize * 0.5f, heightOffset * cellSize * 0.5f);
+            origin = newOrigin;
+        }
         FillBoardInitial();
 
         OnMovesChanged?.Invoke(_movesRemaining);
@@ -101,17 +173,25 @@ public class SubgameBoard : MonoBehaviour
         }
     }
 
-    // Get a random NodeType
+    // Get a random NodeType from the currently available/unlocked set
     private NodeType RandomNodeType()
     {
-        int r = UnityEngine.Random.Range(0, _nodeTypeCount);
-        return (NodeType) r;
+        if (_availableTypes == null || _availableTypes.Count == 0)
+        {
+            Debug.LogError("Available Types is null or empty, defaulting to a random node type (This shouldn't happen)");
+            int r = UnityEngine.Random.Range(0, nodeDataList.Count);
+            return (NodeType)r;
+        }
+
+        int idx = UnityEngine.Random.Range(0, _availableTypes.Count);
+        return _availableTypes[idx];
     }
 
     // Spawn a node of the given type at the given cell coordinates.
     private void SpawnNodeAt(int x, int y, NodeType type)
     {
-        GameObject prefab = nodePrefabs[(int)type];
+        NodeData nodeData = nodeDataList.Find(node => node.nodeType == type);
+        GameObject prefab = nodeData.prefab;
         if (backgroundTilePrefab == null && prefab == null)
         {
             Debug.LogError($"No prefab assigned for NodeType {type}. Please assign in inspector.");
@@ -437,7 +517,8 @@ public class SubgameBoard : MonoBehaviour
                 NodeType t = RandomNodeType();
                 // spawn slightly above
                 Vector3 spawnPos = CellToWorld(x, height + (y - writeY));
-                GameObject prefab = nodePrefabs[(int)t];
+                NodeData nodeData = nodeDataList.Find(node => node.nodeType == t);
+                GameObject prefab = nodeData.prefab;
                 GameObject obj;
                 if (prefab != null)
                 {
