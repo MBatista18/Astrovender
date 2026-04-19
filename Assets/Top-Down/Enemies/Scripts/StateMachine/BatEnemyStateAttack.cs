@@ -13,13 +13,19 @@ public class BatEnemyStateAttack : StateBase
     {
         base.thisUpdate();
 
+        sm.UpdateDirectionLockTimer();
+
         if (Vector2.Distance(sm.GetPlayerTransform().position, sm.transform.position) > sm.GetDetectionRadius() * 1.5f)
         {
             sm.ChangeState(sm.InitialState());
             return;
         }
 
-        Vector2 dir = sm.GetDiagonalOnlyDirection(sm.GetPlayerTransform().position);
-        sm.SetMoveDirection(dir);
+        if (sm.CanChangeDirection())
+        {
+            Vector2 dir = sm.GetDiagonalOnlyDirection(sm.GetPlayerTransform().position);
+            sm.SetMoveDirection(dir);
+            sm.LockDirection();
+        }
     }
 }

@@ -26,9 +26,19 @@ public class BatEnemySM : EnemySM
     private float moveSpeed = 2f;
     private Rigidbody2D rb;
 
+    private float directionLockTimer = 0f;
+    [SerializeField] private float directionLockDuration = 0.5f;
+
     public Transform player;
 
     private Vector2 moveDirection;
+    private Collider2D batCollider;
+
+    [Header("Patrol Values")]
+    [SerializeField] private Collider2D patrolBounds;
+    [SerializeField] private float boundsBuffer = 0.5f;
+
+    private Vector2 startPosition;
 
     private bool hitWall;
 
@@ -37,6 +47,8 @@ public class BatEnemySM : EnemySM
         base.InstantiateComponents();
 
         rb = GetComponent<Rigidbody2D>();
+        startPosition = transform.position;
+        batCollider = GetComponent<Collider2D>();
     }
 
     private void FixedUpdate()
@@ -54,6 +66,7 @@ public class BatEnemySM : EnemySM
         return moveDirection;
     }
 
+    //Many functions to try and keep the enemy from hitting the wall or turning away from it if it does
     public bool DidHitWall()
     {
         return hitWall;
@@ -147,6 +160,79 @@ public class BatEnemySM : EnemySM
         }
 
         return newDir.normalized;
+    }
+
+    public Vector2 GetForcedTurnDirection()
+    {
+        Vector2 newDir = moveDirection;
+
+        // Flip one axis randomly
+        if (Random.value < 0.5f)
+        {
+            newDir.x *= -1f;
+        }
+        else
+        {
+            newDir.y *= -1f;
+        }
+
+        return newDir.normalized;
+    }
+
+    //Functions determining directional movement lock
+    public void UpdateDirectionLockTimer()
+    {
+        if (directionLockTimer > 0f)
+        {
+            directionLockTimer -= Time.deltaTime;
+        }
+    }
+
+    public bool CanChangeDirection()
+    {
+        return directionLockTimer <= 0f;
+    }
+
+    public void LockDirection()
+    {
+        directionLockTimer = directionLockDuration;
+    }
+
+    //Functions determining patrol boundaries
+    public bool IsInsideBounds()
+    {
+        return patrolBounds.bounds.Contains(transform.position);
+    }
+
+    public Vector2 GetBoundsCorrectedDirection()
+    {
+        Bounds patrol = patrolBounds.bounds;
+        Bounds bat = batCollider.bounds;
+
+        Vector2 newDir = moveDirection;
+
+        if (bat.min.x <= patrol.min.x + boundsBuffer)
+            newDir.x = 1f;
+        else if (bat.max.x >= patrol.max.x - boundsBuffer)
+            newDir.x = -1f;
+
+        if (bat.min.y <= patrol.min.y + boundsBuffer)
+            newDir.y = 1f;
+        else if (bat.max.y >= patrol.max.y - boundsBuffer)
+            newDir.y = -1f;
+
+        return newDir.normalized;
+    }
+
+    public bool IsNearBoundsEdge()
+    {
+        Bounds patrol = patrolBounds.bounds;
+        Bounds bat = batCollider.bounds;
+
+        return bat.min.x <= patrol.min.x + boundsBuffer ||
+               bat.max.x >= patrol.max.x - boundsBuffer ||
+               bat.min.y <= patrol.min.y + boundsBuffer ||
+               bat.max.y >= patrol.max.y - boundsBuffer;
     }
 
 }
