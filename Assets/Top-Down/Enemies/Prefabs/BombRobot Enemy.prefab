@@ -31,7 +31,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6842312444895386117}
+  m_Father: {fileID: 3011596191568097302}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &973965644461985052
 CircleCollider2D:
@@ -85,6 +85,7 @@ MonoBehaviour:
   attackCooldown: 1.5
   knocksPlayer: 0
   knockDuration: 0.5
+  enemySM: {fileID: 0}
 --- !u!1 &7839313177776886084
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,6 +100,8 @@ GameObject:
   - component: {fileID: 4341993688040495587}
   - component: {fileID: 4599006601839840405}
   - component: {fileID: 5343249504052667991}
+  - component: {fileID: 6399619550727023431}
+  - component: {fileID: 1643763273265056324}
   m_Layer: 7
   m_Name: BombRobot Enemy
   m_TagString: Enemy
@@ -120,6 +123,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6842312444895386117}
+  - {fileID: 3449146615643383023}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1084021454617703249
@@ -252,7 +256,120 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e26879da27f1c949884aed6f5f1b0f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlashOnHit
+  spriteRenderer: {fileID: 0}
   flashDuration: 0.1
+--- !u!82 &6399619550727023431
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839313177776886084}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 10
+  MaxDistance: 14
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1643763273265056324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839313177776886084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461e8ef33e5ce9e4dbc7ab05925e1fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioCall
+  audioKeys:
+  - audioClip: {fileID: 8300000, guid: 65406b7cac0e37b4a91bea8dd616ac79, type: 3}
+    key: Alert
 --- !u!1 &8414540267200141296
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,8 +399,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3449146615643383023}
+  m_Children: []
   m_Father: {fileID: 3011596191568097302}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7432687522401676840

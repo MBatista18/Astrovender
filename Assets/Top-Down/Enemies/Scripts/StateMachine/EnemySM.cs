@@ -133,6 +133,9 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
     EnemyShield shield;
     public EnemyShield GetShield() { return shield; }
 
+    Animator animator;
+    public Animator GetAnimator() { return animator; }
+
     public override void InstantiateComponents()
     {
         base.InstantiateComponents();
@@ -140,6 +143,7 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
         rb2D = GetComponent<Rigidbody2D>();
         shield = GetComponentInChildren<EnemyShield>();
         flashOnHit = GetComponent<FlashOnHit>();
+        animator = GetComponent<Animator>();
     }
 
     [Header("States")]
@@ -150,12 +154,18 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
     }
 
     EnemyStateHurt stateHurt;
+    EnemyStateKnockback stateKnockback;
+
+    public EnemyStateKnockback GetStateKnockback() { return stateKnockback; }
+
+    public virtual void OnShieldReaction() { Debug.Log("d"); }
 
     public override void InstantiateStates()
     {
         base.InstantiateStates();
         statePatrol = new EnemyStatePatrol(this);
         stateHurt = new EnemyStateHurt(this);
+        stateKnockback = new EnemyStateKnockback(this);
     }
 
     public virtual StateBase AttackState() // override this with whatever aggressive state this enemy has (e.g. chaser enemies go into their chase state)

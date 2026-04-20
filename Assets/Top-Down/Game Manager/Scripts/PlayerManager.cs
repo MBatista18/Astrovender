@@ -7,15 +7,19 @@ public class PlayerManager : MonoBehaviour
     
     static int oxygenLevelMultiplier = 60;
     public static int GetMaxOxygenLevel() { return 150 + (oxygenLevelMultiplier * GameManager.Instance.currentdataObj.oxygenLevel); }
+
+    public readonly static int min_OxygenValue = 100;
     public static int currentOxygenLevel;
     
     public static int bombCount;
     public static void ModifyBombCount(int val) { bombCount = Mathf.Clamp(bombCount + val, 0, GetMaxBombCount()); }
+    public readonly static int min_BombValue = 3;
     public static int GetMaxBombCount() { return 5 + (bombCountMultiplier * GameManager.Instance.currentdataObj.bombLevel); }
     static int bombCountMultiplier = 3;
 
     public static int ammoCount;
     public static void ModifyAmmoCount(int val) { ammoCount = Mathf.Clamp(ammoCount + val, 0, GetMaxAmmoCount()); }
+    public readonly static int min_AmmoValue = 5;
     public static int GetMaxAmmoCount() { return 10 + (ammoCountMultiplier * GameManager.Instance.currentdataObj.gunLevel); }
     static int ammoCountMultiplier = 5;
 
@@ -24,6 +28,7 @@ public class PlayerManager : MonoBehaviour
 
     static int shieldHealthMultiplier = 20;
     public static int GetMaxShieldHealth() { return 40 + (shieldHealthMultiplier * GameManager.Instance.currentdataObj.shieldLevel); }
+    public readonly static int min_ShieldValue = 10;
 
     public static void ModifyShieldHealth(int val) { currentShieldHealth = Mathf.Clamp(currentShieldHealth + val, 0, GetMaxShieldHealth()); }
 
@@ -37,7 +42,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             AssetCall.instance.playerSM.transform.position = playerWorldSpawn;
             Debug.Log("is scene; " + playerWorldSpawn);
@@ -61,12 +66,12 @@ public class PlayerManager : MonoBehaviour
             {
                 case AstrovenderStructs.facingDirection.left:
 
-                    if (difference.x >= 0) { Debug.Log("Counter attack coming left"); canDefend = true; }
+                    if (difference.x >= 0) { canDefend = true; }
 
                     break;
                 case AstrovenderStructs.facingDirection.right:
 
-                    if (difference.x <= 0) { Debug.Log("Counter attack coming right"); canDefend = true; }
+                    if (difference.x <= 0) { canDefend = true; }
 
                     break;
             }
@@ -77,12 +82,12 @@ public class PlayerManager : MonoBehaviour
             {
                 case AstrovenderStructs.facingDirection.down:
 
-                    if (difference.y >= 0) { Debug.Log("Counter attack coming from below"); canDefend = true; }
+                    if (difference.y >= 0) {  canDefend = true; }
 
                     break;
                 case AstrovenderStructs.facingDirection.up:
 
-                    if (difference.y <= 0) { Debug.Log("Counter attack coming from above"); canDefend = true; }
+                    if (difference.y <= 0) { canDefend = true; }
 
                     break;
             }

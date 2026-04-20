@@ -76,12 +76,20 @@ public class ChargingBossSM : BossBaseSM
     public FallingRockManager GetRockSlideManager() { return rockManager; }
 
 
+    AudioCall audioCall;
+    public AudioCall GetAudioCall() { return audioCall; }
+    AudioSource audioSource;
+    public AudioSource GetAudioSource() { return audioSource; }
+
     public override void InstantiateComponents()
     {
         base.InstantiateComponents();
         animator = GetComponent<Animator>();
         boxCollider2D = GetComponent<BoxCollider2D>();
         sp_renderer = transform.Find("Sprite").GetComponent<SpriteRenderer>();
+
+        audioCall = GetComponent<AudioCall>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     [SerializeField] GameObject[] DungeonWalls;

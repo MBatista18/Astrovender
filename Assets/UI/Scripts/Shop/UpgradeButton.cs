@@ -112,8 +112,8 @@ public class UpgradeButton : MonoBehaviour
                 break;
         }
 
-        upgradeText = isActive ? upgradeText +
-                    " - " + purchaseButton.GetShopSO().GetCost().coins + " Coins, " + purchaseButton.GetShopSO().GetCost().gems + " Gems" : upgradeText;
+        /*upgradeText = isActive ? upgradeText +
+                    " - " + purchaseButton.GetShopSO().GetCost().coins + " Coins, " + purchaseButton.GetShopSO().GetCost().gems + " Gems" : upgradeText;*/
 
         buttonText.text = upgradeText;
 

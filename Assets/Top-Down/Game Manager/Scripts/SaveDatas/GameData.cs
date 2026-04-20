@@ -19,7 +19,6 @@ public struct DataObj
     public int day;
     public int coins;
     public int gems;
-    public int keys;
 
     public bool hasShield;
     public bool hasGun;
@@ -55,7 +54,6 @@ public struct DataObj
         day = 0;
         coins = 0;
         gems = 0;
-        keys = 0;
 
         hasShield = false;
         hasGun = false;
@@ -100,14 +98,20 @@ public struct DungeonDatObj
     string sceneName;  // this is useless, c# wouldn't let me compile without a parameter in the constructor, however
 
     public bool defeatedBoss;
-    public List<string> saveObstacles;
     public bool foundMap;
+
+    public bool hasGreenKey;
+    public bool hasRedKey;
+    public bool hasBlueKey;
 
     public DungeonDatObj(string _sceneName)
     {
         sceneName = _sceneName;
         defeatedBoss = false;
-        saveObstacles = new List<string>();
         foundMap = false;
+
+        hasGreenKey = false;
+        hasRedKey = false;
+        hasBlueKey = false;
     }
 }

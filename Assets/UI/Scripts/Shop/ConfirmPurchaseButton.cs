@@ -36,7 +36,7 @@ public class ConfirmPurchaseButton : MonoBehaviour
         button.interactable = isActive;
 
         text.text = isActive ? "BUY" : "Not enough funds";
-        text.fontSize = isActive ? 90 : 55;
+        text.fontSize = isActive ? 60 : 45;
     }
 
     private void Update()

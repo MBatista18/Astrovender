@@ -18,6 +18,8 @@ public class ShielderRobotStateRush : StateBase
         playerDirection = (AssetCall.instance.playerSM.transform.position - sm.transform.position).normalized;
 
         sm.ShieldKnockbackRush(true);
+
+        sm.GetAudioCall().CallAudioClip("Rush");
     }
 
     public override void thisFixedUpdate()

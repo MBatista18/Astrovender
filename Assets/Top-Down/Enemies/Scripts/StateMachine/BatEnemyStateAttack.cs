@@ -13,6 +13,8 @@ public class BatEnemyStateAttack : StateBase
     {
         base.thisUpdate();
 
+        Debug.Log("ATTACKING");
+
         sm.UpdateDirectionLockTimer();
 
         if (Vector2.Distance(sm.GetPlayerTransform().position, sm.transform.position) > sm.GetDetectionRadius() * 1.5f)
@@ -27,5 +29,11 @@ public class BatEnemyStateAttack : StateBase
             sm.SetMoveDirection(dir);
             sm.LockDirection();
         }
+    }
+
+    public override void thisFixedUpdate()
+    {
+        base.thisFixedUpdate();
+        sm.GetRigidbody2D().linearVelocity = sm.GetMoveDirection() * sm.GetMovementSpeed();
     }
 }

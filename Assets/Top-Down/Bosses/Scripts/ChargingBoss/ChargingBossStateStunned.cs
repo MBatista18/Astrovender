@@ -17,6 +17,8 @@ public class ChargingBossStateStunned : StateBase
         sm.GetRockSlideManager().CallRockslide();
         timer = sm.GetStunTime();
 
+        sm.GetAudioCall().CallAudioClip("Crash");
+
         sm.GetAnimator().Play("ChargingBossStun");
     }
 

@@ -16,7 +16,13 @@ public class BombTankStateRush : StateBase
         base.thisStart();
         timer = 1f;
 
-        if (Random.Range(0, 10) < 7) { Object.Instantiate(sm.GetBomb(), sm.transform.position, Quaternion.identity); }
+        sm.GetAudioCall().CallAudioClip("Dash");
+
+        if (Random.Range(0, 10) < 7)
+        {
+            sm.GetAudioCall().CallAudioClip("BombPlace");
+            Object.Instantiate(sm.GetBomb(), sm.transform.position, Quaternion.identity); 
+        }
 
         switch (sm.GetStateMove().movedHorizontally)
         {

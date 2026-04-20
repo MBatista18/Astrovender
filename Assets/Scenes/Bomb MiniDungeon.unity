@@ -18172,6 +18172,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1963396335868236095, guid: bec28fa771324b54daee1edbddad8f98, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: a8fa43f4fa17b0441bd80818fa5458f6, type: 3}
     - target: {fileID: 2729366258098819639, guid: bec28fa771324b54daee1edbddad8f98, type: 3}
       propertyPath: m_Name
       value: Player Assets
@@ -18874,7 +18878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d44329a0fb03b2041829551e3bdc456d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DungeonEntrance
-  dungeonSceneIndex: 0
+  dungeonSceneIndex: 1
   isOutside: 0
   playerSpawn: {fileID: 0}
 --- !u!4 &1558424714

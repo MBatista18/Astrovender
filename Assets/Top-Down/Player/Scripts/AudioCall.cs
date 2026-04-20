@@ -23,6 +23,19 @@ public class AudioCall : MonoBehaviour
             }
         }
     }
+
+    public AudioClip GetAudioClip(string key)
+    {
+        for (int i = 0; i < audioKeys.Length; i++)
+        {
+            if (audioKeys[i].key.Equals(key))
+            {
+                return audioKeys[i].audioClip;
+            }
+        }
+
+        return null;
+    }
 }
 
 [System.Serializable]

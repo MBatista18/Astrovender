@@ -17,6 +17,8 @@ public class BombTankStateMove : StateBase
     {
         base.thisStart();
 
+        sm.GetAudioCall().CallAudioClip("Move");
+
         moveDuration = Random.Range(1.5f, 2.5f);
 
         switch (movedHorizontally)
@@ -55,6 +57,7 @@ public class BombTankStateMove : StateBase
                 break;
         }
 
+        sm.GetAudioCall().CallAudioClip("BombPlace");
         Object.Instantiate(sm.GetBomb(), sm.transform.position, Quaternion.identity);
     }
 

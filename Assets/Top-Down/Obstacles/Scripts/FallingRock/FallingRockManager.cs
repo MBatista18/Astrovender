@@ -6,8 +6,11 @@ public class FallingRockManager : MonoBehaviour
     [SerializeField] GameObject fallingRock;
     BoxCollider2D coll;
 
+    AudioSource audioSource;
+
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         coll = GetComponent<BoxCollider2D>();
     }
 
@@ -17,6 +20,7 @@ public class FallingRockManager : MonoBehaviour
     bool hit;
 
     [SerializeField] bool checkForBomb = true;
+    
 
     private void Update()
     {
@@ -42,6 +46,8 @@ public class FallingRockManager : MonoBehaviour
 
     IEnumerator RockSlide()
     {
+        audioSource.Play();
+
         yield return new WaitForSeconds(1f);
         // have some way of shaking the camera
 

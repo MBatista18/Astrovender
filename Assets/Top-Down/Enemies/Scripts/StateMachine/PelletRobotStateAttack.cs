@@ -31,6 +31,8 @@ public class PelletRobotStateAttack : StateBase
         {
             doOnce = true;
 
+            sm.GetAudioCall().CallAudioClip("Shoot");
+
             var a = Object.Instantiate(sm.GetBullet(), sm.transform.position, Quaternion.identity);
             Vector3 playerPosRef = AssetCall.instance.playerSM.transform.position + ((Vector3)Random.insideUnitCircle * .6f);
             a.GetComponent<EnemyBullet>()?.SetDirection((playerPosRef - sm.transform.position));

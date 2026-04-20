@@ -13,6 +13,16 @@ public class BatEnemyStatePatrol : StateBase
     {
         base.thisStart();
         sm.SetMoveDirection(sm.GetRandomDiagonalDirection());
+        timer = maxTimer;
+    }
+
+    float timer;
+    float maxTimer = 2f; 
+    
+    public override void thisFixedUpdate()
+    {
+        base.thisFixedUpdate();
+        sm.GetRigidbody2D().linearVelocity = sm.GetMoveDirection() * sm.GetMovementSpeed();
     }
 
     public override void thisUpdate()
@@ -20,8 +30,19 @@ public class BatEnemyStatePatrol : StateBase
         base.thisUpdate();
 
         sm.UpdateDirectionLockTimer();
+        Debug.Log("PATROLING AROUND");
 
         Vector2 dir = sm.GetMoveDirection();
+
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+        else
+        {
+            timer = maxTimer;
+            sm.SetMoveDirection(sm.GetNewRandomDiagonalDirection(sm.GetMoveDirection()));
+        }
 
         if (dir.x > 0)
             sm.transform.localScale = new Vector3(-1, 1, 1);
@@ -30,8 +51,11 @@ public class BatEnemyStatePatrol : StateBase
 
         if (sm.IsNearBoundsEdge() && sm.CanChangeDirection())
         {
+            timer = maxTimer;
+
             sm.SetMoveDirection(sm.GetBoundsCorrectedDirection());
             sm.LockDirection();
+
         }
 
         if (Vector2.Distance(sm.GetPlayerTransform().position, sm.transform.position) <= sm.GetDetectionRadius())

@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class LavaFlowObstacle : MonoBehaviour
+public class LavaFlowObstacle : MonoBehaviour, IShieldResponse
 {
     [Header("Points")]
     [SerializeField] private Transform startPoint;
@@ -55,13 +55,15 @@ public class LavaFlowObstacle : MonoBehaviour
         yield return StartCoroutine(LavaCycle());
     }
 
+    public void OnShieldAttack() { }
+
     private void Update()
     {
 
         if (isActive && playerInside)
         {
             AssetCall.instance.playerSM.Knockback(Vector2.right * 2 * (AssetCall.instance.playerSM.transform.position.x < transform.position.x ? 1 : -1), 0.5f);
-            PlayerHealth.ModifyOxygenLevel(damageAmount, false, transform.position);
+            PlayerHealth.ModifyOxygenLevel(damageAmount, false, transform.position, this);
 
             damageTimer -= Time.deltaTime;
 

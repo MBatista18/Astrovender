@@ -57,6 +57,8 @@ public class PelletRobotStateMove : StateBase
             }
         }
         movementTimer = Random.Range(.5f, .75f);
+
+        sm.GetAudioCall().CallAudioClip("Travel");
     }
 
     public override void thisUpdate()

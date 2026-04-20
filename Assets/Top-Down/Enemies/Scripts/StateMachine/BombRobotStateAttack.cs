@@ -13,6 +13,7 @@ public class BombRobotStateAttack : StateBase
     {
         base.thisStart();
 
+        sm.GetAudioCall().CallAudioClip("Alert");
         sm.GetAnimator().Play("BombExploding");
         timer = sm.GetFuseTime();
     }

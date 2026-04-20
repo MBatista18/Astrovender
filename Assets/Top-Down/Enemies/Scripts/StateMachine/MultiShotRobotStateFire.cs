@@ -40,6 +40,8 @@ public class MultiShotRobotStateFire : StateBase
 
     void Shoot() 
     {
+        sm.GetAudioCall().CallAudioClip("Shoot");
+
         switch (cardinalDirection)
         {
             case true:

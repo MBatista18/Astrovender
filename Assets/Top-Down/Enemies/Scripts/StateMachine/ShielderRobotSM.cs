@@ -25,6 +25,15 @@ public class ShielderRobotSM : EnemySM
         statePatrol = new ShielderRobotStatePatrol(this);
     }
 
+    public override void OnShieldReaction()
+    {
+        base.OnShieldReaction();
+
+
+        base.GetStateKnockback().SetKnockback((Vector2)(transform.position - AssetCall.instance.playerSM.transform.position), 1f);
+        ChangeState(base.GetStateKnockback());
+    }
+
     public override StateBase InitialState()
     {
         return statePatrol;
@@ -53,9 +62,6 @@ public class ShielderRobotSM : EnemySM
         base.TakeDamage(damageAmount);
     }
 
-    Animator animator;
-    public Animator GetAnimator() { return animator; }
-
     ShielderVar_DamagePlayerOnCollision onCollision;
     public ShielderVar_DamagePlayerOnCollision GetDamageCollider() { return onCollision; }
 
@@ -81,11 +87,15 @@ public class ShielderRobotSM : EnemySM
         }
     }
 
+    AudioCall audioCall;
+    public AudioCall GetAudioCall() { return audioCall; }
+
     public override void InstantiateComponents()
     {
         base.InstantiateComponents();
-        animator = GetComponent<Animator>();
         sprite = transform.Find("Sprite")?.GetComponent<SpriteRenderer>();
+
+        audioCall = GetComponent<AudioCall>();
 
         onCollision = GetComponentInChildren<ShielderVar_DamagePlayerOnCollision>();
         ShieldKnockbackRush(true);

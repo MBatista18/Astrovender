@@ -29,6 +29,7 @@ public class ArrowDispenser : MonoBehaviour
     private bool isFiring;
 
     Animator animator;
+    AudioSource audioCall;
 
     private void Start()
     {
@@ -37,6 +38,7 @@ public class ArrowDispenser : MonoBehaviour
         fireTimer = initialDelay ? fireInterval/2 : fireInterval;
 
         animator = GetComponent<Animator>();
+        audioCall = GetComponent<AudioSource>();
     }
 
     bool isIdling;
@@ -92,6 +94,8 @@ public class ArrowDispenser : MonoBehaviour
     //Handles projectile firing
     private void FireArrow()
     {
+        audioCall.Play();
+
         //Gets the fire direction
         Vector2 direction = GetDirectionVector();
 

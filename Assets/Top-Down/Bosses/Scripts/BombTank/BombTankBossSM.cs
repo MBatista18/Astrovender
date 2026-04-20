@@ -29,10 +29,14 @@ public class BombTankBossSM : BossBaseSM
     Animator animator;
     public Animator GetAnimator() { return animator; }
 
+    AudioCall audioCall;
+    public AudioCall GetAudioCall() { return audioCall; }
+
     public override void InstantiateComponents()
     {
         base.InstantiateComponents();
 
+        audioCall = GetComponent<AudioCall>();
         animator = GetComponent<Animator>();
     }
 

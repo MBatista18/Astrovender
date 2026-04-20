@@ -4511,6 +4511,10 @@ PrefabInstance:
       propertyPath: uniqueID
       value: 8f66ad6e-45d3-4c8c-9d32-eb508251c570
       objectReference: {fileID: 0}
+    - target: {fileID: 8314343307420636210, guid: f642962f6b1fff44aa2cc57cfa872a51, type: 3}
+      propertyPath: keyColor
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8957481500904781622, guid: f642962f6b1fff44aa2cc57cfa872a51, type: 3}
       propertyPath: m_LocalPosition.x
       value: -54.91194
@@ -4694,7 +4698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d44329a0fb03b2041829551e3bdc456d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DungeonEntrance
-  dungeonSceneIndex: 0
+  dungeonSceneIndex: 1
   isOutside: 0
   playerSpawn: {fileID: 0}
 --- !u!4 &486662238
@@ -96343,6 +96347,10 @@ PrefabInstance:
       propertyPath: lockedDoor
       value: 
       objectReference: {fileID: 890813605}
+    - target: {fileID: 8174685243792261844, guid: 6cf8593330901684494faece37a3e380, type: 3}
+      propertyPath: thisLockColor
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9034542590343370269, guid: 6cf8593330901684494faece37a3e380, type: 3}
       propertyPath: uniqueID
       value: 6152d40c-b5a4-4692-a493-837f52e28c4c
@@ -100131,6 +100139,10 @@ PrefabInstance:
       propertyPath: uniqueID
       value: 6562bc02-03c3-4ef9-b1a5-da5112177a10
       objectReference: {fileID: 0}
+    - target: {fileID: 8314343307420636210, guid: f642962f6b1fff44aa2cc57cfa872a51, type: 3}
+      propertyPath: keyColor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8957481500904781622, guid: f642962f6b1fff44aa2cc57cfa872a51, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -103616,6 +103628,10 @@ PrefabInstance:
       propertyPath: lockedDoor
       value: 
       objectReference: {fileID: 1748823028}
+    - target: {fileID: 8174685243792261844, guid: 6cf8593330901684494faece37a3e380, type: 3}
+      propertyPath: thisLockColor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9034542590343370269, guid: 6cf8593330901684494faece37a3e380, type: 3}
       propertyPath: uniqueID
       value: 2edd24ba-4a41-4fd4-a473-b1545e0f390a
@@ -106939,6 +106955,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1963396335868236095, guid: bec28fa771324b54daee1edbddad8f98, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: a8fa43f4fa17b0441bd80818fa5458f6, type: 3}
     - target: {fileID: 2729366258098819639, guid: bec28fa771324b54daee1edbddad8f98, type: 3}
       propertyPath: m_Name
       value: Player Assets

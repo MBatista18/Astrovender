@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -447,6 +446,8 @@ public class SubgameBoard : MonoBehaviour
                     {
                         matches.Add(_grid[rx, y]);
                         nodeType = _grid[rx, y].Type; // set nodeType to the type of the matched nodes
+
+                        Debug.Log("484 + " + _grid[rx, y].Type);
                     }
                 }
             }
@@ -482,11 +483,14 @@ public class SubgameBoard : MonoBehaviour
                     if (_grid[x, ry] != null)
                     {
                         matches.Add(_grid[x, ry]);
+                        Debug.Log("484 + " + _grid[x, ry].Type);
                         nodeType = _grid[x, ry].Type; // set nodeType to the type of the matched nodes
                     }
                 }
             }
         }
+
+        Debug.Log(nodeType);
 
         return matches;
     }

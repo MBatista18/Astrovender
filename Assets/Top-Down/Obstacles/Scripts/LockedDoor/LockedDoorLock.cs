@@ -12,10 +12,15 @@ public class LockedDoorLock : MonoBehaviour
 
     ObjectID objectID;
 
+    AudioSource audioSource;
+
+    [SerializeField] LockedDoorKey.KeyColor thisLockColor;
+
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
 
         lockedDoor.AddLock();
 
@@ -24,6 +29,19 @@ public class LockedDoorLock : MonoBehaviour
 
 
         objectID = GetComponent<ObjectID>();
+
+        if (thisLockColor == LockedDoorKey.KeyColor.Red)
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+        }
+        else if (thisLockColor == LockedDoorKey.KeyColor.Blue)
+        {
+            GetComponent<SpriteRenderer>().color = Color.blue;
+        }
+        else if (thisLockColor == LockedDoorKey.KeyColor.Green)
+        {
+            GetComponent<SpriteRenderer>().color = Color.green;
+        }
     }
 
     private void Start()
@@ -41,7 +59,11 @@ public class LockedDoorLock : MonoBehaviour
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            if (AssetCall.instance.playerSM.GetKeyCount() <= 0) { return; }
+            DungeonDatObj a = GameManager.Instance.currentdataObj.dungeons[UnityEngine.SceneManagement.SceneManager.GetActiveScene().name];
+
+            if (thisLockColor == LockedDoorKey.KeyColor.Red && !a.hasRedKey) { return; }
+            if (thisLockColor == LockedDoorKey.KeyColor.Blue && !a.hasBlueKey) { return; }
+            if (thisLockColor == LockedDoorKey.KeyColor.Green && !a.hasGreenKey) { return; }
 
             AssetCall.instance.playerSM.UseKey();
             GameManager.Instance.currentdataObj.saveENVGameWorld.Add(objectID.GetID());
@@ -51,6 +73,30 @@ public class LockedDoorLock : MonoBehaviour
 
     public void Unlock()
     {
+        DungeonDatObj dataObj;
+        string currentSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+
+        if (GameManager.Instance.currentdataObj.dungeons.TryGetValue(currentSceneName, out dataObj))
+        {
+            GameManager.Instance.currentdataObj.dungeons.Remove(currentSceneName);
+
+            switch (thisLockColor)
+            {
+                case LockedDoorKey.KeyColor.Red:
+                    dataObj.hasRedKey = true;
+                    break;
+                case LockedDoorKey.KeyColor.Green:
+                    dataObj.hasGreenKey = true;
+                    break;
+                case LockedDoorKey.KeyColor.Blue:
+                    dataObj.hasBlueKey = true;
+                    break;
+            }
+
+            GameManager.Instance.currentdataObj.dungeons.Add(currentSceneName, dataObj);
+        }
+
+        audioSource.Play();
         unlocked = true;
 
         Destroy(lineRenderer);

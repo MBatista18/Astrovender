@@ -6,22 +6,32 @@ public class SetHUDText : MonoBehaviour
 {
     [Header("Player Consumables")]
     [SerializeField] TextMeshProUGUI ammoCount;
-    public void SetAmmoText(int currentAmmo) { if (!ammoCount) return; ammoCount.text = "AMMO: " + currentAmmo; }
+    public void SetAmmoText(int currentAmmo) { if (!ammoCount) return; ammoCount.text = "" + currentAmmo; }
     [SerializeField] TextMeshProUGUI bombCount;
-    public void SetBombText(int currentBombs) { if (!bombCount) return; bombCount.text = "BOMB: " + currentBombs; }
+    public void SetBombText(int currentBombs) { if (!bombCount) return; bombCount.text = "" + currentBombs; }
     [SerializeField] TextMeshProUGUI oxygenCount;
-    public void SetOxygenText(int currentOxygen) { if (!oxygenCount) return; oxygenCount.text = "OXYGEN: " + currentOxygen; }
+    [SerializeField] Slider oxygenSlider;
+    public void SetOxygenText(int currentOxygen)
+    {
+        if (!oxygenCount) { return; } oxygenCount.text = "" + currentOxygen;
+        if (!oxygenSlider) { return; } oxygenSlider.value = (float) currentOxygen / (float) PlayerManager.GetMaxOxygenLevel();
+    }
     [SerializeField] TextMeshProUGUI shieldCount;
-    public void SetShieldText(int currentShield) { if (!shieldCount) return; shieldCount.text = "SHIELD: " + currentShield; }
+    [SerializeField] Slider shieldSlider;
+    public void SetShieldText(int currentShield) 
+    {
+        if (!shieldCount) { return; } shieldCount.text = "" + currentShield;
+        if (!shieldSlider) { return; } shieldSlider.value = (float) currentShield / (float) PlayerManager.GetMaxShieldHealth();
+    }
 
 
     [Header("Game Management")]
     [SerializeField] TextMeshProUGUI dayText;
     public void SetDayText(int dayNumber) { if (!dayText) return; dayText.text = "DAY: " + dayNumber; }
     [SerializeField] TextMeshProUGUI coinText;
-    public void SetCoinText(int currentCoin) { if (!coinText) return; coinText.text = "COLLECTED COINS: " + currentCoin; }
+    public void SetCoinText(int currentCoin) { if (!coinText) return; coinText.text = "" + currentCoin; }
     [SerializeField] TextMeshProUGUI gemText;
-    public void SetGemText(int currentGems) { if (!gemText) return; gemText.text = "COLLECTED GEMS: " + currentGems; }
+    public void SetGemText(int currentGems) { if (!gemText) return; gemText.text = "" + currentGems; }
 
     [Header("Fade Out")]
     public Image fadeOutCircle;
@@ -40,14 +50,39 @@ public class SetHUDText : MonoBehaviour
 
     public void RefreshCollectiblesUI()
     {
-        ammoCount.alpha = GameManager.Instance.currentdataObj.hasGun ? 1 : 0;
-        bombCount.alpha = GameManager.Instance.currentdataObj.hasBombs ? 1 : 0;
-        shieldCount.alpha = GameManager.Instance.currentdataObj.hasShield ? 1 : 0;
+        if (GameManager.Instance.currentdataObj.hasBombs)
+        {
+            bombCount.gameObject.SetActive(true);
+            SetBombText(PlayerManager.bombCount);
+        }
+        else
+        {
+            bombCount.gameObject.SetActive(false);
+        }
 
-        SetBombText(PlayerManager.bombCount);
-        SetAmmoText(PlayerManager.ammoCount);
+        if (GameManager.Instance.currentdataObj.hasShield)
+        {
+            shieldSlider.gameObject.SetActive(true);
+            shieldCount.alpha = 1;
+            SetShieldText(PlayerManager.GetCurrentShieldHealth());
+        }
+        else
+        {
+            shieldCount.alpha = 0;
+            shieldSlider.gameObject.SetActive(false);
+        }
+
+        if (GameManager.Instance.currentdataObj.hasGun)
+        {
+            ammoCount.gameObject.SetActive(true);
+            SetAmmoText(PlayerManager.ammoCount);
+        }
+        else
+        {
+            ammoCount.gameObject.SetActive(false);
+        }
+
         SetOxygenText(PlayerManager.currentOxygenLevel);
-        SetShieldText(PlayerManager.GetCurrentShieldHealth());
     }
 
     public void RefreshDailyValuesUI()

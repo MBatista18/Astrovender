@@ -5,13 +5,23 @@ public class BombRobotSM : EnemySM
     [SerializeField] float fuseTime;
     public float GetFuseTime() { return fuseTime; }
 
-    Animator animator;
-    public Animator GetAnimator() { return animator; }
+    AudioCall audioCall;
+    public AudioCall GetAudioCall()
+    {
+        return audioCall;
+    }
+
     public override void InstantiateComponents()
     {
         base.InstantiateComponents();
 
-        animator = GetComponent<Animator>();
+        audioCall = GetComponent<AudioCall>();
+    }
+
+    public override void OnShieldReaction()
+    {
+        GetStateKnockback().SetKnockback((Vector2)(transform.position - AssetCall.instance.playerSM.transform.position), 1f);
+        ChangeState(GetStateKnockback());
     }
 
     BombRobotStateAttack stateAttack;

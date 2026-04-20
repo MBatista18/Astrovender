@@ -19,6 +19,7 @@ public class ShielderRobotStateKnockback : StateBase
         base.thisStart();
         sm.GetAnimator().Play("ShielderBotKnockback");
         knockbackTime = MAXknockbackTime;
+        sm.GetAudioCall().CallAudioClip("Knockback");
     }
 
     public float GetMovement()

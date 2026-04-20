@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DamagePlayerOnCollision : MonoBehaviour
+public class DamagePlayerOnCollision : MonoBehaviour, IShieldResponse
 {
     [SerializeField] [Tooltip("Damage value applied to player, please keep this value negative")] int damageVal;
     public void SetDamageValue(int value) { damageVal = value; }
@@ -17,6 +17,17 @@ public class DamagePlayerOnCollision : MonoBehaviour
 
     public virtual void OnCollision() { return; }
 
+    public EnemySM enemySM;
+    private void Awake()
+    {
+        enemySM = transform.parent.GetComponent<EnemySM>();
+    }
+
+    public void OnShieldAttack()
+    {
+        enemySM?.OnShieldReaction();
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         //Debug.Log("True");
@@ -25,7 +36,7 @@ public class DamagePlayerOnCollision : MonoBehaviour
         {
             if(Time.time >= nextAttackTime)
             {
-                PlayerHealth.ModifyOxygenLevel(damageVal, false, transform.position);
+                PlayerHealth.ModifyOxygenLevel(damageVal, false, transform.position, this);
 
                 if (knocksPlayer) { AssetCall.instance.playerSM.Knockback(transform.position, knockDuration); }
 

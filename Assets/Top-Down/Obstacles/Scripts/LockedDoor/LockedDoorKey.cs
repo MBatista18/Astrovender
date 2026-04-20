@@ -2,29 +2,65 @@ using UnityEngine;
 
 public class LockedDoorKey : MonoBehaviour
 {
-    ObjectID objectID;
-
-    private void Awake()
+    [System.Serializable]
+    public enum KeyColor
     {
-        objectID = GetComponent<ObjectID>();
+        Red,
+        Green,
+        Blue
     }
+    public KeyColor keyColor;
 
     private void Start()
     {
-      /*  if (GameManager.Instance.currentdataObj.saveCOLGameWorld.Contains(objectID.GetID()))
+        DungeonDatObj a = GameManager.Instance.currentdataObj.dungeons[UnityEngine.SceneManagement.SceneManager.GetActiveScene().name];
+
+        if (keyColor == KeyColor.Red) 
         {
-            Destroy(gameObject);
-        }*/
+            GetComponent<SpriteRenderer>().color = new Color(1, 0.3647059f, 0.3647059f,1);
+            if (!a.hasRedKey) { return; }
+        }
+        else if (keyColor == KeyColor.Blue)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(0.3647059f, 0.3647059f, 1, 1);
+            if (!a.hasBlueKey) { return; }
+        }
+        else if (keyColor == KeyColor.Green)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(0.3647059f, 1, 0.3647059f, 1);
+            if (!a.hasGreenKey) { return; }
+        }
+
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            GameManager.Instance.currentdataObj.saveCOLGameWorld.Add(objectID.GetID());
-            GameManager.Instance.currentdataObj.keys++;
+            DungeonDatObj dataObj;
+            string currentSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
 
-            AssetCall.instance.playerSM.CollectKey();
+            if (GameManager.Instance.currentdataObj.dungeons.TryGetValue(currentSceneName, out dataObj))
+            {
+                GameManager.Instance.currentdataObj.dungeons.Remove(currentSceneName);
+
+                switch (keyColor) 
+                {
+                    case KeyColor.Red:
+                        dataObj.hasRedKey = true;
+                        break;
+                    case KeyColor.Green:
+                        dataObj.hasGreenKey = true;
+                        break;
+                    case KeyColor.Blue:
+                        dataObj.hasBlueKey = true;
+                        break;
+                }
+
+                GameManager.Instance.currentdataObj.dungeons.Add(currentSceneName, dataObj);
+            }
+
             Destroy(gameObject);
         }
     }

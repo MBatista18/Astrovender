@@ -31,6 +31,13 @@ public class Tide : MonoBehaviour
 
     [HideInInspector] public int currentObjectCount = 0;
 
+    AudioCall audioCall;
+
+    private void Awake()
+    {
+        audioCall = GetComponent<AudioCall>();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -60,6 +67,8 @@ public class Tide : MonoBehaviour
 
             if (pauseTimer <= 0f)
             {
+                audioCall.CallAudioClip(rising ? "In" : "Out");
+
                 paused = false;
                 rising = !rising;
             }

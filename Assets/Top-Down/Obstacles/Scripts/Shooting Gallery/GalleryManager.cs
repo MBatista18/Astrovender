@@ -11,8 +11,12 @@ public class GalleryManager : MonoBehaviour
 
     bool summoned = false;
 
+    AudioSource audioSource;
+
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         for (int i = 0; i < galleryTargets.Length; i++)
         {
             galleryTargets[i].SetGalleryManager(this);
@@ -27,6 +31,7 @@ public class GalleryManager : MonoBehaviour
     public void CallBirds()
     {
         if (summoned) { return; }
+        audioSource.Play();
 
         StartCoroutine(SummonBirds());
     }

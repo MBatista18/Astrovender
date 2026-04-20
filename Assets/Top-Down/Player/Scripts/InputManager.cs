@@ -13,6 +13,7 @@ public class InputManager : MonoBehaviour
     public static OnInput bombInput;
     public static OnInput shootInput;
     public static OnInput meleeInput;
+    public static OnInput mapInput;
 
     private void Awake()
     {
@@ -44,5 +45,10 @@ public class InputManager : MonoBehaviour
     void OnMelee()
     {
         meleeInput();
+    }
+
+    void OnMap()
+    {
+        mapInput();
     }
 }

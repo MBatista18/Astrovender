@@ -35,12 +35,21 @@ public class BatEnemySM : EnemySM
     private Collider2D batCollider;
 
     [Header("Patrol Values")]
-    [SerializeField] private Collider2D patrolBounds;
+    //[SerializeField] private Collider2D patrolBounds;
+    private Bounds patrolBounds;
+    [SerializeField] Vector2 patrolSize;
+    [SerializeField] Vector2 patrolCenterOffset;
     [SerializeField] private float boundsBuffer = 0.5f;
 
     private Vector2 startPosition;
 
     private bool hitWall;
+    public override void OnShieldReaction()
+    {
+        Debug.Log("Shield reaction bat");
+        GetStateKnockback().SetKnockback((Vector2) (transform.position - AssetCall.instance.playerSM.transform.position), 1f);
+        ChangeState(GetStateKnockback());
+    }
 
     public override void InstantiateComponents()
     {
@@ -49,11 +58,12 @@ public class BatEnemySM : EnemySM
         rb = GetComponent<Rigidbody2D>();
         startPosition = transform.position;
         batCollider = GetComponent<Collider2D>();
+        patrolBounds = new Bounds(transform.position + (Vector3) patrolCenterOffset, patrolSize);
     }
 
-    private void FixedUpdate()
+    private void OnDrawGizmos()
     {
-        rb.linearVelocity = moveDirection * moveSpeed;
+        Gizmos.DrawWireCube(transform.position + (Vector3)patrolCenterOffset, patrolSize);
     }
 
     public void SetMoveDirection(Vector2 dir)
@@ -74,7 +84,6 @@ public class BatEnemySM : EnemySM
 
     public void ClearHitWall()
     {
-        Debug.Log("Not hitting wall");
         hitWall = false;
     }
 
@@ -88,7 +97,7 @@ public class BatEnemySM : EnemySM
         moveDirection = new Vector2(x, y).normalized;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Walls"))
         {
@@ -107,7 +116,7 @@ public class BatEnemySM : EnemySM
                 SetMoveDirection(GetWallAdjustedDiagonalDirection(normal));
             }
         }
-    }
+    }*/
 
     public Vector2 GetDiagonalOnlyDirection(Vector2 targetPosition)
     {
@@ -201,32 +210,40 @@ public class BatEnemySM : EnemySM
     //Functions determining patrol boundaries
     public bool IsInsideBounds()
     {
-        return patrolBounds.bounds.Contains(transform.position);
+        return patrolBounds.Contains(transform.position);
     }
 
     public Vector2 GetBoundsCorrectedDirection()
     {
-        Bounds patrol = patrolBounds.bounds;
+        Bounds patrol = patrolBounds;
         Bounds bat = batCollider.bounds;
 
         Vector2 newDir = moveDirection;
 
         if (bat.min.x <= patrol.min.x + boundsBuffer)
+        {
             newDir.x = 1f;
+        }
         else if (bat.max.x >= patrol.max.x - boundsBuffer)
+        {
             newDir.x = -1f;
+        }
 
         if (bat.min.y <= patrol.min.y + boundsBuffer)
+        {
             newDir.y = 1f;
+        }
         else if (bat.max.y >= patrol.max.y - boundsBuffer)
+        {
             newDir.y = -1f;
+        }
 
         return newDir.normalized;
     }
 
     public bool IsNearBoundsEdge()
     {
-        Bounds patrol = patrolBounds.bounds;
+        Bounds patrol = patrolBounds;
         Bounds bat = batCollider.bounds;
 
         return bat.min.x <= patrol.min.x + boundsBuffer ||
@@ -235,4 +252,34 @@ public class BatEnemySM : EnemySM
                bat.max.y >= patrol.max.y - boundsBuffer;
     }
 
+
+    public override void UpdateFunctions()
+    {
+        base.UpdateFunctions();
+
+        if (GetCurrentState() == GetStateKnockback()) { return; }
+
+        if (moveDirection.y < 0)
+        {
+            if (moveDirection.x < 0)
+            {
+                GetAnimator().Play("EyeballForward");
+            }
+            else
+            {
+                GetAnimator().Play("EyeballLeft");
+            }
+        }
+        else
+        {
+            if (moveDirection.x < 0)
+            {
+                GetAnimator().Play("EyeballLeft");
+            }
+            else
+            {
+                GetAnimator().Play("EyeballBackward");
+            }
+        }
+    }
 }

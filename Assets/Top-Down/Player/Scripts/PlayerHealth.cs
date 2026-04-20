@@ -5,7 +5,7 @@ public class PlayerHealth : MonoBehaviour
 {    static bool canBeHurt = true;
     float invulnerabilityTimer;
 
-    public static void ModifyOxygenLevel(int val, bool bypassInvulnerabilityCheck, Vector3 position)
+    public static void ModifyOxygenLevel(int val, bool bypassInvulnerabilityCheck, Vector3 position, IShieldResponse shieldResponse)
     {
         if (GameManager.Instance.currentdataObj.hasShield && PlayerManager.ShieldCanDefend(AssetCall.instance.playerSM.transform.position, position, AssetCall.instance.playerSM.GetFacingDirection()))
         {
@@ -17,6 +17,8 @@ public class PlayerHealth : MonoBehaviour
             if (PlayerManager.GetCurrentShieldHealth() > 0)
             {
                 AssetCall.instance.playerSM.GetAudioCall().CallAudioClip("DamageShield");
+
+                shieldResponse.OnShieldAttack();
 
                 PlayerManager.ModifyShieldHealth(val);
                 AssetCall.instance.playerSM.GetShieldVisuals()?.PlayHit();

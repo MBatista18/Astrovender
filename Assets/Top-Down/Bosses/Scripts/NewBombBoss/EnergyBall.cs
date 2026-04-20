@@ -71,7 +71,7 @@ public class EnergyBall : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            PlayerHealth.ModifyOxygenLevel(damage, false, transform.position);
+            //PlayerHealth.ModifyOxygenLevel(damage, false, transform.position);
             Destroy(gameObject);
             return;
         }

@@ -36,7 +36,7 @@ public class PlayerStateDead : StateBase
         if (timer > 3.2f)
         {
             GameManager.Instance.Progress(false);
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 

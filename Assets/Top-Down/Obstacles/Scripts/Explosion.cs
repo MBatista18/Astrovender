@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class Explosion : MonoBehaviour
+public class Explosion : MonoBehaviour, IShieldResponse
 {
     [SerializeField] int damage;
     public void SetDamageValue(int _damage) { damage = _damage; }
@@ -35,6 +35,8 @@ public class Explosion : MonoBehaviour
         if (explosionDuration <= 0) { Destroy(gameObject); }
     }
 
+    public void OnShieldAttack() { }
+
     void Explode()
     {
         if (explosionDuration <= 0.4f) { return; }
@@ -58,7 +60,7 @@ public class Explosion : MonoBehaviour
                     ray.collider.gameObject.GetComponent<EnemySM>().TakeDamage(damage, transform.position);
                     break;
                 case "Player":
-                    PlayerHealth.ModifyOxygenLevel(-damage, false, transform.position);
+                    PlayerHealth.ModifyOxygenLevel(-damage, false, transform.position, this);
 
                     AssetCall.instance.playerSM.Knockback(transform.position, 1.5f);
                     break;

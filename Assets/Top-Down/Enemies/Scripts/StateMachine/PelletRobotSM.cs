@@ -23,15 +23,15 @@ public class PelletRobotSM : EnemySM
         stateMove = new PelletRobotStateMove(this);
     }
 
+    AudioCall audioCall;
+    public AudioCall GetAudioCall() { return audioCall; }
+
     [SerializeField] GameObject bullet;
     public GameObject GetBullet() { return bullet; }
-
-    Animator animator;
-    public Animator GetAnimator() { return animator; }
 
     public override void InstantiateComponents()
     {
         base.InstantiateComponents();
-        animator = GetComponent<Animator>();
+        audioCall = GetComponent<AudioCall>();
     }
 }

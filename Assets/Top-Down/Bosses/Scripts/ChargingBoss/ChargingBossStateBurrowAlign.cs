@@ -17,6 +17,9 @@ public class ChargingBossStateBurrowAlign : StateBase
         base.thisStart();
         timer = sm.GetBurrowingTime();
 
+        sm.GetAudioSource().resource = sm.GetAudioCall().GetAudioClip("Shuffle");
+        sm.GetAudioSource().Play();
+
         sm.GetBoxCollider2D().excludeLayers = LayerMask.GetMask("Walls");
 
         if (sm.GetFacingDirection() == AstrovenderStructs.facingDirection.down)
@@ -73,6 +76,8 @@ public class ChargingBossStateBurrowAlign : StateBase
         base.thisEnd();
 
         sm.GetRigidbody2D().linearVelocity = Vector2.zero;
+
+        sm.GetAudioSource().Stop();
 
         if (sm.GetFacingDirection() == AstrovenderStructs.facingDirection.down)
         {

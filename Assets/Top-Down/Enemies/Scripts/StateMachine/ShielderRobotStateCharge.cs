@@ -16,6 +16,7 @@ public class ShielderRobotStateCharge : StateBase
         base.thisStart();
         sm.GetAnimator().Play("ShielderBotCharge");
         timer = sm.GetChargeTime();
+        sm.GetAudioCall().CallAudioClip("Charge");
     }
 
     public override void thisUpdate()

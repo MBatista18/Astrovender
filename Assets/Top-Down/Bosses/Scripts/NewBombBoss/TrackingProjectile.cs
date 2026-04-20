@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TrackingProjectile : MonoBehaviour
+public class TrackingProjectile : MonoBehaviour, IShieldResponse
 {
 
     [Header("Damage")]
@@ -35,11 +35,16 @@ public class TrackingProjectile : MonoBehaviour
         transform.position += transform.right * speed * Time.deltaTime;
     }
 
+    public void OnShieldAttack()
+    {
+        Destroy(gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            PlayerHealth.ModifyOxygenLevel(damage, false, transform.position);
+            PlayerHealth.ModifyOxygenLevel(damage, false, transform.position, this);
             Destroy(gameObject);
             return;
         }

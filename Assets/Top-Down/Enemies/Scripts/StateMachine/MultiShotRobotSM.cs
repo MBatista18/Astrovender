@@ -28,9 +28,13 @@ public class MultiShotRobotSM : EnemySM
         base.SetReactToDamage(false);
     }
 
+    AudioCall audioCall;
+    public AudioCall GetAudioCall() { return audioCall; }
+
     public override void InstantiateComponents()
     {
         base.InstantiateComponents();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioCall = GetComponent<AudioCall>();
     }
 }

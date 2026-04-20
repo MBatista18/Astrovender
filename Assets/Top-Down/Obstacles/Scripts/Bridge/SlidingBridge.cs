@@ -20,6 +20,13 @@ public class SlidingBridge : MonoBehaviour
     private bool hasBeenActivated = false;
     private Vector3 targetPosition;
 
+    AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -83,6 +90,8 @@ public class SlidingBridge : MonoBehaviour
     //Tells the bridge where to extend/retract and sets isMoving to true
     public void ExtendBridge()
     {
+        audioSource.Play();
+
         bridgeSpaceCollider.enabled = false;
         targetPosition = endPoint.position;
         isMoving = true;

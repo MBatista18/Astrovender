@@ -18,6 +18,9 @@ public class ChargingBossStateCharge : StateBase
         base.thisStart();
         runningTimer = 4f;
 
+        sm.GetAudioSource().resource = sm.GetAudioCall().GetAudioClip("Rush");
+        sm.GetAudioSource().Play();
+
         movementDirection = sm.facingDirection == AstrovenderStructs.facingDirection.down ? -1 : 1;
 
         sm.GetAnimator().Play(movementDirection < 0 ? "ChargingBossChargeDown" : "ChargingBossChargeUp");
@@ -60,6 +63,8 @@ public class ChargingBossStateCharge : StateBase
     public override void thisEnd()
     {
         base.thisEnd();
+
+        sm.GetAudioSource().Stop();
 
         sm.GetRigidbody2D().linearVelocity = Vector2.zero;
     }

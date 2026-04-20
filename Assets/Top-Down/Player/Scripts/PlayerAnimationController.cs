@@ -15,6 +15,7 @@ public class PlayerAnimationController : MonoBehaviour
     {
         Idle,
         Walking,
+        Knockback,
         Death
     }
 
@@ -40,6 +41,9 @@ public class PlayerAnimationController : MonoBehaviour
                 break;
             case AnimatorState.Death:
                 output = "PlayerDeath";
+                break;
+            case AnimatorState.Knockback:
+                output = "PlayerKnockback";
                 break;
         }
 

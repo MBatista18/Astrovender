@@ -25,6 +25,9 @@ public class PlayerStateKnockback : StateBase
     {
         base.thisStart();
 
+        sm.GetAnimationController().SetAnimatorState(PlayerAnimationController.AnimatorState.Knockback);
+        sm.GetAnimationController().Animate();
+
         fullTime = time; 
     }
 

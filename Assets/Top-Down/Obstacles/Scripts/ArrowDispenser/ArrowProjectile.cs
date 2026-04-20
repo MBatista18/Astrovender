@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class ArrowProjectile : MonoBehaviour
+public class ArrowProjectile : MonoBehaviour, IShieldResponse
 {
     [Header("Arrow Behavior")]
     [SerializeField] private float speed = 6f;
@@ -31,6 +31,11 @@ public class ArrowProjectile : MonoBehaviour
         moveDirection = direction.normalized;
     }
 
+    public void OnShieldAttack()
+    {
+        Destroy(gameObject);
+    }
+
     //Damages the player upon entering player collision
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -38,7 +43,7 @@ public class ArrowProjectile : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             Debug.Log("Hit player");
-            PlayerHealth.ModifyOxygenLevel(damageVal, false, transform.position);
+            PlayerHealth.ModifyOxygenLevel(damageVal, false, transform.position, this);
         }
 
         // Destroy arrow when it hits something solid

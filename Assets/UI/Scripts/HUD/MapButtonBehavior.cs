@@ -18,6 +18,16 @@ public class MapButtonBehavior : MonoBehaviour
         OnInteract(); // disables the map on start and sets map is active to false
     }
 
+    private void OnEnable()
+    {
+        InputManager.mapInput += MapInputButton;
+    }
+
+    private void OnDisable()
+    {
+        InputManager.mapInput -= MapInputButton;
+    }
+
     private void Update()
     {
 
@@ -31,6 +41,12 @@ public class MapButtonBehavior : MonoBehaviour
         }
 
         button.interactable = isInteractible;
+    }
+
+    void MapInputButton()
+    {
+        if (!button.interactable) { return; }
+        OnInteract();
     }
 
     public void OnInteract()

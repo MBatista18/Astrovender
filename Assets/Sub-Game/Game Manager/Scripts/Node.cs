@@ -4,10 +4,11 @@ using UnityEngine;
 // Enum representing different node types in the subgame. Primarily used for visual differentiation, but may also be used for type-based logic
 public enum NodeType
 {
-    TypeA = 0,
-    TypeB = 1,
-    TypeC = 2,
-    TypeD = 3
+    Oxygen = 0,
+    Bombs = 1,
+    Ammo = 2,
+    Shield = 3, 
+    Coins = 4
 }
 
 // Represents a single cell in the subgame grid. Handles visuals and highlighting states.
