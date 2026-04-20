@@ -34,7 +34,7 @@ public class SubgameBoard : MonoBehaviour
 
     [Header("Gameplay")]
     [Tooltip("How many moves the player starts with")]
-    [SerializeField] int startingMoves = 20;
+    [SerializeField] int startingMoves = 5;
     [SerializeField] bool startOnWakeup = true;
 
     [Header("Gizmos (Editor only)")]
@@ -60,16 +60,15 @@ public class SubgameBoard : MonoBehaviour
     public float CellSize => cellSize;
     public Vector2 Origin => origin;
 
-    private void Awake()
-    {
-        _grid = new Node[width, height];
-        _movesRemaining = startingMoves;
-
-        RefreshAvailableTypes();
-    }
-
     private void Start()
     {
+        Debug.Log(width + " + " + GameManager.Instance.currentdataObj.subgame_gridExpansionLevel);
+        _grid = new Node[width + GameManager.Instance.currentdataObj.subgame_gridExpansionLevel, height];
+        _movesRemaining = startingMoves + (5 * GameManager.Instance.currentdataObj.subgame_turnLevel);
+
+
+        RefreshAvailableTypes();
+
         if (startOnWakeup) InitializeBoard(width, height);
     }
 
@@ -81,6 +80,21 @@ public class SubgameBoard : MonoBehaviour
         _availableTypes.Clear();
         foreach (var nodeData in nodeDataList)
         {
+            if (nodeData.nodeType == NodeType.Bombs && !GameManager.Instance.currentdataObj.hasBombs)
+            {
+                continue;
+            }
+
+            if (nodeData.nodeType == NodeType.Ammo && !GameManager.Instance.currentdataObj.hasGun)
+            {
+                continue;
+            }
+
+            if (nodeData.nodeType == NodeType.Shield && !GameManager.Instance.currentdataObj.hasShield)
+            {
+                continue;
+            }
+
             if (nodeData.unlocked)
             {
                 _availableTypes.Add(nodeData.nodeType);

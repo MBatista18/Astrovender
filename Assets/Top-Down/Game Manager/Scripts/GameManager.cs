@@ -106,6 +106,9 @@ public class GameManager : MonoBehaviour, ISaveable
     public void StartDay()
     {
         IncrementDay();
+
+        if (currentdataObj.day <= 1) { PlayerManager.currentOxygenLevel = 70; } // when the player first starts the game, they get given a free stock of oxygen
+
         //Debug.Log("A new day has started. Current Day: " + 1CurrentDay);
 
         /*collectedCoins = 0;
@@ -120,7 +123,7 @@ public class GameManager : MonoBehaviour, ISaveable
 
         startingDataObj = currentdataObj;
 
-        PlayerManager.ResetPlayerValues();
+        //PlayerManager.ResetPlayerValues();
         PlayerManager.playerWorldSpawn = new Vector3(10, 23);
         //SaveManager.Instance.Save(this);
     }

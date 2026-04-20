@@ -1598,7 +1598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89afeda69e3bad64ba3a77e8f37ee0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BeginNextDay
-  gameplayScene_ID: 1
+  gameplayScene_ID: 9
 --- !u!1 &2078656750
 GameObject:
   m_ObjectHideFlags: 0

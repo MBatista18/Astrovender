@@ -8,7 +8,8 @@ public enum NodeType
     Bombs = 1,
     Ammo = 2,
     Shield = 3, 
-    Coins = 4
+    Coins = 4,
+    Junk = 5
 }
 
 // Represents a single cell in the subgame grid. Handles visuals and highlighting states.
