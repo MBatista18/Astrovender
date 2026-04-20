@@ -1,5 +1,6 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using static TreeEditor.TreeEditorHelper;
 
 public class SubgameCommunicator : MonoBehaviour
 {
@@ -30,36 +31,38 @@ public class SubgameCommunicator : MonoBehaviour
         Debug.Log("Ammo = " + PlayerManager.GetMaxAmmoCount());
     }
 
-    public void OnLineCompletion(NodeType nodeType, int integerVal)
+    public void OnLineCompletion(MatchResult matchResults)
     {
-        Debug.Log("Nodey type = " + nodeType);
-
-       /* if (nodeType == NodeType.Bombs && GameManager.Instance.currentdataObj.hasBombs) { nodeType = NodeType.Coins; }
-        if (nodeType == NodeType.Ammo && GameManager.Instance.currentdataObj.hasGun) { nodeType = NodeType.Coins; }
-        if (nodeType == NodeType.Shield && GameManager.Instance.currentdataObj.hasShield) { nodeType = NodeType.Coins; }*/
-
-        switch (nodeType)
+        /* if (nodeType == NodeType.Bombs && GameManager.Instance.currentdataObj.hasBombs) { nodeType = NodeType.Coins; }
+         if (nodeType == NodeType.Ammo && GameManager.Instance.currentdataObj.hasGun) { nodeType = NodeType.Coins; }
+         if (nodeType == NodeType.Shield && GameManager.Instance.currentdataObj.hasShield) { nodeType = NodeType.Coins; }*/
+        var nodeTypes = matchResults.ClearedCounts.Keys;
+        foreach (var nodeType in nodeTypes)
         {
-            case NodeType.Oxygen:
-                Debug.Log("Oxygen update");
-                oxygenVal = Mathf.RoundToInt(Mathf.Clamp(oxygenVal + (oxygenTick * integerVal), PlayerManager.min_OxygenValue, PlayerManager.GetMaxOxygenLevel()));
-                break;
-            case NodeType.Bombs:
-                Debug.Log("Bombs update");
-                bombVal = Mathf.RoundToInt(Mathf.Clamp(bombVal + (bombTick * integerVal), PlayerManager.min_BombValue, PlayerManager.GetMaxBombCount()));
-                break;
-            case NodeType.Ammo:
-                Debug.Log("Ammo update");
-                ammoVal = Mathf.RoundToInt(Mathf.Clamp(ammoVal + (ammoTick * integerVal), PlayerManager.min_AmmoValue, PlayerManager.GetMaxAmmoCount()));
-                break;
-            case NodeType.Shield:
-                Debug.Log("Shield update");
-                shieldVal = Mathf.RoundToInt(Mathf.Clamp(shieldVal + (shieldTick * integerVal), PlayerManager.min_ShieldValue, PlayerManager.GetMaxShieldHealth()));
-                break;
-            case NodeType.Coins:
-                Debug.Log("Coins update");
-                GameManager.Instance.ModifyDataCoinCountBy(integerVal);
-                break;
+            int integerVal = matchResults.ClearedCounts[nodeType];
+            switch (nodeType)
+            {
+                case NodeType.Oxygen:
+                    Debug.Log("Oxygen update");
+                    oxygenVal = Mathf.RoundToInt(Mathf.Clamp(oxygenVal + (oxygenTick * integerVal), PlayerManager.min_OxygenValue, PlayerManager.GetMaxOxygenLevel()));
+                    break;
+                case NodeType.Bombs:
+                    Debug.Log("Bombs update");
+                    bombVal = Mathf.RoundToInt(Mathf.Clamp(bombVal + (bombTick * integerVal), PlayerManager.min_BombValue, PlayerManager.GetMaxBombCount()));
+                    break;
+                case NodeType.Ammo:
+                    Debug.Log("Ammo update");
+                    ammoVal = Mathf.RoundToInt(Mathf.Clamp(ammoVal + (ammoTick * integerVal), PlayerManager.min_AmmoValue, PlayerManager.GetMaxAmmoCount()));
+                    break;
+                case NodeType.Shield:
+                    Debug.Log("Shield update");
+                    shieldVal = Mathf.RoundToInt(Mathf.Clamp(shieldVal + (shieldTick * integerVal), PlayerManager.min_ShieldValue, PlayerManager.GetMaxShieldHealth()));
+                    break;
+                case NodeType.Coins:
+                    Debug.Log("Coins update");
+                    GameManager.Instance.ModifyDataCoinCountBy(integerVal);
+                    break;
+            }
         }
     }
 

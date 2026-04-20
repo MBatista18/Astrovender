@@ -51,8 +51,8 @@ public class SubgameBoard : MonoBehaviour
     public UnityEvent<int> OnMovesChanged; // Event that passes current moves remaining
     [Tooltip("Event that fires when the player runs out of moves.")]
     public UnityEvent OnOutOfMoves;
-    [Tooltip("Event that fires when a match is made and nodes are cleared. Provides the NodeType of the nodes cleared and how many were cleared.")]
-    public UnityEvent<NodeType, int> OnNodesCleared;
+    [Tooltip("Event that fires when a matches are made. Returns a MatchResults structure that holds each cleared NodeType and how many nodes of that type were cleared")]
+    public UnityEvent<MatchResult> OnNodesCleared;
 
     public int MovesRemaining => _movesRemaining;
     public int Width => width;
@@ -282,7 +282,7 @@ public class SubgameBoard : MonoBehaviour
         b.StartCoroutine(b.MoveToPosition(posB, swapDuration));
         yield return new WaitForSeconds(swapDuration + 0.01f);
 
-        var matches = FindAllMatches(out var type);
+        var matches = FindAllMatches();
         if (matches.Count == 0)
         {
             // No matches created.
@@ -290,14 +290,21 @@ public class SubgameBoard : MonoBehaviour
             yield break;
         }
 
+        
+
         // resolve matches
         while (matches.Count > 0)
         {
             var toRemove = matches;
-            int removedCount = toRemove.Count;
+            var matchResults = new MatchResult();
+            // Track how many of each NodeType were cleared
+            foreach (var node in matches)
+            {
+                matchResults.Add(node.Type);
+            }
 
             // Notify subscribers about cleared nodes
-            OnNodesCleared?.Invoke(type, removedCount);
+            OnNodesCleared?.Invoke(matchResults);
 
             // remove nodes
             foreach (var node in toRemove)
@@ -329,7 +336,6 @@ public class SubgameBoard : MonoBehaviour
     }
 
     // Find all nodes that are part of a horizontal or vertical run of 3 or more matching types. Returns a set of nodes to be cleared.
-    // Has an overload that also outputs the type of the matched nodes
     private HashSet<Node> FindAllMatches()
     {
         HashSet<Node> matches = new HashSet<Node>();
@@ -407,95 +413,6 @@ public class SubgameBoard : MonoBehaviour
 
         return matches;
     }
-    #region FindAllMatches Overload
-
-    private HashSet<Node> FindAllMatches(out NodeType nodeType)
-    {
-        HashSet<Node> matches = new HashSet<Node>();
-        nodeType = default;
-
-        // horizontal runs
-        for (int y = 0; y < height; y++)
-        {
-            int runStart = 0;
-            for (int x = 0; x < width; x++)
-            {
-                if (x == runStart) continue;
-                var a = _grid[x, y];
-                var b = _grid[x - 1, y];
-                if (a == null || b == null || a.Type != b.Type)
-                {
-                    int runLength = x - runStart;
-                    if (runLength >= 3)
-                    {
-                        for (int rx = runStart; rx < x; rx++)
-                        {
-                            if (_grid[rx, y] != null) matches.Add(_grid[rx, y]);
-                        }
-                    }
-                    runStart = x;
-                }
-            }
-            // handle end of row
-            int finalRunLength = width - runStart;
-            if (finalRunLength >= 3)
-            {
-                for (int rx = runStart; rx < width; rx++)
-                {
-                    if (_grid[rx, y] != null)
-                    {
-                        matches.Add(_grid[rx, y]);
-                        nodeType = _grid[rx, y].Type; // set nodeType to the type of the matched nodes
-
-                        Debug.Log("484 + " + _grid[rx, y].Type);
-                    }
-                }
-            }
-        }
-
-        // vertical runs
-        for (int x = 0; x < width; x++)
-        {
-            int runStart = 0;
-            for (int y = 0; y < height; y++)
-            {
-                if (y == runStart) continue;
-                var a = _grid[x, y];
-                var b = _grid[x, y - 1];
-                if (a == null || b == null || a.Type != b.Type)
-                {
-                    int runLength = y - runStart;
-                    if (runLength >= 3)
-                    {
-                        for (int ry = runStart; ry < y; ry++)
-                        {
-                            if (_grid[x, ry] != null) matches.Add(_grid[x, ry]);
-                        }
-                    }
-                    runStart = y;
-                }
-            }
-            int finalRunLength = height - runStart;
-            if (finalRunLength >= 3)
-            {
-                for (int ry = runStart; ry < height; ry++)
-                {
-                    if (_grid[x, ry] != null)
-                    {
-                        matches.Add(_grid[x, ry]);
-                        Debug.Log("484 + " + _grid[x, ry].Type);
-                        nodeType = _grid[x, ry].Type; // set nodeType to the type of the matched nodes
-                    }
-                }
-            }
-        }
-
-        Debug.Log(nodeType);
-
-        return matches;
-    }
-
-    #endregion
 
     // After matches are cleared, collapse columns down and spawn new nodes at the top. Animates falling. Waits for animations to complete before returning.
     private IEnumerator CollapseColumns()
