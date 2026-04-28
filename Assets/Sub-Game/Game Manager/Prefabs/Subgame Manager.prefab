@@ -66,27 +66,15 @@ MonoBehaviour:
   nodeDataList:
   - nodeType: 0
     prefab: {fileID: 4806181888951159119, guid: 7474ce40b07c24044ab87adef17717c2, type: 3}
-    frequency: 5
     unlocked: 1
   - nodeType: 1
     prefab: {fileID: 6271802088635220574, guid: ca08744a4596a1549875c33a4d180e49, type: 3}
-    frequency: 3
     unlocked: 1
   - nodeType: 2
     prefab: {fileID: 6385377638312398284, guid: 1e0f6edd670eefb48aa09fd16733d3c9, type: 3}
-    frequency: 2
     unlocked: 1
   - nodeType: 3
     prefab: {fileID: 3144733590786165761, guid: 093320a007c806c4ab6badb219ac62bf, type: 3}
-    frequency: 2
-    unlocked: 1
-  - nodeType: 4
-    prefab: {fileID: 3144733590786165761, guid: a963e33883ef8ab48b241aff50caf69a, type: 3}
-    frequency: 3
-    unlocked: 1
-  - nodeType: 5
-    prefab: {fileID: 3144733590786165761, guid: b279d8883d8287841ba34696ce791026, type: 3}
-    frequency: 1
     unlocked: 1
   backgroundTilePrefab: {fileID: 7669107819939452947, guid: 8b7eea34afc4f96489a35126dc726166, type: 3}
   nodeParent: {fileID: 0}
@@ -94,7 +82,6 @@ MonoBehaviour:
   fallDuration: 0.12
   startingMoves: 20
   startOnWakeup: 1
-  drawGizmos: 1
   OnMovesChanged:
     m_PersistentCalls:
       m_Calls:
