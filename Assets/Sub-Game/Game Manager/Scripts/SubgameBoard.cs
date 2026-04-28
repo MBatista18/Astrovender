@@ -18,8 +18,6 @@ public class SubgameBoard : MonoBehaviour
     {
         public NodeType nodeType;
         public GameObject prefab;
-        [Tooltip("Affects how often this node type will appear. The higher the number, the more nodes of this type will appear")]
-        public int frequency;
         public bool unlocked;
     }
     [Header("Node Types (Make sure each Node Type is only represented once)")]
@@ -43,13 +41,10 @@ public class SubgameBoard : MonoBehaviour
     [SerializeField] bool drawGizmos = true;
 
     private Node[,] _grid;
-
     private bool _boardBusy;
-    public bool BoardBusy => _boardBusy;
-
     private int _movesRemaining;
 
-    // A list holding a number of each available NodeType equal to its frequency, used for getting a random node type
+    // runtime unlocked state
     private List<NodeType> _availableTypes = new List<NodeType>();
 
     [Tooltip("Event that fires when the player's moves remaining changes. Passes the current moves remaining as an int.")]
@@ -102,10 +97,7 @@ public class SubgameBoard : MonoBehaviour
 
             if (nodeData.unlocked)
             {
-                for (int i = 0; i < nodeData.frequency; i++)
-                {
-                    _availableTypes.Add(nodeData.nodeType);
-                }
+                _availableTypes.Add(nodeData.nodeType);
             }
         }
 
@@ -115,6 +107,38 @@ public class SubgameBoard : MonoBehaviour
             Debug.LogError("There are no Node Types unlocked, so defaulting to unlocking the first node type. Probably not intended");
             _availableTypes.Add((NodeType)0);
         }
+    }
+
+    // Public API to unlock/lock types at runtime
+    public void UnlockNodeType(NodeType type)
+    {
+        int index = nodeDataList.FindIndex(node => node.nodeType == type);
+        if (index != -1)
+        {
+            // Set NodeData to unlocked
+            var nodeData = nodeDataList[index];
+            nodeData.unlocked = true;
+            nodeDataList[index] = nodeData;
+        }
+        RefreshAvailableTypes();
+    }
+
+    public void LockNodeType(NodeType type)
+    {
+        int index = nodeDataList.FindIndex(node => node.nodeType == type);
+        if (index != -1)
+        {
+            // Set NodeData to locked
+            var nodeData = nodeDataList[index];
+            nodeData.unlocked = false;
+            nodeDataList[index] = nodeData;
+        }
+        RefreshAvailableTypes();
+    }
+
+    public IReadOnlyList<NodeType> GetAvailableNodeTypes()
+    {
+        return _availableTypes.AsReadOnly();
     }
 
     public void InitializeBoard(int width, int height, bool offsetOrigin = false)
@@ -279,6 +303,8 @@ public class SubgameBoard : MonoBehaviour
             _boardBusy = false;
             yield break;
         }
+
+        
 
         // resolve matches
         while (matches.Count > 0)

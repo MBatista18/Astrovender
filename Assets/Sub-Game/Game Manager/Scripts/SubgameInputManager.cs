@@ -76,8 +76,6 @@ public class SubgameInputManager : MonoBehaviour
     // On touch press, selects the node at the touch position and begins tracking it for dragging. Highlights the selected node.
     private void OnPointerDown(Vector2 screenPos)
     {
-        if (_board.BoardBusy) return;
-
         Vector2 world = _mainCam.ScreenToWorldPoint(screenPos);
         var node = _board.GetNodeAtWorld(world);
         if (node == null) return;
@@ -108,7 +106,7 @@ public class SubgameInputManager : MonoBehaviour
         if (_selectedNode == null) return;
 
         // if we have a valid target outstanding, attempt swap
-        if (_currentTarget != null && !_board.BoardBusy)
+        if (_currentTarget != null)
         {
             // ensure target is still present in the board
             if (_board.GetNodeAt(_currentTarget.X, _currentTarget.Y) == _currentTarget)
@@ -138,7 +136,7 @@ public class SubgameInputManager : MonoBehaviour
         }
         else
         {
-            // no target selected or board is busy: return selected node to its original cell visually
+            // no target selected: return selected node to its original cell visually
             _selectedNode.StartCoroutine(_selectedNode.MoveToPosition(_board.GetCellCenter(_startX, _startY), 0.12f));
         }
 

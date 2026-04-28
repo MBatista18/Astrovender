@@ -1,28 +1,30 @@
 using UnityEngine;
 
-public class BatEnemyStatePatrol : StateBase
+public class EelStatePatrol : StateBase
 {
-    BatEnemySM sm;
+    EelSM sm;
 
-    public BatEnemyStatePatrol(StateMachineBase _sm) : base(_sm)
+    public EelStatePatrol(StateMachineBase _sm) : base(_sm)
     {
-        sm = (BatEnemySM)_sm;
+        sm = (EelSM)_sm;
     }
 
     public override void thisStart()
     {
         base.thisStart();
+
         sm.SetMoveDirection(sm.GetRandomDiagonalDirection());
-        timer = maxTimer;
+        timer = sm.patrolChangeTime;
     }
 
     float timer;
-    float maxTimer = 2f; 
-    
+
     public override void thisFixedUpdate()
     {
         base.thisFixedUpdate();
-        sm.GetRigidbody2D().linearVelocity = sm.GetMoveDirection() * sm.GetMovementSpeed();
+
+        sm.GetRigidbody2D().linearVelocity =
+            sm.GetMoveDirection() * sm.GetMovementSpeed();
     }
 
     public override void thisUpdate()
@@ -30,7 +32,6 @@ public class BatEnemyStatePatrol : StateBase
         base.thisUpdate();
 
         sm.UpdateDirectionLockTimer();
-        //Debug.Log("PATROLING AROUND");
 
         Vector2 dir = sm.GetMoveDirection();
 
@@ -40,22 +41,25 @@ public class BatEnemyStatePatrol : StateBase
         }
         else
         {
-            timer = maxTimer;
+            timer = sm.patrolChangeTime;
             sm.SetMoveDirection(sm.GetNewRandomDiagonalDirection(sm.GetMoveDirection()));
         }
 
+        Vector3 scale = sm.originalScale;
+
         if (dir.x > 0)
-            sm.transform.localScale = new Vector3(-1, 1, 1);
+            scale.x = -Mathf.Abs(scale.x);
         else if (dir.x < 0)
-            sm.transform.localScale = new Vector3(1, 1, 1);
+            scale.x = Mathf.Abs(scale.x);
+
+        sm.transform.localScale = scale;
 
         if (sm.IsNearBoundsEdge() && sm.CanChangeDirection())
         {
-            timer = maxTimer;
+            timer = sm.patrolChangeTime;
 
             sm.SetMoveDirection(sm.GetBoundsCorrectedDirection());
             sm.LockDirection();
-
         }
 
         if (Vector2.Distance(sm.GetPlayerTransform().position, sm.transform.position) <= sm.GetDetectionRadius())
