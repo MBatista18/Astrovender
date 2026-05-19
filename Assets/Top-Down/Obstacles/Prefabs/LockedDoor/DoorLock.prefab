@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LockedDoorLock
   lockedDoor: {fileID: 0}
+  thisLockColor: 0
 --- !u!212 &3050613211700038178
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -309,7 +310,7 @@ AudioSource:
   m_GameObject: {fileID: 263234174216284280}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8320292748494799931, guid: 518160d440bc8fe45878ba496a9d30ce, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 8772c8f8b1c9ef546a0c105e6b22bcef, type: 3}
   m_PlayOnAwake: 0

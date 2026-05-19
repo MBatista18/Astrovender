@@ -8,7 +8,7 @@ public class PlayerManager : MonoBehaviour
     static int oxygenLevelMultiplier = 60;
     public static int GetMaxOxygenLevel() { return 150 + (oxygenLevelMultiplier * GameManager.Instance.currentdataObj.oxygenLevel); }
 
-    public readonly static int min_OxygenValue = 70;
+    public static int min_OxygenValue { get { return 70 + GameManager.Instance.currentdataObj.oxygenLevel * 25; } }
     public static int currentOxygenLevel;
     
     public static int bombCount;
@@ -43,7 +43,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 1)
+        if (SceneManager.GetActiveScene().name.Equals("GameWorldPrototyping"))
         {
             AssetCall.instance.playerSM.transform.position = playerWorldSpawn;
             Debug.Log("is scene; " + playerWorldSpawn);

@@ -88,17 +88,6 @@ public class UpgradeButton : MonoBehaviour
                     upgradeText = "Upgrade to Enemy Drops Lvl " + (GameManager.Instance.currentdataObj.enemyDropLevel + 1);
                 }
                 break;
-            case Upgrades_ShopSO.Type.gridExpansion:
-                if (GameManager.Instance.currentdataObj.subgame_gridExpansionLevel >= GameManager.Instance.currentdataObj.MAX_SUBGAME_GRIDEXPANSIONLEVEL)
-                {
-                    isActive = false;
-                    upgradeText = "Max Replicator Grid Size";
-                }
-                else
-                {
-                    upgradeText = "Upgrade Replicator Grid to Lvl " + (GameManager.Instance.currentdataObj.bombLevel + 1);
-                }
-                break;
             case Upgrades_ShopSO.Type.subgameTurns:
                 if (GameManager.Instance.currentdataObj.subgame_turnLevel >= GameManager.Instance.currentdataObj.MAX_SUBGAME_TURNLEVEL)
                 {
@@ -108,6 +97,17 @@ public class UpgradeButton : MonoBehaviour
                 else
                 {
                     upgradeText = "Upgrade Replicator Turn Count to Lvl " + (GameManager.Instance.currentdataObj.bombLevel + 1);
+                }
+                break;
+            case Upgrades_ShopSO.Type.gridRewardMultiplier:
+                if (GameManager.Instance.currentdataObj.subgame_rewardMultiplierLevel >= GameManager.Instance.currentdataObj.MAX_SUBGAME_REWARDMULTIPLIERLEVEL)
+                {
+                    isActive = false;
+                    upgradeText = "Max Reward Multiplier";
+                }
+                else
+                {
+                    upgradeText = "Upgrade Replicator Multiplier to Lvl " + (GameManager.Instance.currentdataObj.subgame_rewardMultiplierLevel + 1);
                 }
                 break;
         }

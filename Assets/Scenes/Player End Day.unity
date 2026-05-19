@@ -172,7 +172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c72963df9c9de0e489ab0422d196d7fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OpenShop
-  shopScene_ID: 3
 --- !u!114 &400398403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,7 +240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89afeda69e3bad64ba3a77e8f37ee0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BeginNextDay
-  gameplayScene_ID: 0
 --- !u!114 &400398405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1537,7 +1535,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1928611361}
-        m_TargetAssemblyTypeName: BeginNextDay, Assembly-CSharp
+        m_TargetAssemblyTypeName: OpenSubgame, Assembly-CSharp
         m_MethodName: ContinueToNextDay
         m_Mode: 1
         m_Arguments:
@@ -1595,10 +1593,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1928611356}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89afeda69e3bad64ba3a77e8f37ee0ef, type: 3}
+  m_Script: {fileID: 11500000, guid: d0b3d99f07222aa4887f37aee722474d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BeginNextDay
-  gameplayScene_ID: 9
+  m_EditorClassIdentifier: Assembly-CSharp::OpenSubgame
 --- !u!1 &2078656750
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,6 @@ public class BombButtonBehavior : MonoBehaviour
 
     private void Update()
     {
-        button.interactable = GameManager.Instance.currentdataObj.hasGun;
+        button.interactable = GameManager.Instance.currentdataObj.hasBombs;
     }
 }

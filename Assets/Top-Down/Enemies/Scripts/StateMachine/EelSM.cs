@@ -24,6 +24,12 @@ public class EelSM : EnemySM
         stateAttack = new EelStateAttack(this);
     }
 
+    public override void OnShieldReaction()
+    {
+        GetStateKnockback().SetKnockback((Vector2)(transform.position - AssetCall.instance.playerSM.transform.position), 1f);
+        ChangeState(GetStateKnockback());
+    }
+
     [Header("Movement")]
     public Rigidbody2D rb;
     public float moveSpeed = 2f;
@@ -55,6 +61,9 @@ public class EelSM : EnemySM
 
     private Vector2 moveDirection;
 
+    AudioCall audioCall;
+    public AudioCall GetAudioCall() { return audioCall; }
+
     public override void InstantiateComponents()
     {
         base.InstantiateComponents();
@@ -62,6 +71,7 @@ public class EelSM : EnemySM
         rb = GetComponent<Rigidbody2D>();
         originalScale = transform.localScale;
         patrolBounds = new Bounds(transform.position + (Vector3)patrolCenterOffset, patrolSize);
+        audioCall = GetComponent<AudioCall>();
     }
 
     //Functions
@@ -78,6 +88,29 @@ public class EelSM : EnemySM
 
     public void SetMoveDirection(Vector2 dir)
     {
+        if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
+        {
+            if (dir.x > 0)
+            {
+                GetAnimator().Play("EelRight");
+            }
+            else
+            {
+                GetAnimator().Play("EelLeft");
+            }
+        }
+        else
+        {
+            if (dir.y > 0)
+            {
+                GetAnimator().Play("EelUp");
+            }
+            else
+            {
+                GetAnimator().Play("EelDown");
+            }
+        }
+
         moveDirection = dir.normalized;
     }
 

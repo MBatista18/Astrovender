@@ -9,13 +9,13 @@ public class PlayerHealth : MonoBehaviour
     {
         if (GameManager.Instance.currentdataObj.hasShield && PlayerManager.ShieldCanDefend(AssetCall.instance.playerSM.transform.position, position, AssetCall.instance.playerSM.GetFacingDirection()))
         {
-            if (!bypassInvulnerabilityCheck) // It's bad practice to just copy the code over to here, but it probably works, so I'll just do it I guess
-            {
-                if (val < 0 && !canBeHurt) { return; } else { canBeHurt = false; }
-            }
-
             if (PlayerManager.GetCurrentShieldHealth() > 0)
             {
+                if (!bypassInvulnerabilityCheck) // It's bad practice to just copy the code over to here, but it probably works, so I'll just do it I guess
+                {
+                    if (val < 0 && !canBeHurt) { return; } else { canBeHurt = false; }
+                }
+
                 AssetCall.instance.playerSM.GetAudioCall().CallAudioClip("DamageShield");
 
                 shieldResponse.OnShieldAttack();
@@ -36,10 +36,10 @@ public class PlayerHealth : MonoBehaviour
         // if being damaged and the player is currently invulnerable, return false
         if (!bypassInvulnerabilityCheck)
         {
-            if (val < 0 && !canBeHurt) { Debug.Log("No Damage"); return; } 
+            if (val < 0 && !canBeHurt) { Debug.Log("Val = " + val + "; " + canBeHurt); return; } 
             else 
             {
-                //Debug.Log("Damage; " + val + "; canBehurt = " + canBeHurt + "; bypass = " + bypassInvulnerabilityCheck);
+                Debug.Log("Damage; " + val + "; canBehurt = " + canBeHurt + "; bypass = " + bypassInvulnerabilityCheck);
                 canBeHurt = false;
 
                 AssetCall.instance.playerSM.GetFlashOnHit()?.FlashRed();
@@ -80,7 +80,7 @@ public class PlayerHealth : MonoBehaviour
             }
         }
 
-        if (PlayerManager.currentOxygenLevel > PlayerManager.GetMaxOxygenLevel() * .25f)
+        if (PlayerManager.currentOxygenLevel > PlayerManager.GetMaxOxygenLevel() * .2f)
         {
             healthDipping = false;
         }
@@ -94,7 +94,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    bool healthDipping;
+    static bool healthDipping;
 
     IEnumerator beepbeepbeep()
     {

@@ -50,11 +50,6 @@ public class GameManager : MonoBehaviour, ISaveable
         }
     }
 
-    void Start()
-    {
-        StartDay(); // this should be removed for the final build, otherwise everytime the player starts the game and this object is created, it'll start a new day
-    }
-
     public void Progress(bool success)
     {
         if (success)
@@ -107,7 +102,7 @@ public class GameManager : MonoBehaviour, ISaveable
     {
         IncrementDay();
 
-        if (currentdataObj.day <= 1) { PlayerManager.currentOxygenLevel = 70; } // when the player first starts the game, they get given a free stock of oxygen
+        if (currentdataObj.day <= 1) { PlayerManager.currentOxygenLevel = PlayerManager.min_OxygenValue; } // when the player first starts the game, they get given a free stock of oxygen
 
         //Debug.Log("A new day has started. Current Day: " + 1CurrentDay);
 

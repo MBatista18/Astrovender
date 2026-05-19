@@ -3,10 +3,19 @@ using UnityEngine;
 
 public class SubgameCommunicator : MonoBehaviour
 {
-    public int oxygenTick = 10;
-    public int shieldTick = 5;
-    public int bombTick = 1;
-    public int ammoTick = 1;
+    int oxygenTick = 17;
+    int oxygenTickPerUpgrade = 5;
+
+    int shieldTick = 8;
+    int shieldTickPerUpgrade = 5;
+
+    int bombTick = 1;
+    int bombTickPerUpgrade = 1;
+
+    int ammoTick = 2;
+    int ammoTickPerUpgrade = 1;
+
+    int coinTickPerUpgrade = 2;
 
     int oxygenVal;
     public int GetOxygenVal() { return oxygenVal; }
@@ -40,25 +49,30 @@ public class SubgameCommunicator : MonoBehaviour
             switch (nodeType)
             {
                 case NodeType.Oxygen:
-                  //  Debug.Log("Oxygen tick = " + oxygenTick + " ; integer val = " + integerVal);
-                   // Debug.Log("Oxygen update = " + (oxygenTick * integerVal));
-                    oxygenVal = Mathf.RoundToInt(Mathf.Clamp(oxygenVal + (oxygenTick * integerVal), PlayerManager.min_OxygenValue, PlayerManager.GetMaxOxygenLevel()));
+                    //  Debug.Log("Oxygen tick = " + oxygenTick + " ; integer val = " + integerVal);
+                    // Debug.Log("Oxygen update = " + (oxygenTick * integerVal));
+                   // Debug.Log("Oxygen update = " + oxygenVal + " + " + (oxygenTick * integerVal));
+                    oxygenVal = Mathf.RoundToInt(Mathf.Clamp(oxygenVal + (oxygenTick * integerVal) + (oxygenTickPerUpgrade * GameManager.Instance.currentdataObj.subgame_rewardMultiplierLevel),
+                        PlayerManager.min_OxygenValue, PlayerManager.GetMaxOxygenLevel()));
                     break;
                 case NodeType.Bombs:
-                 //   Debug.Log("Bombs update = " + (bombTick * integerVal));
-                    bombVal = Mathf.RoundToInt(Mathf.Clamp(bombVal + (bombTick * integerVal), PlayerManager.min_BombValue, PlayerManager.GetMaxBombCount()));
+                   // Debug.Log("Bombs update = " + bombVal + " + " + (bombTick * integerVal));
+                    bombVal = Mathf.RoundToInt(Mathf.Clamp(bombVal + (bombTick * integerVal) + (bombTickPerUpgrade * GameManager.Instance.currentdataObj.subgame_rewardMultiplierLevel), 
+                        PlayerManager.min_BombValue, PlayerManager.GetMaxBombCount()));
                     break;
                 case NodeType.Ammo:
-                 //   Debug.Log("Ammo update = " + (ammoTick * integerVal));
-                    ammoVal = Mathf.RoundToInt(Mathf.Clamp(ammoVal + (ammoTick * integerVal), PlayerManager.min_AmmoValue, PlayerManager.GetMaxAmmoCount()));
+                   // Debug.Log("Ammo update = " +  ammoVal  + " + " + (ammoTick * integerVal));
+                    ammoVal = Mathf.RoundToInt(Mathf.Clamp(ammoVal + (ammoTick * integerVal) + (ammoTickPerUpgrade * GameManager.Instance.currentdataObj.subgame_rewardMultiplierLevel), 
+                        PlayerManager.min_AmmoValue, PlayerManager.GetMaxAmmoCount()));
                     break;
                 case NodeType.Shield:
-                   // Debug.Log("Shield update = " + (shieldTick * integerVal));
-                    shieldVal = Mathf.RoundToInt(Mathf.Clamp(shieldVal + (shieldTick * integerVal), PlayerManager.min_ShieldValue, PlayerManager.GetMaxShieldHealth()));
+                   // Debug.Log("Shield update = " + shieldVal + " + " + (shieldTick * integerVal));
+                    shieldVal = Mathf.RoundToInt(Mathf.Clamp(shieldVal + (shieldTick * integerVal) + (shieldTickPerUpgrade * GameManager.Instance.currentdataObj.subgame_rewardMultiplierLevel), 
+                        PlayerManager.min_ShieldValue, PlayerManager.GetMaxShieldHealth()));
                     break;
                 case NodeType.Coins:
                     //Debug.Log("Coins update = " + (integerVal));
-                    GameManager.Instance.ModifyDataCoinCountBy(integerVal);
+                    GameManager.Instance.ModifyDataCoinCountBy(integerVal + (coinTickPerUpgrade * GameManager.Instance.currentdataObj.subgame_rewardMultiplierLevel));
                     break;
                 case NodeType.Junk:
                    // Debug.Log("Junk update");

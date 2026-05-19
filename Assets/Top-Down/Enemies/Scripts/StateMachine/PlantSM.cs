@@ -80,10 +80,7 @@ public class PlantSM : EnemySM
 
     public Vector2 GetClampedLungeTarget()
     {
-        if (player == null || lungeBounds == null)
-            return startPosition;
-
-        Vector2 rawTarget = player.position;
+        Vector2 rawTarget = AssetCall.instance.playerSM.transform.position;
         Bounds bounds = lungeBounds.bounds;
 
         float x = Mathf.Clamp(rawTarget.x, bounds.min.x, bounds.max.x);

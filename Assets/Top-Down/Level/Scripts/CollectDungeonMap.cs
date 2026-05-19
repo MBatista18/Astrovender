@@ -3,6 +3,17 @@ using UnityEngine.SceneManagement;
 
 public class CollectDungeonMap : MonoBehaviour
 {
+    private void Start()
+    {
+        if (GameManager.Instance.currentdataObj.dungeons.ContainsKey(SceneManager.GetActiveScene().name))
+        {
+            if (GameManager.Instance.currentdataObj.dungeons[SceneManager.GetActiveScene().name].foundMap)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer != LayerMask.NameToLayer("Player"))

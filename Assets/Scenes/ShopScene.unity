@@ -3583,7 +3583,7 @@ AudioSource:
   m_GameObject: {fileID: 1090349198}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8264110014981590015, guid: 518160d440bc8fe45878ba496a9d30ce, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: e688021c09f08a044b119abc7f0886eb, type: 3}
   m_PlayOnAwake: 1
@@ -4667,7 +4667,7 @@ GameObject:
   - component: {fileID: 1331769407}
   - component: {fileID: 1331769408}
   m_Layer: 5
-  m_Name: ExpandSubGameGrid
+  m_Name: SubGameMultiplier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7234,7 +7234,7 @@ GameObject:
   - component: {fileID: 1926000160}
   - component: {fileID: 1926000159}
   - component: {fileID: 1926000158}
-  - component: {fileID: 1926000157}
+  - component: {fileID: 1926000161}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -7261,19 +7261,6 @@ RectTransform:
   m_AnchoredPosition: {x: -123, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1926000157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926000155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c72963df9c9de0e489ab0422d196d7fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OpenShop
-  shopScene_ID: 2
 --- !u!114 &1926000158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7318,9 +7305,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1926000157}
-        m_TargetAssemblyTypeName: OpenShop, Assembly-CSharp
-        m_MethodName: ContinueToNextDay
+      - m_Target: {fileID: 1926000161}
+        m_TargetAssemblyTypeName: CallSceneAt, Assembly-CSharp
+        m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7368,6 +7355,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1926000155}
   m_CullTransparentMesh: 1
+--- !u!114 &1926000161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926000155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f5962c773d0464781028f6c6a82d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CallSceneAt
+  SceneName: Player End Day
 --- !u!1 &1950238724
 GameObject:
   m_ObjectHideFlags: 0
@@ -7533,7 +7533,7 @@ AudioSource:
   m_GameObject: {fileID: 1950238724}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8320292748494799931, guid: 518160d440bc8fe45878ba496a9d30ce, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -7975,8 +7975,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 111130998}
   m_HandleRect: {fileID: 111130997}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.77305263
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

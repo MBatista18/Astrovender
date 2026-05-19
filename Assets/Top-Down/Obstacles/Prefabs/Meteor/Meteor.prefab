@@ -356,6 +356,7 @@ MonoBehaviour:
   attackCooldown: 1.5
   knocksPlayer: 1
   knockDuration: 0.5
+  enemySM: {fileID: 0}
 --- !u!1 &8186935909478851286
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,7 +439,7 @@ AudioSource:
   m_GameObject: {fileID: 8186935909478851286}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8320292748494799931, guid: 518160d440bc8fe45878ba496a9d30ce, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: efc4d0bf690f94744be7e0772db74012, type: 3}
   m_PlayOnAwake: 1

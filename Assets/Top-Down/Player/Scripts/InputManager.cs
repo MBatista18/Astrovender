@@ -14,6 +14,7 @@ public class InputManager : MonoBehaviour
     public static OnInput shootInput;
     public static OnInput meleeInput;
     public static OnInput mapInput;
+    public static OnInput pauseInput;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale == 0) { return; }
         Movement = _moveAction.ReadValue<Vector2>();
 
         if (Movement == Vector2.zero)
@@ -50,5 +52,10 @@ public class InputManager : MonoBehaviour
     void OnMap()
     {
         mapInput();
+    }
+
+    void OnPause()
+    {
+        pauseInput();
     }
 }

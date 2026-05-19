@@ -46,6 +46,7 @@ public class SetHUDText : MonoBehaviour
     {
         RefreshCollectiblesUI();
         RefreshFadeInUI();
+        RefreshKeys();
     }
 
     public void RefreshCollectiblesUI()
@@ -108,5 +109,38 @@ public class SetHUDText : MonoBehaviour
 
         fadeOutCircle.color = new Color(1, 1, 1, Mathf.Clamp01(a1Timer/ MAXTIMER));
         fadeOut.color = new Color(0, 0, 0, Mathf.Clamp01(a1Timer - MAXTIMER));
+    }
+
+    public Image greenKey;
+    public Image redKey;
+    public Image blueKey;
+
+    public void RefreshKeys()
+    {
+        bool showBlue = false;
+        bool showRed = false;
+        bool showGreen = false;
+
+        if (GameManager.Instance.currentdataObj.dungeons.ContainsKey(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name))
+        {
+            if (GameManager.Instance.currentdataObj.dungeons[UnityEngine.SceneManagement.SceneManager.GetActiveScene().name].hasBlueKey)
+            {
+                showBlue = true;
+            }
+
+            if (GameManager.Instance.currentdataObj.dungeons[UnityEngine.SceneManagement.SceneManager.GetActiveScene().name].hasRedKey)
+            {
+                showRed = true;
+            }
+
+            if (GameManager.Instance.currentdataObj.dungeons[UnityEngine.SceneManagement.SceneManager.GetActiveScene().name].hasGreenKey)
+            {
+                showGreen = true;
+            }
+        }
+
+        greenKey.color = new Color(greenKey.color.r, greenKey.color.g, greenKey.color.b, showGreen ? 1 : 0);
+        redKey.color = new Color(redKey.color.r, redKey.color.g, redKey.color.b, showRed ? 1 : 0);
+        blueKey.color = new Color(blueKey.color.r, blueKey.color.g, blueKey.color.b, showBlue ? 1 : 0);
     }
 }

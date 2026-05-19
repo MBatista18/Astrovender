@@ -67,6 +67,13 @@ public class SettingsMenu : MonoBehaviour
         sfxVolumeValueText.text = $"{Mathf.RoundToInt(sfxVolume * 100)}%";
     }
 
+    private void Update()
+    {
+        SetMasterVolume(masterVolumeSlider.value);
+        SetSFXVolume(sfxVolumeSlider.value);
+        SetMusicVolume(musicVolumeSlider.value);
+    }
+
     public void SetMasterVolume(float volume)
     {
         // Converted 0-1 slider to decibels

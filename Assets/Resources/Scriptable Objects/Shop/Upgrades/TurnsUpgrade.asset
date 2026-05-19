@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Increase Replicator 3000 Turns
   Sprite: {fileID: 21300000, guid: 54f0631c467d4dc4cbde147b241bdc52, type: 3}
   Description: Increase the total number of turns available in the Replicator 3000.
-  thisUpgradeType: 6
+  thisUpgradeType: 5
   tiersCost:
   - coins: 40
     gems: 1

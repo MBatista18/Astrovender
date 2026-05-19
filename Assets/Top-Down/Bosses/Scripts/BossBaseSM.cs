@@ -2,7 +2,23 @@ using UnityEngine;
 
 public class BossBaseSM : EnemySM
 {
-    
+    BossMusicPlayer musicPlayer;
+
+    public override void OnEnableFunctions()
+    {
+        base.OnEnableFunctions();
+
+        musicPlayer = FindFirstObjectByType<BossMusicPlayer>();
+        musicPlayer?.StartBossTheme();
+    }
+
+    public override void OnDisableFunctions()
+    {
+        base.OnDisableFunctions();
+
+        musicPlayer?.EndBossTheme();
+    }
+
     public override StateBase DeathState()
     {
         DungeonDatObj dataObj;

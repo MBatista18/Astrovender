@@ -62,10 +62,7 @@ public class SubgameBoard : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(width + " + " + GameManager.Instance.currentdataObj.subgame_gridExpansionLevel);
-        _grid = new Node[width + GameManager.Instance.currentdataObj.subgame_gridExpansionLevel, height];
         _movesRemaining = startingMoves + (5 * GameManager.Instance.currentdataObj.subgame_turnLevel);
-
 
         RefreshAvailableTypes();
 

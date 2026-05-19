@@ -11,8 +11,8 @@ public class Upgrades_ShopSO : ShopSO
         ammoCount,
         shieldMeter,
         enemyDrops,
-        gridExpansion,
-        subgameTurns
+        subgameTurns, 
+        gridRewardMultiplier
     }
 
     [SerializeField] Cost[] tiersCost;
@@ -40,11 +40,11 @@ public class Upgrades_ShopSO : ShopSO
             case Type.enemyDrops:
                 referenceIndex = dataObj.enemyDropLevel;
                 break;
-            case Type.gridExpansion:
-                referenceIndex = dataObj.subgame_gridExpansionLevel;
-                break;
             case Type.subgameTurns:
                 referenceIndex = dataObj.subgame_turnLevel;
+                break;
+            case Type.gridRewardMultiplier:
+                referenceIndex = dataObj.subgame_rewardMultiplierLevel;
                 break;
         }
 
@@ -87,15 +87,15 @@ public class Upgrades_ShopSO : ShopSO
 
                 GameManager.Instance.currentdataObj.enemyDropLevel = Mathf.Clamp(val + 1, 0, GameManager.Instance.currentdataObj.MAX_ENEMYDROPLEVEL);
                 break;
-            case Type.gridExpansion:
-                val = GameManager.Instance.currentdataObj.subgame_gridExpansionLevel;
-
-                GameManager.Instance.currentdataObj.subgame_gridExpansionLevel = Mathf.Clamp(val + 1, 0, GameManager.Instance.currentdataObj.MAX_SUBGAME_GRIDEXPANSIONLEVEL);
-                break;
             case Type.subgameTurns:
                 val = GameManager.Instance.currentdataObj.subgame_turnLevel;
 
                 GameManager.Instance.currentdataObj.subgame_turnLevel = Mathf.Clamp(val + 1, 0, GameManager.Instance.currentdataObj.MAX_SUBGAME_TURNLEVEL);
+                break;
+            case Type.gridRewardMultiplier:
+                val = GameManager.Instance.currentdataObj.subgame_rewardMultiplierLevel;
+
+                GameManager.Instance.currentdataObj.subgame_rewardMultiplierLevel = Mathf.Clamp(val + 1, 0, GameManager.Instance.currentdataObj.MAX_SUBGAME_REWARDMULTIPLIERLEVEL);
                 break;
         }
     }

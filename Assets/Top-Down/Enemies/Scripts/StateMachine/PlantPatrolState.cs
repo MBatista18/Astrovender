@@ -14,6 +14,8 @@ public class PlantPatrolState : StateBase
     {
         base.thisStart();
 
+        Debug.Log("Patrol");
+
         plant.rb.linearVelocity = Vector2.zero;
         plant.transform.position = plant.startPosition;
 
@@ -24,21 +26,23 @@ public class PlantPatrolState : StateBase
     {
         base.thisUpdate();
 
-        if (plant.PlayerInDetectionRange())
+        if (Vector3.Distance(AssetCall.instance.playerSM.transform.position, plant.transform.position) < plant.detectionRange)
         {
-            Debug.Log("Detecting player");
+            //Debug.Log("Detecting player");
             if (!isPeeking)
             {
                 isPeeking = true;
             }
 
-            if (plant.PlayerInLungeRange())
+            if (Vector3.Distance(AssetCall.instance.playerSM.transform.position, plant.transform.position) < plant.detectionRange/2)
             {
-                plant.ChangeState(new PlantAttackState(plant));
+                plant.ChangeState(plant.AttackState());
             }
         }
         else
         {
+            //Debug.Log("false");
+
             if (isPeeking)
             {
                 isPeeking = false;

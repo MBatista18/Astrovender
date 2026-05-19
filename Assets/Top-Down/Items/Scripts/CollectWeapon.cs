@@ -22,9 +22,9 @@ public class CollectWeapon : MonoBehaviour
 
         AssetCall.instance.playerSM.GetAudioCall().CallAudioClip("CollectAbility");
 
-        if (gun) { GameManager.Instance.currentdataObj.hasGun = true; }
-        if (bomb) { GameManager.Instance.currentdataObj.hasBombs = true; }
-        if (shield) { GameManager.Instance.currentdataObj.hasShield = true; }
+        if (gun) { GameManager.Instance.currentdataObj.hasGun = true; PlayerManager.ammoCount = PlayerManager.GetMaxAmmoCount(); }
+        if (bomb) { GameManager.Instance.currentdataObj.hasBombs = true; PlayerManager.bombCount = PlayerManager.GetMaxBombCount(); }
+        if (shield) { GameManager.Instance.currentdataObj.hasShield = true; PlayerManager.SetCurrentShieldHealth(PlayerManager.GetMaxShieldHealth()); }
 
         Destroy(gameObject);
     }

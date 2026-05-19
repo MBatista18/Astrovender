@@ -29,6 +29,10 @@ public class EelStateAttack : StateBase
     public override void thisStart()
     {
         attackCoroutine = sm.StartCoroutine(AttackRoutine());
+
+        sm.GetAudioCall().CallAudioClip("charge");
+
+        sm.GetAnimator().Play("EelShock");
     }
 
     public override void thisEnd()
@@ -44,11 +48,13 @@ public class EelStateAttack : StateBase
 
     private IEnumerator AttackRoutine()
     {
-        while (Vector2.Distance(sm.GetPlayerTransform().position, sm.transform.position) <= sm.GetDetectionRadius())
-        {
+        //while (Vector2.Distance(sm.GetPlayerTransform().position, sm.transform.position) <= sm.GetDetectionRadius())
+        //{
             sm.rb.linearVelocity = Vector2.zero;
 
             yield return new WaitForSeconds(sm.windupDuration);
+
+            sm.GetAudioCall().CallAudioClip("shock");
 
             foreach (Vector2 offset in shockOffsets)
             {
@@ -62,7 +68,7 @@ public class EelStateAttack : StateBase
 
             yield return new WaitForSeconds(sm.postShockWaitDuration);
 
-            while (
+            /*while (
                 Vector2.Distance(sm.GetPlayerTransform().position, sm.transform.position) > sm.shockRange &&
                 Vector2.Distance(sm.GetPlayerTransform().position, sm.transform.position) <= sm.GetDetectionRadius()
             )
@@ -73,8 +79,8 @@ public class EelStateAttack : StateBase
                 sm.rb.linearVelocity = chaseDir * sm.chaseSpeed;
 
                 yield return null;
-            }
-        }
+            }*/
+        //}
 
         sm.rb.linearVelocity = Vector2.zero;
         sm.ChangeState(sm.statePatrol);

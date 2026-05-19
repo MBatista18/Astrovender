@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Player Control Test.unity
     guid: 629c782331aa970429ea123952b6e467
   - enabled: 1
+    path: Assets/Scenes/Cutscenes/OpeningCutscene.unity
+    guid: c11531452232c2848b4124f8cc95e701
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 7c700ecc424c1b14085a97a73f248eca
   - enabled: 1
@@ -38,6 +41,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Subgame Test.unity
     guid: da8247a4899bdfb40bf5570de51d9018
+  - enabled: 1
+    path: Assets/Scenes/BossArena.unity
+    guid: a4cd38c147edd5742a685f524850b094
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/EndingCutscene.unity
+    guid: 8e709b948c753764b9445c23dc10253a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

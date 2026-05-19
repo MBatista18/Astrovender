@@ -571,7 +571,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 9c05cc71726dd2e4c8bc861406c4dc52, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -580,7 +580,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 3
+  m_PixelsPerUnitMultiplier: 4
 --- !u!1 &4532793040051295194
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,7 +707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SquidBossSM
   facingDirection: 1
-  deathEffectPrefab: {fileID: 0}
+  deathEffectPrefab: {fileID: 3732931278602249674, guid: 8d3d8f1585b81154fbbca1c015fbc255, type: 3}
   maxHealth: 300
   damageReactionTime: 0
   reactToDamage: 0
@@ -756,6 +756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e26879da27f1c949884aed6f5f1b0f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlashOnHit
+  spriteRenderer: {fileID: 0}
   flashDuration: 0.1
 --- !u!82 &319642149716927219
 AudioSource:
@@ -766,7 +767,7 @@ AudioSource:
   m_GameObject: {fileID: 4532793040051295194}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8320292748494799931, guid: 518160d440bc8fe45878ba496a9d30ce, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -1028,7 +1029,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: c6860a79f21f4dc4f848381bfc9a4194, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1037,7 +1038,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 3
+  m_PixelsPerUnitMultiplier: 4
 --- !u!1 &5813480120893892519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,8 +1239,8 @@ RectTransform:
   m_LocalScale: {x: 0.013665856, y: 0.028382933, z: 0.035040658}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5106609683758267626}
   - {fileID: 1336087840318991686}
+  - {fileID: 5106609683758267626}
   m_Father: {fileID: 5383410306106702160}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}

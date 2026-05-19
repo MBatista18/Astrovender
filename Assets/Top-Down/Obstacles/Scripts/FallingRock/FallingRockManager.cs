@@ -46,6 +46,7 @@ public class FallingRockManager : MonoBehaviour
 
     IEnumerator RockSlide()
     {
+        Debug.Log("audio");
         audioSource.Play();
 
         yield return new WaitForSeconds(1f);

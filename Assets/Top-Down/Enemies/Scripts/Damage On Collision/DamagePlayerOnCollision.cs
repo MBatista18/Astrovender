@@ -20,6 +20,7 @@ public class DamagePlayerOnCollision : MonoBehaviour, IShieldResponse
     public EnemySM enemySM;
     private void Awake()
     {
+        if (transform.parent == null) { return; }
         enemySM = transform.parent.GetComponent<EnemySM>();
     }
 

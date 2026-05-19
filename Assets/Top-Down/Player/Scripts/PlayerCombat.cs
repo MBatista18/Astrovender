@@ -46,6 +46,8 @@ public class PlayerCombat : MonoBehaviour
     //Handles the shoot button
     public void Shoot()
     {
+        if (Time.timeScale == 0) { return; }
+
         if (!GameManager.Instance.currentdataObj.hasGun) { return; }
 
         if (PlayerManager.ammoCount <= 0) { return; }
@@ -66,6 +68,8 @@ public class PlayerCombat : MonoBehaviour
     //Handles the bomb button
     public void Bomb()
     {
+        if (Time.timeScale == 0) { return; }
+
         if (!GameManager.Instance.currentdataObj.hasBombs) { return; }
 
         if (PlayerManager.bombCount <= 0) { return; }
@@ -84,6 +88,8 @@ public class PlayerCombat : MonoBehaviour
     //Handles the sword button
     public void SwordAttack()
     {
+        if (Time.timeScale == 0) { return; }
+
         //Debug.Log("Sword attack trigger");
         sm._moveSpeed = 0.0f;
         if (!canSwordAttack) return;

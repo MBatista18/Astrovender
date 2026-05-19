@@ -85,6 +85,7 @@ MonoBehaviour:
   attackCooldown: 1.5
   knocksPlayer: 1
   knockDuration: 0.5
+  enemySM: {fileID: 0}
 --- !u!1 &774132934811346825
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,7 +358,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 9c05cc71726dd2e4c8bc861406c4dc52, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -366,7 +367,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 3
+  m_PixelsPerUnitMultiplier: 4
 --- !u!1 &2961769302184920444
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,7 +675,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: c6860a79f21f4dc4f848381bfc9a4194, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -683,7 +684,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 3
+  m_PixelsPerUnitMultiplier: 4
 --- !u!1 &5087164119926881571
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,7 +870,7 @@ AudioSource:
   m_GameObject: {fileID: 5087164119926881571}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8320292748494799931, guid: 518160d440bc8fe45878ba496a9d30ce, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
@@ -1005,8 +1006,8 @@ RectTransform:
   m_LocalScale: {x: 0.013665856, y: 0.028382933, z: 0.035040658}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6816376639148522679}
   - {fileID: 130063547296395610}
+  - {fileID: 6816376639148522679}
   m_Father: {fileID: 823372392432289879}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}

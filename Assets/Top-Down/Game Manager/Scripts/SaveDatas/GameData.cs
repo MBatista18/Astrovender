@@ -24,6 +24,9 @@ public struct DataObj
     public bool hasGun;
     public bool hasBombs;
 
+    public bool finalKeyLeft;
+    public bool finalKeyRight;
+
     public int oxygenLevel;
     public readonly int MAX_OXYGENLEVEL;
     public int shieldLevel;
@@ -34,8 +37,8 @@ public struct DataObj
     public readonly int MAX_BOMBLEVEL;
     public int enemyDropLevel;
     public readonly int MAX_ENEMYDROPLEVEL;
-    public int subgame_gridExpansionLevel;
-    public readonly int MAX_SUBGAME_GRIDEXPANSIONLEVEL;
+    public int subgame_rewardMultiplierLevel;
+    public readonly int MAX_SUBGAME_REWARDMULTIPLIERLEVEL;
     public int subgame_turnLevel;
     public readonly int MAX_SUBGAME_TURNLEVEL;
 
@@ -59,12 +62,15 @@ public struct DataObj
         hasGun = false;
         hasBombs = false;
 
+        finalKeyLeft = false;
+        finalKeyRight = false;
+
         oxygenLevel = 0;
         shieldLevel = 0;
         bombLevel = 0;
         gunLevel = 0;
         enemyDropLevel = 0;
-        subgame_gridExpansionLevel = 0;
+        subgame_rewardMultiplierLevel = 0;
         subgame_turnLevel = 0;
 
         wornHat = "";
@@ -74,7 +80,7 @@ public struct DataObj
         MAX_BOMBLEVEL = 10;
         MAX_GUNLEVEL = 10;
         MAX_ENEMYDROPLEVEL = 5;
-        MAX_SUBGAME_GRIDEXPANSIONLEVEL = 5;
+        MAX_SUBGAME_REWARDMULTIPLIERLEVEL = 3;
         MAX_SUBGAME_TURNLEVEL = 5;
 
         puchasedHats = new List<string>();

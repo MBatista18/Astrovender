@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b973176b4180d247815a103cd2101f4, type: 3}
+  m_Name: SubgameMultiplierUpgrade
+  m_EditorClassIdentifier: Assembly-CSharp::Upgrades_ShopSO
+  Name: Increase Replicator 3000 Multiplier
+  Sprite: {fileID: 21300000, guid: 6b5baaa08eb311945a2bca9d626dd917, type: 3}
+  Description: Increases the multiplier of rewards the player receives for each item
+    collected in the subgame.
+  thisUpgradeType: 6
+  tiersCost:
+  - coins: 60
+    gems: 1
+  - coins: 100
+    gems: 2
+  - coins: 200
+    gems: 4

@@ -45,6 +45,8 @@ public class MapButtonBehavior : MonoBehaviour
 
     void MapInputButton()
     {
+        if (Time.timeScale == 0) { return; }
+
         if (!button.interactable) { return; }
         OnInteract();
     }

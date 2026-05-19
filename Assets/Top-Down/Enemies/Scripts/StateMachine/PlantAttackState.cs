@@ -24,6 +24,8 @@ public class PlantAttackState : StateBase
     {
         base.thisStart();
 
+        Debug.Log("Attack");
+
         plant.rb.linearVelocity = Vector2.zero;
 
         phase = AttackPhase.Windup;
@@ -58,7 +60,7 @@ public class PlantAttackState : StateBase
 
             if (timer <= 0f)
             {
-                plant.ChangeState(new PlantPatrolState(plant));
+                plant.ChangeState(plant.InitialState());
             }
         }
     }

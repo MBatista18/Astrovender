@@ -158,7 +158,7 @@ public class EnemySM : StateMachineBase // this is the base for the enemy state 
 
     public EnemyStateKnockback GetStateKnockback() { return stateKnockback; }
 
-    public virtual void OnShieldReaction() { Debug.Log("d"); }
+    public virtual void OnShieldReaction() { }
 
     public override void InstantiateStates()
     {

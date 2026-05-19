@@ -61,6 +61,8 @@ public class LockedDoorKey : MonoBehaviour
                 GameManager.Instance.currentdataObj.dungeons.Add(currentSceneName, dataObj);
             }
 
+            AssetCall.instance.playerSM.GetAudioCall().CallAudioClip("CollectKey");
+
             Destroy(gameObject);
         }
     }

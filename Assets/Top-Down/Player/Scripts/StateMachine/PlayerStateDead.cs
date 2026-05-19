@@ -21,6 +21,8 @@ public class PlayerStateDead : StateBase
         sm.GetAnimationController().SetAnimatorState(PlayerAnimationController.AnimatorState.Death);
         sm.GetAnimationController().Animate();
 
+        sm.GetAudioCall().CallAudioClip("Death");
+
         sm.GetCollider2D().enabled = false;
         
         AssetCall.instance.HUDText.BeginCountdown();
@@ -36,7 +38,7 @@ public class PlayerStateDead : StateBase
         if (timer > 3.2f)
         {
             GameManager.Instance.Progress(false);
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene("Player End Day");
         }
     }
 

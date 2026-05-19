@@ -9,12 +9,15 @@ public class EelStatePatrol : StateBase
         sm = (EelSM)_sm;
     }
 
+    float delayAttack;
+
     public override void thisStart()
     {
         base.thisStart();
 
         sm.SetMoveDirection(sm.GetRandomDiagonalDirection());
         timer = sm.patrolChangeTime;
+        delayAttack = Random.Range(.7f, 2f);
     }
 
     float timer;
@@ -62,10 +65,18 @@ public class EelStatePatrol : StateBase
             sm.LockDirection();
         }
 
-        if (Vector2.Distance(sm.GetPlayerTransform().position, sm.transform.position) <= sm.GetDetectionRadius())
+        //if (Vector2.Distance(sm.GetPlayerTransform().position, sm.transform.position) <= sm.GetDetectionRadius())
+        
+        if (delayAttack <= 0)
         {
+            if (Vector2.Distance(sm.GetPlayerTransform().position, sm.transform.position) > 8) { return; }
+
             sm.ChangeState(sm.AttackState());
             return;
+        }
+        else
+        {
+            delayAttack -= Time.deltaTime;
         }
     }
 }

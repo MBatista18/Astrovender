@@ -13,7 +13,7 @@ public class BatEnemyStateAttack : StateBase
     {
         base.thisUpdate();
 
-        Debug.Log("ATTACKING");
+       // Debug.Log("ATTACKING");
 
         sm.UpdateDirectionLockTimer();
 

@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class DungeonEntrance : MonoBehaviour
 {
-    [SerializeField] int dungeonSceneIndex;
+    [SerializeField] string dungeonSceneName;
 
     [SerializeField] bool isOutside;
     [SerializeField] Transform playerSpawn;
@@ -17,7 +17,7 @@ public class DungeonEntrance : MonoBehaviour
                 PlayerManager.playerWorldSpawn = playerSpawn.position;
 
             }
-            SceneManager.LoadScene(dungeonSceneIndex);
+            SceneManager.LoadScene(dungeonSceneName);
         }
     }
 }
