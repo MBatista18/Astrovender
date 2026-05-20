@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 [System.Serializable]
 public class GameData
@@ -54,7 +55,7 @@ public struct DataObj
     {
         saveName = _saveName;
 
-        day = 0;
+        day = 1;
         coins = 0;
         gems = 0;
 

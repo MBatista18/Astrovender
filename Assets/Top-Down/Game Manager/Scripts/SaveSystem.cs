@@ -46,4 +46,6 @@ public static class SaveSystem
             Debug.LogError("Save file not found in " + path);
         }
     }
+
+    public static bool SaveFileExists() => File.Exists(path);
 }

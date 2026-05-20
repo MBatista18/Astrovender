@@ -98,9 +98,22 @@ public class GameManager : MonoBehaviour, ISaveable
         SaveManager.Instance.Save(this);
     }
 
-    public void StartDay()
+    public void StartNewGame()
     {
-        IncrementDay();
+        currentdataObj = new DataObj("");
+        currentdataObj.day = 1;
+        StartDay(0);
+    }
+
+    public void ContinueGame()
+    {
+        SaveManager.Instance.Load(this);
+        StartDay(0); // Start from the start of the current saved day
+    }
+
+    public void StartDay(int incrementValue = 1)
+    {
+        IncrementDay(incrementValue);
 
         if (currentdataObj.day <= 1) { PlayerManager.currentOxygenLevel = PlayerManager.min_OxygenValue; } // when the player first starts the game, they get given a free stock of oxygen
 
@@ -120,7 +133,7 @@ public class GameManager : MonoBehaviour, ISaveable
 
         //PlayerManager.ResetPlayerValues();
         PlayerManager.playerWorldSpawn = new Vector3(10, 23);
-        //SaveManager.Instance.Save(this);
+        CallSaveGame();
     }
 
     public void IncrementDay(int value = 1)
@@ -170,8 +183,6 @@ public class GameManager : MonoBehaviour, ISaveable
             PermaDefeatedGunsBoss = data.deafeatedGunsBoss;*/
 
             currentdataObj = saveData.gameData.data;
-            currentdataObj.coins = 0;
-            currentdataObj.gems = 0;
         }
     }
 }

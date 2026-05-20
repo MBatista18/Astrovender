@@ -53,7 +53,7 @@ public class CutsceneManager : MonoBehaviour
 
         if (openingCutscene)
         {
-            FindAnyObjectByType<BeginNextDay>().ContinueToNextDay();
+            FindAnyObjectByType<BeginNextDay>().NewGame();
         }
         else
         {

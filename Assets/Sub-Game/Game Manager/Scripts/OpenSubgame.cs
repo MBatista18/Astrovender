@@ -8,7 +8,7 @@ public class OpenSubgame : MonoBehaviour
     {
         if (GameManager.Instance == null) { Debug.LogError("No Game Manager"); }
 
-        GameManager.Instance.StartDay();
+        GameManager.Instance.StartDay(0);
         UnityEngine.SceneManagement.SceneManager.LoadScene(gameWorldID);
     }
 }

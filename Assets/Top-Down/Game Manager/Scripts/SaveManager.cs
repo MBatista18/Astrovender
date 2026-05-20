@@ -9,9 +9,6 @@ public class SaveManager : MonoBehaviour
 
     [Header("Debugging")]
     public bool showDebugLogs = false;
-    public KeyCode saveData = KeyCode.I;
-    public KeyCode loadSave = KeyCode.O;
-    public KeyCode deleteSave = KeyCode.P;
 
     private void Awake()
     {
@@ -34,25 +31,23 @@ public class SaveManager : MonoBehaviour
     void OnEnable()
     {
         if (GameManager.Instance != null)
-            SaveManager.Instance.saveables.Add(GameManager.Instance);
+            saveables.Add(GameManager.Instance);
     }
     void OnDisable()
     {
         if (GameManager.Instance != null)
-            SaveManager.Instance.saveables.Add(GameManager.Instance);
+            saveables.Remove(GameManager.Instance);
     }
 
-    private void Update()
-    {
-       /* if (Input.GetKeyDown(saveData))
-        {
-            Save();
-        }
-        else if (Input.GetKeyDown(loadSave))
-        {
-            Load();
-        }*/
-    }
+#if UNITY_EDITOR
+    // Adds commands to save/load data from the SaveManager component's context menu (right click the component in the inspector)
+    [ContextMenu("Save Game")]
+    private void SaveGame() => Save();
+    [ContextMenu("Load Data")]
+    private void LoadGame() => Load();
+    [ContextMenu("Delete Data")]
+    private void DeleteGame() => Delete();
+#endif
 
     public void Save(Object source = null)
     {
@@ -90,4 +85,19 @@ public class SaveManager : MonoBehaviour
             saveable.LoadData(data);
         }
     }
+
+    public void Delete(Object source = null)
+    {
+        if (showDebugLogs)
+        {
+            if (source == null)
+                Debug.Log("Deleting data.");
+            else
+                Debug.Log($"Deleting data due to " + source.name);
+        }
+
+        SaveSystem.DeleteData();
+    }
+
+    public bool SaveFileExists() => SaveSystem.SaveFileExists();
 }
